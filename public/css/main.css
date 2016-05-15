@@ -1,0 +1,12 @@
+.greeting {
+    padding: 12px;
+    color: #288f18;
+    font: 16px sans-serif;
+    background-color: #78cc5c;
+}
+.offer {
+    padding: 12px * 2;
+    color: #f7ba00;
+    font: 16px sans-serif;
+    background-color: #d67d00;
+}

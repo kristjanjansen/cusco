@@ -1,10 +1,12 @@
 var Vue = require('vue');
 
-import greeting from './components/greeting/component.vue';
+import Alert from './components/Alert/Alert.vue';
 
 new Vue({
     el: 'body',
 
-    components: { greeting },
+    components: {
+        Alert
+    },
 
 });

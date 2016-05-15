@@ -6,21 +6,67 @@ use View;
 
 class Blade {
 
-    public static function bladeComponent($name, $data = []) {
+    public static function bladeComponent($selector, $data = []) {
 
-        $name = "components.$name.component";
+        $component = self::parseSelector($selector);
 
-        return View::make($name, array_except(get_defined_vars(), array('__data', '__path')))
-            ->with($data)
-            ->render();
+        $name = "components.$component->name.$component->name";
+
+        if (view()->exists($name)) {
+
+        
+            return View::make($name, array_except(get_defined_vars(), array('__data', '__path')))
+                ->with($data)
+                ->with(['modifiers' => $component->modifiers])
+                ->render();
+        
+        } else {
+
+            return '<component is="'
+                . $component->name
+                . '" modifiers="'
+                . $component->modifiers
+                . '" variables="'
+                . rawurlencode(json_encode($data))
+                . '" />';
+        }
 
     }
 
-    public static function vueComponent($name, $data = []) {
-            
-        //$name = camel_case(str_replace('.', '_', $name . '.show'));
+    public static function vueComponent($selector, $data = []) {
+                
+        $component = self::parseSelector($selector);
 
-        return '<component is="' . $name . '" variables="' . rawurlencode(json_encode($data)) . '" />';
+        return '<component is="'
+            . $component->name
+            . '" modifiers="'
+            . $component->modifiers
+            . '" variables="'
+            . rawurlencode(json_encode($data))
+            . '" />';
+
+    }
+
+    protected static function parseSelector($selector) {
+
+        $classes = collect(explode(' ', $selector));
+
+        $name = $classes->first();
+        $modifiers ='';
+
+        if ($classes->count() > 1) {
+
+            $classes->shift();
+
+            $modifiers = $classes
+                ->map(function($class) use ($name) {
+                    return $name . $class;
+                })
+                ->implode(' ');
+        
+        }
+
+        return (object) ['name' => $name, 'modifiers' => $modifiers];
 
     }
 

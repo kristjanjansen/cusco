@@ -10,13 +10,17 @@
         
         <div class="row">
 
+                <div class="item">
 
-            <div class="col-xs-1">
-                <div class="item">@component('offer', ['type' => 'lame'])</div>
-            </div>
-            <div class="col-xs-11">
-                <div class="item">@component('offer', ['type' => 'lame'])</div>
-            </div>
+                    @component('OfferItem --orange', ['type' => 'lame'])
+
+                </div>
+
+                <div class="item">
+
+                    @component('Alert --red --small', ['type' => 'lame'])
+
+                </div>
     
         </div>
 

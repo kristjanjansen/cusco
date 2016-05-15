@@ -1,0 +1,11 @@
+.Alert {
+    background-color: $brand-green;
+    color: $brand-green-dark;
+    font: $font-base-md;
+    padding: $padding-md;
+}
+
+.Alert--small {
+    font: $font-base-sm;
+    padding: $padding-md;
+}

@@ -1,4 +1,4 @@
-<div class="offer">
+<div class="OfferItem {{ $modifiers }}">
     
 I am an {{ $type ?? 'bad' }} offer
 

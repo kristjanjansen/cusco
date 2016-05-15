@@ -10435,7 +10435,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
 
-    props: ['variables'],
+    props: ['variables', 'modifiers'],
 
     data: function data() {
         return {};
@@ -10445,12 +10445,12 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"greeting\">\n\n    Hello, {{ variables.type }}!\n\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"Alert {{ modifiers }}\">\n\n    Hello, {{ variables.type }}!!\n\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/kristjanjansen/Documents/projects/cusco/resources/views/components/greeting/component.vue"
+  var id = "/Users/kristjanjansen/Documents/projects/cusco/resources/views/components/Alert/Alert.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -10460,9 +10460,9 @@ if (module.hot) {(function () {  module.hot.accept()
 },{"vue":3,"vue-hot-reload-api":2}],5:[function(require,module,exports){
 'use strict';
 
-var _component = require('./components/greeting/component.vue');
+var _Alert = require('./components/Alert/Alert.vue');
 
-var _component2 = _interopRequireDefault(_component);
+var _Alert2 = _interopRequireDefault(_Alert);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10471,10 +10471,12 @@ var Vue = require('vue');
 new Vue({
     el: 'body',
 
-    components: { greeting: _component2.default }
+    components: {
+        Alert: _Alert2.default
+    }
 
 });
 
-},{"./components/greeting/component.vue":4,"vue":3}]},{},[5]);
+},{"./components/Alert/Alert.vue":4,"vue":3}]},{},[5]);
 
 //# sourceMappingURL=main.js.map

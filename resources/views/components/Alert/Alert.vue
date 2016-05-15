@@ -1,8 +1,8 @@
 <template>
 
-<div class="greeting">
+<div class="Alert {{ modifiers }}">
 
-    Hello, {{ variables.type }}!
+    Hello, {{ variables.type }}!!
 
 </div>
 
@@ -12,7 +12,7 @@
 
     export default {
 
-        props: ['variables'],
+        props: ['variables', 'modifiers'],
 
         data() {
             return {};

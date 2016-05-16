@@ -6,6 +6,8 @@
 }
 
 .Body h3 {
-    font: $font-header-md;
+    font-size: responsive;
+    min-font-size: $font-size-md;
+    max-font-size: $font-size-lg;
     margin: $margin-topbottom-sm;
 }

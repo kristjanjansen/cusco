@@ -1,5 +1,6 @@
 $spacer: 12px;
 
+$padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
 
 $padding-leftright-md: 0 calc($spacer * 2);
@@ -15,6 +16,9 @@ $padding-topbottom-lg: calc($spacer * 3) 0;
 $margin-topbottom-sm: $spacer 0;
 $margin-topbottom-md: calc($spacer * 2) 0;
 $margin-topbottom-lg: calc($spacer * 3) 0;
- 
+
+$width-md: calc($spacer * 4);
+$width-lg: calc($spacer * 6); 
+
 $height-md: calc($spacer * 4);
 $height-lg: calc($spacer * 6); 

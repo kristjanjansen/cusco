@@ -2178,6 +2178,26 @@
     padding-bottom: 0;
   }
 }
+.Alert {
+    background-color: #78cc5c;
+    color: #288f18;
+    font: normal 16px "Karla",sans-serif;
+    height: calc(12px * 4);
+    padding: 0 calc(12px * 2); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.Alert--lg {
+    font: normal 20px "Karla",sans-serif;
+    height: calc(12px * 6);
+    padding: 0 calc(12px * 3); 
+}
+
+.Alert__close {
+    cursor: pointer;
+}
 .Body * {
     font-size: calc(14px + 6 * ((100vw - 420px) / 860));
     line-height: 140%;
@@ -2214,25 +2234,17 @@
     font-size: 16px;
   }
 }
-.Alert {
-    background-color: #78cc5c;
-    color: #288f18;
-    font: normal 16px "Karla",sans-serif;
-    height: calc(12px * 4);
-    padding: 0 calc(12px * 2); 
+.Display {
+    height: calc(12px * 14);
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between; 
 }
 
-.Alert--lg {
-    font: normal 20px "Karla",sans-serif;
-    height: calc(12px * 6);
-    padding: 0 calc(12px * 3); 
-}
-
-.Alert__close {
-    cursor: pointer;
+.Display__title {
+    font: bold 20px "Karla",sans-serif;
+    color: white;
+    text-align: center;
 }
 .OfferItem {
 

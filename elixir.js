@@ -16,9 +16,10 @@ Elixir.extend('postcss', function (src, output) {
         return gulp.src(src)
             .pipe($.concat('main.css'))
             .pipe(postcss([
-                require('postcss-advanced-variables')(),
-                require('postcss-responsive-type')(),
-                require('postcss-font-magician')(),
+                require('postcss-advanced-variables'),
+                require('postcss-responsive-type'),
+                require('postcss-font-magician'),
+                require('postcss-if-media'),
             ]).on('error', function(err) {
                 new Elixir.Notification('PostCSS Failed!');
                 console.log(err)

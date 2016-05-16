@@ -13,6 +13,7 @@
     "postcss-advanced-variables": "^1.2.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-font-magician": "^1.4.0",
+    "postcss-if-media": "^1.0.1",
     "postcss-import": "^8.1.2",
     "postcss-responsive-type": "^0.3.3",
     "suitcss-components-grid": "^3.0.3",

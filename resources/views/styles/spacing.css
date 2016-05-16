@@ -3,8 +3,16 @@ $spacer: 12px;
 $padding-leftright-md: 0 calc($spacer * 2);
 $padding-leftright-lg: 0 calc($spacer * 3);
 
+$padding-margin-md: 0 calc($spacer * 2);
+$padding-margin-lg: 0 calc($spacer * 3);
+
+$padding-topbottom-sm: $spacer 0;
 $padding-topbottom-md: calc($spacer * 2) 0;
 $padding-topbottom-lg: calc($spacer * 3) 0;
+
+$margin-topbottom-sm: $spacer 0;
+$margin-topbottom-md: calc($spacer * 2) 0;
+$margin-topbottom-lg: calc($spacer * 3) 0;
  
 $height-md: calc($spacer * 4);
 $height-lg: calc($spacer * 6); 

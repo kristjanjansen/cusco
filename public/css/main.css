@@ -2123,6 +2123,29 @@
     box-sizing: border-box;
 }
 
+.Grid {
+}
+
+@media (max-width: 34em) {
+
+  .Grid {
+    flex-direction: column;
+  }
+}
+.padding-leftright-md {
+    padding: 0 calc(12px * 2);
+}
+
+.padding-leftright-collapse-md {
+    padding: 0 calc(12px * 2);
+}
+
+@media (max-width: 34em) {
+
+  .padding-leftright-collapse-md {
+    padding: 0;
+  }
+}
 .Alert {
     background-color: #78cc5c;
     color: #288f18;
@@ -2145,6 +2168,7 @@
 }
 .Body * {
     font-size: calc(14px + 7 * ((100vw - 420px) / 860));
+    line-height: 140%;
     font-family: "Karla";
 }
 @media screen and (min-width: 1280px) {
@@ -2162,7 +2186,7 @@
 
 .Body h3 {
     font: bold 20px "Karla",sans-serif;
-    margin: $spacer-topbottom-md;
+    margin: 12px 0;
 }
 .OfferItem {
 

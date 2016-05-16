@@ -16,7 +16,7 @@
 
                 </div>
 
-                <div class="Grid-cell">
+                <div class="Grid-cell padding-leftright-collapse-md">
 
                     @component('Body', ['body' => '<p>Ennui flannel offal next level pork belly. Fap before they sold out wolf cardigan vegan, waistcoat bitters four loko listicle synth church-key you probably havent heard of them keffiyeh sriracha.</p><h3>Gentrify etsy chartreuse</h3><p>try-hard. Deep v blue bottle four dollar toast, pork belly YOLO direct trade 90 cold-pressed beard photo booth selvage craft beer. Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck everyday carry pop-up cray lomo. Deep v farm-to-table poutine, cardigan brooklyn godard iPhone post-ironic thundercats authentic bitters.</p>'])
 

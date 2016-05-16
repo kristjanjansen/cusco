@@ -2,7 +2,7 @@
 
 <div class="Alert {{ modifiers }}">
 
-    Hello, {{ variables.type }}!!
+    {{ variables.title }}
 
 </div>
 

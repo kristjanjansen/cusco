@@ -35,7 +35,7 @@ class Blade {
 
     public static function vueComponent($selector, $data = []) {
                 
-        $component = self::parseSelector($selector);
+        $component = self::parseSelector2($selector);
 
         return '<component is="'
             . $component->name
@@ -49,7 +49,7 @@ class Blade {
 
     protected static function parseSelector($selector) {
 
-        $classes = collect(explode(' ', $selector));
+        $classes = collect(explode('--', $selector));
 
         $name = $classes->first();
         $modifiers ='';
@@ -59,8 +59,8 @@ class Blade {
             $classes->shift();
 
             $modifiers = $classes
-                ->map(function($class) use ($name) {
-                    return $name . $class;
+                ->map(function($modifier) use ($name) {
+                    return $name . '--' . $modifier;
                 })
                 ->implode(' ');
         
@@ -69,5 +69,4 @@ class Blade {
         return (object) ['name' => $name, 'modifiers' => $modifiers];
 
     }
-
 }

@@ -8,8 +8,8 @@ elixir(function(mix) {
     mix.browserify('./resources/views/main.js')
 
     mix.postcss([
-        './resources/views/styles/**/*.scss',
-        './resources/views/components/**/*.scss'
+        './resources/views/styles/**/*.*css',
+        './resources/views/components/**/*.*css'
     ])
 
 });

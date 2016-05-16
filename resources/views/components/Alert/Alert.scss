@@ -1,11 +1,14 @@
 .Alert {
+    all: initial;
     background-color: $brand-green;
     color: $brand-green-dark;
-    font: $font-base-md;
+    font-family: "Karla";
+    font-size: responsive;
+    min-font-size: 14px;
     padding: $padding-md;
 }
 
-.Alert--small {
-    font: $font-base-sm;
-    padding: $padding-md;
+.Alert--lg {
+    font: $font-base-lg;
+    padding: $padding-lg;  
 }

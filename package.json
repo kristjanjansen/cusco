@@ -9,7 +9,11 @@
     "gulp-postcss": "^6.1.1",
     "laravel-elixir": "^5.0.0",
     "laravel-elixir-vueify": "^1.0.3",
+    "normalize.css": "^4.1.1",
     "postcss-advanced-variables": "^1.2.2",
-    "postcss-import": "^8.1.2"
+    "postcss-easy-import": "^1.0.1",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-import": "^8.1.2",
+    "postcss-responsive-type": "^0.3.3"
   }
 }

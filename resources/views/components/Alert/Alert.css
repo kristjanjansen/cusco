@@ -1,0 +1,15 @@
+.Alert {
+    background-color: $brand-green;
+    color: $brand-green-dark;
+    font: $font-header-md;
+    height: $height-md;
+    padding: $spacing-leftright-md; 
+    display: flex;
+    align-items: center;
+}
+
+.Alert--lg {
+    font: $font-base-lg;
+    height: $height-lg;
+    padding: $spacing-leftright-md; 
+}

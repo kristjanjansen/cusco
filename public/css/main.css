@@ -4,73 +4,84 @@
     font-weight: 400;
     src: local("Karla Italic"),local(Karla-Italic),url(//fonts.gstatic.com/s/karla/v5/q1iut0qldmpQ41lMrYSYhg.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/LCDsRHICy9vmW7BLwm8u7g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/oU7KPLtl1UkRu830svIOXw.woff) format("woff");
 }
+
 @font-face {
     font-family: Karla;
     font-style: italic;
     font-weight: 700;
     src: local("Karla Bold Italic"),local(Karla-BoldItalic),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxFQlYEbsez9cZjKsNMjLOwM.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxPk_vArhqVIZ0nv9q090hN8.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxBsxEYwM7FgeyaSgU71cLG0.woff) format("woff");
 }
+
 @font-face {
     font-family: Karla;
     font-style: normal;
     font-weight: 400;
     src: local(Karla),local(Karla-Regular),url(//fonts.gstatic.com/s/karla/v5/8gO-GQO6h3meAtqRrd890A.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/Zi_e6rBgGqv33BWF8WTq8g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/azR40LUJrT4HaWK28zHmVA.woff) format("woff");
 }
+
 @font-face {
     font-family: Karla;
     font-style: normal;
     font-weight: 700;
     src: local("Karla Bold"),local(Karla-Bold),url(//fonts.gstatic.com/s/karla/v5/s-O-g1eMGKQFvcIY8dKM9fesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/suoMYBGv5sGCUIrF9mVTffesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/3nZS3BKzlvhkwl4yjCQcjPesZW2xOQ-xsNqO47m55DA.woff) format("woff");
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
 }
+
 .Alert {
-    all: initial;
     background-color: #78cc5c;
     color: #288f18;
-    font-family: "Karla";
-    font-size: calc(14px + 7 * ((100vw - 420px) / 860));
-    padding: 12px;
-}
-@media screen and (min-width: 1280px) {
-    .Alert {
-        font-size: 21px;
-    }
-}
-@media screen and (max-width: 420px) {
-    .Alert {
-        font-size: 14px;
-    }
+    font: bold 20px "Karla",sans-serif;
+    height: calc(12px * 4);
+    padding: 0 12px; 
+    display: flex;
+    align-items: center;
 }
 
 .Alert--lg {
-    font: bold 20px "Karla",sans-serif;
-    padding: calc(12px * 3);  
+    font: $font-base-lg;
+    height: calc(12px * 8);
+    padding: 0 12px; 
 }
-.Body {
+.Body * {
     font-size: calc(14px + 7 * ((100vw - 420px) / 860));
-    line-height: 130%;
     font-family: "Karla";
 }
 @media screen and (min-width: 1280px) {
-    .Body {
+
+    .Body * {
         font-size: 21px;
     }
 }
 @media screen and (max-width: 420px) {
-    .Body {
+
+    .Body * {
         font-size: 14px;
     }
 }
+
+.Body h3 {
+    font: bold 20px "Karla",sans-serif;
+    margin: $spacer-topbottom-md;
+}
 .OfferItem {
 
-    padding: calc(12px * 3);
+    padding: $padding-lg;
     color: #f7ba00;
-    font: bold 20px "Karla",sans-serif;
+    font: $font-base-lg;
+    background-color: #d67d00;
+
+}
+.OfferItem {
+
+    padding: $padding-lg;
+    color: #f7ba00;
+    font: $font-base-lg;
     background-color: #d67d00;
 
 }

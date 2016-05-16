@@ -1,10 +1,10 @@
 .Body * {
     font-size: responsive;
-    min-font-size: $font-size-small;
-    font-family: "Karla";
+    min-font-size: $font-size-sm;
+    font-family: $font-family;
 }
 
 .Body h3 {
     font: $font-header-md;
-    margin: $space-topbottom-md;
+    margin: $spacer-topbottom-md;
 }

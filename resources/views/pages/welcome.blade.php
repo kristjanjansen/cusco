@@ -16,10 +16,10 @@
 
                 <div class="Grid-cell">
 
-
                     @component('Row', [
                         'image' => '<img src="http://lorempixel.com/g/32/32/" />',
-                        'body' => 'Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
+                        'body' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
+                        ])
                     ])
 
                     @component('Alert', ['title' => 'I am an alert.'])

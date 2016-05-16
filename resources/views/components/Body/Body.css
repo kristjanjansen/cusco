@@ -1,5 +1,10 @@
-.Body {
+.Body * {
     font-size: responsive;
-    line-height: 130%;
+    min-font-size: $font-size-small;
     font-family: "Karla";
+}
+
+.Body h3 {
+    font: $font-header-md;
+    margin: $space-topbottom-md;
 }

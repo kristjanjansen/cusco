@@ -16,7 +16,7 @@
 
                 <div class="Grid-cell">
 
-                    @component('Row', [
+                    @component('Row--border', [
                         'aside' => component('UserImage', [
                             'image' => 'http://lorempixel.com/g/64/64/'
                         ]),

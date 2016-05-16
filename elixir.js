@@ -9,6 +9,12 @@ var config = Elixir.config;
 
 Elixir.extend('postcss', function (src, output) {
 
+    Elixir.onWatch(function() {
+
+        gulp.start('postcss');
+    
+    });
+
     return new Elixir.Task('postcss', function () {
         
         this.log(src, output);
@@ -16,9 +22,10 @@ Elixir.extend('postcss', function (src, output) {
         return gulp.src(src)
             .pipe($.concat('main.css'))
             .pipe(postcss([
-                require('postcss-advanced-variables')(),
-                require('postcss-responsive-type')(),
-                require('postcss-font-magician')(),
+                require('postcss-advanced-variables'),
+                require('postcss-responsive-type'),
+                require('postcss-font-magician'),
+                require('postcss-custom-media')
             ]).on('error', function(err) {
                 new Elixir.Notification('PostCSS Failed!');
                 console.log(err)

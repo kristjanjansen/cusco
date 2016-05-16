@@ -18,3 +18,9 @@
 .Alert__close {
     cursor: pointer;
 }
+
+@media ($media-xs) {
+    .Alert {
+        background-color: red;
+    }
+}

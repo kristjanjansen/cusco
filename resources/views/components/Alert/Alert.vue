@@ -1,6 +1,6 @@
 <template>
 
-<div v-if="show" class="Alert {{ modifiers }}">
+<div class="Alert {{ modifiers }}" v-if="show" transition="fadeUp">
 
     <div class="Alert__title">
         {{ variables.title }}
@@ -26,6 +26,10 @@
 
         ready() {
             this.variables = JSON.parse(decodeURIComponent(this.variables))
+
+            setTimeout(function() {
+                // this.show = false;
+            }.bind(this), 2000);
         }
 
     }

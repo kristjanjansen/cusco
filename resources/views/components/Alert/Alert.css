@@ -1,15 +1,20 @@
 .Alert {
     background-color: $brand-green;
     color: $brand-green-dark;
-    font: $font-header-md;
+    font: $font-md;
     height: $height-md;
-    padding: $spacing-leftright-md; 
+    padding: $padding-leftright-md; 
     display: flex;
     align-items: center;
+    justify-content: space-between; 
 }
 
 .Alert--lg {
-    font: $font-base-lg;
+    font: $font-lg;
     height: $height-lg;
-    padding: $spacing-leftright-md; 
+    padding: $padding-leftright-lg; 
+}
+
+.Alert__close {
+    cursor: pointer;
 }

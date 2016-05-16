@@ -1,12 +1,10 @@
 $spacer: 12px;
 
-$spacing-xl: calc($spacer * 4);
-$spacing-lg: calc($spacer * 3);
-$spacing-md: $spacer;
-$spacing-sm: calc($spacer / 2);
+$padding-leftright-md: 0 calc($spacer * 2);
+$padding-leftright-lg: 0 calc($spacer * 3);
 
-$spacing-leftright-md: 0 $spacer;
-$spacing-topbottom-md: $spacer 0;
+$padding-topbottom-md: calc($spacer * 2) 0;
+$padding-topbottom-lg: calc($spacer * 3) 0;
  
 $height-md: calc($spacer * 4);
-$height-lg: calc($spacer * 8);
+$height-lg: calc($spacer * 6); 

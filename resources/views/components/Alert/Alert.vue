@@ -1,8 +1,14 @@
 <template>
 
-<div class="Alert {{ modifiers }}">
+<div v-if="show" class="Alert {{ modifiers }}">
 
-    {{ variables.title }}
+    <div class="Alert__title">
+        {{ variables.title }}
+    </div>
+
+    <div class="Alert__close" @click="show = false">
+        ×
+    </div>
 
 </div>
 
@@ -15,7 +21,7 @@
         props: ['variables', 'modifiers'],
 
         data() {
-            return {};
+            return { show: true };
         },
 
         ready() {

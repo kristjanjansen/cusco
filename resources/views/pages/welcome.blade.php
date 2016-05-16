@@ -18,7 +18,7 @@
 
                 <div class="item">
 
-                    @component('Alert', ['title' => 'I am an alert.'])
+                    @component('Alert--lg', ['title' => 'I am an alert.'])
 
                 </div>
     

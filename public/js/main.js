@@ -10438,14 +10438,14 @@ exports.default = {
     props: ['variables', 'modifiers'],
 
     data: function data() {
-        return {};
+        return { show: true };
     },
     ready: function ready() {
         this.variables = JSON.parse(decodeURIComponent(this.variables));
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"Alert {{ modifiers }}\">\n\n    {{ variables.title }}\n\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div v-if=\"show\" class=\"Alert {{ modifiers }}\">\n\n    <div class=\"Alert__title\">\n        {{ variables.title }}\n    </div>\n\n    <div class=\"Alert__close\" @click=\"show = false\">\n        ×\n    </div>\n\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

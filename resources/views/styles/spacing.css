@@ -1,5 +1,7 @@
 $spacer: 12px;
 
+$padding-md: calc($spacer * 2);
+
 $padding-leftright-md: 0 calc($spacer * 2);
 $padding-leftright-lg: 0 calc($spacer * 3);
 

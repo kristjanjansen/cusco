@@ -10,7 +10,8 @@ elixir(function(mix) {
     mix.postcss([
         './node_modules/suitcss-components-grid/lib/grid.css',
         './node_modules/vue-animate/dist/vue-animate.css',
-        './resources/views/styles/**/*.css',
+        './resources/views/variables/**/*.css',
+        './resources/views/utils/**/*.css',
         './resources/views/components/**/*.*css'
     ])
 

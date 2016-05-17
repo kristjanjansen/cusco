@@ -24,18 +24,13 @@ Route::get('/styleguide', function () {
         ->map(function($directory) {
             return Storage::disk('resources')->files($directory);
         })
-        ->flatten()
+        ->collapse()
         ->filter(function($filepath) {
             return pathinfo($filepath, PATHINFO_EXTENSION) == 'yaml';
         })
         ->map(function($filepath) {
-            return (object) [
-                'name' => pathinfo($filepath, PATHINFO_FILENAME),
-                'yaml' => Storage::disk('resources')->get($filepath)
-            ];
-        })
-        ->map(function($component) {
-            $component->yaml = Yaml::parse(trim($component->yaml));
+            $component = (object) Yaml::parse(trim(Storage::disk('resources')->get($filepath)));
+            $component->name = pathinfo($filepath, PATHINFO_FILENAME);
             return $component;
         });
  

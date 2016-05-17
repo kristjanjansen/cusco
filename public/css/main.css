@@ -26,6 +26,48 @@
   src: local("Karla Bold"),local(Karla-Bold),url(//fonts.gstatic.com/s/karla/v5/s-O-g1eMGKQFvcIY8dKM9fesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/suoMYBGv5sGCUIrF9mVTffesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/3nZS3BKzlvhkwl4yjCQcjPesZW2xOQ-xsNqO47m55DA.woff) format("woff");
 }
 
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  src: local("Helvetica Neue Light Italic"),local(HelveticaNeue-LightItalic),local("Helvetica Light Oblique"),local(Helvetica-LightOblique);
+}
+
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Helvetica Neue Italic"),local(HelveticaNeue-Italic),local("Helvetica Oblique"),local(Helvetica-Oblique);
+}
+
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  src: local("Helvetica Neue Bold Italic"),local(HelveticaNeue-BoldItalic),local("Helvetica Bold Oblique"),local(Helvetica-BoldOblique);
+}
+
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Helvetica Neue Light"),local(HelveticaNeue-Light),local("Helvetica Light"),local(Helvetica-Light);
+}
+
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local(HelveticaNeue),local(Helvetica);
+}
+
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Helvetica Neue Bold"),local(HelveticaNeue-Bold),local("Helvetica Bold"),local(Helvetica-Bold);
+}
+
 /** @define Grid */
 
 :root {
@@ -2117,12 +2159,31 @@
   -webkit-animation-name: zoomOutDown;
           animation-name: zoomOutDown;
 }
+
 *, *:before, *:after  {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.styleguide {
+    height: calc(12px * 10);
+    display: flex;
+    align-items: center;
+}
 
+.styleguide-title {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ddd;
+}
+
+.styleguide-description {
+    padding: 0 0 0 12px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #ddd;
+}
 .container {
   margin: 0 auto;
   max-width: 75em;
@@ -2234,11 +2295,6 @@
     font-size: 16px;
   }
 }
-.FrontpageHeader {
-    height: calc(12px * 20);
-    color: white;
-    background-size: cover;
-}
 .Display {
     height: calc(12px * 14);
     display: flex;
@@ -2251,21 +2307,10 @@
     color: white;
     text-align: center;
 }
-.OfferItem {
-
-    padding: $padding-lg;
-    color: #f7ba00;
-    font: $font-base-lg;
-    background-color: #d67d00;
-
-}
-.OfferItem {
-
-    padding: $padding-lg;
-    color: #f7ba00;
-    font: $font-base-lg;
-    background-color: #d67d00;
-
+.FrontpageHeader {
+    height: calc(12px * 20);
+    color: white;
+    background-size: cover;
 }
 .Row {
     display: flex;
@@ -2273,7 +2318,7 @@
 }
 
 .Row--border {
-    border: 3px solid #555;
+    border: 3px solid $gray-md;
     padding: calc(12px * 2);
 }
 

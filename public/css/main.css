@@ -2259,18 +2259,6 @@
 .Alert__close {
     cursor: pointer;
 }
-.Display {
-    height: calc(12px * 14);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Display__title {
-    font: bold 26px "Karla",sans-serif;
-    color: white;
-    text-align: center;
-}
 .Body * {
     font-size: calc(14px + 6 * ((100vw - 420px) / 860));
     line-height: 140%;
@@ -2307,6 +2295,18 @@
     font-size: 16px;
   }
 }
+.Display {
+    height: calc(12px * 14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Display__title {
+    font: bold 26px "Karla",sans-serif;
+    color: white;
+    text-align: center;
+}
 .FrontpageHeader {
     height: calc(12px * 20);
     color: white;
@@ -2317,8 +2317,8 @@
     height: calc(12px * 10);
 }
 .Placeholder {
-    height: calc(12px * 4);
-    border: 1px dotted #ddd;
+    height: calc(12px * 6);
+    border: 1px dotted #aaa;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2326,7 +2326,7 @@
 
 .Placeholder {
     font: normal 16px "Karla",sans-serif;
-    color: #555;
+    color: #aaa;
 }
 .Row {
     display: flex;

@@ -11,6 +11,34 @@
 |
 */
 
+use Symfony\Component\Yaml\Yaml;
+
 Route::get('/', function () {
-    return view('pages.welcome');
+    return view('pages.index');
+});
+
+Route::get('/styleguide', function () {
+
+
+    collect(Storage::disk('resources')->allDirectories('views/components'))
+        ->map(function($directory) {
+            return Storage::disk('resources')->files($directory);
+        })
+        ->flatten()
+        ->filter(function($filepath) {
+            return pathinfo($filepath, PATHINFO_EXTENSION) == 'yaml';
+        })
+        ->map(function($filepath) {
+            return Storage::disk('resources')->get($filepath);
+        })
+        ->map(function($yaml) {
+            return Yaml::parse(trim($yaml));
+        })
+        ->each(function($component) {
+            dump($component);
+        });
+ 
+
+    //return view('pages.styleguide');
+
 });

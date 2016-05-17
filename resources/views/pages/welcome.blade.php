@@ -7,6 +7,12 @@
         <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
+
+        @component('FrontpageHeader', [
+            'image' => 'http://lorempixel.com/300/200/',
+            'top' => component('Alert--big', ['title' => 'I am an alert.']),
+            'bottom' => 'Bottom'
+        ])
         
         <div class="region-one">
 

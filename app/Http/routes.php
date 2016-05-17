@@ -32,6 +32,10 @@ Route::get('/styleguide', function () {
             $component = (object) Yaml::parse(trim(Storage::disk('resources')->get($filepath)));
             $component->name = pathinfo($filepath, PATHINFO_FILENAME);
             return $component;
+        })
+        ->map(function($component) {
+            $component->selector = $component->name;
+            return $component;
         });
  
     return view('pages.styleguide', [

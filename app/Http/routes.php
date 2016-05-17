@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/styleguide', function () {
 
 
-    collect(Storage::disk('resources')->allDirectories('views/components'))
+    $components = collect(Storage::disk('resources')->allDirectories('views/components'))
         ->map(function($directory) {
             return Storage::disk('resources')->files($directory);
         })
@@ -29,16 +29,18 @@ Route::get('/styleguide', function () {
             return pathinfo($filepath, PATHINFO_EXTENSION) == 'yaml';
         })
         ->map(function($filepath) {
-            return Storage::disk('resources')->get($filepath);
+            return (object) [
+                'name' => pathinfo($filepath, PATHINFO_FILENAME),
+                'yaml' => Storage::disk('resources')->get($filepath)
+            ];
         })
-        ->map(function($yaml) {
-            return Yaml::parse(trim($yaml));
-        })
-        ->each(function($component) {
-            dump($component);
+        ->map(function($component) {
+            $component->yaml = Yaml::parse(trim($component->yaml));
+            return $component;
         });
  
-
-    //return view('pages.styleguide');
+    return view('pages.styleguide', [
+        'components' => $components
+    ]);
 
 });

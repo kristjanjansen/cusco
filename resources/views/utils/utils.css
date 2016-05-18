@@ -1,0 +1,37 @@
+.container {
+  margin: 0 auto;
+  max-width: $media-lg;
+  width: 90%;
+}
+
+.region-one {
+    background: $brand-yellow;
+}
+
+.Grid {
+    flex-direction: column ?if media (max-width: $media-xs);
+}
+
+.padding-leftright-md {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+}
+
+.padding-leftright-collapse-md {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+    padding-left: 0 ?if media (max-width: $media-xs);
+    padding-right: 0 ?if media (max-width: $media-xs);
+}
+
+.padding-topbottom-md {
+    padding-top: $padding-md;
+    padding-bottom: $padding-md;
+}
+
+.padding-topbottom-collapse-md {
+    padding-top: $padding-md;
+    padding-bottom: $padding-md;
+    padding-top: 0 ?if media (max-width: $media-xs);
+    padding-bottom: 0 ?if media (max-width: $media-xs);
+}

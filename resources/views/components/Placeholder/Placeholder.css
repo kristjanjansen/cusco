@@ -1,0 +1,12 @@
+.Placeholder {
+    height: $height-lg;
+    border: 1px dotted $gray-sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Placeholder {
+    font: $font-text-md;
+    color: $gray-sm;
+}

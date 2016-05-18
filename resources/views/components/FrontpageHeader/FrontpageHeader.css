@@ -1,0 +1,9 @@
+.FrontpageHeader {
+    height: $height-xxxl;
+    color: white;
+    background-size: cover;
+}
+
+.FrontpageHeader--wide {
+    height: $height-xl;
+}

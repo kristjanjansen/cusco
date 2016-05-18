@@ -1,0 +1,11 @@
+.UserImage {
+    width: $width-lg;
+    height: $height-lg;
+    width: $width-md ?if media (max-width: $media-xs);
+    height: $height-md ?if media (max-width: $media-xs);
+}
+
+.UserImage__image {
+    border-radius: 100%;
+    width: 100%;
+}

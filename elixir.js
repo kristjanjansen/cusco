@@ -25,7 +25,7 @@ Elixir.extend('postcss', function (src, output) {
                 console.log(err)
                 this.emit('end');
             }))
-            .pipe(gulp.dest('./public/css'))
+            .pipe(gulp.dest(output || './public/css'))
             .pipe(new Elixir.Notification('PostCSS Compiled!'));
     
     })

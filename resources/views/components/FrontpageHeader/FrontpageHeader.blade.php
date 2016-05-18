@@ -9,13 +9,13 @@
 >    
     <div class="FrontpageHeader__top container">
 
-        {!! $top or component('Placeholder', ['title' => '$top']) !!}
+        {!! $top !!}
 
     </div>
 
     <div class="FrontpageHeader__bottom container">
 
-        {!! $top or component('Placeholder', ['title' => '$bottom']) !!}
+        {!! $bottom !!}
 
     </div>
 

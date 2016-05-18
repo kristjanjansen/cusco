@@ -10442,10 +10442,6 @@ exports.default = {
     },
     ready: function ready() {
         this.variables = JSON.parse(decodeURIComponent(this.variables));
-
-        setTimeout(function () {
-            // this.show = false;
-        }.bind(this), 2000);
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default

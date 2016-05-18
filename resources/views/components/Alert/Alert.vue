@@ -26,10 +26,6 @@
 
         ready() {
             this.variables = JSON.parse(decodeURIComponent(this.variables))
-
-            setTimeout(function() {
-                // this.show = false;
-            }.bind(this), 2000);
         }
 
     }

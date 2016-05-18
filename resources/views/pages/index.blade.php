@@ -18,9 +18,9 @@
 
         <div class="container">
 
-        <div class="Grid Grid--fit">
+        <div class="row">
 
-                <div class="Grid-cell">
+                <div class="col">
 
                     @component('Row--border', [
                         'aside' => component('UserImage', [
@@ -34,7 +34,7 @@
 
                 </div>  
 
-                <div class="Grid-cell padding-leftright-collapse-md padding-topbottom-md">
+                <div class="col padding-leftright-collapse-md padding-topbottom-md">
 
                     @component('Display', [
                         'image' => 'http://lorempixel.com/g/400/400/',

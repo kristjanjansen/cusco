@@ -34,7 +34,7 @@ Route::get('/styleguide', function () {
             return $component;
         })
         ->map(function($component) {
-            $component->selector = $component->name;
+            $component->modifiers = collect(isset($component->modifiers) ? $component->modifiers : [])->prepend('');
             return $component;
         });
  

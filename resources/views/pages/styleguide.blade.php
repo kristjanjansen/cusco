@@ -9,21 +9,22 @@
     <body>
 
     @foreach($components as $component)
-        
-        <div class="styleguide container }}">
-            
-            <div class="styleguide-title">{{ $component->name }}</div>
 
-            <div class="styleguide-description">{{ $component->description }}</div>
+        @foreach($component->modifiers as $modifier)
+        
+        <div class="styleguide container">
+            
+            <div class="styleguide-title">{{ $component->name.$modifier }}</div>
 
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component($component->selector, $component->data) !!}
+            {!! component($component->name.$modifier, $component->data) !!}
                 
         </div>
 
+        @endforeach
 
     @endforeach
 

@@ -1,0 +1,39 @@
+:root {
+  --grid: {
+    display: flex;
+    flex-wrap: wrap;
+  };
+  --cell: {
+    box-sizing: border-box;
+    flex-shrink: 0;
+  };
+}
+
+.grid            { display: flex;
+    flex-wrap: wrap; }
+.grid.grid-top      { align-items: flex-start; }
+.grid.grid-middle   { align-items: center; }
+.grid.grid-bottom   { align-items: flex-end; }
+.grid.grid-stretch  { align-items: stretch; }
+.grid.grid-baseline { align-items: baseline; }
+.grid.grid-left     { justify-content: flex-start; }
+.grid.grid-center   { justify-content: center; }
+.grid.grid-right    { justify-content: flex-end; }
+.grid.grid-between  { justify-content: space-between; }
+.grid.grid-around   { justify-content: space-around; }
+
+.cell            { box-sizing: border-box;
+    flex-shrink: 0; }
+.cell.cell-fill     { width: 0; min-width: 0; flex-grow: 1; }
+.cell.cell-1   { width: calc(100% * 1 / 12); }
+.cell.cell-2    { width: calc(100% * 2 / 12); }
+.cell.cell-3    { width: calc(100% * 3 / 12); }
+.cell.cell-4    { width: calc(100% * 4 / 12); }
+.cell.cell-5    { width: calc(100% * 5 / 12); }
+.cell.cell-6    { width: calc(100% * 6 / 12); }
+.cell.cell-7    { width: calc(100% * 7 / 12); }
+.cell.cell-8    { width: calc(100% * 8 / 12); }
+.cell.cell-9    { width: calc(100% * 9 / 12); }
+.cell.cell-10   { width: calc(100% * 10 / 12); }
+.cell.cell-11   { width: calc(100% * 11 / 12); }
+.cell.cell-12   { width: 100%; }

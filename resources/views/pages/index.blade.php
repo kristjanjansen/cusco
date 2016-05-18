@@ -8,16 +8,6 @@
     </head>
     <body>
 
-
-        <div class="container">
-
-            <div class="grid">
-            <div class="cell cell-2">@component('Placeholder')</div>
-            <div class="cell cell-10">@component('Placeholder')</div>
-            </div>
-
-        </div>
-
         @component('FrontpageHeader', [
             'image' => 'http://lorempixel.com/300/200/',
             'top' => component('Alert--big', ['title' => 'I am an alert.']),

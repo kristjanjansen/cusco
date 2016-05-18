@@ -1,12 +1,12 @@
-<div class="Row {{ $modifiers }}">
+<div class="Media row {{ $modifiers }}">
     
-    <div class="Row__aside">
+    <div class="Media__aside col">
 
         {!! $aside !!}
 
     </div>
 
-    <div class="Row__body">
+    <div class="Media__body col">
 
         {!! $body !!}
 

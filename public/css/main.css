@@ -4,195 +4,557 @@
   font-weight: 400;
   src: local("Karla Italic"),local(Karla-Italic),url(//fonts.gstatic.com/s/karla/v5/q1iut0qldmpQ41lMrYSYhg.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/LCDsRHICy9vmW7BLwm8u7g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/oU7KPLtl1UkRu830svIOXw.woff) format("woff");
 }
-
 @font-face {
   font-family: Karla;
   font-style: italic;
   font-weight: 700;
   src: local("Karla Bold Italic"),local(Karla-BoldItalic),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxFQlYEbsez9cZjKsNMjLOwM.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxPk_vArhqVIZ0nv9q090hN8.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxBsxEYwM7FgeyaSgU71cLG0.woff) format("woff");
 }
-
 @font-face {
   font-family: Karla;
   font-style: normal;
   font-weight: 400;
   src: local(Karla),local(Karla-Regular),url(//fonts.gstatic.com/s/karla/v5/8gO-GQO6h3meAtqRrd890A.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/Zi_e6rBgGqv33BWF8WTq8g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/azR40LUJrT4HaWK28zHmVA.woff) format("woff");
 }
-
 @font-face {
   font-family: Karla;
   font-style: normal;
   font-weight: 700;
   src: local("Karla Bold"),local(Karla-Bold),url(//fonts.gstatic.com/s/karla/v5/s-O-g1eMGKQFvcIY8dKM9fesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/suoMYBGv5sGCUIrF9mVTffesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/3nZS3BKzlvhkwl4yjCQcjPesZW2xOQ-xsNqO47m55DA.woff) format("woff");
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: italic;
   font-weight: 300;
   src: local("Helvetica Neue Light Italic"),local(HelveticaNeue-LightItalic),local("Helvetica Light Oblique"),local(Helvetica-LightOblique);
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: italic;
   font-weight: 400;
   src: local("Helvetica Neue Italic"),local(HelveticaNeue-Italic),local("Helvetica Oblique"),local(Helvetica-Oblique);
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: italic;
   font-weight: 700;
   src: local("Helvetica Neue Bold Italic"),local(HelveticaNeue-BoldItalic),local("Helvetica Bold Oblique"),local(Helvetica-BoldOblique);
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: normal;
   font-weight: 300;
   src: local("Helvetica Neue Light"),local(HelveticaNeue-Light),local("Helvetica Light"),local(Helvetica-Light);
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
   src: local(HelveticaNeue),local(Helvetica);
 }
-
 @font-face {
   font-family: sans-serif;
   font-style: normal;
   font-weight: 700;
   src: local("Helvetica Neue Bold"),local(HelveticaNeue-Bold),local("Helvetica Bold"),local(Helvetica-Bold);
 }
-
-/** @define Grid */
-
-:root {
-  --Grid-gutter-size: 20px;
+from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to,
+0%,
+20%,
+40%,
+60%,
+80%,
+to,
+from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to,
+0%,
+20%,
+40%,
+60%,
+80%,
+to,
+20%,
+50%,
+  55%,
+to,
+20%,
+50%,
+  55%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+0%,
+60%,
+75%,
+90%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+0%,
+60%,
+75%,
+90%,
+to,
+20%,
+40%,
+  45%,
+to,
+20%,
+40%,
+  45%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+0%,
+60%,
+75%,
+90%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+0%,
+60%,
+75%,
+90%,
+to,
+20%,
+to,
+20%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+from,
+60%,
+75%,
+90%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+from,
+60%,
+75%,
+90%,
+to,
+20%,
+to,
+20%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+from,
+60%,
+75%,
+90%,
+to,
+from,
+  60%,
+  75%,
+  90%,
+  to,
+from,
+60%,
+75%,
+90%,
+to,
+20%,
+40%,
+  45%,
+to,
+20%,
+40%,
+  45%,
+to,
+.bounce-transition,
+.bounceDown-transition, .bounceLeft-transition, .bounceRight-transition, .bounceUp-transition,
+.bounce-enter,
+.bounceIn,
+.bounce-leave,
+.bounceOut,
+.bounceUp-enter,
+.bounceInUp,
+.bounceUp-leave,
+.bounceOutUp,
+.bounceRight-enter,
+.bounceInRight,
+.bounceRight-leave,
+.bounceOutRight,
+.bounceLeft-enter,
+.bounceInLeft,
+.bounceLeft-leave,
+.bounceOutLeft,
+.bounceDown-enter,
+.bounceInDown,
+.bounceDown-leave,
+.bounceOutDown,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+.fade-transition,
+.fadeDown-transition, .fadeDownBig-transition, .fadeLeft-transition, .fadeLeftBig-transition, .fadeRight-transition, .fadeRightBig-transition, .fadeUp-transition, .fadeUpBig-transition,
+.fade-enter,
+.fadeIn,
+.fade-leave,
+.fadeOut,
+.fadeUpBig-enter,
+.fadeInUpBig,
+.fadeUpBig-leave,
+.fadeOutUpBig,
+.fadeUp-enter,
+.fadeInUp,
+.fadeUp-leave,
+.fadeOutUp,
+.fadeRightBig-enter,
+.fadeInRightBig,
+.fadeRightBig-leave,
+.fadeOutRightBig,
+.fadeRight-enter,
+.fadeInRight,
+.fadeRight-leave,
+.fadeOutRight,
+.fadeLeftBig-enter,
+.fadeInLeftBig,
+.fadeLeftBig-leave,
+.fadeOutLeftBig,
+.fadeLeft-enter,
+.fadeInLeft,
+.fadeLeft-leave,
+.fadeOutLeft,
+.fadeDownBig-enter,
+.fadeInDownBig,
+.fadeDownBig-leave,
+.fadeOutDownBig,
+.fadeDown-enter,
+.fadeInDown,
+.fadeDown-leave,
+.fadeOutDown,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+.rotate-transition,
+.rotateDownLeft-transition, .rotateDownRight-transition, .rotateUpLeft-transition, .rotateUpRight-transition,
+.rotate-enter,
+.rotateIn,
+.rotate-leave,
+.rotateOut,
+.rotateUpRight-enter,
+.rotateInUpRight,
+.rotateUpRight-leave,
+.rotateOutUpRight,
+.rotateUpLeft-enter,
+.rotateInUpLeft,
+.rotateUpLeft-leave,
+.rotateOutUpLeft,
+.rotateDownRight-enter,
+.rotateInDownRight,
+.rotateDownRight-leave,
+.rotateOutDownRight,
+.rotateDownLeft-enter,
+.rotateInDownLeft,
+.rotateDownLeft-leave,
+.rotateOutDownLeft,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+from,
+to,
+.slide-transition,
+.slideDown-transition, .slideLeft-transition, .slideRight-transition, .slideUp-transition,
+.slide-enter,
+.slideIn,
+.slide-leave,
+.slideOut,
+.slideUp-enter,
+.slideInUp,
+.slideUp-leave,
+.slideOutUp,
+.slideRight-enter,
+.slideInRight,
+.slideRight-leave,
+.slideOutRight,
+.slideLeft-enter,
+.slideInLeft,
+.slideLeft-leave,
+.slideOutLeft,
+.slideDown-enter,
+.slideInDown,
+.slideDown-leave,
+.slideOutDown,
+from,
+50%,
+from,
+50%,
+from,
+50%,
+to,
+from,
+50%,
+to,
+from,
+60%,
+from,
+60%,
+40%,
+to,
+40%,
+to,
+from,
+60%,
+from,
+60%,
+40%,
+to,
+40%,
+to,
+from,
+60%,
+from,
+60%,
+40%,
+to,
+40%,
+to,
+from,
+60%,
+from,
+60%,
+40%,
+to,
+40%,
+to,
+.zoom-transition,
+.zoomDown-transition, .zoomLeft-transition, .zoomRight-transition, .zoomUp-transition,
+.zoom-enter,
+.zoomIn,
+.zoom-leave,
+.zoomOut,
+.zoomUp-enter,
+.zoomInUp,
+.zoomUp-leave,
+.zoomOutUp,
+.zoomRight-enter,
+.zoomInRight,
+.zoomRight-leave,
+.zoomOutRight,
+.zoomLeft-enter,
+.zoomInLeft,
+.zoomLeft-leave,
+.zoomOutLeft,
+.zoomDown-enter,
+.zoomInDown,
+.zoomDown-leave,
+.zoomOutDown,
+.row,
+.row-top,
+.row-middle,
+.row-bottom,
+.row-stretch,
+.row-baseline,
+.row-left,
+.row-center,
+.row-right,
+.row-between,
+.row-around,
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.styleguide,
+.styleguide-title,
+.styleguide-description,
+.container,
+.region-one,
+.Grid,
+.padding-leftright-md,
+.padding-leftright-collapse-md,
+.padding-topbottom-md,
+.padding-topbottom-collapse-md,
+.Alert,
+.Alert__close,
+.Body *,
+.Body h3,
+.Display,
+.Display__title,
+.FrontpageHeader,
+.Placeholder,
+.Row,
+.Row__aside,
+.Row__body,
+.UserImage,
+.UserImage__image {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
-
-/**
- * Core grid component
- *
- * DO NOT apply dimension or offset utilities to the `Grid` element. All cell
- * widths and offsets should be applied to child grid cells.
- */
-
-/* Grid container
-   ========================================================================== */
-
-/**
- * All content must be contained within child `Grid-cell` elements.
- *
- * 1. Account for browser defaults of elements that might be the root node of
- *    the component.
- */
-
-.Grid {
-  box-sizing: border-box;
-  display: flex; /* 1 */
-  flex-flow: row wrap;
-  margin: 0; /* 1 */
-  padding: 0; /* 1 */
-}
-
-/**
- * Modifier: center align all grid cells
- */
-
-.Grid--alignCenter {
-  justify-content: center;
-}
-
-/**
- * Modifier: right align all grid cells
- */
-
-.Grid--alignRight {
-  justify-content: flex-end;
-}
-
-/**
- * Modifier: middle-align grid cells
- */
-
-.Grid--alignMiddle {
-  align-items: center;
-}
-
-/**
- * Modifier: bottom-align grid cells
- */
-
-.Grid--alignBottom {
-  align-items: flex-end;
-}
-
-/**
- * Modifier: allow cells to equal distribute width
- *
- * 1. Provide all values to avoid IE10 bug with shorthand flex
- *    http://git.io/vllC7
- *
- *    Use `0%` to avoid bug in IE10/11 with unitless flex basis
- *    http://git.io/vllWx
- */
-
-.Grid--fit > .Grid-cell {
-  flex: 1 1 0%; /* 1 */
-}
-
-/**
- * Modifier: all cells match height of tallest cell in a row
- */
-
-.Grid--equalHeight > .Grid-cell {
-  display: flex;
-}
-
-/**
- * Modifier: gutters
- */
-
-.Grid--withGutter {
-  margin: 0 calc(-0.5 * var(--Grid-gutter-size));
-}
-
-.Grid--withGutter > .Grid-cell {
-  padding: 0 calc(0.5 * var(--Grid-gutter-size));
-}
-
-/* Grid cell
-   ========================================================================== */
-
-/**
- * No explicit width by default. Rely on combining `Grid-cell` with a dimension
- * utility or a component class that extends 'Grid'.
- *
- * 1. Set flex items to full width by default
- * 2. Fix issue where elements with overflow extend past the
- *    `Grid-cell` container - https://git.io/vw5oF
- */
-
-.Grid-cell {
-  box-sizing: inherit;
-  flex-basis: 100%; /* 1 */
-  min-width: 0; /* 2 */
-}
-
-/**
- * Modifier: horizontally center one unit
- * Set a specific unit to be horizontally centered. Doesn't affect
- * any other units. Can still contain a child `Grid` object.
- */
-
-.Grid-cell--center {
-  margin: 0 auto;
-}
-
 @charset "UTF-8";
 /*!
  * vue-animate v0.0.4
@@ -2223,7 +2585,6 @@
 }
 
 @media (max-width: 34em) {
-
   .Grid {
     flex-direction: column;
   }
@@ -2240,7 +2601,6 @@
 }
 
 @media (max-width: 34em) {
-
   .padding-leftright-collapse-md {
     padding-left: 0;
     padding-right: 0;
@@ -2258,7 +2618,6 @@
 }
 
 @media (max-width: 34em) {
-
   .padding-topbottom-collapse-md {
     padding-top: 0;
     padding-bottom: 0;
@@ -2290,13 +2649,11 @@
     font-family: "Karla";
 }
 @media screen and (min-width: 1280px) {
-
   .Body * {
     font-size: 21px;
   }
 }
 @media screen and (max-width: 420px) {
-
   .Body * {
     font-size: 14px;
   }
@@ -2308,14 +2665,12 @@
 }
 
 @media screen and (min-width: 1280px) {
-
   .Body h3 {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 420px) {
-
   .Body h3 {
     font-size: 16px;
   }
@@ -2348,8 +2703,6 @@
 }
 
 .Row {
-    display: flex;
-    align-items: flex-start;
 }
 
 .Row--border {
@@ -2362,14 +2715,12 @@
 }
 
 @media (max-width: 34em) {
-
   .Row__aside {
     padding-right: 12px;
   }
 }
 
 .Row__body {
-    flex: 1;
     font: normal 16px "Karla",sans-serif;
 }
 .UserImage {
@@ -2377,7 +2728,6 @@
     height: calc(12px * 6);
 }
 @media (max-width: 34em) {
-
   .UserImage {
     width: calc(12px * 4);
     height: calc(12px * 4);

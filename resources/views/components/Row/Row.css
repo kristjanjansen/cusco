@@ -1,6 +1,4 @@
 .Row {
-    display: flex;
-    align-items: flex-start;
 }
 
 .Row--border {
@@ -14,6 +12,5 @@
 }
 
 .Row__body {
-    flex: 1;
     font: $font-text-md;
 }

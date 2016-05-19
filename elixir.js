@@ -20,8 +20,9 @@ Elixir.extend('postcss', function (src, output) {
         this.log(src, output);
 
         return gulp.src(src)
-            .pipe($.concat('main.css'))
+            .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
             .pipe(postcss([
+                require('postcss-import')({ path: './resources/views/utils'}),
                 require('postcss-simple-vars')(),
                 require('postcss-responsive-type')(),
                 require('postcss-font-magician')(),
@@ -31,6 +32,8 @@ Elixir.extend('postcss', function (src, output) {
                 console.log(err)
                 this.emit('end');
             }))
+            .pipe($.concat('main.css'))
+            .pipe($.if(config.sourcemaps, $.sourcemaps.write('.')))
             .pipe(gulp.dest(output || './public/css'))
             .pipe(new Elixir.Notification('PostCSS Compiled!'));
     

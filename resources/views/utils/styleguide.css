@@ -1,3 +1,5 @@
+@import "variables";
+
 .styleguide {
     height: $height-xl;
     display: flex;

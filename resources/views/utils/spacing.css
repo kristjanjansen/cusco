@@ -1,12 +1,4 @@
-.container {
-  margin: 0 auto;
-  max-width: $largedesktop-width;
-  width: 90%;
-}
-
-.region-one {
-    background: $brand-yellow;
-}
+@import "variables";
 
 .padding-leftright-md {
     padding-left: $padding-md;

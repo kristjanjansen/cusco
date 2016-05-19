@@ -6,8 +6,8 @@
     background-size: cover;
 }
 
-.Display__title {
-    font: $font-header-lg;
-    color: white;
-    text-align: center;
-}
+    .Display__title {
+        font: $font-header-lg;
+        color: $color-white;
+        text-align: center;
+    }

@@ -8,14 +8,49 @@ use Storage;
 class ComponentCreate extends Command
 {
 
-    protected $signature = 'component:create';
-
+    protected $signature = 'component:create { name }';
 
     public function handle()
     {
-        $dirs = Storage::disk('resources')->allDirectories('views/components');
 
-        $this->line($dirs);
+        $name = $this->argument('name');
+        $dir = "views/components/$name"; 
+        
+        Storage::disk('resources')->makeDirectory($dir);
+
+        $element = 'title';
+        $modifiers = '--alternate';
+
+        $yaml = [
+            "data:",
+            "    $element: $name",
+            "modifiers:",
+            "    - $modifiers"
+        ];
+
+        Storage::disk('resources')->put("$dir/$name.yaml", implode("\n", $yaml));
+
+        $blade = [
+            "<div class=\"$name {{ \$modifiers }} \">",
+            "    {{ \$title }}",
+            "</div>"
+        ];
+
+        Storage::disk('resources')->put("$dir/$name.blade.php", implode("\n\n", $blade));
+
+        $css = [
+            ".$name {",
+            "}",
+            ".$name$modifiers {",
+            "}",
+            "    .$name"."__"."$element {",
+            "    }"
+        ];
+
+        Storage::disk('resources')->put("$dir/$name.css", implode("\n\n", $css));
+
+        $this->line("$dir created");
 
     }
+
 }

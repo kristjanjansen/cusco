@@ -10460,9 +10460,43 @@ if (module.hot) {(function () {  module.hot.accept()
 },{"vue":3,"vue-hot-reload-api":2}],5:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    props: ['variables', 'modifiers'],
+
+    data: function data() {
+        return {};
+    },
+    ready: function ready() {
+        this.variables = JSON.parse(decodeURIComponent(this.variables));
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"DynamicDisplay {{ modifiers }}\" style=\"\n        background-image: linear-gradient(\n            rgba(0, 0, 0, 0.75),\n            rgba(0, 0, 0, 0.75)\n        ),\n    url({{ variables.image }});\">\n\n    <div class=\"DynamicDisplay__title\">\n        {{ variables.title }}\n    </div>\n\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/kristjanjansen/Documents/projects/cusco/resources/views/components/DynamicDisplay/DynamicDisplay.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":3,"vue-hot-reload-api":2}],6:[function(require,module,exports){
+'use strict';
+
 var _Alert = require('./components/Alert/Alert.vue');
 
 var _Alert2 = _interopRequireDefault(_Alert);
+
+var _DynamicDisplay = require('./components/DynamicDisplay/DynamicDisplay.vue');
+
+var _DynamicDisplay2 = _interopRequireDefault(_DynamicDisplay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10472,11 +10506,11 @@ new Vue({
     el: 'body',
 
     components: {
-        Alert: _Alert2.default
+        Alert: _Alert2.default, DynamicDisplay: _DynamicDisplay2.default
     }
 
 });
 
-},{"./components/Alert/Alert.vue":4,"vue":3}]},{},[5]);
+},{"./components/Alert/Alert.vue":4,"./components/DynamicDisplay/DynamicDisplay.vue":5,"vue":3}]},{},[6]);
 
 //# sourceMappingURL=main.js.map

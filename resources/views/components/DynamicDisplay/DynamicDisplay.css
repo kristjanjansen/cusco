@@ -1,0 +1,15 @@
+@import "variables";
+
+.DynamicDisplay {
+    height: $height-xxl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+    .DynamicDisplay__title {
+        font: $font-header-lg;
+        color: $color-white;
+        text-align: center;
+    }

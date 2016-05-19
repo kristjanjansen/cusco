@@ -39,7 +39,7 @@ class ComponentCreate extends Command
         Storage::disk('resources')->put("$dir/$name.blade.php", implode("\n\n", $blade));
 
         $css = [
-            "@import \"variables\"",
+            "@import \"variables\";",
             ".$name {",
             "}",
             ".$name$modifiers {",

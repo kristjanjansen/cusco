@@ -1,1 +1,4 @@
-$mobile: media (max-width: 34em);
+$mobile-width: 34em;
+$largedesktop-width: 74em;
+
+$mobile: media (max-width: $mobile-width);

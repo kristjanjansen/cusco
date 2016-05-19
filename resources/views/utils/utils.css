@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  max-width: $media-lg;
+  max-width: $largedesktop-width;
   width: 90%;
 }
 
@@ -16,8 +16,8 @@
 .padding-leftright-collapse-md {
     padding-left: $padding-md;
     padding-right: $padding-md;
-    padding-left: 0 ?if media (max-width: $media-xs);
-    padding-right: 0 ?if media (max-width: $media-xs);
+    padding-left: 0 ?if $mobile;
+    padding-right: 0 ?if $mobile);
 }
 
 .padding-topbottom-md {
@@ -28,6 +28,6 @@
 .padding-topbottom-collapse-md {
     padding-top: $padding-md;
     padding-bottom: $padding-md;
-    padding-top: 0 ?if media (max-width: $media-xs);
-    padding-bottom: 0 ?if media (max-width: $media-xs);
+    padding-top: 0 ?if $mobile;
+    padding-bottom: 0 ?if $mobile;
 }

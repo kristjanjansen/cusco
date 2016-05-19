@@ -1,8 +1,8 @@
 .UserImage {
     width: $width-lg;
     height: $height-lg;
-    width: $width-md ?if media (max-width: $media-xs);
-    height: $height-md ?if media (max-width: $media-xs);
+    width: $width-md ?if $mobile;
+    height: $height-md ?if $mobile;
 }
 
 .UserImage__image {

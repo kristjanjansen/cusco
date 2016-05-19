@@ -27,14 +27,6 @@ Elixir.extend('postcss', function (src, output) {
                 require('postcss-responsive-type')(),
                 require('postcss-font-magician')(),
                 require('postcss-if-media')(),
-                require('postcss-autoreset')({
-                    reset: {
-                        margin: 0,
-                        padding: 0,
-                        borderRadius: 0,
-                        boxSizing: 'border-box'
-                    },
-                    rulesMatcher: 'bem'}),
             ]).on('error', function(err) {
                 new Elixir.Notification('PostCSS Failed!');
                 console.log(err)

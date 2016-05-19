@@ -38,7 +38,7 @@
 
                 <div class="col">
 
-                    @component('Row--border', [
+                    @component('Media--border', [
                         'aside' => component('UserImage', [
                             'image' => 'http://lorempixel.com/g/64/64/'
                         ]),

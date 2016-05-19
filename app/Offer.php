@@ -7,9 +7,16 @@ class Offer
 {
 
     protected static $offers = [
-        ['title' => 'Hello'],
-        ['title' => 'World'],
-        ['title' => 'Now']
+
+        [
+            'title' => 'World',
+            'image' => 'http://www.gamesvillage.it/wp-content/uploads/2014/07/chuck-norris-bruce-lee-colosseo-1024x795.jpg'
+        ],
+        [
+            'title' => 'Now',
+            'image' => 'http://2.bp.blogspot.com/-tTjKTQlQKHo/UR03zASXCLI/AAAAAAAADEc/scsyqW3QSLY/s1600/Chuck+Norris+in+Way+of+the+Dragon.jpg'
+        ]
+
     ];
 
     public static function getRandom()

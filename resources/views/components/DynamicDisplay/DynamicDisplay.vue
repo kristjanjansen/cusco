@@ -9,7 +9,7 @@
     </div>
 
 </div>
-    
+
 </template>
 
 <script>
@@ -20,8 +20,20 @@
 
         computed: {
             style: function() {
-                return { backgroundImage: 'url(' + this.variables.image + ')' }
+                return { backgroundImage: 'url(' + this.images[0].image + ')' }
             }
+        },
+
+        data: function() {
+            return {
+                images: []
+            }
+        },
+
+        ready() {
+            this.$http.get('/offers/random').then(function(res) {
+                this.images = res.data
+            });
         }
 
     })

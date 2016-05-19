@@ -1,4 +1,4 @@
-.row            { display: flex; flex-wrap: wrap; }
+.row            { display: flex; flex-wrap: wrap; flex-direction: column ?if $mobile; }
 .row-top        { align-items: flex-start; display: flex; flex-wrap: wrap; }
 .row-middle     { align-items: center; display: flex; flex-wrap: wrap; }
 .row-bottom     { align-items: flex-end; display: flex; flex-wrap: wrap; }
@@ -10,7 +10,7 @@
 .row-between    { justify-content: space-between; display: flex; flex-wrap: wrap; }
 .row-around     { justify-content: space-around; display: flex; flex-wrap: wrap; }
 
-.col            { width: 0; min-width: 0; flex-grow: 1; box-sizing: border-box; flex-shrink: 0;}
+.col            { width: 0; width: inherit ?if $mobile; min-width: 0; flex-grow: 1; box-sizing: border-box; flex-shrink: 0;}
 .col-1          { width: calc(100% * 1 / 12); box-sizing: border-box; flex-shrink: 0;}
 .col-2          { width: calc(100% * 2 / 12); box-sizing: border-box; flex-shrink: 0;}
 .col-3          { width: calc(100% * 3 / 12); box-sizing: border-box; flex-shrink: 0;}

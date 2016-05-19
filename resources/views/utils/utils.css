@@ -8,10 +8,6 @@
     background: $brand-yellow;
 }
 
-.Grid {
-    flex-direction: column ?if media (max-width: $media-xs);
-}
-
 .padding-leftright-md {
     padding-left: $padding-md;
     padding-right: $padding-md;

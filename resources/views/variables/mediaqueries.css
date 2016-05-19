@@ -1,4 +1,1 @@
-$media-xs: 34em;
-$media-sm: 48em;
-$media-md: 48em;
-$media-lg: 75em;
+$mobile: media (max-width: 34em);

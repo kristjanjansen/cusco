@@ -16,6 +16,7 @@
     "postcss-if-media": "^1.0.1",
     "postcss-import": "^8.1.2",
     "postcss-responsive-type": "^0.3.3",
+    "postcss-simple-vars": "^2.0.0",
     "suitcss-components-grid": "^3.0.3",
     "vue-animate": "0.0.4"
   }

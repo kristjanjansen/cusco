@@ -1,15 +1,11 @@
 <template>
 
-<div class="DynamicDisplay {{ modifiers }}" style="
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.75)
-        ),
-    url({{ variables.image }});"
->
+<div :style="style" >
 
     <div class="DynamicDisplay__title">
+
         {{ variables.title }}
+
     </div>
 
 </div>
@@ -18,18 +14,18 @@
 
 <script>
 
-    export default {
+    import Component from '../Component';
 
-        props: ['variables', 'modifiers'],
+    export default Component.extend({
 
         data() {
-            return {};
-        },
-
-        ready() {
-            this.variables = JSON.parse(decodeURIComponent(this.variables))
+            return { 
+                style: {
+                    backgroundImage: 'url(http://www.writecamp.org/writecamp//files/copy_images/Vd3MJo.jpg)' 
+                }
+            }
         }
-
-    }
+    
+    })
 
 </script>

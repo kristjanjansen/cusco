@@ -1,0 +1,6 @@
+description: Frontpage hero
+nocontainer: true
+data:
+    image: http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg
+    top:
+    bottom:

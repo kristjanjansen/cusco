@@ -1,0 +1,18 @@
+.Media {
+    display: flex;
+    flex-direction: column ?if $mobile;
+}
+
+.Media--border {
+    border: $border-md;
+    padding: $padding-md;
+}
+
+.Media__aside {
+    padding-right: $padding-md;
+    padding-right: $padding-sm ?if $mobile;
+}
+
+.Media__body {
+    font: $font-text-md;
+}

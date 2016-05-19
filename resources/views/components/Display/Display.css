@@ -1,0 +1,13 @@
+.Display {
+    height: $height-xxl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+    .Display__title {
+        font: $font-header-lg;
+        color: $color-white;
+        text-align: center;
+    }

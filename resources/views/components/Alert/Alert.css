@@ -1,7 +1,7 @@
 .Alert {
     background-color: $brand-green;
     color: $brand-green-dark;
-    font: $font-md;
+    font: $font-text-md;
     height: $height-md;
     padding: $padding-leftright-md; 
     display: flex;
@@ -10,7 +10,7 @@
 }
 
 .Alert--lg {
-    font: $font-lg;
+    font: $font-text-lg;
     height: $height-lg;
     padding: $padding-leftright-lg; 
 }

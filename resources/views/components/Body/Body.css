@@ -1,10 +1,13 @@
 .Body * {
     font-size: responsive;
     min-font-size: $font-size-sm;
+    line-height: 140%;
     font-family: $font-family;
 }
 
 .Body h3 {
-    font: $font-header-md;
-    margin: $spacer-topbottom-md;
+    font-size: responsive;
+    min-font-size: $font-size-md;
+    max-font-size: $font-size-lg;
+    margin: $margin-topbottom-sm;
 }

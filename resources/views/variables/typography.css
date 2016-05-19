@@ -1,0 +1,14 @@
+$font-family: "Karla";
+
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 26px;
+
+$font-text-sm: normal $font-size-sm $font-family, sans-serif;
+$font-text-md: normal $font-size-md $font-family, sans-serif;
+$font-text-lg: normal $font-size-lg $font-family, sans-serif;
+
+$font-header-sm: bold $font-size-md $font-family, sans-serif;
+$font-header-md: bold $font-size-lg $font-family, sans-serif;
+$font-header-lg: bold $font-size-xl $font-family, sans-serif;

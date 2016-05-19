@@ -16,14 +16,18 @@
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
+        props: ['variables', 'modifiers'],
 
         data() {
             return { show: true };
         },
 
-    })
+        ready() {
+            this.variables = JSON.parse(decodeURIComponent(this.variables))
+        }
+
+    }
 
 </script>

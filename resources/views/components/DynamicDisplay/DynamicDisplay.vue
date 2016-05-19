@@ -1,6 +1,6 @@
 <template>
 
-<div :style="style" >
+<div class="DynamicDisplay" :style="style" >
 
     <div class="DynamicDisplay__title">
 
@@ -9,23 +9,27 @@
     </div>
 
 </div>
+    
+    {{ style | json }}
 
 </template>
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
+        props: ['variables', 'modifiers'],
 
-        data() {
-            return { 
-                style: {
-                    backgroundImage: 'url(http://www.writecamp.org/writecamp//files/copy_images/Vd3MJo.jpg)' 
-                }
+        computed: {
+            style: function() {
+                return { backgroundImage: 'url(' + this.variables.image + ')' }
             }
+        },
+
+        ready() {
+            this.variables = JSON.parse(decodeURIComponent(this.variables))
         }
-    
-    })
+
+    }
 
 </script>

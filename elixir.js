@@ -22,7 +22,10 @@ Elixir.extend('postcss', function (src, output) {
         return gulp.src(src)
             .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
             .pipe(postcss([
-                require('postcss-import')({ path: './resources/views/utils'}),
+                require('postcss-import')({ path: [
+                    './resources/views/utils',
+                    './node_modules'
+                ]}),
                 require('postcss-simple-vars')(),
                 require('postcss-responsive-type')(),
                 require('postcss-font-magician')(),

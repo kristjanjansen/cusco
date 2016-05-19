@@ -10433,17 +10433,18 @@ module.exports = Vue;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
 
-    props: ['variables', 'modifiers'],
+var _Component = require('../Component');
 
+var _Component2 = _interopRequireDefault(_Component);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Component2.default.extend({
     data: function data() {
         return { show: true };
-    },
-    ready: function ready() {
-        this.variables = JSON.parse(decodeURIComponent(this.variables));
     }
-};
+});
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"Alert {{ modifiers }}\" v-if=\"show\" transition=\"fadeUp\">\n\n    <div class=\"Alert__title\">\n        {{ variables.title }}\n    </div>\n\n    <div class=\"Alert__close\" @click=\"show = false\">\n        ×\n    </div>\n\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -10457,28 +10458,52 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2}],5:[function(require,module,exports){
+},{"../Component":5,"vue":3,"vue-hot-reload-api":2}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _vue2.default.extend({
 
     props: ['variables', 'modifiers'],
+
+    ready: function ready() {
+        this.variables = JSON.parse(decodeURIComponent(this.variables));
+    }
+});
+
+},{"vue":3}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Component = require('../Component');
+
+var _Component2 = _interopRequireDefault(_Component);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Component2.default.extend({
 
     computed: {
         style: function style() {
             return { backgroundImage: 'url(' + this.variables.image + ')' };
         }
-    },
-
-    ready: function ready() {
-        this.variables = JSON.parse(decodeURIComponent(this.variables));
     }
-};
+
+});
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"DynamicDisplay\" :style=\"style\">\n\n    <div class=\"DynamicDisplay__title\">\n\n        {{ variables.title }}\n\n    </div>\n\n</div>\n    \n    {{ style | json }}\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"DynamicDisplay\" :style=\"style\">\n\n    <div class=\"DynamicDisplay__title\">\n\n        {{ variables.title }}\n\n    </div>\n\n</div>\n    \n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -10490,7 +10515,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2}],6:[function(require,module,exports){
+},{"../Component":5,"vue":3,"vue-hot-reload-api":2}],7:[function(require,module,exports){
 'use strict';
 
 var _Alert = require('./components/Alert/Alert.vue');
@@ -10514,6 +10539,6 @@ new Vue({
 
 });
 
-},{"./components/Alert/Alert.vue":4,"./components/DynamicDisplay/DynamicDisplay.vue":5,"vue":3}]},{},[6]);
+},{"./components/Alert/Alert.vue":4,"./components/DynamicDisplay/DynamicDisplay.vue":6,"vue":3}]},{},[7]);
 
 //# sourceMappingURL=main.js.map

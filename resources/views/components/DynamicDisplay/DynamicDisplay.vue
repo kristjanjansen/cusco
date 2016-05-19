@@ -10,26 +10,20 @@
 
 </div>
     
-    {{ style | json }}
-
 </template>
 
 <script>
 
-    export default {
+    import Component from '../Component';
 
-        props: ['variables', 'modifiers'],
+    export default Component.extend({
 
         computed: {
             style: function() {
                 return { backgroundImage: 'url(' + this.variables.image + ')' }
             }
-        },
-
-        ready() {
-            this.variables = JSON.parse(decodeURIComponent(this.variables))
         }
 
-    }
+    })
 
 </script>

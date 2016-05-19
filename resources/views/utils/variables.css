@@ -30,6 +30,7 @@ $spacer: 12px;
 
 $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
+$padding-lg: calc($spacer * 3);
 
 $padding-left-sm: 0 0 0 $spacer;
 $padding-left-md: 0 0 0 calc($spacer * 2);
@@ -51,7 +52,8 @@ $margin-topbottom-lg: calc($spacer * 3) 0;
 $width-md: calc($spacer * 4);
 $width-lg: calc($spacer * 6); 
 
-$height-md: calc($spacer * 4);
+$height-sm: calc($spacer * 2);
+$height-md: calc($spacer * 4); 
 $height-lg: calc($spacer * 6); 
 $height-xl: calc($spacer * 10); 
 $height-xxl: calc($spacer * 18);

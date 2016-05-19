@@ -1,0 +1,11 @@
+@import "variables";
+
+.HeaderMenu {
+    display: flex;
+}
+
+    .HeaderMenu__link {
+        padding: $padding-sm;
+        color: $color-white;
+        font: $font-header-sm;
+    }

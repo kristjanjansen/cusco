@@ -11,10 +11,6 @@
 |
 */
 
-use Symfony\Component\Yaml\Yaml;
-
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'FrontpageController@index');
 
 Route::get('/styleguide', 'StyleguideController@index');

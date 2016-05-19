@@ -9,8 +9,8 @@
     <body>
 
         @component('FrontpageHeader', [
-            'image' => 'http://lorempixel.com/300/200/',
-            'top' => component('Alert--big', ['title' => 'I am an alert.']),
+            'image' => 'http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg',
+            'top' => component('HeaderMenu', ['links' => ['Q', 'Trip.ee', 'Flights', 'Travelmates']]),
             'bottom' => 'Bottom'
         ])
         
@@ -24,7 +24,7 @@
 
                     @component('Media--border', [
                         'aside' => component('UserImage', [
-                            'image' => 'http://lorempixel.com/g/64/64/'
+                            'image' => 'https://38.media.tumblr.com/avatar_924462799b59_128.png'
                         ]),
                         'body' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
                         ])
@@ -37,7 +37,7 @@
                 <div class="col padding-leftright-collapse-md padding-topbottom-md">
 
                     @component('Display', [
-                        'image' => 'http://lorempixel.com/g/400/400/',
+                        'image' => 'http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg',
                         'title' => 'Craft beer helvetica portland...'
                     ])
 

@@ -2607,6 +2607,55 @@
     color: #555;
 }
 
+@font-face {
+    font-family: Karla;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Karla Italic"),local(Karla-Italic),url(//fonts.gstatic.com/s/karla/v5/q1iut0qldmpQ41lMrYSYhg.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/LCDsRHICy9vmW7BLwm8u7g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/oU7KPLtl1UkRu830svIOXw.woff) format("woff");
+}
+
+@font-face {
+    font-family: Karla;
+    font-style: italic;
+    font-weight: 700;
+    src: local("Karla Bold Italic"),local(Karla-BoldItalic),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxFQlYEbsez9cZjKsNMjLOwM.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxPk_vArhqVIZ0nv9q090hN8.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/VZ08RdiotRdV1D0ewK-mxBsxEYwM7FgeyaSgU71cLG0.woff) format("woff");
+}
+
+@font-face {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Karla),local(Karla-Regular),url(//fonts.gstatic.com/s/karla/v5/8gO-GQO6h3meAtqRrd890A.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/Zi_e6rBgGqv33BWF8WTq8g.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/azR40LUJrT4HaWK28zHmVA.woff) format("woff");
+}
+
+@font-face {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Karla Bold"),local(Karla-Bold),url(//fonts.gstatic.com/s/karla/v5/s-O-g1eMGKQFvcIY8dKM9fesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/karla/v5/suoMYBGv5sGCUIrF9mVTffesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/karla/v5/3nZS3BKzlvhkwl4yjCQcjPesZW2xOQ-xsNqO47m55DA.woff) format("woff");
+}
+
+/* Colors */
+
+/* Spacing */
+
+/* Borders */
+
+/* Fonts */
+
+/* Media queries */
+
+/* Opacities */
+
+/* Animations */
+
+.Truth {
+
+}
+
+.Truth__title {
+    font: normal 16px "Karla", sans-serif;
+}
 /* Colors */
 
 /* Spacing */
@@ -2729,14 +2778,18 @@
 }
 
 /*
-
+*[class^="row"] {
+    border: 1px dotted black;
+    padding: 3px;
+}
 *[class^="col"] {
     border: 1px dotted red;
+    padding: 3px;
 }
 *[class^="col"] > * {
     border: 1px dotted blue;
+    padding: 3px;
 }
-
 */
 /* Colors */
 

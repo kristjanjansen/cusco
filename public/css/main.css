@@ -4288,6 +4288,17 @@
     margin: 0;
     padding: 0;
 }
+
+/*
+
+*[class^="col"] {
+    border: 1px dotted red;
+}
+*[class^="col"] > * {
+    border: 1px dotted blue;
+}
+
+*/
 .padding-leftright-md {
     padding-left: calc(12px * 2);
     padding-right: calc(12px * 2);

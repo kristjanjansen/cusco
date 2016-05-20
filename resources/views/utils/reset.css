@@ -2,3 +2,14 @@
     margin: 0;
     padding: 0;
 }
+
+/*
+
+*[class^="col"] {
+    border: 1px dotted red;
+}
+*[class^="col"] > * {
+    border: 1px dotted blue;
+}
+
+*/

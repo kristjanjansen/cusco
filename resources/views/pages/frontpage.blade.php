@@ -10,7 +10,8 @@
 
         @component('FrontpageHeader', [
             'image' => 'http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg',
-            'top' => component('HeaderMenu', ['links' => ['Trip.ee', 'Flights', 'Travelmates', 'Blogs', 'Log in']]),
+            'top' =>
+                component('HeaderMenu', ['links' => ['Trip.ee', 'Flights', 'Travelmates', 'Blogs', 'Log in']]),
             'bottom' => component('HeaderTitle', ['title' => 'Kick it hard'])
         ])
         
@@ -56,8 +57,6 @@
                         'body' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
                         ])
                     ])
-
-                    @component('Alert', ['title' => 'I am an alert.'])
 
                 </div>  
 

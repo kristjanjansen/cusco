@@ -24,8 +24,6 @@ class ComponentCreate extends Command
         $yaml = [
             "data:",
             "    $element: $name",
-            "modifiers:",
-            "    - $modifiers"
         ];
 
         Storage::disk('resources')->put("$dir/$name.yaml", implode("\n", $yaml));
@@ -42,10 +40,8 @@ class ComponentCreate extends Command
             "@import \"variables\";",
             ".$name {",
             "}",
-            ".$name$modifiers {",
-            "}",
-            "    .$name"."__"."$element {",
-            "    }"
+            ".$name"."__"."$element {",
+            "}"
         ];
 
         Storage::disk('resources')->put("$dir/$name.css", implode("\n\n", $css));

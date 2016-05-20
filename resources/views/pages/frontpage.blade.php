@@ -10,11 +10,38 @@
 
         @component('FrontpageHeader', [
             'image' => 'http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg',
-            'top' => component('HeaderMenu', ['links' => ['Q', 'Trip.ee', 'Flights', 'Travelmates']]),
-            'bottom' => 'Bottom'
+            'top' => component('HeaderMenu', ['links' => ['Trip.ee', 'Flights', 'Travelmates', 'Blogs', 'Log in']]),
+            'bottom' => component('HeaderTitle', ['title' => 'Kick it hard'])
         ])
         
         <div class="region-one">
+
+        <div class="container">
+
+        <div class="row">
+
+                <div class="col padding-right-collapse-sm padding-topbottom-md">
+
+                    @component('Display', [
+                        'image' => 'http://cdn2.fightstate.com/wp-content/uploads/2015/08/Bruce-Lee-and-Chuck-Norris-taking-a-break-on-the-set-of-The-Way-of-the-Dragon.jpg',
+                        'title' => 'True Love'
+                    ])
+
+                </div>  
+
+                <div class="col padding-left-collapse-sm padding-topbottom-md">
+
+                    @component('Body', ['body' => '<p>Ennui flannel offal next level pork belly. Fap before they sold out wolf cardigan vegan, waistcoat bitters four loko listicle synth church-key you probably havent heard of them keffiyeh sriracha.</p><h3>Gentrify etsy chartreuse</h3><p>try-hard. Deep v blue bottle four dollar toast, pork belly YOLO direct trade 90 cold-pressed beard photo booth selvage craft beer. Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck everyday carry pop-up cray lomo. Deep v farm-to-table poutine, cardigan brooklyn godard iPhone post-ironic thundercats authentic bitters.</p>'])
+
+                </div>
+
+        </div>
+
+        </div>
+
+        </div>
+
+
 
         <div class="container">
 
@@ -44,8 +71,6 @@
                     @component('Body', ['body' => '<p>Ennui flannel offal next level pork belly. Fap before they sold out wolf cardigan vegan, waistcoat bitters four loko listicle synth church-key you probably havent heard of them keffiyeh sriracha.</p><h3>Gentrify etsy chartreuse</h3><p>try-hard. Deep v blue bottle four dollar toast, pork belly YOLO direct trade 90 cold-pressed beard photo booth selvage craft beer. Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck everyday carry pop-up cray lomo. Deep v farm-to-table poutine, cardigan brooklyn godard iPhone post-ironic thundercats authentic bitters.</p>'])
 
                 </div>
-
-        </div>
 
         </div>
 

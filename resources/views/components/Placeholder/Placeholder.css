@@ -2,9 +2,9 @@
 
 .Placeholder {
     height: $height-lg;
-    border: 1px dotted $gray-sm;
+    border: 1px dotted $gray-light;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $gray-md;
+    color: $gray-neutral;
 }

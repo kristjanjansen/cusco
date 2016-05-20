@@ -12,7 +12,6 @@
 
 .Media__aside {
     padding-right: $padding-md;
-    padding-right: $padding-sm ?if $mobile;
 }
 
 .Media__body {

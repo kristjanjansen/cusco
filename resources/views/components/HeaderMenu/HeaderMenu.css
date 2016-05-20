@@ -6,6 +6,6 @@
 
     .HeaderMenu__link {
         padding: $padding-sm;
-        color: $color-white;
+        color: $gray-lighter;
         font: $font-header-sm;
     }

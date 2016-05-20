@@ -1,6 +1,8 @@
-$gray-xs: #ddd;
-$gray-sm: #aaa;
-$gray-md: #555;
+/* Colors */
+
+$gray-lighter: #ddd;
+$gray-light: #aaa;
+$gray-neutral: #555;
 
 $color-white: #fff;
 
@@ -10,21 +12,8 @@ $brand-yellow-dark: #d67d00;
 $brand-green: #78cc5c;
 $brand-green-dark: #288f18;
 
-$border-md: 3px solid $gray-md;
 
-
-
-$mobile-width: 34em;
-$tablet-width: 48em;
-$desktop-width: 62em;
-$largedesktop-width: 74em;
-
-$mobile: media (max-width: $mobile-width);
-$tablet: media (max-width: $tablet-width);
-$desktop: media (max-width: $tablet-width);
-$largedesktop: media (max-width: $tablet-width);
-
-
+/* Spacing */
 
 $spacer: 12px;
 
@@ -60,6 +49,12 @@ $height-xxl: calc($spacer * 18);
 $height-xxxl: calc($spacer * 24); 
 
 
+/* Borders */
+
+$border-md: 3px solid $gray-neutral;
+
+
+/* Fonts */
 
 $font-family: "Karla";
 
@@ -81,3 +76,20 @@ $font-header-lg: bold $font-size-xl $font-family, sans-serif;
 $font-header-xl: bold $font-size-xxl $font-family, sans-serif;
 $font-header-xxl: bold $font-size-xxxl $font-family, sans-serif;
 $font-header-xxxl: bold $font-size-xxxxl $font-family, sans-serif;
+
+
+/* Media queries */
+
+$mobile-width: 34em;
+$tablet-width: 48em;
+$desktop-width: 62em;
+$largedesktop-width: 74em;
+
+$mobile: media (max-width: $mobile-width);
+$tablet: media (max-width: $tablet-width);
+$desktop: media (max-width: $tablet-width);
+$largedesktop: media (max-width: $tablet-width);
+
+/* Opacities */
+
+/* Animations */

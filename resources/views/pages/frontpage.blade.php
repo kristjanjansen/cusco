@@ -50,11 +50,11 @@
 
                 <div class="col padding-right-collapse-sm">
 
-                    @component('Media--border', [
-                        'aside' => component('UserImage', [
-                            'image' => 'https://38.media.tumblr.com/avatar_924462799b59_128.png'
+                    @component('Comment--border', [
+                        'left' => component('UserImage', [
+                            'image' => 'http://www.irl.ee/sites/default/files/styles/sc180x180/public/party_member/maris_rebel.jpg'
                         ]),
-                        'body' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
+                        'right' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
                         ])
                     ])
 

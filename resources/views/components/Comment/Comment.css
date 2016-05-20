@@ -1,19 +1,19 @@
 @import "variables";
 
-.Media {
+.Comment {
     display: flex;
-    flex-direction: column ?if $mobile;
 }
 
-.Media--border {
+.Comment--border {
     border: $border-md;
     padding: $padding-md;
 }
 
-.Media__aside {
+.Comment__left {
     padding-right: $padding-md;
+    display: none ?if $mobile;
 }
 
-.Media__body {
+.Comment__right {
     font: $font-text-md;
 }

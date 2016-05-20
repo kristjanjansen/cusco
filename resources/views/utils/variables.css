@@ -17,6 +17,7 @@ $brand-green-dark: #288f18;
 
 $spacer: 12px;
 
+$padding-xs: calc($spacer / 2);
 $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
@@ -33,6 +34,11 @@ $padding-margin-lg: 0 calc($spacer * 3);
 $padding-topbottom-sm: $spacer 0;
 $padding-topbottom-md: calc($spacer * 2) 0;
 $padding-topbottom-lg: calc($spacer * 3) 0;
+
+$margin-xs: calc($spacer / 2);
+$margin-sm: $spacer;
+$margin-md: calc($spacer * 2);
+$margin-lg: calc($spacer * 3);
 
 $margin-topbottom-sm: $spacer 0;
 $margin-topbottom-md: calc($spacer * 2) 0;
@@ -51,7 +57,7 @@ $height-xxxl: calc($spacer * 24);
 
 /* Borders */
 
-$border-md: 3px solid $gray-light;
+$border-md: 3px solid $gray-lighter;
 
 
 /* Fonts */

@@ -8,7 +8,17 @@
 
     <div class="Comment__right">
 
-        {!! $right !!}
+        <div class="Comment__title">
+
+            {!! $title !!}
+
+        </div>
+
+        <div class="Comment__body">
+
+            @component('Body', ['body' => $body])
+            
+        </div>
 
     </div>
 

@@ -54,8 +54,8 @@
                         'left' => component('UserImage', [
                             'image' => 'http://bzfilm.com/wp-content/uploads/2012/01/norris-blackw.jpg'
                         ]),
-                        'right' => component('Body', ['body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck'
-                        ])
+                        'title' => 'Posted by <a>yomarine</a> 22 days ago',
+                        'body' => '<p>Craft beer helvetica portland ethical chia, polaroid salvia 90 cliche tousled. Blue bottle semiotics humblebrag wolf etsy bitters blog, cornhole master cleanse food truck</p>'
                     ])
 
                 </div>  

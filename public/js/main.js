@@ -12042,7 +12042,7 @@ exports.default = _Component2.default.extend({
     }
 });
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"DynamicDisplay\" :style=\"style\">\n\n    <div class=\"DynamicDisplay__title\">\n\n        {{ variables.title }}\n\n    </div>\n\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"DynamicDisplay\" :style=\"style\">\n\n    <div class=\"DynamicDisplay__title\">\n\n        {{ images[0].title }}\n\n    </div>\n\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

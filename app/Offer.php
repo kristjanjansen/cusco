@@ -9,13 +9,18 @@ class Offer
     protected static $offers = [
 
         [
-            'title' => 'World',
+            'title' => 'Dynamic duo',
             'image' => 'http://www.gamesvillage.it/wp-content/uploads/2014/07/chuck-norris-bruce-lee-colosseo-1024x795.jpg'
         ],
         [
-            'title' => 'Now',
+            'title' => 'Get down',
             'image' => 'http://2.bp.blogspot.com/-tTjKTQlQKHo/UR03zASXCLI/AAAAAAAADEc/scsyqW3QSLY/s1600/Chuck+Norris+in+Way+of+the+Dragon.jpg'
+        ],
+        [
+            'title' => 'Hanging out',
+            'image' => 'http://cdn2.fightstate.com/wp-content/uploads/2015/08/Bruce-Lee-and-Chuck-Norris-taking-a-break-on-the-set-of-The-Way-of-the-Dragon.jpg?2233d5'
         ]
+
 
     ];
 

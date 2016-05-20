@@ -4,7 +4,7 @@
 
     <div class="DynamicDisplay__title">
 
-        {{ variables.title }}
+        {{ images[0].title }}
 
     </div>
 

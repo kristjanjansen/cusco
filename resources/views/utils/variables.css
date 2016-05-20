@@ -51,7 +51,7 @@ $height-xxxl: calc($spacer * 24);
 
 /* Borders */
 
-$border-md: 3px solid $gray-neutral;
+$border-md: 3px solid $gray-light;
 
 
 /* Fonts */

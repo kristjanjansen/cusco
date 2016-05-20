@@ -48,7 +48,7 @@
 
         <div class="row">
 
-                <div class="col padding-right-collapse-sm">
+                <div class="col padding-right-collapse-sm padding-topbottom-md">
 
                     @component('Comment--border', [
                         'left' => component('UserImage', [

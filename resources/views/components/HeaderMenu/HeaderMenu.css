@@ -4,8 +4,17 @@
     display: flex;
 }
 
-    .HeaderMenu__link {
-        padding: $padding-sm;
-        color: $gray-lighter;
-        font: $font-header-sm;
-    }
+.HeaderMenu__hamburger {
+    display: none;
+    display: block ?if $mobile;
+}
+
+.HeaderMenu__links {
+    display: none ?if $mobile;
+}
+
+.HeaderMenu__link {
+    padding: $padding-sm;
+    color: $gray-lighter;
+    font: $font-header-sm;
+}

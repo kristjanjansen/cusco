@@ -2540,11 +2540,32 @@
     display: flex;
 }
 
-.HeaderMenu__link {
-        padding: 12px;
-        color: #ddd;
-        font: bold 16px "Karla", sans-serif;
+.HeaderMenu__hamburger {
+    display: none;
+}
+
+@media (max-width: 34em) {
+
+    .HeaderMenu__hamburger {
+        display: block;
     }
+}
+
+.HeaderMenu__links {
+}
+
+@media (max-width: 34em) {
+
+    .HeaderMenu__links {
+        display: none;
+    }
+}
+
+.HeaderMenu__link {
+    padding: 12px;
+    color: #ddd;
+    font: bold 16px "Karla", sans-serif;
+}
 @font-face {
     font-family: Karla;
     font-style: italic;

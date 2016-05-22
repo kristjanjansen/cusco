@@ -1,0 +1,101 @@
+/* Colors */
+
+$gray-lighter: #ddd;
+$gray-light: #aaa;
+$gray-neutral: #555;
+
+$color-white: #fff;
+
+$brand-yellow: #f7ba00;
+$brand-yellow-dark: #d67d00;
+
+$brand-green: #78cc5c;
+$brand-green-dark: #288f18;
+
+
+/* Spacing */
+
+$spacer: 12px;
+
+$padding-xs: calc($spacer / 2);
+$padding-sm: $spacer;
+$padding-md: calc($spacer * 2);
+$padding-lg: calc($spacer * 3);
+
+$padding-left-sm: 0 0 0 $spacer;
+$padding-left-md: 0 0 0 calc($spacer * 2);
+
+$padding-leftright-md: 0 calc($spacer * 2);
+$padding-leftright-lg: 0 calc($spacer * 3);
+
+$padding-margin-md: 0 calc($spacer * 2);
+$padding-margin-lg: 0 calc($spacer * 3);
+
+$padding-topbottom-sm: $spacer 0;
+$padding-topbottom-md: calc($spacer * 2) 0;
+$padding-topbottom-lg: calc($spacer * 3) 0;
+
+$margin-xs: calc($spacer / 2);
+$margin-sm: $spacer;
+$margin-md: calc($spacer * 2);
+$margin-lg: calc($spacer * 3);
+
+$margin-topbottom-sm: $spacer 0;
+$margin-topbottom-md: calc($spacer * 2) 0;
+$margin-topbottom-lg: calc($spacer * 3) 0;
+
+$width-md: calc($spacer * 4);
+$width-lg: calc($spacer * 6); 
+
+$height-sm: calc($spacer * 2);
+$height-md: calc($spacer * 4); 
+$height-lg: calc($spacer * 6); 
+$height-xl: calc($spacer * 10); 
+$height-xxl: calc($spacer * 18);
+$height-xxxl: calc($spacer * 24); 
+
+
+/* Borders */
+
+$border-md: 3px solid $gray-lighter;
+
+
+/* Fonts */
+
+$font-family: "Karla";
+
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 28px;
+$font-size-xxl: 36px;
+$font-size-xxxl: 48px;
+$font-size-xxxxl: 64px;
+
+$font-text-sm: normal $font-size-sm $font-family, sans-serif;
+$font-text-md: normal $font-size-md $font-family, sans-serif;
+$font-text-lg: normal $font-size-lg $font-family, sans-serif;
+
+$font-header-sm: bold $font-size-md $font-family, sans-serif;
+$font-header-md: bold $font-size-lg $font-family, sans-serif;
+$font-header-lg: bold $font-size-xl $font-family, sans-serif;
+$font-header-xl: bold $font-size-xxl $font-family, sans-serif;
+$font-header-xxl: bold $font-size-xxxl $font-family, sans-serif;
+$font-header-xxxl: bold $font-size-xxxxl $font-family, sans-serif;
+
+
+/* Media queries */
+
+$mobile-width: 34em;
+$tablet-width: 48em;
+$desktop-width: 62em;
+$largedesktop-width: 74em;
+
+$mobile: media (max-width: $mobile-width);
+$tablet: media (max-width: $tablet-width);
+$desktop: media (max-width: $tablet-width);
+$largedesktop: media (max-width: $tablet-width);
+
+/* Opacities */
+
+/* Animations */

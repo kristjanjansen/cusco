@@ -8,7 +8,7 @@ use Storage;
 class ComponentCreate extends Command
 {
 
-    protected $signature = 'component:create { name }';
+    protected $signature = 'make:component { name }';
 
     public function handle()
     {
@@ -24,8 +24,6 @@ class ComponentCreate extends Command
         $yaml = [
             "data:",
             "    $element: $name",
-            "modifiers:",
-            "    - $modifiers"
         ];
 
         Storage::disk('resources')->put("$dir/$name.yaml", implode("\n", $yaml));
@@ -39,12 +37,11 @@ class ComponentCreate extends Command
         Storage::disk('resources')->put("$dir/$name.blade.php", implode("\n\n", $blade));
 
         $css = [
+            "@import \"variables\";",
             ".$name {",
             "}",
-            ".$name$modifiers {",
-            "}",
-            "    .$name"."__"."$element {",
-            "    }"
+            ".$name"."__"."$element {",
+            "}"
         ];
 
         Storage::disk('resources')->put("$dir/$name.css", implode("\n\n", $css));

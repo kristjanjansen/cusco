@@ -1,49 +1,70 @@
-<div class="Grid Grid--fit">
+<?php
 
-    @component('UserImage', 'colorBlue', $data)
-    
-</div>
+namespace App\Http\Composers;
 
-    
-</div>
-@component('UserImage', 'colorBlue', $data)
+use App;
+use Request;
 
+class HeaderComposer {
 
-@component UserImage {
-    
-    @modifier colorBlue {
-        color: blue;
-    }
+    public function compose(Request $request) {
 
-    @descendent 
+        return [
+
+            'component' => 'Header',
+            'top_left' => App\Composers\MenuComposer($request),
+            'top_right' => [
+                [
+                    'component' => App\Composers\UserMenuLogged($request),
+                    'show' => $request->user()-check()
+                ],
+                [
+                    'component' => App\Composers\UserMenuNonLogged($request),
+                    'show' => ! $request->user()-check()
+                ]
+            ]
+        ];
+
 }
 
-.UserImage {
-    
-}
 
-.UserImage--colorBlue {
- 
-    color: blue;
+//php
 
-}
+//namespace App\Http\Controllers;
 
-<div class="UserImage UserImage--colorBlue">
+//use App;
+//use Request;
+//use App\Http\Composers;
 
-/components/UserImage/UserImage.blade.php
-/components/UserImage/UserImage.yaml
-/components/UserImage/UserImage.css
+class FrontpageController extends Controller {
 
+    public function index(Request $request) {
 
+        $regions = (object) [];
 
-@b('user_image', 'color_blue')
+        $regions->header = Composers\Header::compose();
+        $regions->header->componentName = 'FrontpageHeader';
 
+        $regions->top_offers = [
 
-@b user_image {
-    
-    @m color_blue {
+            'component' => 'FrontpageTopOffers',
+            'show' => $request->user()->can('see-offers'),
+            'data' => ['offers' => App\Offers::frontpageTop()]
+        
+        ];
 
-        color: blue;
+        $regions->main = [
+            [
+                'component' => 'FrontpageMainNews',
+                'show' => true,
+                'data' => ['offers' => App\News::frontpagePrimary()]
+            ]
+        ];
+
+        $regions = $regions->reject(function($region))
+
+        return pageView('frontpage', $regions);
+
     }
 
 }

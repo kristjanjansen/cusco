@@ -1,3 +1,6 @@
+@import "variables";
+@import "vue-animate/dist/vue-animate";
+
 .Alert {
     background-color: $brand-green;
     color: $brand-green-dark;

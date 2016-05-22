@@ -1,0 +1,7 @@
+@import "variables";
+
+.HeaderTitle {
+    font: $font-header-xxxl;
+    color: $color-white;
+    text-align: center;
+}

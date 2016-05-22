@@ -1,0 +1,20 @@
+@import "variables";
+
+.HeaderMenu {
+    display: flex;
+}
+
+.HeaderMenu__hamburger {
+    display: none;
+    display: block ?if $mobile;
+}
+
+.HeaderMenu__links {
+    display: none ?if $mobile;
+}
+
+.HeaderMenu__link {
+    padding: $padding-sm;
+    color: $gray-lighter;
+    font: $font-header-sm;
+}

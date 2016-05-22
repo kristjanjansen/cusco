@@ -1,5 +1,16 @@
+@import "variables";
+
 .FrontpageHeader {
-    height: $height-xxxl;
-    color: white;
     background-size: cover;
+}
+
+.FrontpageHeader__top {
+    height: $height-md;
+}
+
+.FrontpageHeader__bottom {
+    height: $height-xxxl;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }

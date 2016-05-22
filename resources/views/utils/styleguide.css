@@ -1,3 +1,5 @@
+@import "variables";
+
 .styleguide {
     height: $height-xl;
     display: flex;
@@ -8,12 +10,12 @@
     font-family: sans-serif;
     font-weight: bold;
     font-size: $font-size-lg;
-    color: $gray-xs;
+    color: $gray-lighter;
 }
 
 .styleguide-description {
     padding: $padding-left-sm;
     font-family: sans-serif;
     font-size: $font-size-sm;
-    color: $gray-xs;
+    color: $gray-lighter;
 }

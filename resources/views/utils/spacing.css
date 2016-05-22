@@ -1,16 +1,28 @@
-.container {
-  margin: 0 auto;
-  max-width: $largedesktop-width;
-  width: 90%;
-}
-
-.region-one {
-    background: $brand-yellow;
-}
+@import "variables";
 
 .padding-leftright-md {
     padding-left: $padding-md;
     padding-right: $padding-md;
+}
+
+.padding-left-collapse-sm {
+    padding-left: $padding-sm;
+    padding-left: 0 ?if $mobile;
+}
+
+.padding-left-collapse-md {
+    padding-left: $padding-md;
+    padding-left: 0 ?if $mobile;
+}
+
+.padding-right-collapse-sm {
+    padding-right: $padding-sm;
+    padding-right: 0 ?if $mobile;
+}
+
+.padding-right-collapse-md {
+    padding-right: $padding-md;
+    padding-right: 0 ?if $mobile;
 }
 
 .padding-leftright-collapse-md {

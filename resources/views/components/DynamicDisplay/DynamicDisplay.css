@@ -1,6 +1,6 @@
 @import "variables";
 
-.Display {
+.DynamicDisplay {
     height: $height-xxl;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-    .Display__title {
+    .DynamicDisplay__title {
         font: $font-header-lg;
         color: $color-white;
         text-align: center;

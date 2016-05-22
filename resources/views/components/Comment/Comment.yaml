@@ -1,6 +1,7 @@
 description: Classic media element
 data:
-    aside: Aside
+    left: Aside
+    title: Title
     body: Body
 modifiers:
   - --border

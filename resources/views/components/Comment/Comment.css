@@ -1,0 +1,28 @@
+@import "variables";
+
+.Comment {
+    display: flex;
+}
+
+.Comment--border {
+    border: $border-md;
+    padding: $padding-md;
+}
+
+.Comment__left {
+    padding-right: $padding-md;
+    display: none ?if $mobile;
+}
+
+.Comment__right {
+}
+
+.Comment__title {
+    color: $gray-light;
+    font: $font-header-sm;
+    margin-bottom: $margin-sm;
+}
+
+.Comment__body {
+    font: $font-text-md;
+}

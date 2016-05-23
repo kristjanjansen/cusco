@@ -9,6 +9,12 @@ class StyleguideController extends Controller {
 
     public function index() {
 
+        $icons = collect(Storage::disk('resources')->files('svg'))
+            ->map(function($filename) {
+                return pathinfo($filename, PATHINFO_FILENAME);
+            })
+            ->toArray();
+
         $components = collect(Storage::disk('resources')->allDirectories('views/components'))
             ->map(function($directory) {
                 return Storage::disk('resources')->files($directory);
@@ -23,7 +29,14 @@ class StyleguideController extends Controller {
                 return $component;
             })
             ->map(function($component) {
-                $component->modifiers = collect(isset($component->modifiers) ? $component->modifiers : [])->prepend('');
+                $component->modifiers = collect(isset($component->modifiers) ? $component->modifiers : [])
+                    ->prepend('');
+                return $component;
+            })
+            ->map(function($component) use ($icons) {
+                if ($component->name == 'Icons') {
+                    $component->data['icons'] = $icons;
+                }
                 return $component;
             });
         

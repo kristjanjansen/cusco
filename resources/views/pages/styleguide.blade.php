@@ -16,7 +16,6 @@
             
             <div class="styleguide-title">{{ $component->name.$modifier }}</div>
 
-
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">

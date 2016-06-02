@@ -23,12 +23,16 @@ See [this](https://laracasts.com/series/whip-monstrous-code-into-shape/episodes/
 
 Presenters can be stored next to models, such as ```ContentPresenter.php```.
 
-Note: we should consider simpler naming convention, such as ```ContentVars.php``` / ```Content::find(1)->vars()->bodyShort```.
+Note: we should consider simpler naming convention, such as
+
+```
+Content::find(1)->vars()->bodyShort
+```
 
 Under discussion:
 
-* View templates only receive model data via presenters / vars
-* Presenters should not return any markup 
+* View templates only receive model data via presenters / vars?
+* Presenters should not return any markup?
 
 #### 3. Controllers
 
@@ -38,12 +42,13 @@ Models work as previously. Its recommended to have a minimal amount of view-rela
 
 Components are wrappers around partial views that can be rendered via ```component()``` helper or ```@component``` Blade directive. 
 
-Both Blade and VueJS components are supported,  ```component()``` helper abstracts away the differentce calling them. 
+Both Blade and VueJS components are supported,  ```component()``` helper abstracts away the difference calling them. 
 
 Components are stored in ```resources/views/components``` directory and they have simple flat structure:
 
 ```yaml
 - resources/views/components/Alert/Alert.vue
+- resources/views/components/Alert/Alert.css
 - resources/views/components/UserImage/UserImage.blade.php
 - resources/views/components/UserImage/UserImage.css
 - resources/views/components/UserImage/UserImage.yaml # Optional, for styleguide
@@ -86,7 +91,7 @@ return view('pages.content.static.show')
     
 ```
 
-It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet **Composers**:
+It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet...
 
 #### 5. Composers
 
@@ -95,6 +100,8 @@ Composers are similar to Laravel's [view composers](https://laravel.com/docs/5.2
 Composers are stored in ```app/Composers```
 
 Here is the same code again with Composers:
+
+```php
 
 // app/Http/Controllers/ContentStaticController.php
 // ...

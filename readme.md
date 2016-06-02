@@ -196,7 +196,7 @@ Views are still views but they are degraded just to full page layouts that accom
 
 ```html
 
-    // pages/content/static/show.blade.php
+    <!-- pages/content/static/show.blade.php -->
 
     @extends('layouts.main')
 

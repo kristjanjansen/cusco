@@ -192,7 +192,7 @@ class ContentTravelmates
 ```
 #### 6. Views
 
-Views are still views but they are degraded to simple full page layouts that accomodate rendered components and lay them out using helper classes.
+Views are still views but they are degraded to simple layouts that accomodate rendered components and lay them out using helper classes.
 
 ```html
 

@@ -238,7 +238,7 @@ Views are still views but they are degraded to simple layouts that accomodate re
 
     @endsection
 
-    @section('header', $header)
+    @section('footer', $footer)
 
 ```
 

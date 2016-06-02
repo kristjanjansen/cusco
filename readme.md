@@ -25,7 +25,7 @@ Content::find(1)->present()->bodyShort
 
 See [this](https://laracasts.com/series/whip-monstrous-code-into-shape/episodes/11) for a reference.
 
-Presenters can be stored next to models, such as ```ContentPresenter.php```.
+Presenters can be stored next to models, such as ```ContentPresenter.php``` and can be delivered as traits.
 
 Note: we should consider simpler naming convention, such as
 

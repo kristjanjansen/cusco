@@ -7,7 +7,7 @@
 #### 0.2
 
 * Changed 'Composers' to 'Regions'
-* 
+* Proposing region() helper
 
 ## About
 
@@ -303,6 +303,8 @@ return view('pages.content.news.show')
 ```    
 
 Another example with region() helper
+
+```php
 
 // app/Http/Controllers/ContentStaticController.php
 // ...

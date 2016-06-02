@@ -110,17 +110,17 @@ $post = \App\Content::whereType('static')->findOrFail($id);
 
 return view('pages.content.static.show')
     ->with('header', Composers\Header::get())
-    ->with('content', Composers\ContentStaticShow::get($post),
+    ->with('content', Composers\ContentStaticShow::get($post)),
     ->with('footer', Composers\Footer::get())
     
 ```
 
 Composers are the most immature part of the proposal:
 
-* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
+* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc?
 * Should we pass ```$request```?
 * Are we essentially calling controllers from controllers or is ok in MVVC context?
-* ```get()``` vs ```render()``` vs whatever
+* ```get()``` vs ```render()``` vs whatever?
 
 Here is another more complex example:
 

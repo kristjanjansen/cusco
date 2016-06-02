@@ -122,9 +122,9 @@ Composers are the most immature part of the proposal:
 
 * Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc?
 * Should we pass ```$request```?
-* Are we essentially calling controllers from controllers or is ok in MVVC context?
-* API is in flux: ```->get($data)``` vs ```->render()``` vs whatever?
-* should we surface 
+* Are we essentially calling controllers from controllers or is it ok in MVVC context?
+* API is in flux: ```->get($data)``` vs ```->render($data)``` vs whatever?
+
 Here is another more complex example:
 
 ```php

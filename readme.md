@@ -39,7 +39,7 @@ Under discussion:
 
 #### 3. Controllers
 
-Models work as previously. Its recommended to have a minimal amount of view-related code in ```index``` and ```show``` methods (see the example below)
+Controllers work as previously. Its recommended to have a minimal amount of view-related code in ```index``` and ```show``` methods (see the example below)
 
 #### 4. Components
 

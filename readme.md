@@ -1,3 +1,14 @@
+## Changelog
+
+#### 0.1
+
+* Initial version
+
+#### 0.2
+
+* Changed 'Composers' to 'Regions'
+* 
+
 ## About
 
 The goal of this experiment is to clear up current view rendering mess and come up
@@ -77,11 +88,13 @@ Here is and example with model, presenters, controller and nested components:
 // ...
 
 $post = Content::whereType('static')->findOrFail($id);
+$photo = Content::getRandomFeaturedPhoto();
 
 return view('pages.content.static.show')
     ->with('header', component('Header')
-        ->with('title', $post->vars()->title)
         ->with('menu', config('menu.header'))
+        ->with('title', $post->vars()->title)
+        ->with('photo', $photo->vars())
     )
     ->with('content', [
         component('ListItem') // Something like row component used to be
@@ -96,13 +109,13 @@ return view('pages.content.static.show')
 
 It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet...
 
-#### 5. Composers
+#### 5. Regions
 
-Composers are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially another form of ViewControllers that encapsulate certain complex component rendering.
+Regions are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
 
-Composers are stored in ```app/Composers```
+Regions are stored in ```app/Regions```
 
-Here is the same code again with Composers:
+Here is the same code again with Regions:
 
 ```php
 
@@ -112,17 +125,17 @@ Here is the same code again with Composers:
 $post = \App\Content::whereType('static')->findOrFail($id);
 
 return view('pages.content.static.show')
-    ->with('header', Composers\Header::get())
-    ->with('content', Composers\ContentStaticShow::get($post)),
-    ->with('footer', Composers\Footer::get())
+    ->with('header', Regions\Header::get())
+    ->with('content', Regions\ContentStaticShow::get($post)),
+    ->with('footer', Regions\Footer::get())
     
 ```
 
-Composers are the most immature part of the proposal:
+Regions are the most immature part of the proposal:
 
-* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc?
+* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
 * Should we pass ```$request```?
-* Are we essentially calling controllers from controllers or is it ok in MVVC context?
+* Are we simply calling controllers from controllers or is it ok in MVVC context?
 * API is in flux: ```->get($data)``` vs ```->render($data)``` vs whatever?
 
 Here is another more complex example:
@@ -136,27 +149,27 @@ $travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
 $forumPosts =  Content::whereType('forum')::getLatestPosts(5);
 
 return view('pages.content.travemates.index')
-    ->with('header', Composers\Header::get())
+    ->with('header', Regions\Header::get())
     ->with('content', [
-        Composers\ContentTravelmates::get($travelmatePosts->forPage(1, 12)),
-        Composers\AdMedium::get(),
-        Composers\ContentTravelmates::get($travelmatePosts->forPage(2, 12)),
+        Regions\ContentTravelmates::get($travelmatePosts->forPage(1, 12)),
+        Regions\AdMedium::get(),
+        Regions\ContentTravelmates::get($travelmatePosts->forPage(2, 12)),
     ])
     ->with('sidebar', [
-        Composers\TravelmatesAbout::get(),
-        Composers\AdSmall::get(),
-        Composers\ContentForumSidebar::get($forumPosts),
+        Regions\TravelmatesAbout::get(),
+        Regions\AdSmall::get(),
+        Regions\ContentForumSidebar::get($forumPosts),
     ])
-    ->with('footer_ad', Composers\AdLarge::get())
-    ->with('footer', Composers\Footer::get());
+    ->with('footer_ad', Regions\AdLarge::get())
+    ->with('footer', Regions\Footer::get());
 
 ```
 
-And here is the composer:
+And here is the Region:
 
 ```php
 
-// app/Composers/ContentTravelmates.php
+// app/Regions/ContentTravelmates.php
 
 use Request;
 
@@ -241,6 +254,79 @@ Views are still views but they are degraded to simple layouts that accomodate re
     @section('footer', $footer)
 
 ```
+
+## More examples
+
+```php
+
+// app/Http/Controllers/ContentNewsController.php
+// ...
+
+$post = Content::whereType('news')->findOrFail($id);
+
+return view('pages.content.news.show')
+    ->with('header', component('Header')
+        ->is('withLargeImage')
+        ->with('menu', config('menu.header'))
+        ->with('title', $post->vars()->title)
+        ->with('subtitle', $post->vars()->meta)
+        ->with('image', $post->vars()->image)
+    )
+    ->with('content', [
+        component('Body')->with('body', $post->vars()->body),
+        component('Box')
+            ->with('title', trans('comment.add.title'))
+            ->with('content', component('Form')
+                ->with('route', route('comment.add'))
+                ->with('fields', [
+                    component('FormTextbox')->with('placeholder', trans('comment.add.body.title'))
+                ])
+                ->with('buttons', component('Button')->with('title', trans('comment.add.body.title')))
+        )
+    ])
+    ->with('header', component('Footer')->with('menu', config('menu.footer')))
+    
+```
+
+Alternative with region() helper
+
+```php
+
+return view('pages.content.news.show')
+    ->with('header', region('NewsHeader', $post))
+    ->with('content', [
+        component('Body')->with('body', $post->vars()->body),
+        region('CommentForm')
+    ])
+    ->with('header', Regions\Footer::render())
+
+```    
+
+Another example with region() helper
+
+// app/Http/Controllers/ContentStaticController.php
+// ...
+
+$travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
+$forumPosts =  Content::whereType('forum')::getLatestPosts(5);
+
+return view('pages.content.travemates.index')
+    ->with('header', region('Header'))
+    ->with('content', [
+        region('ContentTravelmates', $travelmatePosts->forPage(1, 12)),
+        component('Ad'),
+        region('ContentTravelmates'), $travelmatePosts->forPage(2, 12)),
+    ])
+    ->with('sidebar', [
+        region('TravelmatesAbout'),
+        component('Ad')->is('small'),
+        region('ContentForumSidebar', $forumPosts)
+    ])
+    ->with('footer_ad', component('Ad')->is('large'))
+    ->with('footer', region('Footer'));
+
+```
+
 
 ## Why Cusco?
 

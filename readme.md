@@ -11,6 +11,10 @@ Here are some core concepts:
 
 Models work as previously but the presentational methods (truncated body texts etc) are moved out (see below).
 
+Open questions:
+* How to serve fallback content (no related posts, no content in particular destination tree level etc)? Consider ```ModelFinder``` class, see [this](https://laracasts.com/series/whatcha-working-on/episodes/3).
+
+
 #### 2. Presenters
 
 Presenters, essentialy ViewModels that augment the models with presenter methods, such as
@@ -31,8 +35,7 @@ Content::find(1)->vars()->bodyShort
 
 Under discussion:
 
-* View templates only receive model data via presenters / vars?
-* Presenters should not return any markup?
+* Will views only receive model data via presenters / vars or can they access model attributes directly?
 
 #### 3. Controllers
 
@@ -121,7 +124,7 @@ Composers are the most immature part of the proposal:
 * Should we pass ```$request```?
 * Are we essentially calling controllers from controllers or is ok in MVVC context?
 * API is in flux: ```->get($data)``` vs ```->render()``` vs whatever?
-
+* should we surface 
 Here is another more complex example:
 
 ```php

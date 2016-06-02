@@ -190,6 +190,57 @@ class ContentTravelmates
 
 }
 ```
+#### 6. Views
+
+Views are still views but they are degraded just to full page layouts that accomodate rendered components and lay them out using helper classes.
+
+```html
+
+    // pages/content/static/show.blade.php
+
+    @extends('layouts.main')
+
+    @section('header', $header)
+
+    @section('content')
+
+    <div class="row">
+
+        <div class="col-8 padding-right-sm">
+        
+            @foreach($content as $content_item)
+        
+                <div class="margin-bottom-md">   
+                
+                    {!! content_item !!}
+            
+                </div>
+
+            @endforeach
+
+        </div>
+
+        <div class="col-4 padding-left-mobile-sm">
+        
+            @foreach($sidebar as $sidebar_item)
+        
+                <div class="margin-bottom-md">   
+                    
+                    {!! sidebar_item !!}
+                
+                </div>
+
+            @endforeach
+        
+        </div>
+
+    </div>
+
+    @endsection
+
+    @section('header', $header)
+
+```
 
 ## Why Cusco?
 

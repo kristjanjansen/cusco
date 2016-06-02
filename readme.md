@@ -98,7 +98,7 @@ It feels almost too much code for a controller. Lets try to move more complex an
 
 #### 5. Composers
 
-Composers are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially another form of ViewModel that encapsulates certain complex component rendering.
+Composers are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially another form of ViewControllers that encapsulate certain complex component rendering.
 
 Composers are stored in ```app/Composers```
 

@@ -81,7 +81,7 @@ return view('pages.content.static.show')
         ->with('menu', config('menu.header'))
     )
     ->with('content', [
-        component('ListItem') 
+        component('ListItem') // Something like row component used to be
             ->with('user', component('UserImage')->with('user', $post->user->vars())
             ->with('title', $post->vars()->title)
             ->with('subtitle', $post->vars()->meta)),

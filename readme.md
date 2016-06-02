@@ -61,7 +61,7 @@ Components are stored in ```resources/views/components``` directory and they hav
 Component API is modeled after Laravel views, collections and other chained APIs and works as follows:
 
 ```php
-component()
+component('Name')
     ->is('small') // This used to be $modifiers variable
     ->is(collect(['orange', 'yellow')->random()) // Can be chained and dynamic
     ->with('data1', $data1) // Same as view()->with()

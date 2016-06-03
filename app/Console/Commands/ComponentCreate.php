@@ -14,37 +14,36 @@ class ComponentCreate extends Command
     {
 
         $name = $this->argument('name');
-        $dir = "views/components/$name"; 
+        $dir = "resources/views/components/$name"; 
         
-        Storage::disk('resources')->makeDirectory($dir);
+        Storage::disk('root')->makeDirectory($dir);
 
         $element = 'title';
-        $modifiers = '--alternate';
 
         $yaml = [
             "data:",
             "    $element: $name",
         ];
 
-        Storage::disk('resources')->put("$dir/$name.yaml", implode("\n", $yaml));
+        Storage::disk('root')->put("$dir/$name.yaml", implode("\n", $yaml));
 
         $blade = [
-            "<div class=\"$name {{ \$modifiers }} \">",
+            "<div class=\"$name {{ \$is }}\">",
             "    {{ \$title }}",
             "</div>"
         ];
 
-        Storage::disk('resources')->put("$dir/$name.blade.php", implode("\n\n", $blade));
+        Storage::disk('root')->put("$dir/$name.blade.php", implode("\n\n", $blade));
 
         $css = [
             "@import \"variables\";",
             ".$name {",
             "}",
-            ".$name"."__"."$element {",
-            "}"
+            "    .$name"."__"."$element {",
+            "    }"
         ];
 
-        Storage::disk('resources')->put("$dir/$name.css", implode("\n\n", $css));
+        Storage::disk('root')->put("$dir/$name.css", implode("\n\n", $css));
 
         $this->line("$dir created");
 

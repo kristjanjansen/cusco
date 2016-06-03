@@ -2628,6 +2628,44 @@
 
 /* Animations */
 
+.Icon {
+
+}
+/* Colors */
+
+/* Spacing */
+
+/* Borders */
+
+/* Fonts */
+
+/* Media queries */
+
+/* Opacities */
+
+/* Animations */
+
+.Icons {
+
+}
+
+.Icons__title {
+
+}
+/* Colors */
+
+/* Spacing */
+
+/* Borders */
+
+/* Fonts */
+
+/* Media queries */
+
+/* Opacities */
+
+/* Animations */
+
 .Placeholder {
     height: calc(12px * 6);
     border: 1px dotted #aaa;
@@ -2637,6 +2675,27 @@
     color: #555;
 }
 
+/* Colors */
+
+/* Spacing */
+
+/* Borders */
+
+/* Fonts */
+
+/* Media queries */
+
+/* Opacities */
+
+/* Animations */
+
+.Test {
+    background-color: #f7ba00;
+}
+
+.Test__title {
+
+}
 /* Colors */
 
 /* Spacing */

@@ -10,11 +10,31 @@
 
     @foreach($components as $component)
 
+        <div class="styleguide container">
+            
+            <div class="styleguide-title">
+            
+                {{ $component->name }}
+
+            </div>
+
+        </div>        
+        
+        <div class="{{ $component->nocontainer or 'container' }}">
+
+            {!! component2($component->name, [$component->data]) !!}
+                
+        </div>
+
         @foreach($component->is as $is)
         
         <div class="styleguide container">
             
-            <div class="styleguide-title">{{ $component->name.$is }}</div>
+            <div class="styleguide-title">
+            
+                {{ component2($component->name)->is($is)->generateIsClasses() }}
+
+            </div>
 
         </div>        
         

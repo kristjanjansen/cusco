@@ -1,5 +1,5 @@
-<div class="Comment {{ $is or ''}}">
-    
+<div class="Comment {{ $is }}">
+
     <div class="Comment__left">
 
         {!! $left !!}
@@ -16,7 +16,7 @@
 
         <div class="Comment__body">
 
-            @component('Body', ['body' => $body])
+            {{-- @component('Body', ['body' => $body]) --}}
             
         </div>
 

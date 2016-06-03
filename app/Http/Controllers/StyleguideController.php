@@ -29,8 +29,7 @@ class StyleguideController extends Controller {
                 return $component;
             })
             ->map(function($component) {
-                $component->is = collect(isset($component->modifiers) ? $component->modifiers : [])
-                    ->prepend('');
+                $component->is = $component->is ?? [];
                 return $component;
             })
             ->map(function($component) use ($icons) {

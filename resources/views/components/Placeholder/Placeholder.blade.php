@@ -1,4 +1,4 @@
-<div class="Placeholder">
+<div class="Placeholder {{ $is }}">
     
     <div class="Placeholder__title">
 

@@ -1,4 +1,4 @@
-<div class="HeaderMenu {{ $modifiers }} ">
+<div class="HeaderMenu {{ $is }} ">
 
     <div class="HeaderMenu__hamburger">
 

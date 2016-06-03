@@ -8,8 +8,8 @@ class Test {
     {
 
         return component2('Test')
-            ->is('yellow')
-            ->is('small')
+        //    ->is('yellow')
+        //    ->is('small')
             ->with('title', $title);
     
     }

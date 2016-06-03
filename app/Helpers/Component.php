@@ -10,7 +10,7 @@ class Component {
     protected $is;
     protected $with;
 
-    public function __construct($component, $with = [])
+    public function __construct($component, $with = null)
     {
         
         $this->component = $component;
@@ -40,21 +40,25 @@ class Component {
     
     }
 
-    public function render() {
+    public function generateIsClasses() {
 
         $component = $this->component;
-
-        $name = "components.$component.$component";
-
-        $is = $this->is->map(function($item) use ($component) {
+        
+        return $this->is->map(function($item) use ($component) {
             return $component.'--'.$item;
         })
         ->implode(' ');
-       
+
+    }
+
+    public function render() {
+
+        $name = "components.$this->component.$this->component";
+
         if (view()->exists($name)) {
 
             return View::make($name, $this->with->flatten(1)->all())
-                ->with('is', $is)
+                ->with('is', $this->generateIsClasses())
                 ->render();
 
         }

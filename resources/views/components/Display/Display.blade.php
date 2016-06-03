@@ -1,5 +1,5 @@
 <div
-    class="Display {{ $modifiers }}"
+    class="Display {{ $is }}"
     style="
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.75),

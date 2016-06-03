@@ -1,4 +1,4 @@
-<div class="Test {{ $is }} ">
+<div class="Test {{ $is or '' }}">
 
     {{ $title }}
 

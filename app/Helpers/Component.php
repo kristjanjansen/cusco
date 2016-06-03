@@ -19,24 +19,6 @@ class Component {
     
     }
 
-    public function render() {
-
-        $component = $this->component;
-
-        $name = "components.$component.$component";
-
-        $is = $this->is->map(function($item) use ($component) {
-            return $component.'--'.$item;
-        })
-        ->implode(' ');
-       
-        //dump($is);
-        //dump($this->with->toArray());
-
-        return View::make($name, $this->with->flatten(1)->all())->with('is', $is);
-
-    }
-
     public function is($is) {
 
         $this->is->push($is);
@@ -52,4 +34,27 @@ class Component {
     
     }
 
+    public function __toString() {
+
+        return $this->render();
+    
+    }
+
+    public function render() {
+
+        $component = $this->component;
+
+        $name = "components.$component.$component";
+
+        $is = $this->is->map(function($item) use ($component) {
+            return $component.'--'.$item;
+        })
+        ->implode(' ');
+       
+        return View::make($name, $this->with->flatten(1)->all())
+            ->with('is', $is)
+            ->render();
+
+    }
+    
 }

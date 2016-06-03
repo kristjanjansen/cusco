@@ -12,7 +12,7 @@
     justify-content: space-between; 
 }
 
-.Alert--lg {
+.Alert--large {
     font: $font-text-lg;
     height: $height-lg;
     padding: $padding-leftright-lg; 

@@ -55,15 +55,24 @@ class Component {
 
         $name = "components.$this->component.$this->component";
 
+        $with = $this->with->flatten(1)->all();
+
         if (view()->exists($name)) {
 
-            return View::make($name, $this->with->flatten(1)->all())
+            return View::make($name, $with)
                 ->with('is', $this->generateIsClasses())
                 ->render();
 
-        }
+        } else {
 
-        return '';
+            return '<component is="'
+                . $this->component
+                . '" modifiers="'
+                . $this->generateIsClasses()
+                . '" variables="'
+                . rawurlencode(json_encode($with))
+                . '" />';
+        }
     
     }
     

@@ -9,6 +9,10 @@
 * Changed 'Composers' to 'Regions'
 * Proposing region() helper
 
+#### 0.3
+
+* Proposing componentGroup() helper
+
 ## About
 
 The goal of this experiment is to clear up current view rendering mess and come up
@@ -103,7 +107,8 @@ return view('pages.content.static.show')
             ->with('subtitle', $post->vars()->meta)),
         component('Body')->with('body', $post->vars()->body)
     ])
-    ->with('header', component('Footer')->with('menu', config('menu.footer')))
+    ->with('footer_ad', component('Ad')->is('inFooter'))
+    ->with('footer', component('Footer')->with('menu', config('menu.footer')))
     
 ```
 
@@ -127,16 +132,50 @@ $post = \App\Content::whereType('static')->findOrFail($id);
 return view('pages.content.static.show')
     ->with('header', Regions\Header::get())
     ->with('content', Regions\ContentStaticShow::get($post)),
+    ->with('footer_ad', component('Ad')->is('inFooter'))
     ->with('footer', Regions\Footer::get())
     
 ```
+
+Here's the same example with a ```region()``` helper method:
+
+```php
+
+// app/Http/Controllers/ContentStaticController.php
+
+$post = \App\Content::whereType('static')->findOrFail($id);
+
+return view('pages.content.static.show')
+    ->with('header', region('Header'))
+    ->with('content', region('ContentStaticShow', $post)),
+    ->with('footer_ad', component('Ad')->is('inFooter'))
+    ->with('footer', region('Footer'))
+    
+```
+
+...or with ```componentGroup()``` helper
+
+```php
+
+// app/Http/Controllers/ContentStaticController.php
+
+$post = \App\Content::whereType('static')->findOrFail($id);
+
+return view('pages.content.static.show')
+    ->with('header', componentGroup('Header'))
+    ->with('content', componentGroup('ContentStaticShow', $post)),
+    ->with('footer_ad', component('Ad')->is('inFooter'))
+    ->with('footer', componentGroup('Footer'))
+    
+```
+
 
 Regions are the most immature part of the proposal:
 
 * Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
 * Should we pass ```$request```?
 * Are we simply calling controllers from controllers or is it ok in MVVC context?
-* API is in flux: ```->get($data)``` vs ```->render($data)``` vs whatever?
+* Should we surface the hide/show logic to controller level?
 
 Here is another more complex example:
 
@@ -254,81 +293,6 @@ Views are still views but they are degraded to simple layouts that accomodate re
     @section('footer', $footer)
 
 ```
-
-## More examples
-
-```php
-
-// app/Http/Controllers/ContentNewsController.php
-// ...
-
-$post = Content::whereType('news')->findOrFail($id);
-
-return view('pages.content.news.show')
-    ->with('header', component('Header')
-        ->is('withLargeImage')
-        ->with('menu', config('menu.header'))
-        ->with('title', $post->vars()->title)
-        ->with('subtitle', $post->vars()->meta)
-        ->with('image', $post->vars()->image)
-    )
-    ->with('content', [
-        component('Body')->with('body', $post->vars()->body),
-        component('Box')
-            ->with('title', trans('comment.add.title'))
-            ->with('content', component('Form')
-                ->with('route', route('comment.add'))
-                ->with('fields', [
-                    component('FormTextbox')->with('placeholder', trans('comment.add.body.title'))
-                ])
-                ->with('buttons', component('Button')->with('title', trans('comment.add.body.title')))
-        )
-    ])
-    ->with('header', component('Footer')->with('menu', config('menu.footer')))
-    
-```
-
-Alternative with region() helper
-
-```php
-
-return view('pages.content.news.show')
-    ->with('header', region('NewsHeader', $post))
-    ->with('content', [
-        component('Body')->with('body', $post->vars()->body),
-        region('CommentForm')
-    ])
-    ->with('header', Regions\Footer::render())
-
-```    
-
-Another example with region() helper
-
-```php
-
-// app/Http/Controllers/ContentStaticController.php
-// ...
-
-$travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
-$forumPosts =  Content::whereType('forum')::getLatestPosts(5);
-
-return view('pages.content.travemates.index')
-    ->with('header', region('Header'))
-    ->with('content', [
-        region('ContentTravelmates', $travelmatePosts->forPage(1, 12)),
-        component('Ad'),
-        region('ContentTravelmates'), $travelmatePosts->forPage(2, 12)),
-    ])
-    ->with('sidebar', [
-        region('TravelmatesAbout'),
-        component('Ad')->is('small'),
-        region('ContentForumSidebar', $forumPosts)
-    ])
-    ->with('footer_ad', component('Ad')->is('large'))
-    ->with('footer', region('Footer'));
-
-```
-
 
 ## Why Cusco?
 

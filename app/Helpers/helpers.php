@@ -2,13 +2,7 @@
 
 use App\Helpers;
 
-function component($selector, $data = []) {
-
-    return Helpers\Blade::bladeComponent($selector, $data);
-        
-}
-
-function component2($component, $with = []) {
+function component($component, $with = []) {
 
     return (new Helpers\Component($component, $with));
         

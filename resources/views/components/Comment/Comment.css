@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.Comment--border {
+.Comment--withBorder {
     border: $border-md;
     padding: $padding-md;
 }

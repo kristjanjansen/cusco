@@ -1,5 +1,5 @@
 data:
     icon:
-modifiers:
-    - --light
-    - --dark
+is:
+    - light
+    - dark

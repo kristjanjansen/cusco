@@ -22,7 +22,7 @@
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component2($component->name, [$component->data]) !!}
+            {!! component($component->name, [$component->data]) !!}
                 
         </div>
 
@@ -32,7 +32,8 @@
             
             <div class="styleguide-title">
             
-                {{ component2($component->name)->is($is)->generateIsClasses() }}
+                {{ $component->name }}
+                {{ component($component->name)->is($is)->generateIsClasses() }}
 
             </div>
 
@@ -40,7 +41,7 @@
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component2($component->name, [$component->data])->is($is) !!}
+            {!! component($component->name, [$component->data])->is($is) !!}
                 
         </div>
 

@@ -9,27 +9,27 @@ class StyleguideController extends Controller {
 
     public function index() {
 
-        $icons = collect(Storage::disk('resources')->files('svg'))
+        $icons = collect(Storage::disk('root')->files('resources/svg'))
             ->map(function($filename) {
                 return pathinfo($filename, PATHINFO_FILENAME);
             })
             ->toArray();
 
-        $components = collect(Storage::disk('resources')->allDirectories('views/components'))
+        $components = collect(Storage::disk('root')->allDirectories('resources/views/components'))
             ->map(function($directory) {
-                return Storage::disk('resources')->files($directory);
+                return Storage::disk('root')->files($directory);
             })
             ->collapse()
             ->filter(function($filepath) {
                 return pathinfo($filepath, PATHINFO_EXTENSION) == 'yaml';
             })
             ->map(function($filepath) {
-                $component = (object) Yaml::parse(trim(Storage::disk('resources')->get($filepath)));
+                $component = (object) Yaml::parse(trim(Storage::disk('root')->get($filepath)));
                 $component->name = pathinfo($filepath, PATHINFO_FILENAME);
                 return $component;
             })
             ->map(function($component) {
-                $component->modifiers = collect(isset($component->modifiers) ? $component->modifiers : [])
+                $component->is = collect(isset($component->modifiers) ? $component->modifiers : [])
                     ->prepend('');
                 return $component;
             })

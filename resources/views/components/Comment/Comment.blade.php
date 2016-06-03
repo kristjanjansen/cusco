@@ -1,4 +1,4 @@
-<div class="Comment {{ $modifiers }}">
+<div class="Comment {{ $is or ''}}">
     
     <div class="Comment__left">
 

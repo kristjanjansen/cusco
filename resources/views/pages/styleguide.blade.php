@@ -10,17 +10,17 @@
 
     @foreach($components as $component)
 
-        @foreach($component->modifiers as $modifier)
+        @foreach($component->is as $is)
         
         <div class="styleguide container">
             
-            <div class="styleguide-title">{{ $component->name.$modifier }}</div>
+            <div class="styleguide-title">{{ $component->name.$is }}</div>
 
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component($component->name.$modifier, $component->data) !!}
+            {!! component2($component->name, [$component->data])->is($is) !!}
                 
         </div>
 

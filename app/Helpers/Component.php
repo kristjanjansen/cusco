@@ -10,12 +10,12 @@ class Component {
     protected $is;
     protected $with;
 
-    public function __construct($component)
+    public function __construct($component, $with = [])
     {
         
         $this->component = $component;
         $this->is = collect();
-        $this->with = collect();
+        $this->with = collect($with);
     
     }
 
@@ -51,10 +51,16 @@ class Component {
         })
         ->implode(' ');
        
-        return View::make($name, $this->with->flatten(1)->all())
-            ->with('is', $is)
-            ->render();
+        if (view()->exists($name)) {
 
+            return View::make($name, $this->with->flatten(1)->all())
+                ->with('is', $is)
+                ->render();
+
+        }
+
+        return '';
+    
     }
     
 }

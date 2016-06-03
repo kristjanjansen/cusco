@@ -1,5 +1,5 @@
-<div class="Body {{ $modifiers }}">
+<div class="Body {{ $is }}">
     
-{!! $body !!}
+    {!! $body !!}
 
 </div>

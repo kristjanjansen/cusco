@@ -8,9 +8,9 @@ function component($selector, $data = []) {
         
 }
 
-function component2($component) {
+function component2($component, $with = []) {
 
-    return (new Helpers\Component($component));
+    return (new Helpers\Component($component, $with));
         
 }
 

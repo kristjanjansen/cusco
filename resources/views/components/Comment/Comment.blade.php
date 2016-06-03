@@ -1,8 +1,8 @@
-<div class="Comment {{ $modifiers }}">
-    
+<div class="Comment {{ $is }}">
+
     <div class="Comment__left">
 
-        {!! $left !!}
+        {!! $user !!}
 
     </div>
 
@@ -16,8 +16,8 @@
 
         <div class="Comment__body">
 
-            @component('Body', ['body' => $body])
-            
+            {!! $body !!}
+
         </div>
 
     </div>

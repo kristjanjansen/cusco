@@ -7,7 +7,7 @@ class Test {
     public function render($title)
     {
 
-        return component2('Test')
+        return component('Test')
             ->is('yellow')
             ->is('small')
             ->with('title', $title);

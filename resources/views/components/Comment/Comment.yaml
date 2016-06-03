@@ -1,7 +1,7 @@
 description: Classic media element
 data:
-    left: Aside
+    user: User
     title: Title
     body: Body
-modifiers:
-  - --border
+is:
+  - withBorder

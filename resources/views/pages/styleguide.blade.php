@@ -10,17 +10,38 @@
 
     @foreach($components as $component)
 
-        @foreach($component->modifiers as $modifier)
-        
         <div class="styleguide container">
             
-            <div class="styleguide-title">{{ $component->name.$modifier }}</div>
+            <div class="styleguide-title">
+            
+                {{ $component->name }}
+
+            </div>
 
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component($component->name.$modifier, $component->data) !!}
+            {!! component($component->name, [$component->data]) !!}
+                
+        </div>
+
+        @foreach($component->is as $is)
+        
+        <div class="styleguide container">
+            
+            <div class="styleguide-title">
+            
+                {{ $component->name }}
+                {{ component($component->name)->is($is)->generateIsClasses() }}
+
+            </div>
+
+        </div>        
+        
+        <div class="{{ $component->nocontainer or 'container' }}">
+
+            {!! component($component->name, [$component->data])->is($is) !!}
                 
         </div>
 

@@ -1,5 +1,5 @@
 <div
-    class="FrontpageHeader {{ $modifiers }}"
+    class="FrontpageHeader {{ $is }}"
     style="
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.75),

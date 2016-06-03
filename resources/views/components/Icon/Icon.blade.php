@@ -1,4 +1,4 @@
-<div class="Icon {{ $modifiers }} ">
+<div class="Icon {{ $is }} ">
 
     {{ $icon }}
 

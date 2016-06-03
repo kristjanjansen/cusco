@@ -1,4 +1,4 @@
-<div class="HeaderTitle {{ $modifiers }} ">
+<div class="HeaderTitle {{ $is }} ">
 
     {{ $title }}
 

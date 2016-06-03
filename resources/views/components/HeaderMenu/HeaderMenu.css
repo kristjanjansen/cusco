@@ -10,6 +10,7 @@
 }
 
 .HeaderMenu__links {
+    display: flex;
     display: none ?if $mobile;
 }
 

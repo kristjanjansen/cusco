@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Blade;
-use App;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,14 +13,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        Blade::directive('component', function($expression) {
-            return "<?php echo App\Helpers\Blade::bladeComponent{$expression} ?>";
-        });
-
-        Blade::directive('vuecomponent', function($expression) {
-            return "<?php echo App\Helpers\Blade::vueComponent{$expression} ?>";
-        });
 
     }
   

@@ -11,7 +11,8 @@
 
 #### 0.3
 
-* Proposing componentGroup() helper
+* Changed 'Regions' to 'ComponentGroups'
+* Implementing ```component()``` and ```componentGroup()``` / ```region()``` / ```pattern()``` helpers
 
 ## About
 
@@ -114,46 +115,13 @@ return view('pages.content.static.show')
 
 It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet...
 
-#### 5. Regions
+#### 5. ComponentGroups
 
-Regions are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
+ComponentGroups are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
 
-Regions are stored in ```app/Regions```
+Regions are stored in ```app/ComponentGroups```
 
-Here is the same code again with Regions:
-
-```php
-
-// app/Http/Controllers/ContentStaticController.php
-// ...
-
-$post = \App\Content::whereType('static')->findOrFail($id);
-
-return view('pages.content.static.show')
-    ->with('header', Regions\Header::get())
-    ->with('content', Regions\ContentStaticShow::get($post)),
-    ->with('footer_ad', component('Ad')->is('inFooter'))
-    ->with('footer', Regions\Footer::get())
-    
-```
-
-Here's the same example with a ```region()``` helper method:
-
-```php
-
-// app/Http/Controllers/ContentStaticController.php
-
-$post = \App\Content::whereType('static')->findOrFail($id);
-
-return view('pages.content.static.show')
-    ->with('header', region('Header'))
-    ->with('content', region('ContentStaticShow', $post)),
-    ->with('footer_ad', component('Ad')->is('inFooter'))
-    ->with('footer', region('Footer'))
-    
-```
-
-...or with ```componentGroup()``` helper
+Here is the same code again with ComponentGroups:
 
 ```php
 
@@ -169,9 +137,11 @@ return view('pages.content.static.show')
     
 ```
 
+ComponentGroups are invoked using ```componentGroup()`` helper function.
 
 Regions are the most immature part of the proposal:
 
+* Naming. ComponentGroups are quite lengthy. For experimentation there are also ```region()``` and ```pattern()``` aliases.
 * Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
 * Should we pass ```$request```?
 * Are we simply calling controllers from controllers or is it ok in MVVC context?

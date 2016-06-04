@@ -20,7 +20,8 @@ The goal of this experiment is to clear up current view rendering mess and come 
 with a solution with clearer data and control flow. Currently the view logic
 is diffused into models, controllers, views and utility functions.
 
-The proposal is to introduce some MVVC and functional programming ideas to view rendering.
+The proposal is to introduce some MVVC and declarative programming ideas to view rendering.
+
 Here are some core concepts:
 
 #### 1. Models
@@ -134,7 +135,6 @@ Component groups are stored in ```app/ComponentGroups``` and can be generated us
 ```sh
 php artisan make:componentgroup GroupName
 ```
-
 
 Here is the same code again with ComponentGroups:
 

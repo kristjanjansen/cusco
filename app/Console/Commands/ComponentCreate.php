@@ -8,7 +8,7 @@ use Storage;
 class ComponentCreate extends Command
 {
 
-    protected $signature = 'make:component { name }';
+    protected $signature = 'make:component { name } {--vue}';
 
     public function handle()
     {
@@ -22,18 +22,10 @@ class ComponentCreate extends Command
 
         $yaml = [
             "data:",
-            "    $element: $name",
+            "    $element: I am $name",
         ];
 
         Storage::disk('root')->put("$dir/$name.yaml", implode("\n", $yaml));
-
-        $blade = [
-            "<div class=\"$name {{ \$is }}\">",
-            "    {{ \$title }}",
-            "</div>"
-        ];
-
-        Storage::disk('root')->put("$dir/$name.blade.php", implode("\n\n", $blade));
 
         $css = [
             "@import \"variables\";",
@@ -49,7 +41,7 @@ class ComponentCreate extends Command
             "<template>",
             "   <div class=\"$name {{ modifiers }}\">",
             "       <div class=\"$name"."__"."$element\">",
-            "           {{ variables.title }}",
+            "           {{ variables.title }} {{ message }}",
             "       </div>",
             "   </div>",
             "</template>",
@@ -57,14 +49,35 @@ class ComponentCreate extends Command
             "   import Component from '../Component';",
             "   export default Component.extend({",
             "       data() {",
+            "           return {", 
+            "               message: 'from Vue'",
+            "           }",
             "       }",
             "   })",
             "</script>"
         ];
 
-        Storage::disk('root')->put("$dir/$name.vue", implode("\n\n", $vue));
+        $blade = [
+            "<div class=\"$name {{ \$is }}\">",
+            "    {{ \$title }}",
+            "</div>"
+        ];
 
-        $this->line("$dir created");
+        if ($this->option('vue')) {
+
+            Storage::disk('root')->put("$dir/$name.vue", implode("\n\n", $vue));
+            $this->info("\nVue component $dir created");
+            $this->line("\nYour next steps:");
+            $this->line("\n    1. Edit resources/views/main.js to import your new component");
+            $this->line("    2. Run gulp\n");
+
+        } else {
+
+            Storage::disk('root')->put("$dir/$name.blade.php", implode("\n\n", $blade));
+            $this->info("\nBlade component $dir created\n");
+
+        }
+
 
     }
 

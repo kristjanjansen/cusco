@@ -11970,6 +11970,42 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _Component2.default.extend({
     data: function data() {
+
+        return {
+
+            message: 'from Vue'
+
+        };
+    }
+});
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"Ahaa2 {{ modifiers }}\">\n\n    <div class=\"Ahaa2__title\">\n\n        {{ variables.title }} {{ message }}\n\n    </div>\n\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/kristjanjansen/Documents/projects/cusco/resources/views/components/Ahaa2/Ahaa2.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../Component":30,"vue":27,"vue-hot-reload-api":2}],29:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Component = require('../Component');
+
+var _Component2 = _interopRequireDefault(_Component);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Component2.default.extend({
+    data: function data() {
         return { show: true };
     }
 });
@@ -11986,7 +12022,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../Component":29,"vue":27,"vue-hot-reload-api":2}],29:[function(require,module,exports){
+},{"../Component":30,"vue":27,"vue-hot-reload-api":2}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12008,7 +12044,7 @@ exports.default = _vue2.default.extend({
     }
 });
 
-},{"vue":27}],30:[function(require,module,exports){
+},{"vue":27}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12054,7 +12090,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../Component":29,"vue":27,"vue-hot-reload-api":2}],31:[function(require,module,exports){
+},{"../Component":30,"vue":27,"vue-hot-reload-api":2}],32:[function(require,module,exports){
 'use strict';
 
 var _vue = require('vue');
@@ -12073,6 +12109,10 @@ var _DynamicDisplay = require('./components/DynamicDisplay/DynamicDisplay.vue');
 
 var _DynamicDisplay2 = _interopRequireDefault(_DynamicDisplay);
 
+var _Ahaa = require('./components/Ahaa2/Ahaa2.vue');
+
+var _Ahaa2 = _interopRequireDefault(_Ahaa);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vueResource2.default);
@@ -12081,11 +12121,11 @@ new _vue2.default({
     el: 'body',
 
     components: {
-        Alert: _Alert2.default, DynamicDisplay: _DynamicDisplay2.default
+        Alert: _Alert2.default, DynamicDisplay: _DynamicDisplay2.default, Ahaa2: _Ahaa2.default
     }
 
 });
 
-},{"./components/Alert/Alert.vue":28,"./components/DynamicDisplay/DynamicDisplay.vue":30,"vue":27,"vue-resource":16}]},{},[31]);
+},{"./components/Ahaa2/Ahaa2.vue":28,"./components/Alert/Alert.vue":29,"./components/DynamicDisplay/DynamicDisplay.vue":31,"vue":27,"vue-resource":16}]},{},[32]);
 
 //# sourceMappingURL=main.js.map

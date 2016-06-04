@@ -45,6 +45,25 @@ class ComponentCreate extends Command
 
         Storage::disk('root')->put("$dir/$name.css", implode("\n\n", $css));
 
+        $vue = [
+            "<template>",
+            "   <div class=\"$name {{ modifiers }}\">",
+            "       <div class=\"$name"."__"."$element\">",
+            "           {{ variables.title }}",
+            "       </div>",
+            "   </div>",
+            "</template>",
+            "<script>",
+            "   import Component from '../Component';",
+            "   export default Component.extend({",
+            "       data() {",
+            "       }",
+            "   })",
+            "</script>"
+        ];
+
+        Storage::disk('root')->put("$dir/$name.vue", implode("\n\n", $vue));
+
         $this->line("$dir created");
 
     }

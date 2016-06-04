@@ -14,3 +14,15 @@ function componentGroup($component, ...$arguments) {
     return (new $class)->render(...$arguments);
         
 }
+
+function region($component, ...$arguments) {
+
+    return componentGroup($component, ...$arguments);
+        
+}
+
+function pattern($component, ...$arguments) {
+
+    return componentGroup($component, ...$arguments);
+        
+}

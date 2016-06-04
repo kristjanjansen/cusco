@@ -59,9 +59,19 @@ Controllers work as previously. Its recommended to have a minimal amount of view
 
 #### 4. Components
 
-Components are wrappers around partial views that can be rendered via ```component()``` helper or ```@component``` Blade directive. 
+Components are wrappers around partial views that can be rendered via ```component()``` helper. Both Blade and VueJS components are supported,  ```component()``` helper abstracts away the difference calling them.
 
-Both Blade and VueJS components are supported,  ```component()``` helper abstracts away the difference calling them. 
+Blade components can be generated using
+
+```sh
+php artisan make:component ComponentName
+```
+
+Vue components can be generated using
+
+```sh
+php artisan make:component ComponentName --vue
+```
 
 Components are stored in ```resources/views/components``` directory and they have simple flat structure:
 
@@ -115,11 +125,16 @@ return view('pages.content.static.show')
 
 It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet...
 
-#### 5. ComponentGroups
+#### 5. Component groups
 
-ComponentGroups are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
+Component groups are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
 
-Regions are stored in ```app/ComponentGroups```
+Component groups are stored in ```app/ComponentGroups``` and can be generated using
+
+```sh
+php artisan make:componentgroup GroupName
+```
+
 
 Here is the same code again with ComponentGroups:
 

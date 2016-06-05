@@ -206,13 +206,13 @@ class ContentTravelmates
         return component('Box')
             ->is('light')
             ->with('title', trans('forum.box.title'))
-            ->with('content', $forumPosts->transform(function($post) {
+            ->with('content', $forumPosts->render(function($post) {
                 return component('ListItem')
                     ->with('figure', component('UserImage')->is('small')->with('user', $post->user))
                     ->with('title', $post->present()->titleSmall)
                     ->with('route', $post->present()->route)
                     ->with('subtitle', $post->present()->meta)
-                    ->with('subtitle2', $post->topics->transform(function($topic) {
+                    ->with('subtitle2', $post->topics->render(function($topic) {
                         return component('Tag')
                             ->is('small')
                             ->is(collect(['yellow', 'red', 'orange'])->random())

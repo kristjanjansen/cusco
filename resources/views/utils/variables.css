@@ -57,8 +57,11 @@ $height-xxxl: calc($spacer * 24);
 
 /* Borders */
 
-$border-md: 3px solid $gray-lighter;
+$border-md: 2px solid $gray-lighter;
 
+/* Border radiuses */
+
+$border-radius-md: 3px;
 
 /* Fonts */
 
@@ -72,16 +75,18 @@ $font-size-xxl: 36px;
 $font-size-xxxl: 48px;
 $font-size-xxxxl: 64px;
 
-$font-text-sm: normal $font-size-sm $font-family, sans-serif;
-$font-text-md: normal $font-size-md $font-family, sans-serif;
-$font-text-lg: normal $font-size-lg $font-family, sans-serif;
+$line-height-md: 140%;
 
-$font-header-sm: bold $font-size-md $font-family, sans-serif;
-$font-header-md: bold $font-size-lg $font-family, sans-serif;
-$font-header-lg: bold $font-size-xl $font-family, sans-serif;
-$font-header-xl: bold $font-size-xxl $font-family, sans-serif;
-$font-header-xxl: bold $font-size-xxxl $font-family, sans-serif;
-$font-header-xxxl: bold $font-size-xxxxl $font-family, sans-serif;
+$font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
+$font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
+
+$font-header-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
+$font-header-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-header-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;
+$font-header-xl: bold $font-size-xxl/$line-height-md $font-family, sans-serif;
+$font-header-xxl: bold $font-size-xxxl/$line-height-md $font-family, sans-serif;
+$font-header-xxxl: bold $font-size-xxxxl/$line-height-md $font-family, sans-serif;
 
 
 /* Media queries */
@@ -99,3 +104,4 @@ $largedesktop: media (max-width: $tablet-width);
 /* Opacities */
 
 /* Animations */
+

@@ -1,14 +1,14 @@
 @import "variables";
 
-.FrontpageHeader {
+.Masthead {
     background-size: cover;
 }
 
-.FrontpageHeader__top {
+.Masthead__top {
     height: $height-md;
 }
 
-.FrontpageHeader__bottom {
+.Masthead__bottom {
     height: $height-xxxl;
     display: flex;
     justify-content: center;

@@ -1,13 +1,13 @@
 @import "variables";
 
-.UserImage {
+.ProfileImage {
     width: $width-lg;
     height: $height-lg;
     width: $width-md ?if $mobile;
     height: $height-md ?if $mobile;
 }
 
-.UserImage__image {
+.ProfileImage__image {
     border-radius: 100%;
     width: 100%;
 }

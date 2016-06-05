@@ -34,12 +34,6 @@ class Component {
     
     }
 
-    public function __toString() {
-
-        return $this->render();
-    
-    }
-
     public function generateIsClasses() {
 
         $component = $this->component;
@@ -75,5 +69,11 @@ class Component {
         }
     
     }
+
+    public function __toString() {
+
+        return $this->render();
     
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Collection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
+        Collection::macro('render', function ($callback) {
+            return $this
+                ->map($callback)
+                ->map(function($item) {
+                    return (string) $item;
+                })
+                ->implode('');
+        });
+    
     }
 }

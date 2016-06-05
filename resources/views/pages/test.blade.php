@@ -8,7 +8,14 @@
     </head>
     <body>
 
-        {!! $test !!}
+        @foreach ($contents as $content)
+            <div class="container margin-bottom-md">
+
+                {!! $content !!}
+                
+            </div>
+
+        @endforeach
         
         <script src="/js/main.js"></script>
     </body>

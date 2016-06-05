@@ -1,5 +1,8 @@
 @import "variables";
 
+.margin-bottom-md {
+    margin-bottom: $margin-md;
+}
 .padding-leftright-md {
     padding-left: $padding-md;
     padding-right: $padding-md;

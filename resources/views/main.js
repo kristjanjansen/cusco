@@ -10,7 +10,7 @@ new Vue({
     el: 'body',
 
     components: {
-        Alert, DynamicDisplay, Ahaa2
+        Alert
     },
 
 });

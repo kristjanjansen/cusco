@@ -1,18 +1,10 @@
-## Changelog
+## Setup
 
-#### 0.1
+No extra setup, just clone the project and
 
-* Initial version
-
-#### 0.2
-
-* Changed 'Composers' to 'Regions'
-* Proposing region() helper
-
-#### 0.3
-
-* Changed 'Regions' to 'ComponentGroups'
-* Implementing ```component()``` and ```componentGroup()``` / ```region()``` / ```pattern()``` helpers
+```sh
+php artisan serve
+```
 
 ## About
 
@@ -278,6 +270,20 @@ Views are still views but they are degraded to simple layouts that accomodate re
     @section('footer', $footer)
 
 ```
+
+## Changelog
+
+* 0.1
+    * Initial version
+* 0.2
+    * Changed 'Composers' to 'Regions'
+    * Proposing region() helper
+* 0.3
+    * Changed 'Regions' to 'ComponentGroups'
+    * Implementing ```component()``` and ```componentGroup()``` / ```region()``` / ```pattern()``` helpers
+* 0.4
+    * Implementing styleguide and sample layout
+  
 
 ## Why Cusco?
 

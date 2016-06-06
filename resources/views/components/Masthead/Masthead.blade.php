@@ -7,15 +7,15 @@
         ),
     url({{ $image }});"
 >    
-    <div class="Masthead__top container">
+    <div class="Masthead__nav container">
 
-        {!! $top !!}
+        {!! $nav !!}
 
     </div>
 
-    <div class="Masthead__bottom container">
+    <div class="Masthead__title container">
 
-        {!! $bottom !!}
+        {!! $title !!}
 
     </div>
 

@@ -33,20 +33,20 @@ class StyleguideController extends Controller {
                 return $component;
             })
             ->map(function($component) {
-                $data = collect($component->data)
+                $with = collect($component->with)
                     ->map(function($value) {
                         if (is_array($value) && array_key_exists('component', $value)) {
-                            $value = component($value['component'], [$value['data']])
+                            $value = component($value['component'], [$value['with']])
                                 ->is($value['is'] ?? null);
                         }
                         return $value;
                     });
-               $component->data = $data;
+               $component->with = $with;
                return $component;
             })
             ->map(function($component) use ($icons) {
                 if ($component->name == 'Icons') {
-                    $component->data['icons'] = $icons;
+                    $component->with['icons'] = $icons;
                 }
                 return $component;
             });

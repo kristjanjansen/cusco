@@ -6,8 +6,8 @@
 }
 
 .ProfileImage--small {
-    width: $width-sm;
-    height: $height-sm;
+    width: $width-md;
+    height: $height-md;
 }
 
 .ProfileImage__image {

@@ -10,6 +10,7 @@
     .ForumPost__left {
         padding-right: $padding-md;
         display: none ?if $mobile;
+        margin-left: -$margin-lg;
     }
 
     .ForumPost__title {

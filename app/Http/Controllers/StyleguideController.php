@@ -32,9 +32,21 @@ class StyleguideController extends Controller {
                 $component->is = $component->is ?? [];
                 return $component;
             })
+            ->map(function($component) {
+                $with = collect($component->with)
+                    ->map(function($value) {
+                        if (is_array($value) && array_key_exists('component', $value)) {
+                            $value = component($value['component'], [$value['with']])
+                                ->is($value['is'] ?? null);
+                        }
+                        return $value;
+                    });
+               $component->with = $with;
+               return $component;
+            })
             ->map(function($component) use ($icons) {
                 if ($component->name == 'Icons') {
-                    $component->data['icons'] = $icons;
+                    $component->with['icons'] = $icons;
                 }
                 return $component;
             });

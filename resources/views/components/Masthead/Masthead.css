@@ -4,13 +4,18 @@
     background-size: cover;
 }
 
-.Masthead__top {
-    height: $height-md;
+.Masthead__nav {
+    height: $height-lg;
+    height: $height-sm ?if $mobile;
 }
 
-.Masthead__bottom {
-    height: $height-xxxl;
+.Masthead__title {
+    align-items: center;
+    color: $white;
     display: flex;
+    font: $font-header-xl ?if $mobile;
+    font: $font-header-xxxl;
+    height: $height-xl ?if $mobile;
+    height: $height-xxxl;
     justify-content: center;
-    align-items: center;    
 }

@@ -22,7 +22,7 @@
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component($component->name, [$component->data]) !!}
+            {!! component($component->name, [$component->with]) !!}
                 
         </div>
 
@@ -41,7 +41,7 @@
         
         <div class="{{ $component->nocontainer or 'container' }}">
 
-            {!! component($component->name, [$component->data])->is($is) !!}
+            {!! component($component->name, [$component->with])->is($is) !!}
                 
         </div>
 

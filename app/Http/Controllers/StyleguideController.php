@@ -32,6 +32,18 @@ class StyleguideController extends Controller {
                 $component->is = $component->is ?? [];
                 return $component;
             })
+            ->map(function($component) {
+                $data = collect($component->data)
+                    ->map(function($value) {
+                        if (is_array($value) && array_key_exists('component', $value)) {
+                            $value = component($value['component'], [$value['data']])
+                                ->is($value['is'] ?? null);
+                        }
+                        return $value;
+                    });
+               $component->data = $data;
+               return $component;
+            })
             ->map(function($component) use ($icons) {
                 if ($component->name == 'Icons') {
                     $component->data['icons'] = $icons;

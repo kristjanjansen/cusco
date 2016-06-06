@@ -1,5 +1,9 @@
 data:
-    user: User
-    title: 
+    user:
+        component: ProfileImage
+        data:
+            image: http://bzfilm.com/wp-content/uploads/2012/01/norris-blackw.jpg
+            
+    title: ''
     meta: mitsushita 6 päeva tagasi
     body: Soovitaksin Los Angelsi ja California asemel enamik puhkusest veeta kõrval asuvas Nevada osariigis , Las Vegas jne. Palju odavam ja turvalisem paik kui California.Ilma autota on väga raske liikuda aga Los Angelisi linnaliikus on ka väga raske .Väljaspool linna on lihtsam.

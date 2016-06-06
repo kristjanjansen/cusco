@@ -10,13 +10,15 @@
 
     @foreach($components as $component)
 
-        <div class="styleguide container">
-            
-            <div class="styleguide-title">
-            
-                {{ $component->name }}
-
-            </div>
+        <div class="container" style="
+            height: 100px;
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            color: #777;
+        ">
+                        
+            {{ $component->name }}
 
         </div>        
         
@@ -28,14 +30,16 @@
 
         @foreach($component->is as $is)
         
-        <div class="styleguide container">
-            
-            <div class="styleguide-title">
-            
-                {{ $component->name }}
-                {{ component($component->name)->is($is)->generateIsClasses() }}
-
-            </div>
+        <div class="container" style="
+            height: 100px;
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            color: #777;
+        ">
+                        
+            {{ $component->name }}
+            {{ component($component->name)->is($is)->generateIsClasses() }}
 
         </div>        
         

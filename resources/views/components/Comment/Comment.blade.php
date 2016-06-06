@@ -8,9 +8,9 @@
 
     <div class="Comment__right">
 
-        <div class="Comment__title">
+        <div class="Comment__meta">
 
-            {!! $title !!}
+            {!! $meta !!}
 
         </div>
 

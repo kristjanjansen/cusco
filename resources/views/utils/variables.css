@@ -1,16 +1,33 @@
-/* Colors */
+/* Brand colors */
+
+$yellow: #f7ba00;
+$yellow-dark: #d67d00;
+
+$green: #78cc5c;
+$green-dark: #288f18;
+
+$red: #ed6262;
+$red-dark: #cb4949;
+$red-darker: #b13636;
+
+$purple: #8b84d7;
+$purple-dark: #5147c0;
+
+$blue: #4ac9e3;
+$blue-dark: #0087ae;
+
+$orange: #ff9a3e;
+$orange-dark: #d94d00;
+
+/* Neutral colors */
+
+$white: #fff;
+$black: #000;
 
 $gray-lighter: #ddd;
 $gray-light: #aaa;
 $gray-neutral: #555;
 
-$color-white: #fff;
-
-$brand-yellow: #f7ba00;
-$brand-yellow-dark: #d67d00;
-
-$brand-green: #78cc5c;
-$brand-green-dark: #288f18;
 
 
 /* Spacing */
@@ -49,7 +66,7 @@ $width-lg: calc($spacer * 6);
 
 $height-sm: calc($spacer * 2);
 $height-md: calc($spacer * 4); 
-$height-lg: calc($spacer * 6); 
+$height-lg: calc($spacer * 5); 
 $height-xl: calc($spacer * 10); 
 $height-xxl: calc($spacer * 18);
 $height-xxxl: calc($spacer * 24); 
@@ -57,8 +74,13 @@ $height-xxxl: calc($spacer * 24);
 
 /* Borders */
 
-$border-md: 3px solid $gray-lighter;
+$border-gray: 2px solid $gray-lighter;
+$border-green: 2px solid $green;
+$border-red: 2px solid $red;
 
+/* Border radiuses */
+
+$border-radius-md: 3px;
 
 /* Fonts */
 
@@ -66,22 +88,24 @@ $font-family: "Karla";
 
 $font-size-sm: 14px;
 $font-size-md: 16px;
-$font-size-lg: 20px;
-$font-size-xl: 28px;
-$font-size-xxl: 36px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
 $font-size-xxxl: 48px;
 $font-size-xxxxl: 64px;
 
-$font-text-sm: normal $font-size-sm $font-family, sans-serif;
-$font-text-md: normal $font-size-md $font-family, sans-serif;
-$font-text-lg: normal $font-size-lg $font-family, sans-serif;
+$line-height-md: 140%;
 
-$font-header-sm: bold $font-size-md $font-family, sans-serif;
-$font-header-md: bold $font-size-lg $font-family, sans-serif;
-$font-header-lg: bold $font-size-xl $font-family, sans-serif;
-$font-header-xl: bold $font-size-xxl $font-family, sans-serif;
-$font-header-xxl: bold $font-size-xxxl $font-family, sans-serif;
-$font-header-xxxl: bold $font-size-xxxxl $font-family, sans-serif;
+$font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
+$font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
+
+$font-header-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
+$font-header-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-header-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;
+$font-header-xl: bold $font-size-xxl/$line-height-md $font-family, sans-serif;
+$font-header-xxl: bold $font-size-xxxl/$line-height-md $font-family, sans-serif;
+$font-header-xxxl: bold $font-size-xxxxl/$line-height-md $font-family, sans-serif;
 
 
 /* Media queries */
@@ -99,3 +123,4 @@ $largedesktop: media (max-width: $tablet-width);
 /* Opacities */
 
 /* Animations */
+

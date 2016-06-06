@@ -1,5 +1,5 @@
 <div
-    class="FrontpageHeader {{ $is }}"
+    class="Masthead {{ $is }}"
     style="
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.75),
@@ -7,13 +7,13 @@
         ),
     url({{ $image }});"
 >    
-    <div class="FrontpageHeader__top container">
+    <div class="Masthead__top container">
 
         {!! $top !!}
 
     </div>
 
-    <div class="FrontpageHeader__bottom container">
+    <div class="Masthead__bottom container">
 
         {!! $bottom !!}
 

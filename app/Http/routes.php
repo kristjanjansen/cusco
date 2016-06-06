@@ -15,7 +15,7 @@ Route::get('/', 'FrontpageController@index');
 
 Route::get('/styleguide', 'StyleguideController@index');
 
-Route::get('/offers/random', 'OfferController@getRandom');
+Route::get('/promo', 'PromoController@getRandom');
 
 Route::get('/test', 'TestController@index');
 

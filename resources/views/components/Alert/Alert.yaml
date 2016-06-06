@@ -1,4 +1,4 @@
 data:
     title: This is an alert
 is:
-    - large
+    - error

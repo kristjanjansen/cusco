@@ -1,20 +1,20 @@
 @import "variables";
 
-.HeaderMenu {
+.Navbar {
     display: flex;
 }
 
-.HeaderMenu__hamburger {
+.Navbar__hamburger {
     display: none;
     display: block ?if $mobile;
 }
 
-.HeaderMenu__links {
+.Navbar__links {
     display: flex;
     display: none ?if $mobile;
 }
 
-.HeaderMenu__link {
+.Navbar__link {
     padding: $padding-sm;
     color: $gray-lighter;
     font: $font-header-sm;

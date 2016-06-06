@@ -13,8 +13,8 @@
     align-items: center;
     color: $white;
     display: flex;
-    font: $font-header-xl ?if $mobile;
-    font: $font-header-xxxl;
+    font: $font-heading-xl ?if $mobile;
+    font: $font-heading-xxxl;
     height: $height-xl ?if $mobile;
     height: $height-xxxl;
     justify-content: center;

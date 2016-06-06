@@ -17,8 +17,8 @@ class Content
             ->map(function($id) use ($faker) {
                 return (object) [
                     'id' => $id,
-                    'title' => rtrim($faker->text(20),'.'),
-                    'meta' => rtrim($faker->text(10),'.'),
+                    'title' => rtrim($faker->text(30),'.'),
+                    'meta' => rtrim($faker->text(30),'.'),
                     'body' => $faker->paragraph(10),
                     'comments' => collect(range(0,2))
                         ->map(function($id) use ($faker) {

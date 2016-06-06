@@ -17,5 +17,5 @@
 .Navbar__link {
     padding: $padding-sm;
     color: $gray-lighter;
-    font: $font-header-sm;
+    font: $font-heading-sm;
 }

@@ -12,6 +12,12 @@
         display: none ?if $mobile;
     }
 
+    .ForumPost__title {
+        font: $font-heading-xl;
+        font: $font-heading-lg ?if $mobile;
+        margin-bottom: $margin-xs;
+    }
+
     .ForumPost__meta {
         color: $gray-light;
         font: $font-text-sm;

@@ -22,8 +22,8 @@
             style: function() {
                 return { backgroundImage: `
                     linear-gradient(
-                        rgba(0, 0, 0, 0.5),
-                        rgba(0, 0, 0, 0.5)
+                        rgba(255, 128, 0, 0.5),
+                        rgba(255, 128, 0, 0.5)
                     ), url(${ this.promo.image })
                 `}
             }
@@ -36,7 +36,7 @@
         },
 
         ready() {
-            this.$http.get('/promo').then(function(res) {
+            this.$http.get(this.variables.route).then(function(res) {
                 this.promo = res.data
             });
         }

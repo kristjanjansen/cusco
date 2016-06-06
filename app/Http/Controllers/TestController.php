@@ -8,15 +8,27 @@ class TestController extends Controller {
 
     public function index() {
 
-        $content = (new App\Content)->find(1);
+        $post = (new App\Content)->find(1);
 
         return view('pages.test')
-            ->with('contents', collect()
-                ->push(component('Body')->with('body', '<p>Hello</p>'))
-                ->push($content->comments->render(function($post) {
-                        return component('Placeholder')->with('title', $post->body);
+            ->with('contents', [
+                    component('ForumPost')
+                        ->with('user', component('ProfileImage')
+                            ->with('image', 'http://placekitten.com/96/96')
+                        )
+                        ->with('title', $post->title)
+                        ->with('meta', $post->meta)
+                        ->with('body', $post->body),
+                    $post->comments->render(function($comment) {
+                        return component('ForumPost')
+                            ->with('user', component('ProfileImage')
+                                ->with('image', 'http://placekitten.com/96/96')
+                            )
+                            ->with('title', '')
+                            ->with('meta', $comment->meta)
+                            ->with('body', $comment->body);
                     })
-                )
+                ]
             );
     }
 

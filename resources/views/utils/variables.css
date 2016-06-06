@@ -1,16 +1,33 @@
-/* Colors */
+/* Brand colors */
+
+$yellow: #f7ba00;
+$yellow-dark: #d67d00;
+
+$green: #78cc5c;
+$green-dark: #288f18;
+
+$red: #ed6262;
+$red-dark: #cb4949;
+$red-darker: #b13636;
+
+$purple: #8b84d7;
+$purple-dark: #5147c0;
+
+$blue: #4ac9e3;
+$blue-dark: #0087ae;
+
+$orange: #ff9a3e;
+$orange-dark: #d94d00;
+
+/* Neutral colors */
+
+$white: #fff;
+$black: #000;
 
 $gray-lighter: #ddd;
 $gray-light: #aaa;
 $gray-neutral: #555;
 
-$color-white: #fff;
-
-$brand-yellow: #f7ba00;
-$brand-yellow-dark: #d67d00;
-
-$brand-green: #78cc5c;
-$brand-green-dark: #288f18;
 
 
 /* Spacing */
@@ -49,7 +66,7 @@ $width-lg: calc($spacer * 6);
 
 $height-sm: calc($spacer * 2);
 $height-md: calc($spacer * 4); 
-$height-lg: calc($spacer * 6); 
+$height-lg: calc($spacer * 5); 
 $height-xl: calc($spacer * 10); 
 $height-xxl: calc($spacer * 18);
 $height-xxxl: calc($spacer * 24); 
@@ -57,7 +74,9 @@ $height-xxxl: calc($spacer * 24);
 
 /* Borders */
 
-$border-md: 2px solid $gray-lighter;
+$border-gray: 2px solid $gray-lighter;
+$border-green: 2px solid $green;
+$border-red: 2px solid $red;
 
 /* Border radiuses */
 
@@ -69,9 +88,9 @@ $font-family: "Karla";
 
 $font-size-sm: 14px;
 $font-size-md: 16px;
-$font-size-lg: 20px;
-$font-size-xl: 28px;
-$font-size-xxl: 36px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
 $font-size-xxxl: 48px;
 $font-size-xxxxl: 64px;
 

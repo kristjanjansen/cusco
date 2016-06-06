@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App;
 
-class OfferController extends Controller {
+class PromoController extends Controller {
 
     public function getRandom() {
 
-        return \App\Offer::getRandom();
-
+        return (new App\Promo)->get();
+        
     }
 
 }

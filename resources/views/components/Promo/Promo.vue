@@ -31,8 +31,8 @@
         },
 
         ready() {
-            this.$http.get('/offers/random').then(function(res) {
-                this.images = res.data
+            this.$http.get('/promo').then(function(res) {
+                //this.images = res.data
             });
         }
 

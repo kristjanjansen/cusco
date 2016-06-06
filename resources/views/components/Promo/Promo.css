@@ -1,6 +1,6 @@
 @import "variables";
 
-.DynamicDisplay {
+.Promo {
     height: $height-xxl;
     display: flex;
     justify-content: center;
@@ -8,8 +8,9 @@
     background-size: cover;
 }
 
-    .DynamicDisplay__title {
-        font: $font-header-lg;
-        color: $color-white;
+    .Promo__title {
+        font: "Monoton", sans-serif;
+        font-size: $font-size-xxxxl;
+        color: $white;
         text-align: center;
     }

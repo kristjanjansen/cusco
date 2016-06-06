@@ -2,7 +2,7 @@
 
 .Comment {
     display: flex;
-    border: $border-md;
+    border: $border-gray;
     border-radius: $border-radius-md;
     padding: $padding-md;
 }

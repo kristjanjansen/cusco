@@ -2,22 +2,22 @@
 @import "vue-animate/dist/vue-animate";
 
 .Alert {
-    background-color: $brand-green;
-    color: $brand-green-dark;
-    font: $font-text-md;
-    height: $height-md;
-    padding: $padding-leftright-md; 
-    display: flex;
     align-items: center;
-    justify-content: space-between; 
-}
-
-.Alert--large {
-    font: $font-text-lg;
+    border-radius: $border-radius-md;
+    border: $border-green;
+    color: $green;
+    display: flex;
+    font: $font-header-md;
     height: $height-lg;
-    padding: $padding-leftright-lg; 
+    justify-content: space-between; 
+    padding: $padding-leftright-md; 
 }
 
-.Alert__close {
-    cursor: pointer;
+.Alert--error {
+    border: $border-red;
+    color: $red;
 }
+
+    .Alert__close {
+        cursor: pointer;
+    }

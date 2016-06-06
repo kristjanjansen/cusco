@@ -5,7 +5,8 @@ namespace App;
 
 class Content
 {
-
+    
+    protected $content;
    
     public function __construct()
     {

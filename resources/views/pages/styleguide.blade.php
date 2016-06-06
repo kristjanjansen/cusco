@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="/css/main.css">
-    </head>
-    <body>
+@extends('layouts.main')
+
+@section('content')
 
     @foreach($components as $component)
 
-        <div class="container" style="
-            height: 100px;
-            font-family: monospace;
-            display: flex;
-            align-items: center;
-            color: #777;
-        ">
-                        
-            {{ $component->name }}
+        <div class="container">
 
+            <div style="
+                height: 100px;
+                font-family: monospace;
+                display: flex;
+                align-items: center;
+                color: #777;
+            ">
+                            
+                {{ $component->name }}
+            
+            </div>
+        
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">
@@ -30,17 +28,21 @@
 
         @foreach($component->is as $is)
         
-        <div class="container" style="
-            height: 100px;
-            font-family: monospace;
-            display: flex;
-            align-items: center;
-            color: #777;
-        ">
-                        
-            {{ $component->name }}
-            {{ component($component->name)->is($is)->generateIsClasses() }}
+        <div class="container">
 
+            <div style="
+                height: 100px;
+                font-family: monospace;
+                display: flex;
+                align-items: center;
+                color: #777;
+            ">
+                            
+                {{ $component->name }}
+                {{ component($component->name)->is($is)->generateIsClasses() }}
+
+            </div> 
+        
         </div>        
         
         <div class="{{ $component->nocontainer or 'container' }}">
@@ -53,6 +55,5 @@
 
     @endforeach
 
-        <script src="/js/main.js"></script>
-    </body>
-</html>
+@endsection
+

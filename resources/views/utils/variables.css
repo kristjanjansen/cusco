@@ -22,13 +22,14 @@ $orange-dark: #d94d00;
 /* Neutral colors */
 
 $white: #fff;
-$black: #000;
 
+$gray-lighter: #eee;
 $gray-lighter: #ddd;
 $gray-light: #aaa;
-$gray-neutral: #555;
-
-
+$gray: #555;
+$gray-dark: #444;
+$gray-darker: #222;
+$gray-darkest: #111;
 
 /* Spacing */
 
@@ -38,40 +39,77 @@ $padding-xs: calc($spacer / 2);
 $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
+$padding-xl: calc($spacer * 5);
 
-$padding-left-sm: 0 0 0 $spacer;
-$padding-left-md: 0 0 0 calc($spacer * 2);
+$padding-left-xs: 0 0 0 $padding-xs;
+$padding-left-sm: 0 0 0 $padding-sm;
+$padding-left-md: 0 0 0 $padding-md;
+$padding-left-lg: 0 0 0 $padding-lg;
+$padding-left-xl: 0 0 0 $padding-xl;
 
-$padding-leftright-md: 0 calc($spacer * 2);
-$padding-leftright-lg: 0 calc($spacer * 3);
+$padding-right-xs: 0 $padding-xs 0 0;
+$padding-right-sm: 0 $padding-sm 0 0;
+$padding-right-md: 0 $padding-md 0 0;
+$padding-right-lg: 0 $padding-lg 0 0;
+$padding-right-xl: 0 $padding-xl 0 0;
 
-$padding-margin-md: 0 calc($spacer * 2);
-$padding-margin-lg: 0 calc($spacer * 3);
+$padding-leftright-xs: 0 $padding-xs;
+$padding-leftright-sm: 0 $padding-sm;
+$padding-leftright-md: 0 $padding-md;
+$padding-leftright-lg: 0 $padding-lg;
+$padding-leftright-xl: 0 $padding-xl;
 
-$padding-topbottom-sm: $spacer 0;
-$padding-topbottom-md: calc($spacer * 2) 0;
-$padding-topbottom-lg: calc($spacer * 3) 0;
+$padding-topbottom-xs: $padding-xs 0;
+$padding-topbottom-sm: $padding-sm 0;
+$padding-topbottom-md: $padding-md 0;
+$padding-topbottom-lg: $padding-lg 0;
+$padding-topbottom-xl: $padding-xl 0;
 
-$margin-xs: calc($spacer / 2);
-$margin-sm: $spacer;
-$margin-md: calc($spacer * 2);
-$margin-lg: calc($spacer * 3);
+$margin-xs: $padding-xs;
+$margin-sm: $padding-sm;
+$margin-md: $padding-md;
+$margin-lg: $padding-lg;
+$margin-xl: $padding-xl;
 
-$margin-topbottom-sm: $spacer 0;
-$margin-topbottom-md: calc($spacer * 2) 0;
-$margin-topbottom-lg: calc($spacer * 3) 0;
+$margin-left-xs: 0 0 0 $margin-xs;
+$margin-left-sm: 0 0 0 $margin-sm;
+$margin-left-md: 0 0 0 $margin-md;
+$margin-left-lg: 0 0 0 $margin-lg;
+$margin-left-xl: 0 0 0 $margin-xl;
 
+$margin-right-xs: 0 $margin-xs 0 0;
+$margin-right-sm: 0 $margin-sm 0 0;
+$margin-right-md: 0 $margin-md 0 0;
+$margin-right-lg: 0 $margin-lg 0 0;
+$margin-right-xl: 0 $margin-xl 0 0;
+
+$margin-leftright-xs: 0 $margin-xs;
+$margin-leftright-sm: 0 $margin-sm;
+$margin-leftright-md: 0 $margin-md;
+$margin-leftright-lg: 0 $margin-lg;
+$margin-leftright-xl: 0 $margin-xl;
+
+$margin-topbottom-xs: $margin-xs 0;
+$margin-topbottom-sm: $margin-sm 0;
+$margin-topbottom-md: $margin-md 0;
+$margin-topbottom-lg: $margin-lg 0;
+$margin-topbottom-xl: $margin-xl 0;
+
+$width-xs: calc($spacer);
 $width-sm: calc($spacer * 2);
 $width-md: calc($spacer * 4);
-$width-lg: calc($spacer * 5); 
+$width-lg: calc($spacer * 6); 
 $width-xl: calc($spacer * 10); 
+$width-xxl: calc($spacer * 18); 
+$width-xxxl: calc($spacer * 24); 
 
-$height-sm: calc($spacer * 2);
-$height-md: calc($spacer * 4); 
-$height-lg: calc($spacer * 5); 
-$height-xl: calc($spacer * 10); 
-$height-xxl: calc($spacer * 18);
-$height-xxxl: calc($spacer * 24); 
+$height-xs: $width-xs;
+$height-sm: $width-sm;
+$height-md: $width-md; 
+$height-lg: $width-lg;
+$height-xl: $width-xl;
+$height-xxl: $width-xxl;
+$height-xxxl: $width-xxxl;
 
 
 /* Borders */

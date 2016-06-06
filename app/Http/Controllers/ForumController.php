@@ -11,6 +11,7 @@ class ForumController extends Controller {
         $post = (new App\Content)->find((int)$id);
 
         return view('pages.forum')
+            ->with('header', component('ForumHeader')) 
             ->with('contents', collect()
                    
                     ->push(component('ForumPost')

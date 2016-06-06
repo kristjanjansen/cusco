@@ -11,6 +11,7 @@
     .Promo__title {
         font-family: Monoton, sans-serif;
         font-size: $font-size-xxxl;
+        font-size: $font-size-xl ?if $mobile;
         color: $yellow;
         text-align: center;
     }

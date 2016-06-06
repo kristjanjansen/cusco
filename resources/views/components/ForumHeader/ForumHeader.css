@@ -1,0 +1,5 @@
+@import "variables";
+
+.ForumHeader {
+    height: $height-md;
+}

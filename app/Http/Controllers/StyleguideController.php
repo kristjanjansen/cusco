@@ -33,7 +33,7 @@ class StyleguideController extends Controller {
                 return $component;
             })
             ->map(function($component) {
-                $with = collect($component->with)
+                $with = collect($component->with ?? [])
                     ->map(function($value) {
                         if (is_array($value) && array_key_exists('component', $value)) {
                             $value = component($value['component'], [$value['with']])

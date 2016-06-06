@@ -3,11 +3,15 @@
 .ProfileImage {
     width: $width-lg;
     height: $height-lg;
-    width: $width-md ?if $mobile;
-    height: $height-md ?if $mobile;
+}
+
+.ProfileImage--small {
+    width: $width-sm;
+    height: $height-sm;
 }
 
 .ProfileImage__image {
+    border: $border-gray;
     border-radius: 100%;
     width: 100%;
 }

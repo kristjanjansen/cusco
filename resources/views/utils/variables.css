@@ -61,8 +61,10 @@ $margin-topbottom-sm: $spacer 0;
 $margin-topbottom-md: calc($spacer * 2) 0;
 $margin-topbottom-lg: calc($spacer * 3) 0;
 
+$width-sm: calc($spacer * 2);
 $width-md: calc($spacer * 4);
-$width-lg: calc($spacer * 6); 
+$width-lg: calc($spacer * 5); 
+$width-xl: calc($spacer * 10); 
 
 $height-sm: calc($spacer * 2);
 $height-md: calc($spacer * 4); 

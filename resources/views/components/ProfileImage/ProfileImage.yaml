@@ -1,2 +1,4 @@
 with:
-    image: http://bzfilm.com/wp-content/uploads/2012/01/norris-blackw.jpg
+    image: http://placekitten.com/96/96
+is:
+    - small

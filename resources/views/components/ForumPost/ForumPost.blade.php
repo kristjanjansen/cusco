@@ -10,7 +10,7 @@
 
     @if ($title)
 
-        <div class="ForumPost_title">
+        <div class="ForumPost__title">
 
             {{ $title }}
 

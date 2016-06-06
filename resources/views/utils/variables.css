@@ -61,8 +61,10 @@ $margin-topbottom-sm: $spacer 0;
 $margin-topbottom-md: calc($spacer * 2) 0;
 $margin-topbottom-lg: calc($spacer * 3) 0;
 
+$width-sm: calc($spacer * 2);
 $width-md: calc($spacer * 4);
-$width-lg: calc($spacer * 6); 
+$width-lg: calc($spacer * 5); 
+$width-xl: calc($spacer * 10); 
 
 $height-sm: calc($spacer * 2);
 $height-md: calc($spacer * 4); 
@@ -100,12 +102,12 @@ $font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
 $font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
 $font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
 
-$font-header-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
-$font-header-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
-$font-header-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;
-$font-header-xl: bold $font-size-xxl/$line-height-md $font-family, sans-serif;
-$font-header-xxl: bold $font-size-xxxl/$line-height-md $font-family, sans-serif;
-$font-header-xxxl: bold $font-size-xxxxl/$line-height-md $font-family, sans-serif;
+$font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
+$font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-heading-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;
+$font-heading-xl: bold $font-size-xxl/$line-height-md $font-family, sans-serif;
+$font-heading-xxl: bold $font-size-xxxl/$line-height-md $font-family, sans-serif;
+$font-heading-xxxl: bold $font-size-xxxxl/$line-height-md $font-family, sans-serif;
 
 
 /* Media queries */

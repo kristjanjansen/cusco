@@ -8,8 +8,8 @@ class PromoController extends Controller {
 
     public function getRandom() {
 
-        return (new App\Promo)->get();
-        
+        return (new App\Promo)->getRandom();
+
     }
 
 }

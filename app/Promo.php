@@ -16,7 +16,8 @@ class Promo
             ->map(function($id) use ($faker) {
                 return (object) [
                     'id' => $id,
-                    'title' => rtrim($faker->text(20),'.')
+                    'title' => rtrim($faker->text(20),'.'),
+                    'image' => 'http://placekitten.com/600/200'
                 ];
             });
 
@@ -31,11 +32,11 @@ class Promo
 
     public function getRandom()
     {
-        return $this->promos;/*
-            ->shuffle()
-            ->first()
-            ->toJson();*/
 
+        return json_encode($this->promos
+                ->shuffle()
+                ->first()
+            );
     }
 
 }

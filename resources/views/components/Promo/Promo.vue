@@ -1,10 +1,10 @@
 <template>
 
-<div class="DynamicDisplay" :style="style" >
+<div class="Promo" :style="style" >
 
-    <div class="DynamicDisplay__title">
+    <div class="Promo__title">
 
-        {{ images[0].title }}
+        {{ promo.title }}
 
     </div>
 
@@ -20,19 +20,24 @@
 
         computed: {
             style: function() {
-                return { backgroundImage: 'url(' + this.images[0].image + ')' }
+                return { backgroundImage: `
+                    linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                    ), url(${ this.promo.image })
+                `}
             }
         },
 
         data: function() {
             return {
-                images: []
+                promo: {}
             }
         },
 
         ready() {
             this.$http.get('/promo').then(function(res) {
-                //this.images = res.data
+                this.promo = res.data
             });
         }
 

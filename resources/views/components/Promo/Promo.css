@@ -1,7 +1,7 @@
 @import "variables";
 
 .Promo {
-    height: $height-xxl;
+    height: $height-xl;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,8 +9,8 @@
 }
 
     .Promo__title {
-        font: "Monoton", sans-serif;
-        font-size: $font-size-xxxxl;
+        font-family: Monoton, sans-serif;
+        font-size: $font-size-xxxl;
         color: $white;
         text-align: center;
     }

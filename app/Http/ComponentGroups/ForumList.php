@@ -2,9 +2,11 @@
 
 namespace App\Http\ComponentGroups;
 
+use Illuminate\Http\Request;
+
 class ForumList {
 
-    public function render($posts)
+    public function render(Request $request, $posts)
     {
 
         return $posts->map(function($post) {

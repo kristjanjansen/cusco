@@ -19,7 +19,7 @@ class ComponentGroupCreate extends Command
         $php = [
             "<?php",
             "namespace App\Http\ComponentGroups;",
-            "use Request;",
+            "use Illuminate\Http\Request;",
             "class $name {",
             "    public function render(Request \$request, \$content)\n    {",
             "        return component('Placeholder')\n            ->with('title', \$content->title);",

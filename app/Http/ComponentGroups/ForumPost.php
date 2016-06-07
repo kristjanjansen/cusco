@@ -2,15 +2,20 @@
 
 namespace App\Http\ComponentGroups;
 
-use Request;
+use Illuminate\Http\Request;
 
 class ForumPost {
 
-    public function render(Request $request, $content)
+    public function render(Request $request, $post)
     {
 
-        return component('Placeholder')
-            ->with('title', $content->title);
+        return component('ForumPost')
+            ->with('user', component('ProfileImage')
+                ->with('image', $post->user->image)
+            )
+            ->with('title', $post->title)
+            ->with('meta', $post->meta)
+            ->with('body', $post->body);
 
     }
 

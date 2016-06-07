@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers;
+use Illuminate\Http\Request;
 
 function component($component, $with = []) {
 
@@ -11,7 +12,7 @@ function component($component, $with = []) {
 function componentGroup($component, ...$arguments) {
 
     $class = "\App\Http\ComponentGroups\\$component";
-    return (new $class)->render(...$arguments);
+    return (new $class)->render(new Request, ...$arguments);
         
 }
 

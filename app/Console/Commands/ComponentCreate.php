@@ -21,7 +21,7 @@ class ComponentCreate extends Command
         $element = 'title';
 
         $yaml = [
-            "data:",
+            "with:",
             "    $element: I am $name",
         ];
 

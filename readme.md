@@ -73,21 +73,44 @@ Components are stored in ```resources/views/components``` directory and they hav
 ```yaml
 - resources/views/components/Alert/Alert.vue
 - resources/views/components/Alert/Alert.css
-- resources/views/components/UserImage/UserImage.blade.php
-- resources/views/components/UserImage/UserImage.css
-- resources/views/components/UserImage/UserImage.yaml # Optional, for styleguide
+- resources/views/components/Alert/Alert.yaml # Optional, for styleguide
+- resources/views/components/ProfileImage/ProfileImage.blade.php
+- resources/views/components/ProfileImage/ProfileImage.css
+- resources/views/components/ProfileImage/ProfileImage.yaml # Optional, for styleguide
 - ...
 ```
 
 Component API is modeled after Laravel views, collections and other chained APIs and works as follows:
 
 ```php
-component('Name')
+
+component('MyComponent')
     ->is('small') // This used to be $modifiers variable
     ->is(collect(['orange', 'yellow'])->random()) // Can be chained and dynamic
-    ->with('data1', $data1) // Same as view()->with()
-    ->with('data2', $data2) // Can be chained
+    ->with('data1', 'Hello') // Same as view()->with()
+    ->with('data2', 'World') // Can be chained
     ->when($request->user()->can('see-content')) // Optional access control check
+```
+
+The uses the Blade template...
+
+```handlebars
+
+<!-- resources/views/components/MyComponent/MyComponent.blade.php -->
+
+<div class="MyComponent {{ $is }}">
+    <div class="MyComponent__data1"> {{ $data1 }} </div>
+    <div class="MyComponent__data2"> {{ $data2 }} </div>
+</div>
+```
+
+...and will be rendered into this HTML:
+
+```html
+<div class="MyComponent MyComponent--small MyComponent--orange">
+    <div class="MyComponent__data1">Hello</div>
+    <div class="MyComponent__data2">World</div>
+</div>
 ```
 
 Here is and example with model, presenters, controller and nested components:
@@ -118,11 +141,15 @@ return view('pages.content.static.show')
     
 ```
 
-It feels almost too much code for a controller. Lets try to move more complex and/or repeating parts away. Meet...
+It feels a bit too much code for a controller. Lets try to move more complex and/or repeating parts away. 
+
+Meet...
 
 #### 5. Component groups
 
 Component groups are similar to Laravel's [view composers](https://laravel.com/docs/5.2/views#view-composers), the are essentially ViewControllers that encapsulate certain complex or recurring component rendering.
+
+The have many names, they can also be **Regions**, **Patterns**, **Modules** etc.
 
 Component groups are stored in ```app/ComponentGroups``` and can be generated using
 
@@ -150,7 +177,7 @@ ComponentGroups are invoked using ```componentGroup()`` helper function.
 
 Regions are the most immature part of the proposal:
 
-* Naming. ComponentGroups are quite lengthy. For experimentation there are also ```region()``` and ```pattern()``` aliases.
+* Naming. For experimentation there are ```region()```, ```pattern()``` and ```module()``` aliases.
 * Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
 * Should we pass ```$request```?
 * Are we simply calling controllers from controllers or is it ok in MVVC context?
@@ -183,18 +210,18 @@ return view('pages.content.travemates.index')
 
 ```
 
-And here is the Region:
+And here is the ContentGroup:
 
 ```php
 
-// app/Regions/ContentTravelmates.php
+// app/ContentGroups/ContentTravelmates.php
 
 use Request;
 
 class ContentTravelmates
 {
 
-    public static function get(Request $request, $forumPosts)
+    public static function render(Request $request, $forumPosts)
     {
 
         return component('Box')
@@ -256,7 +283,7 @@ Views are still views but they are degraded to simple layouts that accomodate re
 
     <div class="row">
 
-        <div class="col-8 padding-right-sm">
+        <div class="col-8 padding-right-collapse-sm">
         
             @foreach($content as $content_item)
         
@@ -270,7 +297,7 @@ Views are still views but they are degraded to simple layouts that accomodate re
 
         </div>
 
-        <div class="col-4 padding-left-mobile-sm">
+        <div class="col-4 padding-left-collapse-sm">
         
             @foreach($sidebar as $sidebar_item)
         

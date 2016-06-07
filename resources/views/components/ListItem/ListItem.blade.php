@@ -22,6 +22,12 @@
 
             </div>
 
+            <div class="ListItem__subsubtitle">
+
+                {!! $subsubtitle !!}
+
+            </div>
+
         </div>
 
     </div>

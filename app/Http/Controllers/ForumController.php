@@ -23,6 +23,7 @@ class ForumController extends Controller {
                             )
                             ->with('title', $post->title)
                             ->with('subtitle', 'hello')
+                            ->with('subsubtitle', 'hello')
                             ->with('meta', $post->meta);
                         })
                 )

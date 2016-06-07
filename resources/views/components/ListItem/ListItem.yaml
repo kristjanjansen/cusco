@@ -1,7 +1,8 @@
-data:
+with:
     figure:
         component: ProfileImage
         with:
             image: /images/norris.jpg
     title: I am ListItem
     subtitle: With subtitle
+    subsubtitle: With subsubtitle

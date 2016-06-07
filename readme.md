@@ -3,6 +3,8 @@
 No extra setup, just clone the project and
 
 ```sh
+composer install
+npm install
 php artisan serve
 ```
 

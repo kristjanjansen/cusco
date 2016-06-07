@@ -13,22 +13,11 @@ class ForumController extends Controller {
         return view('pages.forum')
 
             ->with('header', component('ForumHeader')) 
+
             ->with('contents', collect()
-                
-                ->merge($posts->map(function($post) {
-                        return component('ListItem')
-                            ->with('figure', component('ProfileImage')
-                                ->with('image', $post->user->image)
-                            )
-                            ->with('title', $post->title)
-                            ->with('subtitle', 'hello')
-                            ->with('subsubtitle', $post->tags->map(function($tag) {
-                                return component('Tag')->with('title', $tag->title)->render();
-                            })->implode(' '))
-                            ->with('meta', $post->meta);
-                        })
-                )
-            
+                ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
+                ->push(component('Promo')->with('route', '/promo'))
+                ->merge(componentGroup('ForumList', $posts->forPage(2, 4)))
             );
     
     }

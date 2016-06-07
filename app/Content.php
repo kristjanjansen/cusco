@@ -12,7 +12,7 @@ class Content
         
         $faker = \Faker\Factory::create();
 
-        $this->content = collect(range(1,3))
+        $this->content = collect(range(1,20))
             ->map(function($id) use ($faker) {
                 return (object) [
                     'id' => $id,

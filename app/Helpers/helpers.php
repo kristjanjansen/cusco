@@ -26,3 +26,9 @@ function pattern($component, ...$arguments) {
     return componentGroup($component, ...$arguments);
         
 }
+
+function module($component, ...$arguments) {
+
+    return componentGroup($component, ...$arguments);
+        
+}

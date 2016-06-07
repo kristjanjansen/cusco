@@ -32,23 +32,25 @@ Presenters, essentialy ViewModels that augment the models with presenter methods
 Content::find(1)->present()->bodyShort
 ```
 
-See [this](https://laracasts.com/series/whip-monstrous-code-into-shape/episodes/11) for a reference.
-
-Presenters can be stored next to models, such as ```ContentPresenter.php``` and can be delivered as traits.
-
-Note: we should consider simpler naming convention, such as
+Instead of canonical ```->present()``` we consider simpler naming convention, such as
 
 ```
 Content::find(1)->vars()->bodyShort
 ```
 
+See [this screencast](https://laracasts.com/series/whip-monstrous-code-into-shape/episodes/11) for a reference.
+
+Presenters can be stored next to models, such as ```ContentPresenter.php``` and can be delivered as traits.
+
 Under discussion:
 
 * Will views only receive model data via presenters / vars or can they access model attributes directly?
 
+
 #### 3. Controllers
 
 Controllers work as previously. Its recommended to have a minimal amount of view-related code in ```index``` and ```show``` methods (see the example below)
+
 
 #### 4. Components
 
@@ -219,6 +221,25 @@ class ContentTravelmates
 
 }
 ```
+
+Note the ```render()``` method, it is a custom helper method of Collection to render components more easily:
+
+Instead writing...
+
+```php
+$my_eloquent_results->map(function($result) {
+    return collection('MyComponent')->with('result', $result)->render();
+})->implode('')
+```
+...you can write
+
+```php
+$my_eloquent_results->render(function($result) {
+    return collection('MyComponent')->with('result', $result);
+});
+```
+
+
 #### 6. Views
 
 Views are still views but they are degraded to simple layouts that accomodate rendered components and lay them out using helper classes.

@@ -18,23 +18,16 @@ class ComponentGroupCreate extends Command
         
         $php = [
             "<?php",
-            "",
             "namespace App\Http\ComponentGroups;",
-            "",
+            "use Request;",
             "class $name {",
-            "",
-            "    public function render(\$title)",
-            "    {",
-            "",
-            "        return component('Placeholder')",
-            "            ->with('title', \$title);",
-            "",
+            "    public function render(Request \$request, \$content)\n    {",
+            "        return component('Placeholder')\n            ->with('title', \$content->title);",
             "    }",
-            "",
             "}"
         ];
 
-        Storage::disk('root')->put("$dir/$name.php", implode("\n", $php));
+        Storage::disk('root')->put("$dir/$name.php", implode("\n\n", $php));
 
         $this->line("$dir/$name.php created");
 

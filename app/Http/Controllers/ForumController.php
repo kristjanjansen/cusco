@@ -35,7 +35,9 @@ class ForumController extends Controller {
                 ->push(component('Promo')->with('route', '/promo'))
                 ->merge(componentGroup('ForumComments', $post->comments))
             )
-            ->with('sidebar', collect())
+            ->with('sidebar', collect()
+                ->push(componentGroup('ForumAbout'))
+            )
         ;
     
     }

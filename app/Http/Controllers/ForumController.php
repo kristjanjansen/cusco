@@ -19,7 +19,6 @@ class ForumController extends Controller {
                         return component('ListItem')
                             ->with('figure', component('ProfileImage')
                                 ->with('image', $post->user->image)
-                                ->is('small')
                             )
                             ->with('title', $post->title)
                             ->with('subtitle', 'hello')

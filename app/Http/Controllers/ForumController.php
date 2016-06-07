@@ -13,21 +13,11 @@ class ForumController extends Controller {
         return view('pages.forum')
 
             ->with('header', component('ForumHeader')) 
+
             ->with('contents', collect()
-                
-                ->merge($posts->map(function($post) {
-                        return component('ListItem')
-                            ->with('figure', component('ProfileImage')
-                                ->with('image', $post->user->image)
-                                ->is('small')
-                            )
-                            ->with('title', $post->title)
-                            ->with('subtitle', 'hello')
-                            ->with('subsubtitle', 'hello')
-                            ->with('meta', $post->meta);
-                        })
-                )
-            
+                ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
+                ->push(component('Promo')->with('route', '/promo'))
+                ->merge(componentGroup('ForumList', $posts->forPage(2, 4)))
             );
     
     }
@@ -37,21 +27,12 @@ class ForumController extends Controller {
         $post = (new App\Content)->find((int)$id);
 
         return view('pages.forum')
-            ->with('header', component('ForumHeader')) 
-            ->with('contents', collect()
-                   
-                    ->push(component('ForumPost')
-                        ->with('user', component('ProfileImage')
-                            ->with('image', $post->user->image)
-                        )
-                        ->with('title', $post->title)
-                        ->with('meta', $post->meta)
-                        ->with('body', $post->body)
-                    )
 
-                    ->push(component('Promo')
-                        ->with('route', '/promo')
-                    )
+            ->with('header', component('ForumHeader')) 
+           
+            ->with('contents', collect()
+                    ->push(componentGroup('ForumPost', $post))
+                    ->push(component('Promo')->with('route', '/promo'))
 
                     ->merge($post->comments->map(function($comment) {
                         return component('ForumPost')

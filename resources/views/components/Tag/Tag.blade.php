@@ -1,5 +1,9 @@
 <div class="Tag {{ $is }}">
 
-    {{ $title }}
+    <div class="Tag__title">
+
+        {{ $title }}
+
+    </div>
 
 </div>

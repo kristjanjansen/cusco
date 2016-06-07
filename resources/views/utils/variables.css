@@ -23,8 +23,8 @@ $orange-dark: #d94d00;
 
 $white: #fff;
 
+$gray-lightest: #fafafa;
 $gray-lighter: #eee;
-$gray-lighter: #ddd;
 $gray-light: #aaa;
 $gray: #555;
 $gray-dark: #444;
@@ -35,23 +35,37 @@ $gray-darkest: #111;
 
 $spacer: 12px;
 
+$padding-xxxs: calc($spacer / 4);
+$padding-xxs: calc($spacer / 3);
 $padding-xs: calc($spacer / 2);
 $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
 $padding-xl: calc($spacer * 5);
 
-$padding-left-xs: 0 0 0 $padding-xs;
-$padding-left-sm: 0 0 0 $padding-sm;
-$padding-left-md: 0 0 0 $padding-md;
-$padding-left-lg: 0 0 0 $padding-lg;
-$padding-left-xl: 0 0 0 $padding-xl;
+$padding-top-xs: $padding-xs 0 0 0;
+$padding-top-sm: $padding-sm 0 0 0;
+$padding-top-md: $padding-md 0 0 0;
+$padding-top-lg: $padding-lg 0 0 0;
+$padding-top-xl: $padding-xl 0 0 0;
 
 $padding-right-xs: 0 $padding-xs 0 0;
 $padding-right-sm: 0 $padding-sm 0 0;
 $padding-right-md: 0 $padding-md 0 0;
 $padding-right-lg: 0 $padding-lg 0 0;
 $padding-right-xl: 0 $padding-xl 0 0;
+
+$padding-bottom-xs: 0 0 $padding-xs 0;
+$padding-bottom-sm: 0 0 $padding-sm 0;
+$padding-bottom-md: 0 0 $padding-md 0;
+$padding-bottom-lg: 0 0 $padding-lg 0;
+$padding-bottom-xl: 0 0 $padding-xl 0;
+
+$padding-left-xs: 0 0 0 $padding-xs;
+$padding-left-sm: 0 0 0 $padding-sm;
+$padding-left-md: 0 0 0 $padding-md;
+$padding-left-lg: 0 0 0 $padding-lg;
+$padding-left-xl: 0 0 0 $padding-xl;
 
 $padding-leftright-xs: 0 $padding-xs;
 $padding-leftright-sm: 0 $padding-sm;
@@ -71,17 +85,29 @@ $margin-md: $padding-md;
 $margin-lg: $padding-lg;
 $margin-xl: $padding-xl;
 
-$margin-left-xs: 0 0 0 $margin-xs;
-$margin-left-sm: 0 0 0 $margin-sm;
-$margin-left-md: 0 0 0 $margin-md;
-$margin-left-lg: 0 0 0 $margin-lg;
-$margin-left-xl: 0 0 0 $margin-xl;
+$margin-top-xs: $margin-xs 0 0 0;
+$margin-top-sm: $margin-sm 0 0 0;
+$margin-top-md: $margin-md 0 0 0;
+$margin-top-lg: $margin-lg 0 0 0;
+$margin-top-xl: $margin-xl 0 0 0;
 
 $margin-right-xs: 0 $margin-xs 0 0;
 $margin-right-sm: 0 $margin-sm 0 0;
 $margin-right-md: 0 $margin-md 0 0;
 $margin-right-lg: 0 $margin-lg 0 0;
 $margin-right-xl: 0 $margin-xl 0 0;
+
+$margin-bottom-xs: 0 0 $margin-xs 0;
+$margin-bottom-sm: 0 0 $margin-sm 0;
+$margin-bottom-md: 0 0 $margin-md 0;
+$margin-bottom-lg: 0 0 $margin-lg 0;
+$margin-bottom-xl: 0 0 $margin-xl 0;
+
+$margin-left-xs: 0 0 0 $margin-xs;
+$margin-left-sm: 0 0 0 $margin-sm;
+$margin-left-md: 0 0 0 $margin-md;
+$margin-left-lg: 0 0 0 $margin-lg;
+$margin-left-xl: 0 0 0 $margin-xl;
 
 $margin-leftright-xs: 0 $margin-xs;
 $margin-leftright-sm: 0 $margin-sm;
@@ -126,6 +152,7 @@ $border-radius-md: 3px;
 
 $font-family: "Karla";
 
+$font-size-xs: 13px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-lg: 18px;
@@ -136,10 +163,12 @@ $font-size-xxxxl: 64px;
 
 $line-height-md: 140%;
 
+$font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
 $font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
 $font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
 $font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
 
+$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
 $font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
 $font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-heading-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;

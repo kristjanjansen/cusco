@@ -1,14 +1,14 @@
 <template>
 
-<div class="Promo" :style="style" >
+    <div class="Promo {{ isClasses }}" :style="style" >
 
-    <div class="Promo__title">
+        <div class="Promo__title">
 
-        {{ promo.title }}
+            {{ promo.title }}
+
+        </div>
 
     </div>
-
-</div>
 
 </template>
 
@@ -36,7 +36,7 @@
         },
 
         ready() {
-            this.$http.get(this.variables.route).then(function(res) {
+            this.$http.get(this.vars.route).then(function(res) {
                 this.promo = res.data
             });
         }

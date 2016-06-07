@@ -2,10 +2,11 @@
 
 .ListItem {
     display: flex;
-    height: $height-md;
 }
 
     .ListItem__left {
+        display: flex;
+        align-items: center;
         padding-right: $padding-md;
         display: none ?if $mobile;
     }
@@ -16,10 +17,11 @@
     }
 
     .ListItem__title {
-        font: $font-heading-md;
+        font: $font-heading-lg;
     }
 
     .ListItem__subtitle {
         color: $gray-light;
         font: $font-text-sm;
+        margin: $margin-bottom-xs;
     }

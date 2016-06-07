@@ -187,13 +187,6 @@ public function index() {
 
 Component groups are invoked using ``componentGroup()`` helper function.
 
-Component groups are the most immature part of the proposal:
-
-* Naming. For experimentation there are ```region()```, ```pattern()``` and ```module()``` aliases.
-* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
-* Are we simply calling controllers from controllers or is it ok in MVVC context?
-* Should we surface the hide/show logic to controller level?
-
 Here is another more complex example:
 
 ```php
@@ -223,40 +216,34 @@ public function index() {
 
 ```
 
-And here is the ContentGroup:
+And here is the one of the ContentGroups:
 
 ```php
-
-// app/ContentGroups/ContentTravelmates.php
+// app/ContentGroups/ContentTravelmatesIndex.php
 
 use Request;
 
 class ContentTravelmates
 {
 
-    public static function render(Request $request, $forumPosts)
+    public function render(Request $request, $forumPosts)
     {
 
-        return component('Box')
-            ->is('light')
-            ->with('title', trans('forum.box.title'))
-            ->with('content', $forumPosts->render(function($post) {
-                return component('ListItem')
-                    ->with('figure', component('UserImage')->is('small')->with('user', $post->user))
-                    ->with('title', $post->present()->titleSmall)
-                    ->with('route', $post->present()->route)
-                    ->with('subtitle', $post->present()->meta)
-                    ->with('subtitle2', $post->topics->render(function($topic) {
-                        return component('Tag')
-                            ->is('small')
-                            ->is(collect(['yellow', 'red', 'orange'])->random())
-                            ->with('title', $destination->present()->smallTitle)
-                            ->with('route', $destination->present()->route);
-                        })
-                    );
-            }))
-            ->when($request->user()->can('see-forum-posts'));
-
+        return $forumPosts->render(function($post) {
+            return component('ListItem')
+                ->with('figure', component('UserImage')->is('small')->with('user', $post->user))
+                ->with('title', $post->present()->titleSmall)
+                ->with('route', $post->present()->route)
+                ->with('subtitle', $post->present()->meta)
+                ->with('subtitle2', $post->topics->render(function($topic) {
+                    return component('Tag')
+                        ->is('small')
+                        ->is(collect(['yellow', 'red', 'orange'])->random())
+                        ->with('title', $destination->present()->smallTitle)
+                        ->with('route', $destination->present()->route);
+                    })
+                );
+            });
     }
 
 }
@@ -278,6 +265,13 @@ $my_eloquent_results->render(function($result) {
     return collection('MyComponent')->with('result', $result);
 });
 ```
+
+Component groups are the most immature part of the proposal:
+
+* Naming. For experimentation there are ```region()```, ```pattern()``` and ```module()``` aliases.
+* Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
+* Are we simply calling controllers from controllers or is it ok in MVVC context?
+* Should we surface the hide/show logic to controller level?
 
 
 #### 6. Views

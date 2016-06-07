@@ -39,9 +39,9 @@ class ComponentCreate extends Command
 
         $vue = [
             "<template>",
-            "   <div class=\"$name {{ modifiers }}\">",
+            "   <div class=\"$name {{ isclasses }}\">",
             "       <div class=\"$name"."__"."$element\">",
-            "           {{ variables.title }} {{ message }}",
+            "           {{ vars.title }} {{ message }}",
             "       </div>",
             "   </div>",
             "</template>",

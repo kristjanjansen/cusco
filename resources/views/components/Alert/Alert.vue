@@ -1,9 +1,9 @@
 <template>
 
-<div class="Alert {{ modifiers }}" v-if="show" transition="fadeUp">
+<div class="Alert {{ isclasses }}" v-if="show" transition="fadeUp">
 
     <div class="Alert__title">
-        {{ variables.title }}
+        {{ vars.title }}
     </div>
 
     <div class="Alert__close" @click="show = false">

@@ -61,9 +61,9 @@ class Component {
 
             return '<component is="'
                 . $this->component
-                . '" modifiers="'
+                . '" isclasses="'
                 . $this->generateIsClasses()
-                . '" variables="'
+                . '" vars="'
                 . rawurlencode(json_encode($with))
                 . '" />';
         }

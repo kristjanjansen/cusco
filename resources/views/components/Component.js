@@ -2,10 +2,10 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
-    props: ['variables', 'modifiers'],
+    props: ['vars', 'isclasses'],
 
     ready() {
-        this.variables = JSON.parse(decodeURIComponent(this.variables))
+        this.vars = JSON.parse(decodeURIComponent(this.vars))
     }
 
 })

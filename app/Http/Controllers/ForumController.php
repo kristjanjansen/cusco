@@ -6,6 +6,30 @@ use App;
 
 class ForumController extends Controller {
 
+    public function index() {
+
+        $posts = (new App\Content)->get();
+
+        return view('pages.forum')
+
+            ->with('header', component('ForumHeader')) 
+            ->with('contents', collect()
+                
+                ->push($posts->render(function($post) {
+                        return component('ListItem')
+                            ->with('figure', component('ProfileImage')
+                                ->with('image', $post->user->image)
+                            )
+                            ->with('title', $post->title)
+                            ->with('subtitle', 'hello')
+                            ->with('meta', $post->meta);
+                        })
+                )
+            
+            );
+    
+    }
+
     public function show($id) {
 
         $post = (new App\Content)->find((int)$id);

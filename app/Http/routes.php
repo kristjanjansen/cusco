@@ -21,5 +21,7 @@ Route::get('/styleguide', 'StyleguideController@index');
 
 Route::get('/promo', 'PromoController@getRandom');
 
+Route::get('/content/forum', 'ForumController@index');
+
 Route::get('/content/forum/{id}', 'ForumController@show');
 

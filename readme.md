@@ -122,7 +122,7 @@ By using the following Blade template...
 
 Note that a hybrid **BEM** / **SUIT** naming convention is used. No strong opinions there, it is just useful when the new CSS naming convention differs visually from the old one so it makes the refactoring easier and makes the views mixing old and new components visually more parseable.
 
-OK, back to the code. Here is and example with model, presenters, controller and nested components:
+OK, back to the code. Here is an example with model, presenters, controller and nested components:
 
 ```php
 // app/Http/Controllers/ContentStaticController.php
@@ -207,7 +207,7 @@ public function index() {
         ->with('sidebar', [
             componentGroup('TravelmatesAbout'),
             component('Promo')->is('inSidebar'),
-            componentGroup('TravelmatesForumSidebar')
+            componentGroup('TravelmatesForumSidebar', $forumPosts)
         ])
         ->with('footer_promo', component('Promo')->is('inFooter'))
         ->with('footer', componentGroup('Footer'))

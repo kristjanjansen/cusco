@@ -35,6 +35,8 @@ $gray-darkest: #111;
 
 $spacer: 12px;
 
+$padding-xxxs: calc($spacer / 4);
+$padding-xxs: calc($spacer / 3);
 $padding-xs: calc($spacer / 2);
 $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
@@ -126,6 +128,7 @@ $border-radius-md: 3px;
 
 $font-family: "Karla";
 
+$font-size-xs: 13px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-lg: 18px;
@@ -136,10 +139,12 @@ $font-size-xxxxl: 64px;
 
 $line-height-md: 140%;
 
+$font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
 $font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
 $font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
 $font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
 
+$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
 $font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
 $font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-heading-lg: bold $font-size-xl/$line-height-md $font-family, sans-serif;

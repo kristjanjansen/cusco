@@ -35,6 +35,12 @@ class Content
                                 'meta' => rtrim($faker->text(10),'.'),
                                 'body' => $faker->paragraph(10),
                             ];
+                        }),
+                    'tags' => collect(range(1,3))
+                        ->map(function($id) use ($faker) {
+                            return (object) [
+                                'title' => rtrim($faker->text(5),'.')
+                            ];
                         })
                 ];
             });

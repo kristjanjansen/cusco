@@ -3,3 +3,5 @@ with:
     content: 
         - with content
         - and more content
+is:
+    - withBackground

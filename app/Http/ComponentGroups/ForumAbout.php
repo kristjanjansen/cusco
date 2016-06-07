@@ -10,10 +10,11 @@ class ForumAbout {
     {
 
         return component('Box')
+            ->is('withBackground')
             ->with('title', trans('forum.about.title'))
             ->with('content', collect()
                 ->push(component('Body')->with('body', trans('forum.about.body')))
-                ->push(component('Button')->with('title', trans('forum.about.button')))
+                ->push(component('Button')->is('wide')->with('title', trans('forum.about.button')))
             )
         ;
     

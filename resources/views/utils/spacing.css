@@ -65,6 +65,9 @@
 .margin-bottom-md {
     margin-bottom: $margin-md;
 }
+.margin-bottom-md::last-child {
+    margin-bottom: 0;
+}
 .margin-left-md {
     margin-left: $margin-md;
 }

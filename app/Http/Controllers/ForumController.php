@@ -11,15 +11,17 @@ class ForumController extends Controller {
         $posts = (new App\Content)->get();
 
         return view('pages.forum')
-
             ->with('header', component('ForumHeader')) 
-
-            ->with('contents', collect()
+            ->with('content', collect()
                 ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
                 ->push(component('Promo')->with('route', '/promo'))
                 ->merge(componentGroup('ForumList', $posts->forPage(2, 4)))
-            );
-    
+            )
+            ->with('sidebar', collect()
+                ->push(componentGroup('ForumAbout'))
+            )
+        ;
+
     }
 
     public function show($id) {
@@ -27,27 +29,17 @@ class ForumController extends Controller {
         $post = (new App\Content)->find((int)$id);
 
         return view('pages.forum')
-
             ->with('header', component('ForumHeader')) 
-           
-            ->with('contents', collect()
-                    ->push(componentGroup('ForumPost', $post))
-                    ->push(component('Promo')->with('route', '/promo'))
-
-                    ->merge($post->comments->map(function($comment) {
-                        return component('ForumPost')
-                            ->with('user', component('ProfileImage')
-                                ->with('image', $comment->user->image)
-                                ->is('small')
-                            )
-                            ->with('title', '')
-                            ->with('meta', $comment->meta)
-                            ->with('body', $comment->body)
-                            ->render();
-                        })
-                    )
-        
-            );
+            ->with('content', collect()
+                ->push(componentGroup('ForumPost', $post))
+                ->push(component('Promo')->with('route', '/promo'))
+                ->merge(componentGroup('ForumComments', $post->comments))
+            )
+            ->with('sidebar', collect()
+                ->push(componentGroup('ForumAbout'))
+            )
+        ;
+    
     }
 
 }

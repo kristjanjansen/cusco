@@ -1,0 +1,7 @@
+with:
+    title: I am Box
+    content: 
+        - with content
+        - and more content
+is:
+    - withBackground

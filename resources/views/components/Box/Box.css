@@ -1,0 +1,15 @@
+@import "variables";
+
+.Box {
+
+}
+
+.Box--withBackground {
+    background: $gray-lighter;
+    padding: $padding-md;
+}
+
+    .Box__title {
+        font: $font-heading-md;
+        margin-bottom: $margin-sm;
+    }

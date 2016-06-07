@@ -2,6 +2,7 @@
 
 .ListItem {
     display: flex;
+    height: $height-md;
 }
 
     .ListItem__left {

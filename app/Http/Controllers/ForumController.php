@@ -15,10 +15,11 @@ class ForumController extends Controller {
             ->with('header', component('ForumHeader')) 
             ->with('contents', collect()
                 
-                ->push($posts->render(function($post) {
+                ->merge($posts->map(function($post) {
                         return component('ListItem')
                             ->with('figure', component('ProfileImage')
                                 ->with('image', $post->user->image)
+                                ->is('small')
                             )
                             ->with('title', $post->title)
                             ->with('subtitle', 'hello')

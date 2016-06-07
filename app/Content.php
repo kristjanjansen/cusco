@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class Content
 {
     
@@ -54,6 +53,10 @@ class Content
 
         return $this->content->where('id', $id)->first();
 
+    }
+
+    public function vars() {
+        return (new ContentVars($this));
     }
 
 }

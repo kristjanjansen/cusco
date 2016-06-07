@@ -70,7 +70,7 @@ Vue components can be generated using
 php artisan make:component ComponentName --vue
 ```
 
-Components are stored in ```resources/views/components``` directory and they have simple flat structure:
+Components are stored in ```resources/views/components``` directory and have a simple flat structure:
 
 ```yaml
 - resources/views/components/Alert/Alert.vue
@@ -82,65 +82,73 @@ Components are stored in ```resources/views/components``` directory and they hav
 - ...
 ```
 
-Component API is modeled after Laravel views, collections and other chained APIs and works as follows:
+Component API is modeled after Laravel's trademark chained APIs and works as follows:
 
 ```php
-
 component('MyComponent')
     ->is('small') // This used to be $modifiers variable
     ->is(collect(['orange', 'yellow'])->random()) // Can be chained and dynamic
     ->with('data1', 'Hello') // Same as view()->with()
     ->with('data2', 'World') // Can be chained
-    ->when($request->user()->can('see-content')) // Optional access control check
+    ->show($request->user()->can('see-content')) // Or ->hide($request->user()->cannot('see-content'))
 ```
 
-The uses the Blade template...
+By using the following Blade template...
 
 ```handlebars
 
 <!-- resources/views/components/MyComponent/MyComponent.blade.php -->
 
 <div class="MyComponent {{ $is }}">
+  
     <div class="MyComponent__data1"> {{ $data1 }} </div>
+ 
     <div class="MyComponent__data2"> {{ $data2 }} </div>
+
 </div>
 ```
 
-...and will be rendered into this HTML:
+...the component will be rendered into this HTML:
 
 ```html
 <div class="MyComponent MyComponent--small MyComponent--orange">
+
     <div class="MyComponent__data1">Hello</div>
+  
     <div class="MyComponent__data2">World</div>
+
 </div>
 ```
 
-Here is and example with model, presenters, controller and nested components:
+Note that a hybrid **BEM** / **SUIT** naming convention is used. No strong opinions there, it is just useful when the new CSS naming convention differs visually from the old one so it makes the refactoring easier and makes the views mixing old and new components visually more parseable.
+
+OK, back to the code. Here is and example with model, presenters, controller and nested components:
 
 ```php
-
 // app/Http/Controllers/ContentStaticController.php
-// ...
 
-$post = Content::whereType('static')->findOrFail($id);
-$photo = Content::getRandomFeaturedPhoto();
+public function index() {
 
-return view('pages.content.static.show')
-    ->with('header', component('Header')
-        ->with('menu', config('menu.header'))
-        ->with('title', $post->vars()->title)
-        ->with('photo', $photo->vars())
-    )
-    ->with('content', [
-        component('ListItem') // Something like row component used to be
-            ->with('user', component('UserImage')->with('user', $post->user->vars())
+    $post = Content::whereType('static')->findOrFail($id);
+    $photo = Content::getRandomFeaturedPhoto();
+
+    return view('pages.content.static.show')
+        ->with('header', component('Header')
+            ->with('menu', config('menu.header'))
             ->with('title', $post->vars()->title)
-            ->with('subtitle', $post->vars()->meta)),
-        component('Body')->with('body', $post->vars()->body)
-    ])
-    ->with('footer_ad', component('Ad')->is('inFooter'))
-    ->with('footer', component('Footer')->with('menu', config('menu.footer')))
-    
+            ->with('image', $photo->vars()->headerImage)
+        )
+        ->with('content', [
+            component('ListItem') // Something like row component used to be
+                ->with('figure', component('ProfileImage')->with('user', $post->user)
+                ->with('title', $post->vars()->title)
+                ->with('subtitle', $post->vars()->meta)),
+            component('Body')->with('body', $post->vars()->body)
+        ])
+        ->with('footer_promo', component('Promo')->is('inFooter'))
+        ->with('footer', component('Footer')->with('menu', config('menu.footer')))
+
+}
 ```
 
 It feels a bit too much code for a controller. Lets try to move more complex and/or repeating parts away. 
@@ -153,62 +161,65 @@ Component groups are similar to Laravel's [view composers](https://laravel.com/d
 
 The have many names, they can also be **Regions**, **Patterns**, **Modules** etc.
 
-Component groups are stored in ```app/ComponentGroups``` and can be generated using
+Component groups are stored in ```app/Http/ComponentGroups``` and can be generated using
 
 ```sh
 php artisan make:componentgroup GroupName
 ```
 
-Here is the same code again with ComponentGroups:
+Here is the same code again with component groups:
 
 ```php
-
 // app/Http/Controllers/ContentStaticController.php
 
-$post = \App\Content::whereType('static')->findOrFail($id);
+public function index() {
 
-return view('pages.content.static.show')
-    ->with('header', componentGroup('Header'))
-    ->with('content', componentGroup('ContentStaticShow', $post)),
-    ->with('footer_ad', component('Ad')->is('inFooter'))
-    ->with('footer', componentGroup('Footer'))
-    
+    $post = \App\Content::whereType('static')->findOrFail($id);
+
+    return view('pages.content.static.show')
+        ->with('header', componentGroup('Header'))
+        ->with('content', componentGroup('ContentStaticShow', $post)),
+        ->with('footer_promo', component('Promo')->is('inFooter'))
+        ->with('footer', componentGroup('Footer'))
+        
+}
 ```
 
-ComponentGroups are invoked using ```componentGroup()`` helper function.
+Component groups are invoked using ``componentGroup()`` helper function.
 
-Regions are the most immature part of the proposal:
+Component groups are the most immature part of the proposal:
 
 * Naming. For experimentation there are ```region()```, ```pattern()``` and ```module()``` aliases.
 * Various loading options: Controller-only, Laravel view composers, raw calls from Blade etc
-* Should we pass ```$request```?
 * Are we simply calling controllers from controllers or is it ok in MVVC context?
 * Should we surface the hide/show logic to controller level?
 
 Here is another more complex example:
 
 ```php
-
 // app/Http/Controllers/ContentStaticController.php
-// ...
 
-$travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
-$forumPosts =  Content::whereType('forum')::getLatestPosts(5);
+public function index() {
 
-return view('pages.content.travemates.index')
-    ->with('header', Regions\Header::get())
-    ->with('content', [
-        Regions\ContentTravelmates::get($travelmatePosts->forPage(1, 12)),
-        Regions\AdMedium::get(),
-        Regions\ContentTravelmates::get($travelmatePosts->forPage(2, 12)),
-    ])
-    ->with('sidebar', [
-        Regions\TravelmatesAbout::get(),
-        Regions\AdSmall::get(),
-        Regions\ContentForumSidebar::get($forumPosts),
-    ])
-    ->with('footer_ad', Regions\AdLarge::get())
-    ->with('footer', Regions\Footer::get());
+    $travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
+    $forumPosts =  Content::whereType('forum')::getLatestPosts(5);
+
+    return view('pages.content.travelmates.index')
+        ->with('header', componentGroup('Header'))
+        ->with('content', [
+            componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(1, 12)),
+            component('Promo')->is('inMiddleOfContent'),
+            componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(2, 12)),
+        ])
+        ->with('sidebar', [
+            componentGroup('TravelmatesAbout'),
+            component('Promo')->is('inSidebar'),
+            componentGroup('TravelmatesForumSidebar')
+        ])
+        ->with('footer_promo', component('Promo')->is('inFooter'))
+        ->with('footer', componentGroup('Footer'))
+
+}
 
 ```
 

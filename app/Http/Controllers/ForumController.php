@@ -16,7 +16,7 @@ class ForumController extends Controller {
                    
                     ->push(component('ForumPost')
                         ->with('user', component('ProfileImage')
-                            ->with('image', 'http://placekitten.com/96/96')
+                            ->with('image', $post->user->image)
                         )
                         ->with('title', $post->title)
                         ->with('meta', $post->meta)
@@ -30,7 +30,7 @@ class ForumController extends Controller {
                     ->merge($post->comments->map(function($comment) {
                         return component('ForumPost')
                             ->with('user', component('ProfileImage')
-                                ->with('image', 'http://placekitten.com/96/96')
+                                ->with('image', $comment->user->image)
                                 ->is('small')
                             )
                             ->with('title', '')

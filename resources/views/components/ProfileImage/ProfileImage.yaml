@@ -1,4 +1,4 @@
 with:
-    image: http://placekitten.com/96/96
+    image: /images/norris.jpg
 is:
     - small

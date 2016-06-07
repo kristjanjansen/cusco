@@ -17,12 +17,22 @@ class Content
             ->map(function($id) use ($faker) {
                 return (object) [
                     'id' => $id,
+                    'user' => (object) [
+                        'image' =>
+                            collect(['/images/norris.jpg', '/images/carradine.jpg'])
+                                ->random()
+                    ],
                     'title' => rtrim($faker->text(30),'.'),
                     'meta' => rtrim($faker->text(30),'.'),
                     'body' => $faker->paragraph(10),
                     'comments' => collect(range(1,10))
                         ->map(function($id) use ($faker) {
                             return (object) [
+                                'user' => (object) [
+                                    'image' => 
+                                        collect(['/images/norris.jpg', '/images/carradine.jpg'])
+                                            ->random()
+                                ],
                                 'meta' => rtrim($faker->text(10),'.'),
                                 'body' => $faker->paragraph(10),
                             ];

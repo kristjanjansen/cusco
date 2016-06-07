@@ -17,7 +17,7 @@ class Promo
                 return (object) [
                     'id' => $id,
                     'title' => rtrim($faker->text(15),'.'),
-                    'image' => 'http://placekitten.com/600/200'
+                    'image' => '/images/lonewolf.jpg'
                 ];
             });
 

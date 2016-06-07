@@ -1,6 +1,6 @@
 nocontainer: true
 with:
-    image: http://www.plexmx.info/wp-content/uploads/2015/03/lone-wolf-mcquade-chuck-norris-david-carradine-jpg-1766863898.jpg
+    image: /images/lonewolf.jpg
     title: Hello
     nav:
         component: Navbar

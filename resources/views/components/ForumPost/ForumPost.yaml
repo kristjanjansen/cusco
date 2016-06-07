@@ -2,7 +2,7 @@ with:
     user:
         component: ProfileImage
         with:
-            image: http://placekitten.com/96/96
+            image: /images/norris.jpg
             
     title: ''
     meta: mitsushita 6 päeva tagasi

@@ -10,7 +10,7 @@
 
             <div class="col-7">
 
-                @foreach ($content as $content_item)
+                @foreach ($content->withoutLast() as $content_item)
                 
                 <div class="margin-bottom-md">
 
@@ -20,11 +20,17 @@
 
                 @endforeach
 
+                <div>
+
+                    {!! $content->last() !!}
+                        
+                </div>
+
             </div>
 
             <div class="col-4">
 
-                @foreach ($sidebar as $sidebar_item)
+                @foreach ($sidebar->withoutLast() as $sidebar_item)
                 
                 <div class="margin-bottom-md">
 
@@ -33,6 +39,12 @@
                 </div>
 
                 @endforeach
+
+                <div>
+
+                    {!! $sidebar->last() !!}
+                        
+                </div>
 
             </div>
 

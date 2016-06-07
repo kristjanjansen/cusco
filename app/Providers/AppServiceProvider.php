@@ -34,6 +34,14 @@ class AppServiceProvider extends ServiceProvider
                 })
                 ->implode('');
         });
+
+        Collection::macro('withoutLast', function () {
+            return $this->slice(0, $this->count() - 1);
+        });
+
+        Collection::macro('withoutFirst', function () {
+            return $this->slice(1, $this->count());
+        });
     
     }
 }

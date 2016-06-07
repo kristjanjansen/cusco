@@ -8,7 +8,7 @@
 
     <div class="Box__content">
 
-        @foreach ($content as $content_item)
+        @foreach ($content->withoutLast() as $content_item)
     
             <div class="margin-bottom-md">
 
@@ -17,6 +17,12 @@
             </div>
 
         @endforeach
+
+        <div>
+
+            {!! $content->last() !!}
+            
+        </div>
 
     </div>
 

@@ -12,12 +12,16 @@ class ForumController extends Controller {
 
         return view('pages.forum')
             ->with('header', component('ForumHeader')) 
-            ->with('contents', collect()
+            ->with('content', collect()
                 ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
                 ->push(component('Promo')->with('route', '/promo'))
                 ->merge(componentGroup('ForumList', $posts->forPage(2, 4)))
-            );
-    
+            )
+            ->with('sidebar', collect()
+                ->push(componentGroup('ForumAbout'))
+            )
+        ;
+
     }
 
     public function show($id) {
@@ -26,11 +30,13 @@ class ForumController extends Controller {
 
         return view('pages.forum')
             ->with('header', component('ForumHeader')) 
-            ->with('contents', collect()
+            ->with('content', collect()
                 ->push(componentGroup('ForumPost', $post))
                 ->push(component('Promo')->with('route', '/promo'))
                 ->merge(componentGroup('ForumComments', $post->comments))
-            );
+            )
+            ->with('sidebar', collect())
+        ;
     
     }
 

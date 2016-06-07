@@ -1,0 +1,10 @@
+@import "variables";
+
+.Box {
+
+}
+
+    .Box__title {
+        font: $font-heading-md;
+        margin-bottom: $margin-md;
+    }

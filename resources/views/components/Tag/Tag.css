@@ -8,9 +8,9 @@
     align-content: center;
     padding: $padding-xxxs $padding-sm;
     font: $font-text-xs;
-    background-color: $orange;
+    background-color: $gray-lighter;
 }
 
     .Tag__title {
-        color: $white;
+        color: $gray-light;
     }

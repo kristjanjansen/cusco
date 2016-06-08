@@ -4,18 +4,28 @@
     background-size: cover;
 }
 
-.Masthead__nav {
-    height: $height-lg;
-    height: $height-sm ?if $mobile;
-}
+    .Masthead__header {
+        height: $height-lg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.Masthead__title {
-    align-items: center;
-    color: $white;
-    display: flex;
-    font: $font-heading-xl ?if $mobile;
-    font: $font-heading-xxxl;
-    height: $height-xl ?if $mobile;
-    height: $height-xxxl;
-    justify-content: center;
-}
+    .Masthead__logo {
+        color: white;
+        font: $font-heading-sm;
+    }
+
+    .Masthead__title {
+        align-items: center;
+        color: $white;
+        display: flex;
+        font: $font-heading-xl ?if $mobile;
+        font: $font-heading-xxxl;
+        height: $height-xxl ?if $mobile;
+        height: $height-xxxxl;
+        justify-content: center;
+        margin-top: calc($spacer * -6);
+        text-align: center;
+
+    }

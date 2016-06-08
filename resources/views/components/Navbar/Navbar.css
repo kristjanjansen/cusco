@@ -1,7 +1,6 @@
 @import "variables";
 
 .Navbar {
-    display: flex;
 }
 
 .Navbar__hamburger {

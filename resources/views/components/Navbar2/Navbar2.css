@@ -1,0 +1,43 @@
+@import "variables";
+
+.Navbar2 {
+}
+
+    .Navbar2__hamburger {
+        cursor: pointer;
+        font: $font-text-xl;
+    }
+
+    .Navbar2__menu {
+        align-items: center;
+        background: $green;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        padding: $padding-md;
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+
+        .Navbar2__close {
+            color: $white;
+            cursor: pointer;
+            font-size: $font-size-xl;
+            padding: $padding-lg;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .Navbar2__links {
+            padding: $padding-lg;
+        }
+
+        .Navbar2__link {
+            color: $white;
+            font: $font-text-lg;
+            text-align: center;
+            padding: $padding-sm;
+        }

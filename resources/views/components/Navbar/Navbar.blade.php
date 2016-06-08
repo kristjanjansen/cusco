@@ -4,7 +4,7 @@
 
         <div class="Navbar__link">
 
-            ≡
+            Menu
 
         </div> 
 

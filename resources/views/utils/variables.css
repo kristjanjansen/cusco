@@ -125,9 +125,10 @@ $width-xs: calc($spacer);
 $width-sm: calc($spacer * 2);
 $width-md: calc($spacer * 4);
 $width-lg: calc($spacer * 6); 
-$width-xl: calc($spacer * 10); 
+$width-xl: calc($spacer * 12); 
 $width-xxl: calc($spacer * 18); 
 $width-xxxl: calc($spacer * 24); 
+$width-xxxxl: calc($spacer * 32); 
 
 $height-xs: $width-xs;
 $height-sm: $width-sm;
@@ -136,6 +137,7 @@ $height-lg: $width-lg;
 $height-xl: $width-xl;
 $height-xxl: $width-xxl;
 $height-xxxl: $width-xxxl;
+$height-xxxxl: $width-xxxxl;
 
 
 /* Borders */

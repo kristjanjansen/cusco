@@ -7,15 +7,29 @@
         ),
     url({{ $image }});"
 >    
-    <div class="Masthead__nav container">
+    <div class="container">
+    
+        <div class="Masthead__header">
 
-        {!! $nav !!}
+            <div class="Masthead__logo">
 
-    </div>
+                {!! $logo !!}
 
-    <div class="Masthead__title container">
+            </div>
+
+            <div class="Masthead__nav">
+
+                {!! $nav !!}
+
+            </div>
+
+        </div>
+
+        <div class="Masthead__title">
 
         {!! $title !!}
+
+        </div>
 
     </div>
 

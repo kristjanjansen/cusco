@@ -5,14 +5,18 @@
         <div
             class="Navbar2__hamburger"
             v-if="menuClosed"
-            @click="menuClosed = ! menuClosed"
+            @click="toggle()"
         >
             ≡
         </div>
 
-        <div class="Navbar2__menu" v-else>
+        <div
+            class="Navbar2__menu"
+            v-else
+            transition="zoom"
+        >
 
-            <div class="Navbar2__close" @click="menuClosed = ! menuClosed">×</div>
+            <div class="Navbar2__close" @click="toggle()">×</div>
 
             <div class="Navbar2__links">
 
@@ -32,11 +36,21 @@
 
 <script>
 
-   import Component from '../Component';
+    import Component from '../Component';
 
-   export default Component.extend({
+    export default Component.extend({
+        
+        methods: {
+            
+            toggle: function() {
 
-       data() {
+                this.menuClosed = ! this.menuClosed
+                
+            }
+        
+        },
+
+        data() {
 
            return {
 

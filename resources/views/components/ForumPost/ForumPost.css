@@ -27,3 +27,8 @@
     .ForumPost__body {
         font: $font-text-md;
     }
+
+    .ForumPost__footer {
+        display: flex;
+        justify-content: space-between;
+    }

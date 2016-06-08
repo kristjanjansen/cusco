@@ -57,7 +57,7 @@
 /* Margins */
 
 .margin-top-md {
-    margin-bottom: $margin-md;
+    margin-top: $margin-md;
 }
 .margin-right-md {
     margin-right: $margin-md;

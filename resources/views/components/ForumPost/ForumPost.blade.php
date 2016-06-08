@@ -30,6 +30,26 @@
 
         </div>
 
+    @if ($tags)
+
+        <div class="margin-top-md">
+
+            {!! $tags !!}
+
+        </div>
+
+    @endif
+
+    @if ($flags)
+
+        <div class="margin-top-md">
+
+            {!! $flags !!}
+
+        </div>
+
+    @endif
+
     </div>
 
 </div>

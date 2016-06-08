@@ -1,7 +1,7 @@
 nocontainer: true
 with:
     image: /images/lonewolf.jpg
-    title: Hello
+    title: Hello this is a long header that has to fit in somehow
     nav:
         component: Navbar
         with:

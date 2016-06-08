@@ -18,6 +18,8 @@ class ForumComments {
                 ->with('title', '')
                 ->with('meta', $comment->meta)
                 ->with('body', $comment->body)
+                ->with('tags', '')
+                ->with('flags', '')
                 ->render();
             });
 

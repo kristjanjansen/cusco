@@ -19,13 +19,13 @@
 
             <div class="Masthead__nav">
 
-                {!! $nav !!}
+                {!! $navbar !!}
 
             </div>
 
             <div class="Masthead__mobileNav">
 
-                {!! $mobile_nav !!}
+                {!! $navbar_mobile !!}
 
             </div>
 

@@ -3,8 +3,8 @@ with:
     image: /images/lonewolf.jpg
     title: Hello this is a long header that has to fit in somehow
     logo: ''
-    nav:
-        component: Navbar3
+    navbar:
+        component: Navbar
         with:
             links:
                 - One
@@ -14,8 +14,8 @@ with:
                 - Four
                 - Five
                 - Six
-    mobile_nav:
-        component: Navbar2
+    navbar_mobile:
+        component: NavbarMobile
         with:
             links:
                 - One

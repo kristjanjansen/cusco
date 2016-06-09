@@ -1,11 +1,11 @@
 <template>
 
-    <nav class="Navbar3 {{ isclasses }} ">
+    <nav class="Navbar {{ isclasses }} ">
 
-        <div class="Navbar3__links">
+        <div class="Navbar__links">
 
             <div
-                class="Navbar3__link"
+                class="Navbar__link"
                 v-for="link in vars.links"
                 @click="toggleSubmenu($index)"
                 @mouseover="toggleSubmenu($index)"
@@ -18,18 +18,18 @@
         </div>
 
         <div
-            class="Navbar3__popover"
+            class="Navbar__popover"
             v-if="submenuOpen"
             transition="fadeZoom"
             v-on-clickaway="toggleSubmenu()"
         >
-        <div class="Navbar3__arrowWrapper">            
-        <div class="Navbar3__arrow"></div>
+        <div class="Navbar__arrowWrapper">            
+        <div class="Navbar__arrow"></div>
         </div>
 
-        <div class="Navbar3__sublinks">
+        <div class="Navbar__sublinks">
 
-            <div class="Navbar3__sublink" v-for="sublink in vars.sublinks">
+            <div class="Navbar__sublink" v-for="sublink in vars.sublinks">
 
                 {{ sublink }}
 
@@ -46,11 +46,11 @@
 <script>
 
     import Component from '../Component';
-    import { mixin as Clickaway } from 'vue-clickaway';
+    import { mixin as VueClickaway } from 'vue-clickaway';
 
     export default Component.extend({
 
-        mixins: [ Clickaway ],
+        mixins: [ VueClickaway ],
 
         methods: {
             

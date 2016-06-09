@@ -15,6 +15,16 @@
         font: $font-heading-sm;
     }
 
+    .Masthead__nav {
+        display: block;
+        display: none ?if $mobile;
+    }
+
+    .Masthead__mobileNav {
+        display: none;
+        display: block ?if $mobile;
+    }
+
     .Masthead__title {
         align-items: center;
         color: $white;

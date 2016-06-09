@@ -23,6 +23,12 @@
 
             </div>
 
+            <div class="Masthead__mobileNav">
+
+                {!! $mobile_nav !!}
+
+            </div>
+
         </div>
 
         <div class="Masthead__title">

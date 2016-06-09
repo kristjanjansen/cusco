@@ -5,12 +5,11 @@
 
     .Navbar3__links {
         display: flex;
-        display: none ?if $mobile;
     }
 
     .Navbar3__link {
         padding: $padding-sm;
-        color: $gray-light;
+        color: $gray-lighter;
         font: $font-heading-sm;
     }
 

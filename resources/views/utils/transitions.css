@@ -1,5 +1,16 @@
+.fadeCollapse-transition {
+  transition: all 300ms ease;
+  opacity: 1;
+}
+
+.fadeCollapse-enter,
+.fadeCollapse-leave {
+  opacity: 0;
+  transform: translateY(0);
+}
+
 .fadeZoom-transition {
-  transition: all 200ms ease;
+  transition: all 300ms ease;
   opacity: 1;
 }
 

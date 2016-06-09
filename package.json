@@ -14,6 +14,7 @@
     "postcss-import": "^8.1.2",
     "postcss-responsive-type": "^0.3.3",
     "postcss-simple-vars": "^2.0.0",
+    "vue-clickaway": "^1.1.1",
     "vue-resource": "^0.7.0"
   }
 }

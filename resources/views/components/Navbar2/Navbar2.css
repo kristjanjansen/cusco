@@ -6,6 +6,7 @@
     .Navbar2__hamburger {
         cursor: pointer;
         font: $font-text-xl;
+        color: $gray-lighter;
     }
 
     .Navbar2__menu {

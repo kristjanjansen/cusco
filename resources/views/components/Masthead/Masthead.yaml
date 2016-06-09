@@ -2,13 +2,20 @@ nocontainer: true
 with:
     image: /images/lonewolf.jpg
     title: Hello this is a long header that has to fit in somehow
-    logo:
-        component: Navbar
-        with:
-            links:
-                - Trip.ee
+    logo: ''
     nav:
         component: Navbar3
+        with:
+            links:
+                - One
+                - Two
+                - Three
+            sublinks:
+                - Four
+                - Five
+                - Six
+    mobile_nav:
+        component: Navbar2
         with:
             links:
                 - One

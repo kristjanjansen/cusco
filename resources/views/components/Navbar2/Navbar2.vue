@@ -13,7 +13,7 @@
         <div
             class="Navbar2__menu"
             v-else
-            transition="zoom"
+            transition="fadeZoom"
         >
 
             <div class="Navbar2__close" @click="toggle()">×</div>

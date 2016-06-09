@@ -17,7 +17,7 @@
           
         </div>
 
-        <div class="Navbar3__popover" v-if="submenuOpen">
+        <div class="Navbar3__popover" v-if="submenuOpen" transition="fadeZoom">
         <div class="Navbar3__arrowWrapper">            
         <div class="Navbar3__arrow"></div>
         </div>

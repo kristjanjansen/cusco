@@ -16,7 +16,6 @@
 
     .Navbar3__popover {
         width: $width-xl;
-        margin-left: $margin-xl;
     }
 
     .Navbar3__arrowWrapper {

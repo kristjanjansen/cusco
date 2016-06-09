@@ -1,0 +1,10 @@
+.fadeZoom-transition {
+  transition: all 200ms ease;
+  opacity: 1;
+}
+
+.fadeZoom-enter,
+.fadeZoom-leave {
+  opacity: 0;
+  transform: scale(0.7);
+}

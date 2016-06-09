@@ -1,0 +1,51 @@
+@import "variables";
+
+.Navbar3 {
+}
+
+    .Navbar3__links {
+        display: flex;
+        display: none ?if $mobile;
+    }
+
+    .Navbar3__link {
+        padding: $padding-sm;
+        color: $gray-light;
+        font: $font-heading-sm;
+    }
+
+    .Navbar3__popover {
+        width: $width-xl;
+        margin-left: $margin-xl;
+    }
+
+    .Navbar3__arrowWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Navbar3__arrow {
+        width: 0; 
+        height: 0; 
+        border-left: $width-xxs solid transparent;
+        border-right: $width-xxs solid transparent;
+        border-bottom: $width-xxs solid $green;
+    }
+
+    .Navbar3__sublinks {
+        border-radius: $border-radius-md;
+        background: $green;
+        padding: $padding-xs 0;
+    }
+
+    .Navbar3__sublink {
+        color: $white;
+        font: $font-text-lg;
+        padding: $padding-xs $padding-sm;
+    }
+
+    .Navbar3__sublink:hover {
+        color: $white;
+        font: $font-text-lg;
+        background: $green-dark;
+    }

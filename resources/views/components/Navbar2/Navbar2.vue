@@ -26,6 +26,12 @@
                     
                 </div>
 
+                <div class="Navbar2__link" v-for="link in vars.sublinks">
+                    
+                    {{ link }}
+                    
+                </div>
+
             </div>
 
        </div>
@@ -43,9 +49,7 @@
         methods: {
             
             toggle: function() {
-
                 this.menuClosed = ! this.menuClosed
-                
             }
         
         },
@@ -53,9 +57,7 @@
         data() {
 
            return {
-
                menuClosed: true
-
            }
 
        }

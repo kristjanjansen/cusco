@@ -13,7 +13,7 @@
         <div
             class="Navbar2__menu"
             v-else
-            transition="zoom"
+            transition="fadeZoom"
         >
 
             <div class="Navbar2__close" @click="toggle()">×</div>
@@ -21,6 +21,12 @@
             <div class="Navbar2__links">
 
                 <div class="Navbar2__link" v-for="link in vars.links">
+                    
+                    {{ link }}
+                    
+                </div>
+
+                <div class="Navbar2__link" v-for="link in vars.sublinks">
                     
                     {{ link }}
                     
@@ -43,9 +49,7 @@
         methods: {
             
             toggle: function() {
-
                 this.menuClosed = ! this.menuClosed
-                
             }
         
         },
@@ -53,9 +57,7 @@
         data() {
 
            return {
-
                menuClosed: true
-
            }
 
        }

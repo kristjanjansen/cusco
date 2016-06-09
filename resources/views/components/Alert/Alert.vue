@@ -1,6 +1,6 @@
 <template>
 
-<div class="Alert {{ isclasses }}" v-if="show" transition="fadeUp">
+<div class="Alert {{ isclasses }}" v-if="show" transition="fadeCollapse">
 
     <div class="Alert__title">
         {{ vars.title }}

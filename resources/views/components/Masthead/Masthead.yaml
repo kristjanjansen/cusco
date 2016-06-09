@@ -8,9 +8,13 @@ with:
             links:
                 - Trip.ee
     nav:
-        component: Navbar
+        component: Navbar3
         with:
             links:
                 - One
                 - Two
                 - Three
+            sublinks:
+                - Four
+                - Five
+                - Six

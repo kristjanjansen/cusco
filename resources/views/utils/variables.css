@@ -121,6 +121,7 @@ $margin-topbottom-md: $margin-md 0;
 $margin-topbottom-lg: $margin-lg 0;
 $margin-topbottom-xl: $margin-xl 0;
 
+$width-xxs: calc($spacer / 2);
 $width-xs: calc($spacer);
 $width-sm: calc($spacer * 2);
 $width-md: calc($spacer * 4);
@@ -130,6 +131,7 @@ $width-xxl: calc($spacer * 18);
 $width-xxxl: calc($spacer * 24); 
 $width-xxxxl: calc($spacer * 32); 
 
+$height-xxs: $width-xxs;
 $height-xs: $width-xs;
 $height-sm: $width-sm;
 $height-md: $width-md; 

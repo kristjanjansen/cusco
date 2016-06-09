@@ -3,3 +3,7 @@ with:
         - One
         - Two
         - Three
+    sublinks:
+        - Four
+        - Five
+        - Six

@@ -1,8 +1,6 @@
-## Setup
+## Installation
 
-No extra setup, just clone the project and
-
-```sh
+```
 composer install
 npm install
 php artisan serve
@@ -55,6 +53,8 @@ Controllers work as previously. Its recommended to have a minimal amount of view
 
 
 #### 4. Components
+
+![](screenshot.png)
 
 Components are wrappers around partial views that can be rendered via ```component()``` helper. Both Blade and VueJS components are supported,  ```component()``` helper abstracts away the difference calling them.
 

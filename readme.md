@@ -1,11 +1,3 @@
-## Installation
-
-```
-composer install
-npm install
-php artisan serve
-```
-
 ## About
 
 The goal of this experiment is to clear up current view rendering mess and come up
@@ -339,6 +331,13 @@ Views are still views but they are degraded to simple layouts that accomodate re
 * 0.4
     * Implementing styleguide and sample layout
   
+## Installation
+
+```
+composer install
+npm install
+php artisan serve
+```
 
 ## Why Cusco?
 

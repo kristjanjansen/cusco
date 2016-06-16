@@ -5,8 +5,12 @@
         <div v-el:writer class="Editor__writer"></div>
         
         <div class="Editor__preview">
+
+            <div class="Body">
             
             {{{ body }}}
+
+            </div>
 
         </div>
 
@@ -55,7 +59,7 @@
                     this.body = res.data.body
                 });
 
-            }.bind(this), 400));
+            }.bind(this), 200));
        }
 
    })

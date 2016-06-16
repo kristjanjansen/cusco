@@ -29,3 +29,10 @@ Route::get('/content/forum', 'ForumController@index');
 
 Route::get('/content/forum/{id}', 'ForumController@show');
 
+Route::post('/render', function() {
+
+    return Response::json([
+        'body' => nl2br(Request::input('body'))
+    ]);
+
+});

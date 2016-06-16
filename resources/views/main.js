@@ -9,6 +9,7 @@ import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
 import Promo from './components/Promo/Promo.vue';
 
 Vue.use(VueResource);
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 
 new Vue({
     el: 'body',

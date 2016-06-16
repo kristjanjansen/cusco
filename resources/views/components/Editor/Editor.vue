@@ -39,7 +39,7 @@
        },
 
        ready: function() {
-
+            console.log(document.querySelector('#token').getAttribute('content'));
             var editor = brace.edit(this.$els.writer);
             editor.setTheme("ace/theme/chrome");
             editor.getSession().setMode("ace/mode/markdown");
@@ -51,12 +51,11 @@
 
             editor.getSession().on('change', _.throttle(function(e) {
 
-            //    this.$http.post('render').then(function(res) {
-            //        this.promo = res.data
-            //    });
+                this.$http.post('render', {body: editor.getValue()}).then(function(res) {
+                    this.body = res.data.body
+                });
 
-                this.body = editor.getValue().replace(/\n/g, '<br>');
-            }.bind(this), 200));
+            }.bind(this), 400));
        }
 
    })

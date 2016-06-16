@@ -7,13 +7,17 @@ with:
         component: Navbar
         with:
             links:
-                - One
-                - Two
-                - Three
+                - Trip.ee
+                - Lennupakkuimised
+                - Reisikaaslased
+                - Foorum
+                - Minu Trip.ee
             sublinks:
-                - Four
-                - Five
-                - Six
+                - Profiil
+                - Sõnumid
+                - Muuda profiili
+                - Administreeri
+                - Logi välja
     navbar_mobile:
         component: NavbarMobile
         with:
@@ -22,6 +26,8 @@ with:
                 - Two
                 - Three
             sublinks:
-                - Four
-                - Five
-                - Six
+                - Profiil
+                - Sõnumid
+                - Muuda profiili
+                - Administreeri
+                - Logi välja

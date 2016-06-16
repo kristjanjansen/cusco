@@ -1,6 +1,7 @@
 @import "variables";
 
 .Navbar {
+    position: relative;
 }
 
     .Navbar__links {
@@ -14,7 +15,9 @@
     }
 
     .Navbar__popover {
-        width: $width-xl;
+        width: $width-xxl;
+        position: absolute;
+        right: 0;
     }
 
     .Navbar__arrowWrapper {
@@ -38,12 +41,12 @@
 
     .Navbar__sublink {
         color: $white;
-        font: $font-text-lg;
+        font: $font-heading-sm;
         padding: $padding-xs $padding-sm;
     }
 
     .Navbar__sublink:hover {
         color: $white;
-        font: $font-text-lg;
+        font: $font-heading-sm;
         background: $green-dark;
     }

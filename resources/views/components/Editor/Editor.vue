@@ -1,11 +1,12 @@
 <template>
 
    <div class="Editor {{ isclasses }}">
-    <pre>
-        {{ $data | json }}
-    </pre>
+
+        <div v-el:writer class="Editor__writer"></div>
         
-        <div v-el:writer class="Editor__writer">
+        <div class="Editor__preview">
+            
+            {{{ body }}}
 
         </div>
 
@@ -16,6 +17,7 @@
 <script>
 
     import brace from 'brace';
+    import _ from 'lodash';
  
     import 'brace/theme/chrome';
     import 'brace/mode/markdown';
@@ -30,7 +32,7 @@
 
            return {
 
-               test: 'from Vue'
+               body: 'Hello'
 
            }
 
@@ -44,12 +46,17 @@
             editor.renderer.setShowGutter(false);
             editor.setHighlightActiveLine(false);
             editor.setOption("wrap", 60);
-            editor.setValue(this.test);
+            editor.setValue(this.body);
             editor.focus()
 
-            editor.getSession().on('change', function(e) {
-                this.test = editor.getValue();
-            }.bind(this));
+            editor.getSession().on('change', _.throttle(function(e) {
+
+            //    this.$http.post('render').then(function(res) {
+            //        this.promo = res.data
+            //    });
+
+                this.body = editor.getValue().replace(/\n/g, '<br>');
+            }.bind(this), 200));
        }
 
    })

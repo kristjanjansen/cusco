@@ -1,6 +1,10 @@
 @import "variables";
 
 .Body {
+    font: $font-text-md;
+}
+
+.Body--responsive {
     font-size: responsive;
     min-font-size: $font-size-sm;
     line-height: 140%;

@@ -1,0 +1,17 @@
+@import "variables";
+
+.Editor {
+    display: flex;
+    height: 50vh;
+}
+
+    .Editor__writer {
+        flex: 1;
+        font-size: $font-size-sm;
+        line-height: $line-height-lg;
+    }
+
+    .Editor__preview {
+        flex: 1;
+        font: $font-text-md;
+    }

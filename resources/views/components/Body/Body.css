@@ -11,9 +11,17 @@
     font-family: $font-family;
 }
 
-.Body h3 {
+.Body h1,
+.Body h2,
+.Body h3,
+.Body h4,
+.Body h5 {
     font-size: responsive;
     min-font-size: $font-size-md;
     max-font-size: $font-size-lg;
     margin: $margin-topbottom-sm;
+}
+
+.Body ul {
+    padding-left: $padding-md;
 }

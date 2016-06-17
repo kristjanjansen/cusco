@@ -17,7 +17,7 @@
         methods: {
 
             'showAlert': function() {
-                this.$dispatch('alert', 'Hello')
+                this.$dispatch('alert', 'Hello from JS')
             }
         
         }

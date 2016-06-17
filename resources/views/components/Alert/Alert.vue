@@ -3,7 +3,7 @@
 <div class="Alert {{ isclasses }}" v-if="show" transition="fadeCollapse">
 
     <div class="Alert__title">
-        {{ alert || vars.title }}
+        {{ alert }}
     </div>
 
     <div class="Alert__close" @click="show = false">
@@ -21,21 +21,30 @@
     export default Component.extend({
 
         data() {
+            
             return {
+                alert: '',
                 show: false,
-                alert: ''
             };
+        
         },
 
         events: {
           
             'alert': function (alert) {
-                
                 this.alert = alert
                 this.show = true
-            
+                this.hide()
             }
 
+        },
+
+        ready() { this.hide() },
+
+        methods: {
+
+            'hide': function() { setTimeout(() => this.show = false, 2000) }
+        
         }
 
     })

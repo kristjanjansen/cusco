@@ -32,6 +32,22 @@ new Vue({
             this.$broadcast('alert', alert)       
         }
 
+    }, 
+
+    data: {
+
+        varrs: {}
+    
+    },
+
+    ready() {
+
+        this.varrs = JSON.parse(decodeURIComponent(
+            document.querySelector('#global-vars').getAttribute('content')
+        ))
+
+        this.$emit('alert', this.varrs.alert)
+    
     }
 
 });

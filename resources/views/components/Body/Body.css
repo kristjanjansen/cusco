@@ -11,6 +11,9 @@
     font-family: $font-family;
 }
 
+.Body p {
+    margin-bottom: $margin-md;
+}
 .Body h1,
 .Body h2,
 .Body h3,
@@ -24,9 +27,37 @@
 
 .Body ul {
     padding-left: $padding-md;
+    margin: $margin-md 0;
 }
 
 .Body img {
     width: 100%;
+    margin-bottom: $margin-md;
+}
+
+.Body table {
+    width: 100%;
+    border: 1px solid $gray-lighter;
+    border-collapse: collapse;
+    margin: $margin-md 0;
+}
+.Body th,
+.Body tr {
+    border-bottom: 1px solid $gray-lighter;
+    text-align: left;
+    vertical-align: top;
+}
+.Body th {
+    background: $gray-lightest;
+}
+.Body th, 
+.Body td {
+    padding: $padding-xs;
+    border-right: 1px solid #;
+}
+.Body hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid $gray-light;
     margin: $margin-md 0;
 }

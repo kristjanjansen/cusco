@@ -3,6 +3,7 @@ import VueResource from 'vue-resource';
 import { mixin as Clickaway } from 'vue-clickaway';
 
 import Alert from './components/Alert/Alert.vue';
+import AlertDemo from './components/AlertDemo/AlertDemo.vue';
 import Editor from './components/Editor/Editor.vue';
 import ImageUpload from './components/ImageUpload/ImageUpload.vue';
 import Navbar from './components/Navbar/Navbar.vue';
@@ -17,11 +18,20 @@ new Vue({
 
     components: {
         Alert,
+        AlertDemo,
         Editor,
         ImageUpload,
         Navbar,
         NavbarMobile,
         Promo,
     },
+
+    events: {
+      
+        'alert': function (alert) {
+            this.$broadcast('alert', alert)       
+        }
+
+    }
 
 });

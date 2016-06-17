@@ -21,8 +21,18 @@
     export default Component.extend({
 
         data() {
-            return { show: true };
+            return { show: false };
         },
+
+        events: {
+          
+            'alert': function (alert) {
+                
+                this.show = true
+            
+            }
+
+        }
 
     })
 

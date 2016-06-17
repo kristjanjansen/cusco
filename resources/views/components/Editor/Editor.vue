@@ -7,7 +7,9 @@
             <div class="Editor__tool" @click="insertBold()">B</div>
             <div class="Editor__tool" @click="insertItalic()">I</div>
             <div class="Editor__tool" @click="insertMarkdownLink()">Link</div>
-            <div class="Editor__tool" @click="insertTable()">Table</div>
+            <div class="Editor__tool" @click="insertHeading()">H1</div>
+            <div class="Editor__tool" @click="insertTable()">▦</div>
+            <div class="Editor__tool" @click="toggleImagebrowser()">Image</div>
 
         </div>
 
@@ -29,7 +31,7 @@
 
    </div>
 
-   <div class="Editor__imagebrowser">
+   <div class="Editor__imagebrowser" v-if="imagebrowserOpen">
 
        <div v-for="image in images">
        
@@ -58,7 +60,8 @@
            return {
               body: '',
               images: [],
-              editor: {}
+              editor: {},
+              imagebrowserOpen: false
            }
 
        },
@@ -76,6 +79,8 @@
                 this.updatePreview()
             }.bind(this));
 
+            this.updateImages();
+
        },
 
         methods: {
@@ -85,6 +90,12 @@
                     .then(function(res) {
                         this.body = res.data.body
                     });
+            },
+
+            updateImages: function() {
+                this.$http.get('image/index').then(function(res) {
+                    this.images = res.data
+                });
             },
 
             insertBold: function() {
@@ -112,6 +123,14 @@
                 this.editor.focus()
             },
 
+            insertHeading: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '\n#### ' + editor.getSelectedText()
+                )
+                this.editor.focus()
+            },
+
             insertTable: function() {
                 this.editor.getSession().replace(
                     this.editor.selection.getRange(),[
@@ -122,6 +141,10 @@
                     ].join("\n")
                 )
                 this.editor.focus()
+            },
+
+            toggleImagebrowser: function() {
+                this.imagebrowserOpen = !this.imagebrowserOpen
             },
 
         }

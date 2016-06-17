@@ -1,6 +1,6 @@
 nocontainer: true
 with:
-    image: /images/lonewolf.jpg
+    image: /samples/lonewolf.jpg
     title: Hello this is a long header that has to fit in somehow
     logo: ''
     navbar:

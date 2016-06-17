@@ -2,7 +2,7 @@ with:
     user:
         component: ProfileImage
         with:
-            image: /images/norris.jpg
+            image: /samples/norris.jpg
             
     title: ''
     meta: mitsushita 6 päeva tagasi

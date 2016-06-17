@@ -35,7 +35,7 @@
 
        <div v-for="image in images">
        
-           <img :src="image" width="20%">
+           <img :src="image" width="20%" @click="insertImage($key)">
 
        </div>
 
@@ -147,6 +147,14 @@
                 this.imagebrowserOpen = !this.imagebrowserOpen
             },
 
+            insertImage: function(key) {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '[[' + key + ']]\n\n'
+                )
+                this.imagebrowserOpen = false
+                this.editor.focus()
+            }
         }
 
    })

@@ -3,7 +3,7 @@
 <div class="Alert {{ isclasses }}" v-if="show" transition="fadeCollapse">
 
     <div class="Alert__title">
-        {{ vars.title }}
+        {{ alert || vars.title }}
     </div>
 
     <div class="Alert__close" @click="show = false">
@@ -21,13 +21,17 @@
     export default Component.extend({
 
         data() {
-            return { show: false };
+            return {
+                show: false,
+                alert: ''
+            };
         },
 
         events: {
           
             'alert': function (alert) {
                 
+                this.alert = alert
                 this.show = true
             
             }

@@ -4,6 +4,7 @@
 
         <div class="Editor__toolbar">
 
+            <div @click="insertBold()">Link</div>
             <div @click="insertMarkdownLink()">Link</div>
 
         </div>
@@ -82,6 +83,14 @@
                     .then(function(res) {
                         this.body = res.data.body
                     });
+            },
+
+            insertBold: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '**' + this.editor.getSelectedText() + '**'
+                )
+                this.editor.focus()
             },
 
             insertMarkdownLink: function() {

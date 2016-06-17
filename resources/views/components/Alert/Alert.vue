@@ -39,7 +39,11 @@
 
         },
 
-        ready() { this.hide() },
+        ready() {
+
+            this.hide()
+
+        },
 
         methods: {
 

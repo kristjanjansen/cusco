@@ -34,19 +34,28 @@ new Vue({
 
     }, 
 
-    data: {
+    data: function() {
 
-        varrs: {}
+        return {
+
+            globalVars: {
+                alert: '',
+                token: '',
+            }
+
+        }
     
     },
 
     ready() {
 
-        this.varrs = JSON.parse(decodeURIComponent(
-            document.querySelector('#global-vars').getAttribute('content')
+        this.globalVars = JSON.parse(decodeURIComponent(
+            document.querySelector('#globalvars').getAttribute('content')
         ))
 
-        this.$emit('alert', this.varrs.alert)
+        console.log(this.globalVars.token);
+
+        this.$emit('alert', this.globalVars.alert)
     
     }
 

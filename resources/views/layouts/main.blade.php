@@ -5,7 +5,7 @@
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
         <meta id="token" name="token" content="{{ csrf_token() }}">
-        <meta id="global-vars" name="global-vars" content="
+        <meta id="globalvars" name="globalvars" content="
             {{
                 rawurlencode(json_encode([
                     'token' => csrf_token(),

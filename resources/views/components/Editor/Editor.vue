@@ -114,8 +114,12 @@
 
             insertTable: function() {
                 this.editor.getSession().replace(
-                    this.editor.selection.getRange(),
-                    '\n\n| Veerg 1 | Veerg 2 | Veerg 3 |\n|---------|---------|---------|\n| Sisu 1  | Sisu 2  | Sisu 3  |\n\n'
+                    this.editor.selection.getRange(),[
+                        "| Veerg 1 | Veerg 2 | Veerg 3 |",
+                        "|---------|---------|---------|",
+                        "| Sisu 1  | Sisu 2  | Sisu 3  |",
+                        "\n"
+                    ].join("\n")
                 )
                 this.editor.focus()
             },

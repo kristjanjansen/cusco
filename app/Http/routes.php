@@ -37,7 +37,7 @@ Route::post('/render', function() {
 
 });
 
-Route::post('/upload', function() {
+Route::post('/image/upload', function() {
 
     $image = Request::file('image');
 
@@ -55,7 +55,10 @@ Route::get('/image/index', function() {
     $images = collect(Storage::disk('root')->files('public/images'))
         ->filter(function($filename) {
             return pathinfo($filename, PATHINFO_EXTENSION) == 'jpg';
+        })->map(function($filename) {
+            return str_replace('public', '', $filename);
         });
+
     
     return Response::json($images);
 

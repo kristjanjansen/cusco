@@ -11,7 +11,6 @@
 <script>
 
     import Dropzone from 'dropzone';
-
     import Component from '../Component';
 
     export default Component.extend({
@@ -29,7 +28,7 @@
             Dropzone.autoDiscover = false;
 
             new Dropzone(this.$els.dropzone, {
-                url: "/upload",
+                url: "/image/upload",
                 paramName: 'image',
                 maxFilesize: 10,
                 uploadMultiple: false,

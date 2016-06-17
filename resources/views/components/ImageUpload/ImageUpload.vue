@@ -40,11 +40,13 @@
                     .getAttribute('content')
                 },
                 success: function(file, res) {
-                    console.log(res)
                     this.image = res.image
                 }.bind(this)
             
-            })
+            }).on("complete", function(file) {
+                this.removeFile(file);
+            });
+
         }
 
     })

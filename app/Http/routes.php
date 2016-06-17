@@ -39,11 +39,13 @@ Route::post('/render', function() {
     
     if (preg_match_all($imagePattern, $body, $matches)) {
         foreach ($matches[1] as $match) {
-            $body = str_replace(
-                "[[$match]]",
-                '<img src="'.$images[$match].'" />',
-                $body
-            );
+            if (isset($images[$match])) {
+                $body = str_replace(
+                    "[[$match]]",
+                    '<img src="'.$images[$match].'" />',
+                    $body
+                );
+            }
         }
     }
 

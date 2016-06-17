@@ -43,7 +43,6 @@
        },
 
        ready: function() {
-            console.log(document.querySelector('#token').getAttribute('content'));
             var editor = brace.edit(this.$els.writer);
             editor.setTheme("ace/theme/chrome");
             editor.getSession().setMode("ace/mode/markdown");

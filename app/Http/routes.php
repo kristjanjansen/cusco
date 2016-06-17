@@ -36,3 +36,18 @@ Route::post('/render', function() {
     ]);
 
 });
+
+Route::post('/upload', function() {
+
+    $file = Request::file('file');
+
+        $filename = 'image.' . $file->getClientOriginalExtension();
+        $file->move(public_path(), $filename);
+
+        return Response::json([
+            
+            'file' => '/'. $filename
+
+        ]);
+
+});

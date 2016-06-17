@@ -30,6 +30,7 @@
 
             new Dropzone(this.$els.dropzone, {
                 url: "/upload",
+                paramName: 'image',
                 maxFilesize: 10,
                 uploadMultiple: false,
                 acceptedFiles: 'image/*',
@@ -40,7 +41,7 @@
                 },
                 success: function(file, res) {
                     console.log(res)
-                    this.image = res.file
+                    this.image = res.image
                 }.bind(this)
             
             })

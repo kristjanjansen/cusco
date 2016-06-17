@@ -39,14 +39,14 @@ Route::post('/render', function() {
 
 Route::post('/upload', function() {
 
-    $file = Request::file('file');
+    $image = Request::file('image');
 
-        $filename = 'image.' . $file->getClientOriginalExtension();
-        $file->move(public_path(), $filename);
+        $imagename = 'image.' . $image->getClientOriginalExtension();
+        $image->move(public_path(), $imagename);
 
         return Response::json([
             
-            'file' => '/'. $filename
+            'image' => '/'. $imagename
 
         ]);
 

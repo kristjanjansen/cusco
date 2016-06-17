@@ -2,7 +2,9 @@
 @import "dropzone/dist/dropzone.css";
 
 .ImageUpload {
-
     font: $font-text-md;
-    
+}
+
+.ImageUpload:hover {
+    background: $gray-lighter;
 }

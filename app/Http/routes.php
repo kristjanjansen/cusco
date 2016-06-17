@@ -31,8 +31,26 @@ Route::get('/content/forum/{id}', 'ForumController@show');
 
 Route::post('/render', function() {
 
+    $body = Request::input('body');
+    $body = Markdown::setBreaksEnabled(true)->text($body);
+
+    $images = getImages();
+    $imagePattern = '/\[\[([0-9]+)\]\]/';
+    
+    if (preg_match_all($imagePattern, $body, $matches)) {
+        foreach ($matches[1] as $match) {
+            if (isset($images[$match])) {
+                $body = str_replace(
+                    "[[$match]]",
+                    '<img src="'.$images[$match].'" />',
+                    $body
+                );
+            }
+        }
+    }
+
     return Response::json([
-        'body' => Markdown::convertToHtml(Request::input('body'))
+        'body' => $body
     ]);
 
 });
@@ -50,16 +68,18 @@ Route::post('/image/upload', function() {
 
 });
 
-Route::get('/image/index', function() {
+function getImages() {
 
-    $images = collect(Storage::disk('root')->files('public/images'))
+        return collect(Storage::disk('root')->files('public/images'))
         ->filter(function($filename) {
             return pathinfo($filename, PATHINFO_EXTENSION) == 'jpg';
         })->map(function($filename) {
             return str_replace('public', '', $filename);
         });
+}
 
-    
-    return Response::json($images);
+Route::get('/image/index', function() {
+
+    return Response::json(getImages());
 
 });

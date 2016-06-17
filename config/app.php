@@ -148,7 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        DraperStudio\Parsedown\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -203,7 +203,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class
+        'Markdown' => DraperStudio\Parsedown\Facades\Parsedown::class
 
     ],
 

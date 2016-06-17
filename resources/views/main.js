@@ -32,9 +32,8 @@ new Vue({
 
     events: {
       
-        'alert': function (alert) {
-            this.$broadcast('alert', alert)       
-        }
+        'alert': function (alert) { this.$broadcast('alert', alert) },
+        'ImageUploaded': function () { this.$broadcast('ImageUploaded') }
 
     }, 
 

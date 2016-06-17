@@ -1,9 +1,25 @@
 @import "variables";
 
 .Editor {
-    display: flex;
-    height: 50vh;
 }
+
+    .Editor__toolbar {
+        height: $height-md;
+        display: flex;
+        align-content: center;
+    }
+
+    .Editor__tool {
+        padding: $padding-sm;
+        font-family: $font-family-code;
+        font-size: 12px;
+        color: $gray-light;
+    }
+
+    .Editor__wrapper {
+        display: flex;
+        height: 50vh;
+    }
 
     .Editor__writer {
         flex: 1;
@@ -14,4 +30,20 @@
     .Editor__preview {
         flex: 1;
         font: $font-text-md;
+    }
+
+    .Editor__imagebrowser {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: $padding-md;
+        width: $width-xxxl;
+        background: $white;
+        box-shadow: $box-shadow-left;
+    }
+
+    .Editor__imagebrowser img {
+        width: 100%;
+        margin-top: $margin-sm;
     }

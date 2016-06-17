@@ -1,14 +1,30 @@
 <template>
 
-   <div class="Editor {{ isclasses }}">
+    <div class="Editor {{ isclasses }}">
 
-        <div v-el:writer class="Editor__writer"></div>
-        
-        <div class="Editor__preview">
+        <div class="Editor__toolbar">
 
-            <div class="Body">
+            <div class="Editor__tool" @click="insertBold()">B</div>
+            <div class="Editor__tool" @click="insertItalic()">I</div>
+            <div class="Editor__tool" @click="insertMarkdownLink()">Link</div>
+            <div class="Editor__tool" @click="insertHeading()">H1</div>
+            <div class="Editor__tool" @click="insertTable()">▦</div>
+            <div class="Editor__tool" @click="cleanMarkup()">Clean</div>
+            <div class="Editor__tool" @click="toggleImagebrowser()">Image</div>
+
+        </div>
+
+        <div class="Editor__wrapper">
+
+            <div v-el:writer class="Editor__writer"></div>
             
-            {{{ body }}}
+            <div class="Editor__preview">
+
+                <div class="Body">
+                
+                {{{ body }}}
+
+                </div>
 
             </div>
 
@@ -16,11 +32,13 @@
 
    </div>
 
-   <div class="Editor__imagebrowser">
+   <div class="Editor__imagebrowser" v-if="imagebrowserOpen">
+        
+        <component is="ImageUpload"></component>
 
        <div v-for="image in images">
        
-           <img :src="image" width="20%">
+           <img :src="image" width="20%" @click="insertImage($key)">
 
        </div>
 
@@ -32,45 +50,142 @@
 
     import brace from 'brace';
     import _ from 'lodash';
+    import tomarkdown from 'to-markdown';
+    import striptags from 'striptags';
  
     import 'brace/theme/chrome';
     import 'brace/mode/markdown';
 
     import Component from '../Component';
-
-    //var editor = brace.edit("writer");
+    import ImageUpload from '../ImageUpload/ImageUpload.vue';
 
     export default Component.extend({
+
+        components: {
+            ImageUpload
+        },
 
         data() {
 
            return {
               body: '',
-              images: []
+              images: [],
+              editor: {},
+              imagebrowserOpen: false
            }
 
        },
 
        ready: function() {
-            var editor = brace.edit(this.$els.writer);
-            editor.setTheme("ace/theme/chrome");
-            editor.getSession().setMode("ace/mode/markdown");
-            editor.renderer.setShowGutter(false);
-            editor.setHighlightActiveLine(false);
-            editor.setOption("wrap", 60);
-            editor.setValue(this.body);
-            editor.focus()
+            this.editor = brace.edit(this.$els.writer);
+            this.editor.setTheme("ace/theme/chrome");
+            this.editor.getSession().setMode("ace/mode/markdown");
+            this.editor.renderer.setShowGutter(false);
+            this.editor.setHighlightActiveLine(false);
+            this.editor.setOption("wrap", 60);
+            this.editor.setValue(this.body);
 
-            editor.getSession().on('change', _.throttle(function(e) {
-                this.$http.post('render', {body: editor.getValue()}).then(function(res) {
-                    this.body = res.data.body
+            this.editor.getSession().on('change', function() {
+                this.updatePreview()
+            }.bind(this));
+
+            this.updateImages();
+
+       },
+
+       events: {
+         
+           'imageUploaded': function () {
+                this.updateImages();
+           }
+
+       },
+
+        methods: {
+
+            updatePreview: function() {
+                this.$http.post('./render', {body: this.editor.getValue()})
+                    .then(function(res) {
+                        this.body = res.data.body
+                    });
+            },
+
+            updateImages: function() {
+                this.$http.get('image/index').then(function(res) {
+                    this.images = res.data
                 });
-            }.bind(this), 200));
+            },
 
-            this.$http.get('image/index').then(function(res) {
-                this.images = res.data
-            });
-       }
+            insertBold: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '**' + this.editor.getSelectedText() + '**'
+                )
+                this.editor.focus()
+            },
+
+            insertItalic: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '*' + this.editor.getSelectedText() + '*'
+                )
+                this.editor.focus()
+            },
+
+            insertMarkdownLink: function() {
+                var link = prompt("Link URL", "http://");
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '[' + this.editor.getSelectedText() + '](' +  link + ')'
+                )
+                this.editor.focus()
+            },
+
+            insertHeading: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '\n#### ' + editor.getSelectedText()
+                )
+                this.editor.focus()
+            },
+
+            insertTable: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),[
+                        "| Veerg 1 | Veerg 2 | Veerg 3 |",
+                        "|---------|---------|---------|",
+                        "| Sisu 1  | Sisu 2  | Sisu 3  |",
+                        "\n"
+                    ].join("\n")
+                )
+                this.editor.focus()
+            },
+
+            cleanMarkup: function() {
+                var body = this.body
+                body = body.replace(/&nbsp;/g, ' ')
+                body = _.unescape(body)
+                body = striptags(body,
+                    '<b><i><strong><em><a><br><ul><ol><li><img><iframe><h4><h5><h6><p>'
+                )
+                body = tomarkdown(body)
+                this.editor.setValue(body)
+                this.editor.focus()
+            },
+
+            toggleImagebrowser: function() {
+                this.imagebrowserOpen = !this.imagebrowserOpen
+            },
+
+            insertImage: function(key) {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '\n\n[[' + key + ']]\n\n'
+                )
+                this.imagebrowserOpen = false
+                this.editor.focus()
+            }
+        }
 
    })
 

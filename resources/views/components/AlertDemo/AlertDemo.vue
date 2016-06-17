@@ -1,8 +1,12 @@
 <template>
 
-    <div @click="showAlert()">
+    <div @click="showAlert()" class="Button">
 
-        Show alerts
+        <div class="Button__title">
+            
+            Show alerts
+
+        </div>
 
     </div>
 

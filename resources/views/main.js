@@ -10,8 +10,12 @@ import Navbar from './components/Navbar/Navbar.vue';
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
 import Promo from './components/Promo/Promo.vue';
 
+const globalVars = JSON.parse(decodeURIComponent(
+    document.querySelector('#globalvars').getAttribute('content')
+));
+
 Vue.use(VueResource);
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
+Vue.http.headers.common['X-CSRF-TOKEN'] = globalVars.token;
 
 new Vue({
     el: 'body',
@@ -34,29 +38,8 @@ new Vue({
 
     }, 
 
-    data: function() {
-
-        return {
-
-            globalVars: {
-                alert: '',
-                token: '',
-            }
-
-        }
-    
-    },
-
     ready() {
-
-        this.globalVars = JSON.parse(decodeURIComponent(
-            document.querySelector('#globalvars').getAttribute('content')
-        ))
-
-        console.log(this.globalVars.token);
-
-        this.$emit('alert', this.globalVars.alert)
-    
+        this.$emit('alert', globalVars.alert)
     }
 
 });

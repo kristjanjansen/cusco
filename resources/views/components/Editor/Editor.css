@@ -31,3 +31,19 @@
         flex: 1;
         font: $font-text-md;
     }
+
+    .Editor__imagebrowser {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: $padding-md;
+        width: $width-xxxl;
+        background: $white;
+        box-shadow: $box-shadow-left;
+    }
+
+    .Editor__imagebrowser img {
+        width: 100%;
+        margin-top: $margin-sm;
+    }

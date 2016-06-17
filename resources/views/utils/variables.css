@@ -194,6 +194,9 @@ $border-red: 2px solid $red;
 
 $border-radius-md: 3px;
 
+/* Shadows */
+
+$box-shadow-left: 0px 0px $padding-md 0px rgba(0,0,0,0.1);
 
 /* Media queries */
 

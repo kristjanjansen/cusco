@@ -31,6 +31,48 @@ $gray-dark: #444;
 $gray-darker: #222;
 $gray-darkest: #111;
 
+
+/* Fonts */
+
+$font-family: "Karla";
+$font-family-code: monospace;
+
+$font-size-xs: 13px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+$font-size-xxxl: 48px;
+$font-size-xxxxl: 64px;
+
+$line-height-md: 140%;
+$line-height-lg: 130%;
+$line-height-xl: 120%;
+$line-height-xxl: 110%;
+$line-height-xxl: 100%;
+$line-height-xxxl: 100%;
+
+$font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
+$font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
+$font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-text-xl: normal $font-size-xl/$line-height-md $font-family, sans-serif;
+
+$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
+$font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-heading-lg: bold $font-size-xl/$line-height-lg $font-family, sans-serif;
+$font-heading-xl: bold $font-size-xxl/$line-height-xl $font-family, sans-serif;
+$font-heading-xxl: bold $font-size-xxxl/$line-height-xxl $font-family, sans-serif;
+$font-heading-xxxl: bold $font-size-xxxxl/$line-height-xxxl $font-family, sans-serif;
+
+$font-code-xs: normal $font-size-xs/$line-height-md $font-family-code, monospace;
+$font-code-sm: normal $font-size-sm/$line-height-md $font-family-code, monospace;
+$font-code-md: normal $font-size-md/$line-height-md $font-family-code, monospace;
+$font-code-lg: normal $font-size-lg/$line-height-md $font-family-code, monospace;
+
+
 /* Spacing */
 
 $spacer: 12px;
@@ -151,40 +193,6 @@ $border-red: 2px solid $red;
 /* Border radiuses */
 
 $border-radius-md: 3px;
-
-/* Fonts */
-
-$font-family: "Karla";
-
-$font-size-xs: 13px;
-$font-size-sm: 14px;
-$font-size-md: 16px;
-$font-size-lg: 18px;
-$font-size-xl: 24px;
-$font-size-xxl: 32px;
-$font-size-xxxl: 48px;
-$font-size-xxxxl: 64px;
-
-$line-height-md: 140%;
-$line-height-lg: 130%;
-$line-height-xl: 120%;
-$line-height-xxl: 110%;
-$line-height-xxl: 100%;
-$line-height-xxxl: 100%;
-
-$font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
-$font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
-$font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
-$font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
-$font-text-xl: normal $font-size-xl/$line-height-md $font-family, sans-serif;
-
-$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
-$font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
-$font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
-$font-heading-lg: bold $font-size-xl/$line-height-lg $font-family, sans-serif;
-$font-heading-xl: bold $font-size-xxl/$line-height-xl $font-family, sans-serif;
-$font-heading-xxl: bold $font-size-xxxl/$line-height-xxl $font-family, sans-serif;
-$font-heading-xxxl: bold $font-size-xxxxl/$line-height-xxxl $font-family, sans-serif;
 
 
 /* Media queries */

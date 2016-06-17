@@ -1,14 +1,24 @@
 <template>
 
-   <div class="Editor {{ isclasses }}">
+    <div class="Editor {{ isclasses }}">
 
-        <div v-el:writer class="Editor__writer"></div>
-        
-        <div class="Editor__preview">
+        <div class="Editor__toolbar">
 
-            <div class="Body">
+            Links
+
+        </div>
+
+        <div class="Editor__wrapper">
+
+            <div v-el:writer class="Editor__writer"></div>
             
-            {{{ body }}}
+            <div class="Editor__preview">
+
+                <div class="Body">
+                
+                {{{ body }}}
+
+                </div>
 
             </div>
 

@@ -4,7 +4,7 @@
 
         <div class="Editor__toolbar">
 
-            Links
+            <div @click="insertMarkdownLink()">Link</div>
 
         </div>
 
@@ -48,39 +48,52 @@
 
     import Component from '../Component';
 
-    //var editor = brace.edit("writer");
-
     export default Component.extend({
 
         data() {
 
            return {
               body: '',
-              images: []
+              images: [],
+              editor: {}
            }
 
        },
 
        ready: function() {
-            var editor = brace.edit(this.$els.writer);
-            editor.setTheme("ace/theme/chrome");
-            editor.getSession().setMode("ace/mode/markdown");
-            editor.renderer.setShowGutter(false);
-            editor.setHighlightActiveLine(false);
-            editor.setOption("wrap", 60);
-            editor.setValue(this.body);
-            editor.focus()
+            this.editor = brace.edit(this.$els.writer);
+            this.editor.setTheme("ace/theme/chrome");
+            this.editor.getSession().setMode("ace/mode/markdown");
+            this.editor.renderer.setShowGutter(false);
+            this.editor.setHighlightActiveLine(false);
+            this.editor.setOption("wrap", 60);
+            this.editor.setValue(this.body);
 
-            editor.getSession().on('change', _.throttle(function(e) {
-                this.$http.post('render', {body: editor.getValue()}).then(function(res) {
-                    this.body = res.data.body
-                });
-            }.bind(this), 200));
+            this.editor.getSession().on('change', function() {
+                this.updatePreview()
+            }.bind(this));
 
-            this.$http.get('image/index').then(function(res) {
-                this.images = res.data
-            });
-       }
+       },
+
+        methods: {
+
+            updatePreview: function() {
+                this.$http.post('./render', {body: this.editor.getValue()})
+                    .then(function(res) {
+                        this.body = res.data.body
+                    });
+            },
+
+            insertMarkdownLink: function() {
+                var link = prompt("Link URL", "http://");
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '[' + this.editor.getSelectedText() + '](' +  link + ')'
+                )
+                this.editor.focus()
+            },
+
+        }
 
    })
 

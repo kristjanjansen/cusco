@@ -6,7 +6,7 @@ export default Vue.extend({
 
     ready() {
 
-        this.vars = JSON.parse(decodeURIComponent(this.vars))
+        this.vars = this.vars ? JSON.parse(decodeURIComponent(this.vars)) : {}
 
     }
 

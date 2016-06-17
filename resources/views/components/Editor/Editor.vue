@@ -32,6 +32,8 @@
    </div>
 
    <div class="Editor__imagebrowser" v-if="imagebrowserOpen">
+        
+        <component is="ImageUpload"></component>
 
        <div v-for="image in images">
        
@@ -52,8 +54,13 @@
     import 'brace/mode/markdown';
 
     import Component from '../Component';
+    import ImageUpload from '../ImageUpload/ImageUpload.vue';
 
     export default Component.extend({
+
+        components: {
+            ImageUpload
+        },
 
         data() {
 
@@ -80,6 +87,14 @@
             }.bind(this));
 
             this.updateImages();
+
+       },
+
+       events: {
+         
+           'imageUploaded': function () {
+                this.updateImages();
+           }
 
        },
 

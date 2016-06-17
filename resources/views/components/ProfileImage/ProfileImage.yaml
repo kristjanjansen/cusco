@@ -1,4 +1,4 @@
 with:
-    image: /images/norris.jpg
+    image: /samples/norris.jpg
 is:
     - small

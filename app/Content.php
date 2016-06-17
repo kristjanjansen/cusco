@@ -18,7 +18,7 @@ class Content
                     'id' => $id,
                     'user' => (object) [
                         'image' =>
-                            collect(['/images/norris.jpg', '/images/carradine.jpg'])
+                            collect(['/samples/norris.jpg', '/samples/carradine.jpg'])
                                 ->random()
                     ],
                     'title' => rtrim($faker->text(30),'.'),
@@ -29,7 +29,7 @@ class Content
                             return (object) [
                                 'user' => (object) [
                                     'image' => 
-                                        collect(['/images/norris.jpg', '/images/carradine.jpg'])
+                                        collect(['/samples/norris.jpg', '/samples/carradine.jpg'])
                                             ->random()
                                 ],
                                 'meta' => rtrim($faker->text(10),'.'),

@@ -41,13 +41,22 @@ Route::post('/upload', function() {
 
     $image = Request::file('image');
 
-        $imagename = 'image.' . $image->getClientOriginalExtension();
-        $image->move(public_path(), $imagename);
+        $imagename = 'image-' . rand(1,3) . '.' .$image->getClientOriginalExtension();
+        $image->move(public_path() . '/images/' , $imagename);
 
         return Response::json([
-            
-            'image' => '/'. $imagename
-
+            'image' => '/images/'. $imagename
         ]);
+
+});
+
+Route::get('/image/index', function() {
+
+    $images = collect(Storage::disk('root')->files('public/images'))
+        ->filter(function($filename) {
+            return pathinfo($filename, PATHINFO_EXTENSION) == 'jpg';
+        });
+    
+    return Response::json($images);
 
 });

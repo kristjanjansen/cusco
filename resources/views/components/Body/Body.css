@@ -25,3 +25,8 @@
 .Body ul {
     padding-left: $padding-md;
 }
+
+.Body img {
+    width: 100%;
+    margin: $margin-md 0;
+}

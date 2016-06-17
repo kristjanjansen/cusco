@@ -150,7 +150,7 @@
             insertImage: function(key) {
                 this.editor.getSession().replace(
                     this.editor.selection.getRange(),
-                    '[[' + key + ']]\n\n'
+                    '\n\n[[' + key + ']]\n\n'
                 )
                 this.imagebrowserOpen = false
                 this.editor.focus()

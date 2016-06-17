@@ -4,8 +4,10 @@
 
         <div class="Editor__toolbar">
 
-            <div @click="insertBold()">Link</div>
-            <div @click="insertMarkdownLink()">Link</div>
+            <div class="Editor__tool" @click="insertBold()">B</div>
+            <div class="Editor__tool" @click="insertItalic()">I</div>
+            <div class="Editor__tool" @click="insertMarkdownLink()">Link</div>
+            <div class="Editor__tool" @click="insertTable()">Table</div>
 
         </div>
 
@@ -93,11 +95,27 @@
                 this.editor.focus()
             },
 
+            insertItalic: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '*' + this.editor.getSelectedText() + '*'
+                )
+                this.editor.focus()
+            },
+
             insertMarkdownLink: function() {
                 var link = prompt("Link URL", "http://");
                 this.editor.getSession().replace(
                     this.editor.selection.getRange(),
                     '[' + this.editor.getSelectedText() + '](' +  link + ')'
+                )
+                this.editor.focus()
+            },
+
+            insertTable: function() {
+                this.editor.getSession().replace(
+                    this.editor.selection.getRange(),
+                    '\n\n| Veerg 1 | Veerg 2 | Veerg 3 |\n|---------|---------|---------|\n| Sisu 1  | Sisu 2  | Sisu 3  |\n\n'
                 )
                 this.editor.focus()
             },

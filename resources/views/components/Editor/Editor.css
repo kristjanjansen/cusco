@@ -7,6 +7,10 @@
         height: $height-md;
         display: flex;
         align-content: center;
+    }
+
+    .Editor__tool {
+        padding: $padding-sm;
         font-family: $font-family-code;
         font-size: 12px;
         color: $gray-light;

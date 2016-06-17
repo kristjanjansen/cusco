@@ -16,6 +16,16 @@
 
    </div>
 
+   <div class="Editor__imagebrowser">
+
+       <div v-for="image in images">
+       
+           <img :src="image" width="20%">
+
+       </div>
+
+   </div>
+
 </template>
 
 <script>
@@ -35,9 +45,8 @@
         data() {
 
            return {
-
-               body: 'Hello'
-
+              body: '',
+              images: []
            }
 
        },
@@ -53,12 +62,14 @@
             editor.focus()
 
             editor.getSession().on('change', _.throttle(function(e) {
-
                 this.$http.post('render', {body: editor.getValue()}).then(function(res) {
                     this.body = res.data.body
                 });
-
             }.bind(this), 200));
+
+            this.$http.get('image/index').then(function(res) {
+                this.images = res.data
+            });
        }
 
    })

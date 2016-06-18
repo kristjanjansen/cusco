@@ -6,7 +6,7 @@
         
             <path
                 fill="none"
-                stroke="#446688"
+                stroke="#78cc5c"
                 :stroke-width="border" 
                 :d="arc"
             />
@@ -23,14 +23,17 @@
 
     export default Component.extend({
 
+        props: {
+            size: { default: 100 }
+        },
+
         data() {
 
             return {
                 arc: '',
-                size: 100,
-                border: 10,
+                border: 4,
                 startAngle: 0,
-                endAngle: 270,
+                endAngle: 220,
             }
 
         },

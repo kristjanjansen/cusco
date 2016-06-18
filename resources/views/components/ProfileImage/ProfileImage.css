@@ -1,17 +1,20 @@
 @import "variables";
 
 .ProfileImage {
-    width: $width-lg;
-    height: $height-lg;
-}
-
-.ProfileImage--small {
     width: $width-md;
     height: $height-md;
+    position: relative;
 }
 
 .ProfileImage__image {
-    border: $border-gray;
     border-radius: 100%;
     width: 100%;
+}
+
+.ProfileImage__arc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }

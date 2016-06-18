@@ -2,7 +2,7 @@
 
     <div class="Arc {{ isclasses }}">
 
-        <svg>
+        <svg :style="{ width: size + 'px', height: size + 'px' }">
         
             <path
                 id="arc"
@@ -27,7 +27,8 @@
         data() {
 
             return {
-                arc: ''
+                arc: '',
+                size: 50,
             }
 
         },

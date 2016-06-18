@@ -5,7 +5,6 @@
         <svg :style="{ width: size + 'px', height: size + 'px' }">
         
             <path
-                id="arc"
                 fill="none"
                 stroke="#446688"
                 :stroke-width="border" 
@@ -31,7 +30,7 @@
                 size: 100,
                 border: 10,
                 startAngle: 0,
-                endAngle: 360,
+                endAngle: 270,
             }
 
         },
@@ -50,20 +49,25 @@
 
         methods: {
 
-            polarToCartesian: function(centerX, centerY, radius, angleInDegrees) {
-              var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+            // From http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
 
-              return {
-                x: centerX + (radius * Math.cos(angleInRadians)),
-                y: centerY + (radius * Math.sin(angleInRadians))
-              };
+            polarToCartesian: function(centerX, centerY, radius, angleInDegrees) {
+              
+                var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0
+
+                return {
+                    x: centerX + (radius * Math.cos(angleInRadians)),
+                    y: centerY + (radius * Math.sin(angleInRadians))
+                }
+            
             },
 
             generateArc: function(x, y, radius, startAngle, endAngle) {
 
-                endAngle = endAngle - 0.001;
-                var start = this.polarToCartesian(x, y, radius, endAngle);
-                var end = this.polarToCartesian(x, y, radius, startAngle);
+                endAngle = endAngle - 0.001
+
+                var start = this.polarToCartesian(x, y, radius, endAngle)
+                var end = this.polarToCartesian(x, y, radius, startAngle)
 
                 var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
 

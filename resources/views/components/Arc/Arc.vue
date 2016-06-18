@@ -8,7 +8,7 @@
                 id="arc"
                 fill="none"
                 stroke="#446688"
-                stroke-width="1" 
+                :stroke-width="border" 
                 :d="arc"
             />
       
@@ -28,14 +28,23 @@
 
             return {
                 arc: '',
-                size: 50,
+                size: 100,
+                border: 10,
+                startAngle: 0,
+                endAngle: 360,
             }
 
         },
 
         ready() {
 
-            this.arc = this.generateArc(25, 25, 25, 0, 90)
+            this.arc = this.generateArc(
+                this.size / 2,
+                this.size / 2,
+                this.size / 2 - (this.border / 2),
+                this.startAngle,
+                this.endAngle
+            )
         
         },
 
@@ -52,6 +61,7 @@
 
             generateArc: function(x, y, radius, startAngle, endAngle) {
 
+                endAngle = endAngle - 0.001;
                 var start = this.polarToCartesian(x, y, radius, endAngle);
                 var end = this.polarToCartesian(x, y, radius, startAngle);
 

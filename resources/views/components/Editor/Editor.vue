@@ -144,7 +144,7 @@
             insertHeading: function() {
                 this.editor.getSession().replace(
                     this.editor.selection.getRange(),
-                    '\n#### ' + editor.getSelectedText()
+                    '\n#### ' + this.editor.getSelectedText()
                 )
                 this.editor.focus()
             },

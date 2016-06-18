@@ -4,6 +4,7 @@ import { mixin as Clickaway } from 'vue-clickaway';
 
 import Alert from './components/Alert/Alert.vue';
 import AlertDemo from './components/AlertDemo/AlertDemo.vue';
+import Arc from './components/Arc/Arc.vue';
 import Editor from './components/Editor/Editor.vue';
 import ImageUpload from './components/ImageUpload/ImageUpload.vue';
 import Navbar from './components/Navbar/Navbar.vue';
@@ -23,6 +24,7 @@ new Vue({
     components: {
         Alert,
         AlertDemo,
+        Arc,
         Editor,
         ImageUpload,
         Navbar,

@@ -1,0 +1,7 @@
+@import "variables";
+
+.Arc svg {
+    height: 50px;
+    width: 50px;
+    background: gray;
+}

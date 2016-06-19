@@ -2,7 +2,7 @@
 
     <svg>
 
-        <use xlink:href="/svg/main.svg#{{ vars.name || name }}"></use>
+        <use xlink:href="#{{ vars.name || name }}"></use>
 
     </svg>
 

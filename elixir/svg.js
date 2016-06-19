@@ -21,7 +21,7 @@ Elixir.extend('svg', function (src, output) {
 
         return gulp.src(src)
             .pipe(svgmin())
-            .pipe(svgstore())
+            .pipe(svgstore({ inlineSvg: true }))
             .pipe($.rename(function (path) {
                 path.basename = 'main'
             }))

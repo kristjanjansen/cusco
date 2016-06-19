@@ -7,6 +7,7 @@ import AlertDemo from './components/AlertDemo/AlertDemo.vue';
 import Arc from './components/Arc/Arc.vue';
 import Editor from './components/Editor/Editor.vue';
 import Icon from './components/Icon/Icon.vue';
+import IconLoader from './components/IconLoader/IconLoader.vue';
 import ImageUpload from './components/ImageUpload/ImageUpload.vue';
 import Navbar from './components/Navbar/Navbar.vue';
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
@@ -28,6 +29,7 @@ new Vue({
         Arc,
         Editor,
         Icon,
+        IconLoader,
         ImageUpload,
         Navbar,
         NavbarMobile,

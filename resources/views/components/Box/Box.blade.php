@@ -1,4 +1,4 @@
-<div class="Box {{ $is }}">
+<div class="Box {{ $isclasses }}">
 
     <div class="Box__title">
 

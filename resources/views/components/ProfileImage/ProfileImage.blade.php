@@ -1,4 +1,4 @@
-<div class="ProfileImage {{ $is }}">
+<div class="ProfileImage {{ $isclasses }}">
     
     <img class="ProfileImage__image" src="{{ $image }}" />
 

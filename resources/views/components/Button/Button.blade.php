@@ -1,6 +1,6 @@
 <a href="">
 
-<div class="Button {{ $is }}">
+<div class="Button {{ $isclasses }}">
 
 
     <div class="Button__title">

@@ -1,4 +1,4 @@
-<div class="Body {{ $is }}">
+<div class="Body {{ $isclasses }}">
     
     {!! $body !!}
 

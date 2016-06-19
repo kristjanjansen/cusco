@@ -1,6 +1,6 @@
 <template>
 
-    <svg>
+    <svg class="Icon {{ isclasses }}">
 
         <use xlink:href="#{{ vars.name || name }}"></use>
 

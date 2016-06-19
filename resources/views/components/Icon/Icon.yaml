@@ -1,2 +1,4 @@
 with:
-    name: music
+    name: icon-tickets
+is:
+    - small

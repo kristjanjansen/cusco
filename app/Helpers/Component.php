@@ -54,7 +54,7 @@ class Component {
         if (view()->exists($name)) {
 
             return View::make($name, $with)
-                ->with('is', $this->generateIsClasses())
+                ->with('isclasses', $this->generateIsClasses())
                 ->render();
 
         } else {

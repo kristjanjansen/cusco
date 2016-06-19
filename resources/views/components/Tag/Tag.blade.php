@@ -1,4 +1,4 @@
-<div class="Tag {{ $is }}">
+<div class="Tag {{ $isclasses }}">
 
     <div class="Tag__title">
 

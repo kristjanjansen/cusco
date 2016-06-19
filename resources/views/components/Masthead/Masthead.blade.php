@@ -1,5 +1,5 @@
 <div
-    class="Masthead {{ $is }}"
+    class="Masthead {{ $isclasses }}"
     style="
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.75),

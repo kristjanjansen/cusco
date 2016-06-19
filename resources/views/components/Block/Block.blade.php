@@ -1,12 +1,12 @@
-<div class="Box {{ $is }}">
+<div class="Block {{ $isclasses }}">
 
-    <div class="Box__title">
+    <div class="Block__title">
 
         {{ $title }}
 
     </div>
 
-    <div class="Box__content">
+    <div class="Block__content">
 
         @foreach ($content->withoutLast() as $content_item)
     

@@ -1,4 +1,4 @@
-<div class="ListItem {{ $is }}">
+<div class="ListItem {{ $isclasses }}">
 
     <div class="ListItem__left">
 

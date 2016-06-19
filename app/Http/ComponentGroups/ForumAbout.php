@@ -9,7 +9,7 @@ class ForumAbout {
     public function render(Request $request)
     {
 
-        return component('Box')
+        return component('Block')
             ->is('withBackground')
             ->with('title', trans('forum.about.title'))
             ->with('content', collect()

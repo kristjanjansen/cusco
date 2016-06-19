@@ -1,4 +1,4 @@
-<div class="ForumPost {{ $is }}">
+<div class="ForumPost {{ $isclasses }}">
 
     <div class="ForumPost__left">
 

@@ -17,10 +17,12 @@
     </head>
     <body>
 
-        @yield('header')
+        <component is="IconLoader" route="/svg/main.svg"></component>
 
+        @yield('header')
         @yield('content')
         
         <script src="/js/main.js"></script>
+        
     </body>
 </html>

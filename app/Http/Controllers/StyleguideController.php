@@ -9,12 +9,6 @@ class StyleguideController extends Controller {
 
     public function index() {
 
-        $icons = collect(Storage::disk('root')->files('resources/svg'))
-            ->map(function($filename) {
-                return pathinfo($filename, PATHINFO_FILENAME);
-            })
-            ->toArray();
-
         $components = collect(Storage::disk('root')->allDirectories('resources/views/components'))
             ->map(function($directory) {
                 return Storage::disk('root')->files($directory);
@@ -43,12 +37,6 @@ class StyleguideController extends Controller {
                     });
                $component->with = $with;
                return $component;
-            })
-            ->map(function($component) use ($icons) {
-                if ($component->name == 'Icons') {
-                    $component->with['icons'] = $icons;
-                }
-                return $component;
             });
         
         return view('pages.styleguide', [

@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var postcss = require('gulp-postcss');
-
 var Elixir = require('laravel-elixir');
 
 var $ = Elixir.Plugins;
@@ -10,9 +9,7 @@ var config = Elixir.config;
 Elixir.extend('postcss', function (src, output) {
 
     Elixir.onWatch(function() {
-
         gulp.start('postcss');
-    
     });
 
     return new Elixir.Task('postcss', function () {
@@ -30,6 +27,7 @@ Elixir.extend('postcss', function (src, output) {
                 require('postcss-responsive-type')(),
                 require('postcss-font-magician')(),
                 require('postcss-if-media')(),
+                require('postcss-short')(),
             ]).on('error', function(err) {
                 new Elixir.Notification('PostCSS Failed!');
                 console.log(err)
@@ -38,7 +36,7 @@ Elixir.extend('postcss', function (src, output) {
             .pipe($.concat('main.css'))
             .pipe($.if(config.sourcemaps, $.sourcemaps.write('.')))
             .pipe(gulp.dest(output || './public/css'))
-            .pipe(new Elixir.Notification('PostCSS Compiled!'));
+            .pipe(new Elixir.Notification('PostCSS Compiled'));
     
     })
     .watch(src);

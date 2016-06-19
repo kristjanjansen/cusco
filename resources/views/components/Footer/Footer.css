@@ -5,13 +5,26 @@
 }
 
     .Footer__wrapper {
-        height: $height-xxxl;
         display: flex;
+        align-items: center;
         justify-content: center;
-        align-content: center;
+        height: $height-xxxl;
+    }
+
+    .Footer__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $height-xxxl;
+    }
+
+    .Footer__col {
+        width: 20%;
+        flex-shrink: 0;
     }
 
     .Footer__link {
         color: white;
         font: $font-heading-sm;
+        padding: $padding-xxs 0;
     }

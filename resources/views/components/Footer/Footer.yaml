@@ -1,0 +1,21 @@
+nocontainer: true
+with:
+    image: /samples/footer.jpg
+    links:
+        col1:
+            - trip.ee
+        col2:
+            - Lennupakkumised
+            - Reisikaaslased
+            - Uudised
+            - Reisikirjad
+            - Reisipildid
+        col3:
+            - Foorum
+            - Elu välismaal
+            - Ost-müük
+        col4:
+            - Mis on Trip.ee
+            - Kontakt
+            - Kasutustingimused
+            - Reklaam

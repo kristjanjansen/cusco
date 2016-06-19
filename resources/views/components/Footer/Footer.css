@@ -1,0 +1,17 @@
+@import "variables";
+
+.Footer {
+    background-size: cover;
+}
+
+    .Footer__wrapper {
+        height: $height-xxxl;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .Footer__link {
+        color: white;
+        font: $font-heading-sm;
+    }

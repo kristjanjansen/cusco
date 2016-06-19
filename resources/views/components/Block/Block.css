@@ -1,15 +1,15 @@
 @import "variables";
 
-.Box {
+.Block {
 
 }
 
-.Box--withBackground {
+.Block--withBackground {
     background: $gray-lighter;
     padding: $padding-md;
 }
 
-    .Box__title {
+    .Block__title {
         font: $font-heading-md;
         margin-bottom: $margin-sm;
     }

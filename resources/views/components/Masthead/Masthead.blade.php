@@ -2,8 +2,8 @@
     class="Masthead {{ $isclasses }}"
     style="
         background-image: linear-gradient(
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.75)
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
         ),
     url({{ $image }});"
 >    

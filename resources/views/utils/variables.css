@@ -84,6 +84,7 @@ $padding-sm: $spacer;
 $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
 $padding-xl: calc($spacer * 5);
+$padding-xxl: calc($spacer * 7); 
 
 $padding-top-xs: $padding-xs 0 0 0;
 $padding-top-sm: $padding-sm 0 0 0;

@@ -1,0 +1,25 @@
+@import "variables";
+
+.Footer {
+    background-size: cover;
+    padding: $padding-xxl;
+}
+
+    .Footer__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column ?if $tablet
+    }
+
+    .Footer__col {
+        flex-shrink: 0;
+        text-align: center ?if $tablet;
+        width: 25%;
+        width: inherit ?if $tablet;
+    }
+
+    .Footer__link {
+        color: white;
+        font: $font-heading-sm;
+        padding: $padding-xs 0;
+    }

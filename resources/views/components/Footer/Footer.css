@@ -2,29 +2,24 @@
 
 .Footer {
     background-size: cover;
+    padding: $padding-xxl;
 }
 
     .Footer__wrapper {
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: $height-xxxl;
-    }
-
-    .Footer__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: $height-xxxl;
+        flex-direction: column ?if $tablet
     }
 
     .Footer__col {
-        width: 20%;
         flex-shrink: 0;
+        text-align: center ?if $tablet;
+        width: 25%;
+        width: inherit ?if $tablet;
     }
 
     .Footer__link {
         color: white;
         font: $font-heading-sm;
-        padding: $padding-xxs 0;
+        padding: $padding-xs 0;
     }

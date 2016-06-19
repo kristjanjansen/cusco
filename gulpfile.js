@@ -2,6 +2,7 @@ var elixir = require('laravel-elixir')
 
 require('laravel-elixir-vueify')
 require('./elixir/postcss')
+require('./elixir/svg')
 
 elixir(function(mix) {
 
@@ -10,6 +11,10 @@ elixir(function(mix) {
     mix.postcss([
         './resources/views/components/**/*.css',
         './resources/views/utils/**/*.css'
+    ])
+
+    mix.svg([
+        './resources/svg/**/*.svg',
     ])
 
 });

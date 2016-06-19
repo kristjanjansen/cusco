@@ -16,6 +16,7 @@
     "postcss-if-media": "^1.0.1",
     "postcss-import": "^8.1.2",
     "postcss-responsive-type": "^0.3.3",
+    "postcss-short": "^1.4.0",
     "postcss-simple-vars": "^2.0.0",
     "striptags": "^2.1.1",
     "to-markdown": "^3.0.0",

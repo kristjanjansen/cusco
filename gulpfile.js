@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir')
 
 require('laravel-elixir-vueify')
-require('./elixir')
+require('./elixir/postcss')
 
 elixir(function(mix) {
 

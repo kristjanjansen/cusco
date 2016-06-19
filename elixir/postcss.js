@@ -30,6 +30,7 @@ Elixir.extend('postcss', function (src, output) {
                 require('postcss-responsive-type')(),
                 require('postcss-font-magician')(),
                 require('postcss-if-media')(),
+                require('postcss-short')(),
             ]).on('error', function(err) {
                 new Elixir.Notification('PostCSS Failed!');
                 console.log(err)

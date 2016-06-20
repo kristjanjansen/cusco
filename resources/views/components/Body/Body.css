@@ -26,6 +26,14 @@
     margin: $margin-topbottom-sm;
 }
 
+.Body a,
+.Body a:link
+.Body a:active {
+    color: $blue;
+    text-decoration: underline;
+    word-wrap: break-word;
+}
+
 .Body ul {
     padding-left: $padding-md;
     margin: $margin-md 0;

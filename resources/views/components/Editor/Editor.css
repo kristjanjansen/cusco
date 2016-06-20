@@ -12,7 +12,7 @@
     .Editor__tool {
         padding: $padding-sm;
         font-family: $font-family-code;
-        font-size: 12px;
+        font-size: $font-size-xs;
         color: $gray-light;
     }
 
@@ -21,7 +21,7 @@
         height: 50vh;
     }
 
-    .Editor__writer {
+    .Editor__writer, #writer {
         flex: 1;
         font-size: $font-size-sm;
         line-height: $line-height-lg;

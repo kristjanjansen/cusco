@@ -2,6 +2,7 @@
 
 .Navbar {
     position: relative;
+    z-index: 1000;
 }
 
     .Navbar__links {

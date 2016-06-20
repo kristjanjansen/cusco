@@ -14,6 +14,13 @@
         .Masthead__search {
             display: flex;
             align-items: center;
+            display: none ?if $tablet;
+        }
+
+        .Masthead__smalllogo {
+            display: none;
+            display: flex ?if $tablet;
+            align-items: center;
         }
 
         .Masthead__nav {

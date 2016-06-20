@@ -16,7 +16,7 @@
 
         <div class="Editor__wrapper">
 
-            <div v-el:writer class="Editor__writer"></div>
+            <div v-el:writer class="Editor__writer" id="writer"></div>
             
             <div class="Editor__preview">
 

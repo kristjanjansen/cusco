@@ -17,6 +17,12 @@
 
             </div>
 
+            <div class="Masthead__smalllogo">
+
+                {!! $smalllogo !!}
+
+            </div>
+
             <div class="Masthead__nav">
 
                 {!! $navbar !!}

@@ -8,7 +8,7 @@
             @click="toggle()"
         >
         
-            <component is="Icon" name="icon-menu" class="Icon Icon--white"></icon>
+            <component is="Icon" name="icon-menu" class="Icon Icon--white" vars="{}"></icon>
         
         </div>
 

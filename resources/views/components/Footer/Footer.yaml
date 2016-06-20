@@ -1,6 +1,13 @@
 nocontainer: true
 with:
     image: /samples/footer.jpg
+    logo:
+        component: Icon
+        with:
+            name: tripee_logo_plain
+            width: 100%
+            height: 25
+        is: white
     links:
         col1:
             - Lennupakkumised
@@ -17,3 +24,7 @@ with:
             - Kontakt
             - Kasutustingimused
             - Reklaam
+        social:
+            - Facebook
+            - Twitter
+    licence: Autoriõigused © Trip.ee 1998-2016

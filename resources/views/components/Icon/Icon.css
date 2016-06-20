@@ -1,11 +1,15 @@
 @import "variables";
 
 .Icon {
-    width: $width-md;
-    height: $height-md;
+    width: calc($spacer * 1.5);
+    height: calc($spacer * 1.5);
 }
 
-    .Icon--small {
-        width: $width-sm;
-        height: $height-sm;
+    .Icon--large {
+        width: $width-md;
+        height: $height-md;
+    }
+
+    .Icon--white {
+        fill: $white;
     }

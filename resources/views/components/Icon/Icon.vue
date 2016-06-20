@@ -1,7 +1,12 @@
 <template>
 
-    <svg class="Icon {{ isclasses }}">
-
+    <svg
+        class="Icon {{ isclasses }}"
+        :style="{
+            width: vars.width,
+            height: vars.height 
+        }"
+    >
         <use xlink:href="#{{ vars.name || name }}"></use>
 
     </svg>
@@ -14,7 +19,7 @@
 
     export default Component.extend({
 
-        props: ['name']
+        props: ['name', 'width', 'height']
 
     })
 

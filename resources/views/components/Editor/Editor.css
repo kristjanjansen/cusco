@@ -6,7 +6,7 @@
     .Editor__toolbar {
         height: $height-md;
         display: flex;
-        align-content: center;
+        align-items: center;
     }
 
     .Editor__tool {

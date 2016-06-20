@@ -34,7 +34,7 @@ $gray-darkest: #111;
 
 /* Fonts */
 
-$font-family: "Karla";
+$font-family: "Sailec";
 $font-family-code: monospace;
 
 $font-size-xs: 13px;
@@ -46,12 +46,12 @@ $font-size-xxl: 32px;
 $font-size-xxxl: 48px;
 $font-size-xxxxl: 64px;
 
-$line-height-md: 140%;
-$line-height-lg: 130%;
-$line-height-xl: 120%;
-$line-height-xxl: 110%;
-$line-height-xxl: 100%;
-$line-height-xxxl: 100%;
+$line-height-md: 160%;
+$line-height-lg: 150%;
+$line-height-xl: 140%;
+$line-height-xxl: 130%;
+$line-height-xxl: 120%;
+$line-height-xxxl: 110%;
 
 $font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
 $font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
@@ -59,9 +59,9 @@ $font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
 $font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-text-xl: normal $font-size-xl/$line-height-md $font-family, sans-serif;
 
-$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
-$font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
-$font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-heading-xs: 600 $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-heading-sm: 600 $font-size-md/$line-height-md $font-family, sans-serif;
+$font-heading-md: 600 $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-heading-lg: bold $font-size-xl/$line-height-lg $font-family, sans-serif;
 $font-heading-xl: bold $font-size-xxl/$line-height-xl $font-family, sans-serif;
 $font-heading-xxl: bold $font-size-xxxl/$line-height-xxl $font-family, sans-serif;
@@ -85,6 +85,7 @@ $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
 $padding-xl: calc($spacer * 5);
 $padding-xxl: calc($spacer * 7); 
+$padding-xxxl: calc($spacer * 16); 
 
 $padding-top-xs: $padding-xs 0 0 0;
 $padding-top-sm: $padding-sm 0 0 0;
@@ -127,6 +128,8 @@ $margin-sm: $padding-sm;
 $margin-md: $padding-md;
 $margin-lg: $padding-lg;
 $margin-xl: $padding-xl;
+$margin-xxl: $padding-xxl;
+$margin-xxxl: $padding-xxxl;
 
 $margin-top-xs: $margin-xs 0 0 0;
 $margin-top-sm: $margin-sm 0 0 0;
@@ -212,6 +215,12 @@ $desktop: media (max-width: $tablet-width);
 $largedesktop: media (max-width: $tablet-width);
 
 /* Opacities */
+
+$opacity-xs: 0.1;
+$opacity-sm: 0.25;
+$opacity-md: 0.5;
+$opacity-lg: 0.75;
+$opacity-xl: 0.9;
 
 /* Animations */
 

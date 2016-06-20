@@ -1,7 +1,7 @@
 @import "variables";
 
 .Button {
-    align-content: center;
+    align-items: center;
     background: $green;
     border-radius: $border-radius-md;
     display: inline-flex;

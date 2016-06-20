@@ -1,4 +1,4 @@
 with:
     name: icon-tickets
 is:
-    - small
+  - large

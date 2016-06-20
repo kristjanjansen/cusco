@@ -1,14 +1,24 @@
 nocontainer: true
 with:
     image: /samples/header.jpg
-    title: Hello this is a long header that has to fit in somehow
-    logo: ''
+    title: Hello this is a header
+    search:
+        component: Icon
+        with:
+            name: icon-search
+        is: white
+    logo:
+        component: Icon
+        with:
+            name: tripee_logo
+            width: 220
+            height: 100%
     navbar:
         component: Navbar
         with:
             links:
                 - Trip.ee
-                - Lennupakkuimised
+                - Lennupakkumised
                 - Reisikaaslased
                 - Foorum
                 - Minu Trip.ee

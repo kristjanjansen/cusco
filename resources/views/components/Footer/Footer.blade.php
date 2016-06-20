@@ -33,6 +33,22 @@
 
         </div>
 
+        <div class="Footer__social">
+
+            @foreach($links['social'] as $link)
+            
+            <div class="Footer__socialLink">{{ $link }}</div>
+
+            @endforeach
+        
+        </div>
+
+        <div class="Footer__licence">
+
+            {!! $licence !!}
+        
+        </div>
+
     </div>
 
 </div>

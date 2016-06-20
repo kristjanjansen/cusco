@@ -127,6 +127,7 @@ $margin-sm: $padding-sm;
 $margin-md: $padding-md;
 $margin-lg: $padding-lg;
 $margin-xl: $padding-xl;
+$margin-xxl: $padding-xxl;
 
 $margin-top-xs: $margin-xs 0 0 0;
 $margin-top-sm: $margin-sm 0 0 0;
@@ -212,6 +213,8 @@ $desktop: media (max-width: $tablet-width);
 $largedesktop: media (max-width: $tablet-width);
 
 /* Opacities */
+
+$opacity-md: 0.5;
 
 /* Animations */
 

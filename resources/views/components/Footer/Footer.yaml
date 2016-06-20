@@ -23,3 +23,7 @@ with:
             - Kontakt
             - Kasutustingimused
             - Reklaam
+        social:
+            - Facebook
+            - Twitter
+    licence: Autoriõigused © Trip.ee 1998-2016

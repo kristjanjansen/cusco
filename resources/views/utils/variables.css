@@ -46,12 +46,12 @@ $font-size-xxl: 32px;
 $font-size-xxxl: 48px;
 $font-size-xxxxl: 64px;
 
-$line-height-md: 140%;
-$line-height-lg: 130%;
-$line-height-xl: 120%;
-$line-height-xxl: 110%;
-$line-height-xxl: 100%;
-$line-height-xxxl: 100%;
+$line-height-md: 160%;
+$line-height-lg: 150%;
+$line-height-xl: 140%;
+$line-height-xxl: 130%;
+$line-height-xxl: 120%;
+$line-height-xxxl: 110%;
 
 $font-text-xs: normal $font-size-xs/$line-height-md $font-family, sans-serif;
 $font-text-sm: normal $font-size-sm/$line-height-md $font-family, sans-serif;
@@ -59,9 +59,9 @@ $font-text-md: normal $font-size-md/$line-height-md $font-family, sans-serif;
 $font-text-lg: normal $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-text-xl: normal $font-size-xl/$line-height-md $font-family, sans-serif;
 
-$font-heading-xs: bold $font-size-sm/$line-height-md $font-family, sans-serif;
-$font-heading-sm: bold $font-size-md/$line-height-md $font-family, sans-serif;
-$font-heading-md: bold $font-size-lg/$line-height-md $font-family, sans-serif;
+$font-heading-xs: 600 $font-size-sm/$line-height-md $font-family, sans-serif;
+$font-heading-sm: 600 $font-size-md/$line-height-md $font-family, sans-serif;
+$font-heading-md: 600 $font-size-lg/$line-height-md $font-family, sans-serif;
 $font-heading-lg: bold $font-size-xl/$line-height-lg $font-family, sans-serif;
 $font-heading-xl: bold $font-size-xxl/$line-height-xl $font-family, sans-serif;
 $font-heading-xxl: bold $font-size-xxxl/$line-height-xxl $font-family, sans-serif;

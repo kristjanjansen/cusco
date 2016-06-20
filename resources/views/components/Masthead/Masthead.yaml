@@ -2,7 +2,10 @@ nocontainer: true
 with:
     image: /samples/header.jpg
     title: Hello this is a long header that has to fit in somehow
-    logo: ''
+    logo:
+        component: Icon
+        with:
+            name: tripee_logo
     navbar:
         component: Navbar
         with:

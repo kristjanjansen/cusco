@@ -16,7 +16,8 @@
     }
 
     .Masthead__nav {
-        display: block;
+        display: flex;
+        align-items: center;
         display: none ?if $mobile;
     }
 

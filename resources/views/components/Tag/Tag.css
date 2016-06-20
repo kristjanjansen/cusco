@@ -5,7 +5,7 @@
     background: gray;
     display: inline-flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     padding: $padding-xxxs $padding-sm;
     font: $font-text-xs;
     background-color: $gray-lighter;

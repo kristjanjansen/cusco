@@ -5,47 +5,46 @@
 }
 
     .Masthead__header {
-        height: $height-lg;
         display: flex;
         justify-content: space-between;
+        padding: $padding-sm 0;
+        margin-bottom: $margin-lg;
     }
 
-    .Masthead__logo {
-        color: white;
-        font: $font-heading-sm;
-    }
+        .Masthead__search {
+        }
 
-    .Masthead__nav {
+        .Masthead__nav {
+            display: flex;
+            align-items: center;
+            display: none ?if $mobile;
+        }
+
+        .Masthead__mobileNav {
+            display: none;
+            display: block ?if $mobile;
+        }
+
+    .Masthead__wrapper {
         display: flex;
         align-items: center;
-        display: none ?if $mobile;
-    }
-
-    .Masthead__mobileNav {
-        display: none;
-        display: block ?if $mobile;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: $padding-xxl;
     }
 
     .Masthead__content {
-        align-items: center;
-        display: flex;
-        height: $height-xxl ?if $mobile;
-        height: $height-xxxxl;
-        justify-content: center;
-        margin-top: calc($spacer * -6);
-        text-align: center;
         position: relative;
-
     }
 
-    .Masthead__logo {
-        position: absolute;
-        top: 0;
-        left: calc($spacer * -1);
-    }
+        .Masthead__logo {
+            position: absolute;
+            top: -96px;
+            left: -60px;
+        }
 
-    .Masthead__title {
-        color: $white;
-        font: $font-heading-xl ?if $mobile;
-        font: $font-heading-xxxl;
-    }
+        .Masthead__title {
+            color: $white;
+            font: $font-heading-xl ?if $mobile;
+            font: $font-heading-xxxl;
+        }

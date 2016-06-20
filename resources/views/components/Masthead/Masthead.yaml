@@ -1,7 +1,7 @@
 nocontainer: true
 with:
     image: /samples/header.jpg
-    title: Hello this is a long header that has to fit in somehow
+    title: Hello this is a header
     search: ''
     logo:
         component: Icon
@@ -14,7 +14,7 @@ with:
         with:
             links:
                 - Trip.ee
-                - Lennupakkuimised
+                - Lennupakkumised
                 - Reisikaaslased
                 - Foorum
                 - Minu Trip.ee

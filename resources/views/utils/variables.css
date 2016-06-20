@@ -85,6 +85,7 @@ $padding-md: calc($spacer * 2);
 $padding-lg: calc($spacer * 3);
 $padding-xl: calc($spacer * 5);
 $padding-xxl: calc($spacer * 7); 
+$padding-xxxl: calc($spacer * 16); 
 
 $padding-top-xs: $padding-xs 0 0 0;
 $padding-top-sm: $padding-sm 0 0 0;
@@ -128,6 +129,7 @@ $margin-md: $padding-md;
 $margin-lg: $padding-lg;
 $margin-xl: $padding-xl;
 $margin-xxl: $padding-xxl;
+$margin-xxxl: $padding-xxxl;
 
 $margin-top-xs: $margin-xs 0 0 0;
 $margin-top-sm: $margin-sm 0 0 0;
@@ -214,7 +216,11 @@ $largedesktop: media (max-width: $tablet-width);
 
 /* Opacities */
 
+$opacity-xs: 0.1;
+$opacity-sm: 0.25;
 $opacity-md: 0.5;
+$opacity-lg: 0.75;
+$opacity-xl: 0.9;
 
 /* Animations */
 

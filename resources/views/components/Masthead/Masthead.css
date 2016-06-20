@@ -8,21 +8,23 @@
         display: flex;
         justify-content: space-between;
         padding: $padding-sm 0;
-        margin-bottom: $margin-lg;
+        margin-bottom: $margin-xl;
     }
 
         .Masthead__search {
+            display: flex;
+            align-items: center;
         }
 
         .Masthead__nav {
             display: flex;
             align-items: center;
-            display: none ?if $mobile;
+            display: none ?if $tablet;
         }
 
         .Masthead__mobileNav {
             display: none;
-            display: block ?if $mobile;
+            display: block ?if $tablet;
         }
 
     .Masthead__wrapper {
@@ -41,6 +43,7 @@
             position: absolute;
             top: -96px;
             left: -60px;
+            display: none ?if $tablet;
         }
 
         .Masthead__title {

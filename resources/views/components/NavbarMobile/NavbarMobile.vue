@@ -7,7 +7,9 @@
             v-if="menuClosed"
             @click="toggle()"
         >
-            ≡
+        
+            <component is="Icon" name="icon-menu" class="Icon Icon--white"></icon>
+        
         </div>
 
         <div
@@ -43,9 +45,14 @@
 <script>
 
     import Component from '../Component';
+    import Icon from '../Icon/Icon.vue';
 
     export default Component.extend({
         
+        components: {
+            Icon
+        },
+
         methods: {
             
             toggle: function() {

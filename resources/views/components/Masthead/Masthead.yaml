@@ -2,7 +2,11 @@ nocontainer: true
 with:
     image: /samples/header.jpg
     title: Hello this is a header
-    search: ''
+    search:
+        component: Icon
+        with:
+            name: icon-search
+        is: white
     logo:
         component: Icon
         with:

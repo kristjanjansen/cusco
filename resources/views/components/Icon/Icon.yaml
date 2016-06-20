@@ -1,5 +1,4 @@
 with:
     name: icon-tickets
-    width: small
 is:
-    - small
+  - small

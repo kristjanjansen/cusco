@@ -2,10 +2,11 @@ nocontainer: true
 with:
     image: /samples/footer.jpg
     logo:
-        component: icon
+        component: Icon
         with:
             name: tripee_logo_plain
-            size: 84
+            width: 84
+        is: white
     links:
         col1:
             - Lennupakkumised

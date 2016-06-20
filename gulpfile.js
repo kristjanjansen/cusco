@@ -9,8 +9,8 @@ elixir(function(mix) {
     mix.browserify('./resources/views/main.js')
     
     mix.postcss([
-        './resources/views/components/**/*.css',
-        './resources/views/utils/**/*.css'
+        './resources/views/utils/**/*.css',
+        './resources/views/components/**/*.css'
     ])
 
     mix.svg([

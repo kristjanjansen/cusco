@@ -17,7 +17,8 @@
     }
 
     .ListItem__title {
-        font: $font-heading-lg;
+        font: $font-heading-md;
+        opacity: $opacity-lg;
     }
 
     .ListItem__subtitle {

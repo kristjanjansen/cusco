@@ -8,3 +8,7 @@
 .ImageUpload:hover {
     background: $gray-lighter;
 }
+
+.dropzone {
+    min-height: inherit;
+}

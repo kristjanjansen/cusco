@@ -47,7 +47,7 @@
 
         methods: {
 
-            'hide': function() { setTimeout(() => this.show = false, 1200) }
+            'hide': function() { setTimeout(() => this.show = false, 2000) }
         
         }
 

@@ -4,9 +4,7 @@
     align-items: center;
     border-radius: $border-radius-md;
     border: $border-green;
-    color: $green;
     display: flex;
-    font: $font-heading-md;
     height: $height-lg;
     justify-content: space-between; 
     padding: $padding-leftright-md; 
@@ -14,6 +12,15 @@
 
 .Alert--error {
     border: $border-red;
+    color: $red;
+}
+
+    .Alert__title {
+        font: $font-heading-md;
+        color: $green;
+    }
+
+.Alert--error .Alert__title {
     color: $red;
 }
 

@@ -26,16 +26,26 @@
         display: block ?if $mobile;
     }
 
-    .Masthead__title {
+    .Masthead__content {
         align-items: center;
-        color: $white;
         display: flex;
-        font: $font-heading-xl ?if $mobile;
-        font: $font-heading-xxxl;
         height: $height-xxl ?if $mobile;
         height: $height-xxxxl;
         justify-content: center;
         margin-top: calc($spacer * -6);
         text-align: center;
+        position: relative;
 
+    }
+
+    .Masthead__logo {
+        position: absolute;
+        top: 0;
+        left: calc($spacer * -1);
+    }
+
+    .Masthead__title {
+        color: $white;
+        font: $font-heading-xl ?if $mobile;
+        font: $font-heading-xxxl;
     }

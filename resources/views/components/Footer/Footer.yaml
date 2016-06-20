@@ -5,7 +5,8 @@ with:
         component: Icon
         with:
             name: tripee_logo_plain
-            width: 84
+            width: 100%
+            height: 25
         is: white
     links:
         col1:

@@ -13,7 +13,7 @@
     
             <div class="Footer__col">
                 
-                <div class="Footer__link">Trip.ee</div>
+                {!! $logo !!}
 
             </div>
 

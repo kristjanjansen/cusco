@@ -1,11 +1,5 @@
 @import "variables";
 
 .Icon {
-    width: $width-md;
-    height: $height-md;
-}
 
-    .Icon--small {
-        width: $width-sm;
-        height: $height-sm;
-    }
+}

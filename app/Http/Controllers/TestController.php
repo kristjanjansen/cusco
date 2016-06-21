@@ -22,6 +22,7 @@ class TestController extends Controller {
                 )
                 ->push(component('Promo')->with('route', '/promo'))
                 ->push(component('AlertDemo'))
+                ->push(component('Editor'))
             )
             ->with('sidebar', collect());    
     

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="Editor {{ isclasses }}">
+    <div class="Editor" :class="isclasses">
 
         <div class="Editor__toolbar">
 
@@ -56,24 +56,21 @@
     import 'brace/theme/chrome';
     import 'brace/mode/markdown';
 
-    import Component from '../Component';
     import ImageUpload from '../ImageUpload/ImageUpload.vue';
 
-    export default Component.extend({
+    export default {
 
         components: {
             ImageUpload
         },
 
         data() {
-
            return {
               body: '',
               images: [],
               editor: {},
               imagebrowserOpen: false
            }
-
        },
 
        ready: function() {
@@ -187,6 +184,6 @@
             }
         }
 
-   })
+   }
 
 </script>

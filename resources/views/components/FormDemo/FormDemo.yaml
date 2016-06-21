@@ -16,6 +16,12 @@ with:
             name: textarea
             label: Label
             value: Value
+    checbox:
+        component: FormCheckbox
+        with:
+            name: checkbox
+            label: Checkbox
+            checked: false
     button:
         component: FormButton
         with:

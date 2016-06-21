@@ -2,7 +2,6 @@
 
 .Body {
     font: $font-text-md;
-    opacity: $opacity-lg;
 }
 
 .Body--responsive {
@@ -10,6 +9,10 @@
     min-font-size: $font-size-sm;
     line-height: $line-height-md;
     font-family: $font-family;
+}
+
+.Body, .Body * {
+    color: $gray;
 }
 
 .Body p {

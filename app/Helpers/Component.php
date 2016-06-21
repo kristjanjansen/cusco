@@ -66,8 +66,8 @@ class Component {
         } else {
 
             $props = collect($with)->map(function($value, $key) {
-
-                $value = is_string($value) ? $value : json_encode($value);
+dump($value);
+                $value = json_encode($value);
                 return $key.'="'.$value.'"';
             
             })->implode(' ');

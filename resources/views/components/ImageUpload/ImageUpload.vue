@@ -12,9 +12,8 @@
 <script>
 
     import Dropzone from 'dropzone';
-    import Component from '../Component';
 
-    export default Component.extend({
+    export default {
 
         ready: function() {
 
@@ -41,6 +40,6 @@
 
         }
 
-    })
+    }
 
 </script>

@@ -20,8 +20,12 @@ class TestController extends Controller {
                     ->with('links', ['First link', 'Second link'])
                     ->with('sublinks', ['Third link'])
                 )
+                ->push(component('Navbar')
+                    ->with('links', ['First link', 'Second link'])
+                    ->with('sublinks', ['Third link'])
+                )
                 
-      //          ->push(component('FormSelect'))
+       //         ->push(component('FormSelect'))
 
                 ->push(component('Promo')->with('route', '/promo'))
                 ->push(component('AlertDemo'))

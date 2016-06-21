@@ -57,7 +57,7 @@
 
     export default {
 
-        mixins: { VueClickaway },
+        mixins: [ VueClickaway ],
 
         props: {
             isclasses: { default: ''},

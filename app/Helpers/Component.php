@@ -66,10 +66,11 @@ class Component {
         } else {
 
             $props = collect($with)->map(function($value, $key) {
-dump($value);
-                $value = json_encode($value);
+               
+                $value = is_array($value) ? rawurlencode(json_encode($value)) : $value;
+
                 return $key.'="'.$value.'"';
-            
+
             })->implode(' ');
 
             return '<component is="'

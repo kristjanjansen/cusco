@@ -54,8 +54,8 @@
 
         props: {
             isclasses: { default: ''},
-            links: { type: Array, default: function() { return [] } },
-            sublinks: { type: Array, default: function() { return [] } }
+            links: { default: '' },
+            sublinks: { default: '' },
         },
 
         data() {
@@ -71,7 +71,8 @@
         },
 
         ready() {
-            console.log(this.links)
+            this.links = this.links ? JSON.parse(decodeURIComponent(this.links)) : ''
+            this.sublinks = this.sublinks ? JSON.parse(decodeURIComponent(this.sublinks)) : ''
         }
 
     }

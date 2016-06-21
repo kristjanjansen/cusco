@@ -16,7 +16,10 @@ class TestController extends Controller {
                 ->push(component('Arc')->with('border', '10'))
                 ->push(component('Icon')->with('name', 'icon-car'))
                 ->push(component('ImageUpload'))
-                ->push(component('NavbarMobile')->with('links', ['hello']))
+                ->push(component('NavbarMobile')
+                    ->with('links', ['First link'])
+                    ->with('sublinks', ['Second link'])
+                )
             )
             ->with('sidebar', collect());    
     

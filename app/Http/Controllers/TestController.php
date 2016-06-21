@@ -21,6 +21,7 @@ class TestController extends Controller {
                     ->with('sublinks', ['Second link'])
                 )
                 ->push(component('Promo')->with('route', '/promo'))
+                ->push(component('AlertDemo'))
             )
             ->with('sidebar', collect());    
     

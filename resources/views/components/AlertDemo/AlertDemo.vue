@@ -14,9 +14,7 @@
 
 <script>
 
-    import Component from '../Component';
-
-    export default Component.extend({
+    export default {
 
         methods: {
 
@@ -26,6 +24,6 @@
         
         }
 
-    })
+    }
 
 </script>

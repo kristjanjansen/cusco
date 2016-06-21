@@ -16,6 +16,15 @@ with:
             name: textarea
             label: Label
             value: Value
+    select:
+        component: FormSelect
+        with:
+            name: select
+            label: Label
+            options: 
+                - Some
+                - Two
+                - Three
     checbox:
         component: FormCheckbox
         with:

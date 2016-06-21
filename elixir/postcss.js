@@ -8,10 +8,6 @@ var config = Elixir.config;
 
 Elixir.extend('postcss', function (src, output) {
 
-    Elixir.onWatch(function() {
-        gulp.start('postcss');
-    });
-
     return new Elixir.Task('postcss', function () {
         
         this.log(src, output);

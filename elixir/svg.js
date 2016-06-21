@@ -11,10 +11,6 @@ var config = Elixir.config;
 
 Elixir.extend('svg', function (src, output) {
 
-    Elixir.onWatch(function() {
-        gulp.start('svg');
-    });
-
     return new Elixir.Task('svg', function () {
         
         this.log(src, output);

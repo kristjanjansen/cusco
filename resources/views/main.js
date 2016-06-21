@@ -12,6 +12,7 @@ import ImageUpload from './components/ImageUpload/ImageUpload.vue';
 import Navbar from './components/Navbar/Navbar.vue';
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
 import Promo from './components/Promo/Promo.vue';
+import FormSelect from './components/FormSelect/FormSelect.vue';
 
 const globalVars = JSON.parse(decodeURIComponent(
     document.querySelector('#globalvars').getAttribute('content')
@@ -28,6 +29,7 @@ new Vue({
         AlertDemo,
         Arc,
         Editor,
+        FormSelect,
         Icon,
         IconLoader,
         ImageUpload,

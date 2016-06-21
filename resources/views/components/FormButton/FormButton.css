@@ -7,7 +7,6 @@
     border: none;
     color: $white;
     display: inline-flex;
-    float: right;
     font: $font-heading-md;
     justify-content: center;
     padding: $padding-sm $padding-lg;

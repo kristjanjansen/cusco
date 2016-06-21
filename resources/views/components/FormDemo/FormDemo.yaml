@@ -2,7 +2,7 @@ with:
     header:
         component: FormHeader
         with:
-            action: '/formdemo'
+            action: '/styleguide/formdemo'
             method: post
     textfield:
         component: FormTextfield

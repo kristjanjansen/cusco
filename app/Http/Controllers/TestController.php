@@ -17,15 +17,15 @@ class TestController extends Controller {
                 ->push(component('Icon')->with('name', 'icon-car'))
                 ->push(component('ImageUpload'))
                 ->push(component('NavbarMobile')
-                    ->with('links', ['First link'])
-                    ->with('sublinks', ['Second link'])
+                    ->with('links', ['First link', 'Second link'])
+                    ->with('sublinks', ['Third link'])
                 )
                 
-                ->push(component('FormSelect'))
+       //         ->push(component('FormSelect'))
 
-                ->push(component('Promo')->with('route', '/promo'))
+      //          ->push(component('Promo')->with('route', '/promo'))
                 ->push(component('AlertDemo'))
-                ->push(component('Editor'))
+    //            ->push(component('Editor'))
             )
             ->with('sidebar', collect());    
     

@@ -39,12 +39,6 @@
 
         },
 
-        ready() {
-
-            this.hide()
-
-        },
-
         methods: {
 
             'hide': function() { setTimeout(() => this.show = false, 2000) }

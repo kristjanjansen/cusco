@@ -9,7 +9,7 @@
             {{
                 rawurlencode(json_encode([
                     'token' => csrf_token(),
-                    'alert' => 'Test alert from PHP'
+                    'alert' => session('alert')
                 ])) 
             }}
         ">

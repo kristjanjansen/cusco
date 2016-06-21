@@ -37,6 +37,8 @@ class FormdemoController extends Controller {
 
         dump(request()->all());
     
+        return redirect('styleguide')->with('alert', 'We are back');
+
     }
 
 }

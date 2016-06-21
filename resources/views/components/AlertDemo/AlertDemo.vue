@@ -14,18 +14,16 @@
 
 <script>
 
-    import Component from '../Component';
-
-    export default Component.extend({
+    export default {
 
         methods: {
 
             'showAlert': function() {
-                this.$dispatch('alert', 'Hello from JS')
+                this.$dispatch('showAlert', 'Hello from JS')
             }
         
         }
 
-    })
+    }
 
 </script>

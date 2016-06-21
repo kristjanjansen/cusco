@@ -38,10 +38,16 @@ class Component {
 
         $component = $this->component;
         
-        return $this->is->map(function($item) use ($component) {
-            return $component.'--'.$item;
-        })
-        ->implode(' ');
+        if(! $this->is->isEmpty()) {
+
+            return $this->is->map(function($item) use ($component) {
+                return $component.'--'.$item;
+            })
+            ->implode(' ');
+
+        }
+
+        return '';
 
     }
 
@@ -59,13 +65,22 @@ class Component {
 
         } else {
 
+            $props = collect($with)->map(function($value, $key) {
+               
+                $value = is_array($value) ? rawurlencode(json_encode($value)) : $value;
+
+                return $key.'="'.$value.'"';
+
+            })->implode(' ');
+
             return '<component is="'
                 . $this->component
                 . '" isclasses="'
                 . $this->generateIsClasses()
-                . '" vars="'
-                . rawurlencode(json_encode($with))
-                . '" />';
+                . '" ' 
+                . $props
+                . ' />';
+
         }
     
     }

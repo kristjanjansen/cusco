@@ -1,12 +1,12 @@
 <template>
 
-    <div class="Arc {{ isclasses }}">
+    <div class="Arc" :class="isclasses">
 
         <svg :style="{ width: size + 'px', height: size + 'px' }">
         
             <path
                 fill="none"
-                stroke="#78cc5c"
+                :stroke="color"
                 :stroke-width="border" 
                 :d="arc"
             />
@@ -19,21 +19,21 @@
 
 <script>
 
-    import Component from '../Component';
-
-    export default Component.extend({
+    export default {
 
         props: {
-            size: { default: 100 }
+            isclasses: { default: ''},
+            size: { default: 50 },
+            border: { default: 4 },
+            color: { default: 'black' },
+            endangle: { default: 270 }
         },
 
         data() {
 
             return {
                 arc: '',
-                border: 4,
-                startAngle: 0,
-                endAngle: 220,
+                startangle: 0,
             }
 
         },
@@ -44,8 +44,8 @@
                 this.size / 2,
                 this.size / 2,
                 this.size / 2 - (this.border / 2),
-                this.startAngle,
-                this.endAngle
+                this.startangle,
+                this.endangle
             )
         
         },
@@ -85,6 +85,6 @@
 
         }
    
-    })
+    }
 
 </script>

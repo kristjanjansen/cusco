@@ -1,10 +1,14 @@
 <template>
 
-    <div class="Promo {{ isClasses }}" :style="style" >
+    <div
+        class="Promo"
+        :class="isclasses"
+        :style="{ backgroundImage: 'url(' + image + ')'}"
+    >
 
         <div class="Promo__title">
 
-            {{ promo.title }}
+            {{ title }}
 
         </div>
 
@@ -14,33 +18,27 @@
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
-
-        computed: {
-            style: function() {
-                return { backgroundImage: `
-                    linear-gradient(
-                        rgba(255, 128, 0, 0.5),
-                        rgba(255, 128, 0, 0.5)
-                    ), url(${ this.promo.image })
-                `}
-            }
+        props: {
+            isclasses: { default: ''},
+            route: { default: '/promo' }
         },
 
         data: function() {
             return {
-                promo: {}
+                title: '',
+                image: ''
             }
         },
 
         ready() {
-            this.$http.get(this.vars.route).then(function(res) {
-                this.promo = res.data
+            this.$http.get(this.route).then(function(res) {
+                this.title = res.data.title
+                this.image = res.data.image
             });
         }
 
-    })
+    }
 
 </script>

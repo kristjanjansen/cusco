@@ -14,12 +14,12 @@ import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
 import Promo from './components/Promo/Promo.vue';
 import FormSelect from './components/FormSelect/FormSelect.vue';
 
-const globalVars = JSON.parse(decodeURIComponent(
-    document.querySelector('#globalvars').getAttribute('content')
+const globalProps = JSON.parse(decodeURIComponent(
+    document.querySelector('#globalprops').getAttribute('content')
 ));
 
 Vue.use(VueResource);
-Vue.http.headers.common['X-CSRF-TOKEN'] = globalVars.token;
+Vue.http.headers.common['X-CSRF-TOKEN'] = globalProps.token;
 
 new Vue({
     el: 'body',
@@ -40,15 +40,15 @@ new Vue({
 
     events: {
       
-        'alert': function (alert) { this.$broadcast('alert', alert) },
+        'showAlert': function (alert) { this.$broadcast('showAlert', alert) },
         'ImageUploaded': function () { this.$broadcast('ImageUploaded') }
 
     }, 
 
     ready() {
 
-        if (globalVars.alert) {
-            this.$emit('alert', globalVars.alert)
+        if (globalProps.alert) {
+            this.$emit('showAlert', globalProps.alert)
         }
     
     }

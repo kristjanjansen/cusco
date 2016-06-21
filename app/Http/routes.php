@@ -34,3 +34,4 @@ Route::get('/promo', 'PromoController@getRandom');
 
 Route::post('/render', 'HelpersController@render');
 
+Route::get('/test', 'TestController@index');

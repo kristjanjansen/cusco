@@ -1,15 +1,19 @@
 <template>
 
-    <div v-el:dropzone class="ImageUpload {{ isclasses }} dropzone"></div>
+    <div
+        v-el:dropzone
+        class="ImageUpload dropzone"
+        :class="isclasses"
+    >
+    </div>
 
 </template>
 
 <script>
 
     import Dropzone from 'dropzone';
-    import Component from '../Component';
 
-    export default Component.extend({
+    export default {
 
         ready: function() {
 
@@ -36,6 +40,6 @@
 
         }
 
-    })
+    }
 
 </script>

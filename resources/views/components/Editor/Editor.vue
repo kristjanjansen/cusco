@@ -1,44 +1,48 @@
 <template>
 
-    <div class="Editor {{ isclasses }}">
+    <div>
+        
+        <div class="Editor" :class="isclasses">
 
-        <div class="Editor__toolbar">
+            <div class="Editor__toolbar">
 
-            <div class="Editor__tool" @click="insertBold()">B</div>
-            <div class="Editor__tool" @click="insertItalic()">I</div>
-            <div class="Editor__tool" @click="insertMarkdownLink()">Link</div>
-            <div class="Editor__tool" @click="insertHeading()">H1</div>
-            <div class="Editor__tool" @click="insertTable()">▦</div>
-            <div class="Editor__tool" @click="cleanMarkup()">Clean</div>
-            <div class="Editor__tool" @click="toggleImagebrowser()">Image</div>
+                <div class="Editor__tool" @click="insertBold()">B</div>
+                <div class="Editor__tool" @click="insertItalic()">I</div>
+                <div class="Editor__tool" @click="insertMarkdownLink()">Link</div>
+                <div class="Editor__tool" @click="insertHeading()">H1</div>
+                <div class="Editor__tool" @click="insertTable()">▦</div>
+                <div class="Editor__tool" @click="cleanMarkup()">Clean</div>
+                <div class="Editor__tool" @click="toggleImagebrowser()">Image</div>
 
-        </div>
+            </div>
 
-        <div class="Editor__wrapper">
+            <div class="Editor__wrapper">
 
-            <div v-el:writer class="Editor__writer" id="writer"></div>
-            
-            <div class="Editor__preview">
-
-                <div class="Body">
+                <div v-el:writer class="Editor__writer" id="writer"></div>
                 
-                {{{ body }}}
+                <div class="Editor__preview">
+
+                    <div class="Body">
+                    
+                    {{{ body }}}
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+       </div>
 
-   </div>
+       <div class="Editor__imagebrowser" v-if="imagebrowserOpen">
+            
+            <component is="ImageUpload"></component>
 
-   <div class="Editor__imagebrowser" v-if="imagebrowserOpen">
-        
-        <component is="ImageUpload"></component>
+           <div v-for="image in images">
+           
+               <img :src="image" width="20%" @click="insertImage($key)">
 
-       <div v-for="image in images">
-       
-           <img :src="image" width="20%" @click="insertImage($key)">
+           </div>
 
        </div>
 
@@ -56,24 +60,21 @@
     import 'brace/theme/chrome';
     import 'brace/mode/markdown';
 
-    import Component from '../Component';
     import ImageUpload from '../ImageUpload/ImageUpload.vue';
 
-    export default Component.extend({
+    export default {
 
         components: {
             ImageUpload
         },
 
         data() {
-
            return {
               body: '',
               images: [],
               editor: {},
               imagebrowserOpen: false
            }
-
        },
 
        ready: function() {
@@ -83,6 +84,7 @@
             this.editor.renderer.setShowGutter(false);
             this.editor.setHighlightActiveLine(false);
             this.editor.setOption("wrap", 60);
+            this.editor.$blockScrolling = Infinity
             this.editor.setValue(this.body);
 
             this.editor.getSession().on('change', function() {
@@ -187,6 +189,6 @@
             }
         }
 
-   })
+   }
 
 </script>

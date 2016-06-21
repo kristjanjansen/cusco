@@ -1,13 +1,11 @@
 <template>
 
     <svg
-        class="Icon {{ isclasses }}"
-        :style="{
-            width: vars.width,
-            height: vars.height 
-        }"
+        class="Icon"
+        :class="isclasses"
+        :style="{ width: width, height: height }"
     >
-        <use xlink:href="#{{ vars.name || name }}"></use>
+        <use xlink:href="#{{ name }}"></use>
 
     </svg>
 
@@ -15,12 +13,15 @@
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
+        props: {
+            isclasses: { default: ''},
+            width: { default: 18},
+            height: { default: 18},
+            name: { default: ''}
+        }
 
-        props: ['name', 'width', 'height']
-
-    })
+    }
 
 </script>

@@ -39,21 +39,36 @@ class ComponentCreate extends Command
 
         $vue = [
             "<template>",
-            "    <div class=\"$name {{ isclasses }}\">",
+            "",
+            "    <div class=\"$name\" :class=\"isclasses\">",
+            "",
             "        <div class=\"$name"."__"."$element\">",
-            "            {{ vars.title }} {{ message }}",
+            "",
+            "            {{ title }} {{ message }}",
+            "",
             "        </div>",
+            "",
             "    </div>",
+            "",
             "</template>",
+            "",
             "<script>",
-            "    import Component from '../Component';",
-            "    export default Component.extend({",
+            "",
+            "    export default {",
+            "",
+            "        props: {",
+            "            isclasses: { default: '' },", 
+            "            title: { default: '$name' }", 
+            "        },",
+            "",
             "        data() {",
             "            return {", 
             "                message: 'from Vue'",
             "            }",
             "        }",
-            "    })",
+            "",
+            "    }",
+            "",
             "</script>"
         ];
 
@@ -67,7 +82,7 @@ class ComponentCreate extends Command
 
         if ($this->option('vue')) {
 
-            Storage::disk('root')->put("$dir/$name.vue", implode("\n\n", $vue));
+            Storage::disk('root')->put("$dir/$name.vue", implode("\n", $vue));
             $this->info("\nVue component $dir created");
             $this->line("\nYour next steps:");
             $this->line("\n    1. Edit resources/views/main.js to import your new component");

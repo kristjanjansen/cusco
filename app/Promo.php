@@ -33,10 +33,8 @@ class Promo
     public function getRandom()
     {
 
-        return json_encode($this->promos
-                ->shuffle()
-                ->first()
-            );
+        return $this->promos->shuffle()->first();
+        
     }
 
 }

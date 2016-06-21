@@ -11,77 +11,26 @@
 |
 */
 
-Route::get('/', function() {
-    return collect([
-        '/styleguide',
-        '/content/forum',
-        '/content/forum/1'
-    ])->map(function($link) {
-        return "<a href=\"$link\" style=\"display: block; color: #777; padding: 5px; font-family: monospace;\">$link</a>";
-    })->implode('');
-});
+Route::get('/', 'FrontpageController@index');
+
 
 Route::get('/styleguide', 'StyleguideController@index');
 
 Route::post('/styleguide/formdemo', 'StyleguideController@formdemo');
 
-Route::get('/promo', 'PromoController@getRandom');
 
 Route::get('/content/forum', 'ForumController@index');
 
 Route::get('/content/forum/{id}', 'ForumController@show');
 
-Route::post('/render', function() {
 
-    $body = Request::input('body');
-    $body = Markdown::setBreaksEnabled(true)->text($body);
+Route::get('/image/index', 'ImageController@index');
 
-    $images = getImages();
-    $imagePattern = '/\[\[([0-9]+)\]\]/';
-    
-    if (preg_match_all($imagePattern, $body, $matches)) {
-        foreach ($matches[1] as $match) {
-            if (isset($images[$match])) {
-                $body = str_replace(
-                    "[[$match]]",
-                    '<img src="'.$images[$match].'" />',
-                    $body
-                );
-            }
-        }
-    }
+Route::post('/image/store', 'ImageController@store');
 
-    return Response::json([
-        'body' => $body
-    ]);
 
-});
+Route::get('/promo', 'PromoController@getRandom');
 
-Route::post('/image/upload', function() {
 
-    $image = Request::file('image');
+Route::post('/render', 'HelpersController@render');
 
-        $imagename = 'image-' . rand(1,3) . '.' .$image->getClientOriginalExtension();
-        $image->move(public_path() . '/images/' , $imagename);
-
-        return Response::json([
-            'image' => '/images/'. $imagename
-        ]);
-
-});
-
-function getImages() {
-
-        return collect(Storage::disk('root')->files('public/images'))
-        ->filter(function($filename) {
-            return pathinfo($filename, PATHINFO_EXTENSION) == 'jpg';
-        })->map(function($filename) {
-            return str_replace('public', '', $filename);
-        });
-}
-
-Route::get('/image/index', function() {
-
-    return Response::json(getImages());
-
-});

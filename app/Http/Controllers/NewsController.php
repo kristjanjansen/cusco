@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App;
 use Request;
 
-class FormdemoController extends Controller {
+class NewsController extends Controller {
 
     public function create() {
 

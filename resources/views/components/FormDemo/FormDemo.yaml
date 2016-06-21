@@ -1,0 +1,25 @@
+with:
+    header:
+        component: FormHeader
+        with:
+            action: '/formdemo'
+            method: post
+    textfield:
+        component: FormTextfield
+        with:
+            name: textfield
+            label: Label
+            value: Value
+    textarea:
+        component: FormTextarea
+        with:
+            name: textarea
+            label: Label
+            value: Value
+    button:
+        component: FormButton
+        with:
+            title: Title
+    footer:
+        component: FormFooter
+        with:

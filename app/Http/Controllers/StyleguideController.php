@@ -47,8 +47,10 @@ class StyleguideController extends Controller {
 
     public function formdemo() {
 
-        dd(request()->all());
-    
+        dump(request()->all());
+        
+        sleep(2);
+
         return redirect('styleguide')->with('alert', 'We are back from PHP');
 
     }

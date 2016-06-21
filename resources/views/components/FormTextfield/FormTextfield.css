@@ -1,0 +1,13 @@
+@import "variables";
+
+.FormTextfield {
+
+}
+
+    .FormTextfield__title {
+        border: $border-gray;
+        border-radius: $border-radius-md;
+        padding: $padding-sm;
+        font: $font-text-md;
+        width: 100%;
+    }

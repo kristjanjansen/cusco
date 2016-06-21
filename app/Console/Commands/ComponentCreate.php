@@ -58,7 +58,7 @@ class ComponentCreate extends Command
         ];
 
         $blade = [
-            "<div class=\"$name {{ \$is }}\">",
+            "<div class=\"$name {{ \$isclasses }}\">",
             "    <div class=\"$name"."__"."$element\">",
             "        {{ \$title }}",
             "    </div>",

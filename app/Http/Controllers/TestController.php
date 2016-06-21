@@ -15,6 +15,7 @@ class TestController extends Controller {
                 ->push(component('Alert')->with('alert', 'hello'))
                 ->push(component('Arc')->with('border', '10'))
                 ->push(component('Icon')->with('name', 'icon-car'))
+                ->push(component('ImageUpload'))
             )
             ->with('sidebar', collect());    
     

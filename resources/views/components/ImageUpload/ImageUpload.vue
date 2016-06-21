@@ -1,6 +1,11 @@
 <template>
 
-    <div v-el:dropzone class="ImageUpload {{ isclasses }} dropzone"></div>
+    <div
+        v-el:dropzone
+        class="ImageUpload dropzone"
+        :class="isclasses"
+    >
+    </div>
 
 </template>
 

@@ -44,7 +44,11 @@ new Vue({
     }, 
 
     ready() {
-        this.$emit('alert', globalVars.alert)
+
+        if (globalVars.alert) {
+            this.$emit('alert', globalVars.alert)
+        }
+    
     }
 
 });

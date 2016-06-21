@@ -23,8 +23,7 @@ Route::get('/', function() {
 
 Route::get('/styleguide', 'StyleguideController@index');
 
-Route::get('/formdemo', 'FormdemoController@create');
-Route::post('/formdemo', 'FormdemoController@store');
+Route::post('/styleguide/formdemo', 'StyleguideController@formdemo');
 
 Route::get('/promo', 'PromoController@getRandom');
 

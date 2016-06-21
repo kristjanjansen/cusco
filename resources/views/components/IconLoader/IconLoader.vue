@@ -6,11 +6,11 @@
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
-
-        props: ['route'],
+        props: {
+            route: {}
+        },
 
         data: function() {
             return {
@@ -24,6 +24,6 @@
             });
         }
 
-    })
+    }
 
 </script>

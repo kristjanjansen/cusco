@@ -36,12 +36,12 @@ import Icon from '../Icon/Icon.vue';
 
         data() {
             return {
-                show: true,
+                show: false,
             };
         },
 
         events: {
-            'alert': function (alert) {
+            'showAlert': function (alert) {
                 this.alert = alert
                 this.show = true
                 setTimeout(() => this.show = false, 2000)

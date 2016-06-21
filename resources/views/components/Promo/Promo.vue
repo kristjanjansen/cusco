@@ -1,10 +1,14 @@
 <template>
 
-    <div class="Promo" :class="isclasses" :style="style" >
+    <div
+        class="Promo"
+        :class="isclasses"
+        :style="{ backgroundImage: 'url(' + image + ')'}"
+    >
 
         <div class="Promo__title">
 
-            {{ promo.title }}
+            {{ title }}
 
         </div>
 
@@ -18,29 +22,20 @@
 
         props: {
             isclasses: { default: ''},
-            route: { default: '' }
-        },
-
-        computed: {
-            style: function() {
-                return { backgroundImage: `
-                    linear-gradient(
-                        rgba(255, 128, 0, 0.5),
-                        rgba(255, 128, 0, 0.5)
-                    ), url(${ this.promo.image })
-                `}
-            }
+            route: { default: '/promo' }
         },
 
         data: function() {
             return {
-                promo: {}
+                title: '',
+                image: ''
             }
         },
 
         ready() {
             this.$http.get(this.route).then(function(res) {
-                this.promo = res.data
+                this.title = res.data.title
+                this.image = res.data.image
             });
         }
 

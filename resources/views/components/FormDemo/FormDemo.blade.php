@@ -4,6 +4,8 @@
 
 <div class="margin-bottom-md">{!! $textarea !!}</div>
 
+<div class="margin-bottom-md">{!! $select !!}</div>
+
 <div class="margin-bottom-md">{!! $checbox !!}</div>
 
 {!! $button !!}

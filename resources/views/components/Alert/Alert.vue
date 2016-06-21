@@ -1,50 +1,53 @@
 <template>
 
-<div class="Alert {{ isclasses }}" v-if="show" transition="fadeCollapse">
+    <div
+        class="Alert"
+        :class="isclasses"
+        v-if="show"
+        transition="fadeCollapse"
+    >
 
-    <div class="Alert__title">
-        {{ alert }}
+        <div class="Alert__title">
+            {{ alert }}
+        </div>
+
+        <div class="Alert__close" @click="show = false">
+            <component is="Icon" name="icon-close"></component>
+        </div>
+
     </div>
-
-    <div class="Alert__close" @click="show = false">
-        ×
-    </div>
-
-</div>
 
 </template>
 
 <script>
 
-    import Component from '../Component';
+import Icon from '../Icon/Icon.vue';
 
-    export default Component.extend({
+    export default {
+
+        components: {
+            Icon
+        },
+
+        props: {
+            isclasses: { default: ''},
+            alert: { default: '' }
+        },
 
         data() {
-            
             return {
-                alert: '',
-                show: false,
+                show: true,
             };
-        
         },
 
         events: {
-          
             'alert': function (alert) {
                 this.alert = alert
                 this.show = true
-                this.hide()
+                setTimeout(() => this.show = false, 2000)
             }
-
         },
 
-        methods: {
-
-            'hide': function() { setTimeout(() => this.show = false, 2000) }
-        
-        }
-
-    })
+    }
 
 </script>

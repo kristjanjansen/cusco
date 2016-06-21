@@ -12,7 +12,7 @@
             label="name"
         ></component>
 
-        <input type="hidden" :name="name" :value="selected.id" />
+        <input type="hidden" :name="name" :value="selected" />
 
     </div>
 

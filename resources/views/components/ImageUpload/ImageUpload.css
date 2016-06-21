@@ -6,9 +6,11 @@
 }
 
 .ImageUpload:hover {
-    background: $gray-lighter;
+    background: $gray-lightest;
 }
 
 .dropzone {
     min-height: inherit;
+    border: 2px dashed $gray-lighter;
+    border-radius: $border-radius-md;
 }

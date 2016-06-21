@@ -1,6 +1,6 @@
 <template>
 
-    <div class="FormSelect {{ isclasses }}">
+    <div class="FormSelect" :class="isclasses">
     
         <component
             is="Multiselect"
@@ -12,7 +12,7 @@
             label="name"
         ></component>
 
-        <input type="hidden" :name="vars.name || name" :value="selected.id" />
+        <input type="hidden" :name="name" :value="selected.id" />
 
     </div>
 
@@ -21,11 +21,15 @@
 <script>
 
     import { Multiselect } from 'vue-multiselect'
-    import Component from '../Component';
 
-    export default Component.extend({
+    export default {
 
         components: { Multiselect },
+
+        props: {
+            isclasses: { default: ''},
+            name: { default: 'select' },
+        },
 
         data () {
             return {
@@ -34,6 +38,6 @@
             }
         }
 
-    })
+    }
 
 </script>

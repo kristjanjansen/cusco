@@ -4,10 +4,16 @@
 
 }
 
-    .FormTextarea__body {
+    .FormTextarea__label {
+        display: block;
+        font: $font-heading-sm;
+        margin-bottom: $margin-sm;
+    }
+
+    .FormTextarea__textarea {
         border-radius: $border-radius-md;
         border: $border-gray;
         font: $font-text-md;
         padding: $padding-sm;
-        width: 90%;
+        width: 100%;
     }

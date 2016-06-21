@@ -1,5 +1,17 @@
 <div class="FormTextarea {{ $isclasses }}">
 
-    <textarea name="{{ $name }}" rows="8" cols="50" class="FormTextarea__body" >{{ $value }}</textarea>
+    @if ($label)
+
+        <label for="{{ $name }}" class="FormTextarea__label">{{ $label }}</label>
+    
+    @endif
+
+    <textarea
+        id={{ $name }}
+        name="{{ $name }}"
+        rows="8"
+        cols="50"
+        class="FormTextarea__textarea"
+    >{{ $value }}</textarea>
 
 </div>

@@ -4,6 +4,12 @@
 
 }
 
+    .FormTextfield__label {
+        display: block;
+        font: $font-heading-sm;
+        margin-bottom: $margin-sm;
+    }
+
     .FormTextfield__title {
         border: $border-gray;
         border-radius: $border-radius-md;

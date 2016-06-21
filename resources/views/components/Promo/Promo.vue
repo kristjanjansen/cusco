@@ -1,6 +1,6 @@
 <template>
 
-    <div class="Promo {{ isClasses }}" :style="style" >
+    <div class="Promo" :class="isclasses" :style="style" >
 
         <div class="Promo__title">
 
@@ -14,9 +14,12 @@
 
 <script>
 
-    import Component from '../Component';
+    export default {
 
-    export default Component.extend({
+        props: {
+            isclasses: { default: ''},
+            route: { default: '' }
+        },
 
         computed: {
             style: function() {
@@ -36,11 +39,11 @@
         },
 
         ready() {
-            this.$http.get(this.vars.route).then(function(res) {
+            this.$http.get(this.route).then(function(res) {
                 this.promo = res.data
             });
         }
 
-    })
+    }
 
 </script>

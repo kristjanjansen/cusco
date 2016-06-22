@@ -27,8 +27,9 @@
         data() {
             return {
                 paths: [],
-                width: 1000,
-                height: 500,
+                width: 600,
+                height: 300,
+                radius: 2
             }
         },
 
@@ -39,7 +40,7 @@
                 mapExtent: {left: -162, bottom: -52, right: 183, top: 87},
                 output: 'path',
                 pointAsCircle: true,
-                r: 4,
+                r: this.radius,
             });
         
             for (var lat = -54; lat < 85; lat += 3) { 

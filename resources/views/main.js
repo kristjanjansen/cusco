@@ -6,13 +6,14 @@ import Alert from './components/Alert/Alert.vue';
 import AlertDemo from './components/AlertDemo/AlertDemo.vue';
 import Arc from './components/Arc/Arc.vue';
 import Editor from './components/Editor/Editor.vue';
+import FormSelect from './components/FormSelect/FormSelect.vue';
 import Icon from './components/Icon/Icon.vue';
 import IconLoader from './components/IconLoader/IconLoader.vue';
 import ImageUpload from './components/ImageUpload/ImageUpload.vue';
+import Map from './components/Map/Map.vue';
 import Navbar from './components/Navbar/Navbar.vue';
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue';
 import Promo from './components/Promo/Promo.vue';
-import FormSelect from './components/FormSelect/FormSelect.vue';
 
 const globalProps = JSON.parse(decodeURIComponent(
     document.querySelector('#globalprops').getAttribute('content')
@@ -33,6 +34,7 @@ new Vue({
         Icon,
         IconLoader,
         ImageUpload,
+        Map,
         Navbar,
         NavbarMobile,
         Promo,

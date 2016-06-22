@@ -12,7 +12,8 @@ class TestController extends Controller {
         return view('pages.forum')
             ->with('header', '')
             ->with('content', collect()
-                ->push(component('Alert')->with('alert', 'hello'))
+                ->push(component('Map'))
+   /*             ->push(component('Alert')->with('alert', 'hello'))
                 ->push(component('Arc')->with('border', '10'))
                 ->push(component('Icon')->with('name', 'icon-car'))
                 ->push(component('ImageUpload'))
@@ -30,7 +31,7 @@ class TestController extends Controller {
                 ->push(component('Promo')->with('route', '/promo'))
                 ->push(component('AlertDemo'))
                 ->push(component('Editor'))
-            )
+   */         )
             ->with('sidebar', collect());    
     
     }

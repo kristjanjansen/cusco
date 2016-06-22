@@ -47,33 +47,7 @@
 
                 for (var lon = -159; lon < 181; lon += 3) { 
 
-                    var show = false;
-
-                    countries.features.forEach(function(country) {
-
-                        if (country.geometry.type == 'Polygon'
-                            && turf.inside(
-                                turf.point([lon,lat]),
-                                turf.polygon(country.geometry.coordinates)
-                            )
-                        ) { show = true  }
-
-                        if (country.geometry.type == 'MultiPolygon') {
-
-                            country.geometry.coordinates.forEach(function (polygon) {
-
-                                if (turf.inside(
-                                    turf.point([lon,lat]),
-                                    turf.polygon(polygon))
-                                ) { show = true }
-
-                            })
-
-                        }
-
-                    })
-                    
-                    if (show) {
+                    if (this.getPointData(lat, lon)) {
 
                         var path = converter.convert({
                             type: 'Point', coordinates: [lon, lat]
@@ -87,6 +61,41 @@
         
             }
 
+        },
+
+        methods: {
+
+            getPointData: function(lat, lon) {
+
+                var show = false;
+
+                countries.features.forEach(function(country) {
+
+                    if (country.geometry.type == 'Polygon'
+                        && turf.inside(
+                            turf.point([lon,lat]),
+                            turf.polygon(country.geometry.coordinates)
+                        )
+                    ) { show = true  }
+
+                    if (country.geometry.type == 'MultiPolygon') {
+
+                        country.geometry.coordinates.forEach(function (polygon) {
+
+                            if (turf.inside(
+                                turf.point([lon,lat]),
+                                turf.polygon(polygon))
+                            ) { show = true }
+
+                        })
+
+                    }
+
+                })
+
+                return show
+                
+            }
         }
 
     }

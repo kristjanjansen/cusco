@@ -9,7 +9,7 @@ class TestController extends Controller {
 
     public function index() {
 
-        return view('pages.forum')
+        return view('layouts.1col')
             ->with('header', '')
             ->with('content', collect()
 
@@ -94,8 +94,7 @@ class TestController extends Controller {
                     ->with('sublinks', ['Third link'])
                 )
                 
-                ->push(component('ProfileImage')->with('image', '/samples/norris.jpg')
-)
+                ->push(component('ProfileImage')->with('image', '/samples/norris.jpg'))
 
                 ->push(component('Promo')->with('route', '/promo'))
 

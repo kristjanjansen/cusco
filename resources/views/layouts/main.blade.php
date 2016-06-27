@@ -21,6 +21,7 @@
 
         @yield('header')
         @yield('content')
+        @yield('footer')
         
         <script src="/js/main.js"></script>
         

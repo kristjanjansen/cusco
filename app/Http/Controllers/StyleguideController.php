@@ -29,7 +29,7 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Arc'))
                 ->push(component('Arc')
                     ->with('border', '5')
-                    ->with('color', 'orange')
+                    ->with('color', 'gray')
                 )
 
                 ->push(component('StyleguideHeader')->with('title', 'Block'))
@@ -180,7 +180,9 @@ class StyleguideController extends Controller {
 
                 ->merge($this->getIcons())
 
-        );
+
+        )
+        ->with('footer', '');
 
     }
 
@@ -194,7 +196,7 @@ class StyleguideController extends Controller {
                 return component('StyleguideHeader')->with('title', 'Icon '. $filename)
                     . component('Icon')
                         ->with('name', $filename)
-                        ->with('color', 'orange')
+                        ->with('color', 'gray')
                         ->with('width', 32)
                         ->with('height', 32);
             });

@@ -16,7 +16,7 @@ class ForumList {
                     ->with('image', $post->user->image)
                 )
                 ->with('title', $post->title)
-                ->with('route', '')
+                ->with('route', 'forum/'.$post->id)
                 ->with('subtitle', $post->meta);
        
         });

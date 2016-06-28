@@ -27,12 +27,36 @@ class Masthead {
                 ->with('color', 'white')
             )
             ->with('navbar', component('Navbar')
-                ->with('links', ['First', 'Second'])
-                ->with('sublinks', ['First', 'Second'])
+                ->with('links', [
+                    'Trip.ee',
+                    'Lennupakkumised',
+                    'Reisikaaslased',
+                    'Foorum',
+                    'Minu Trip.ee'
+                ])
+                ->with('sublinks', [
+                    'Profiil',
+                    'Sõnumid',
+                    'Muuda profiili',
+                    'Administreeri',
+                    'Logi välja'
+                ])
             )
             ->with('navbar_mobile', component('NavbarMobile')
-                ->with('links', ['First', 'Second'])
-                ->with('sublinks', ['First', 'Second'])
+                ->with('links', [
+                    'Trip.ee',
+                    'Lennupakkumised',
+                    'Reisikaaslased',
+                    'Foorum',
+                    'Minu Trip.ee'
+                ])
+                ->with('sublinks', [
+                    'Profiil',
+                    'Sõnumid',
+                    'Muuda profiili',
+                    'Administreeri',
+                    'Logi välja'
+                ])
             );
     }
 

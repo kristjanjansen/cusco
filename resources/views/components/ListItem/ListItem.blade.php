@@ -1,4 +1,4 @@
-<a href="">
+<a href="{{ $route }}">
 
 <div class="ListItem {{ $isclasses }}">
 
@@ -21,12 +21,6 @@
             <div class="ListItem__subtitle">
 
                 {!! $subtitle !!}
-
-            </div>
-
-            <div class="ListItem__subsubtitle">
-
-                {!! $subsubtitle !!}
 
             </div>
 

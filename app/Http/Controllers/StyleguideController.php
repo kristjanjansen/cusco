@@ -35,20 +35,14 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Block'))
                 ->push(component('Block')
                     ->with('title', 'Title')
-                    ->with('content', collect()
-                        ->push(component('Body')->with('body', 'First line'))
-                        ->push(component('Body')->with('body', 'Second line'))
-                    )
+                    ->with('content', collect(['First item', 'Second item']))
                 )
 
                 ->push(component('StyleguideHeader')->with('title', 'Block--withBackground'))
                 ->push(component('Block')
                     ->is('withBackground')
                     ->with('title', 'Title')
-                    ->with('content', collect()
-                        ->push(component('Body')->with('body', 'First line'))
-                        ->push(component('Body')->with('body', 'Second line'))
-                    )
+                    ->with('content', collect(['First item', 'Second item']))
                 )
 
                 ->push(component('StyleguideHeader')->with('title', 'Body'))
@@ -97,19 +91,37 @@ class StyleguideController extends Controller {
                 ->push(component('FormButton')->with('title', 'Save'))
                 ->push(component('FormFooter'))
 
+
+                ->push(component('StyleguideHeader')->with('title', 'ForumPost'))
+                ->push(component('ForumPost')
+                    ->with('user', component('ProfileImage')
+                        ->with('image', '/samples/norris.jpg')
+                    )
+                    ->with('title', 'title')
+                    ->with('meta', 'meta')
+                    ->with('body', 'body')
+                    ->with('tags', 'tags')
+                    ->with('flags', 'flags')
+                )
+
                 ->push(component('StyleguideHeader')->with('title', 'ImageUpload'))
                 ->push(component('ImageUpload'))
 
+
                 ->push(component('StyleguideHeader')->with('title', 'ListItem'))
                 ->push(component('ListItem')
-                    ->with('figure', '')
-                    ->with('title', '')
-                    ->with('subtitle', '')
-                    ->with('subsubtitle', '')
+                    ->with('figure', component('ProfileImage')
+                        ->with('image', '/samples/norris.jpg')
+                    )
+                    ->with('title', 'Title')
+                    ->with('route', '')
+                    ->with('subtitle', 'Subtitle')
                 )
+
 
                 ->push(component('StyleguideHeader')->with('title', 'Map'))
                 ->push(component('Map'))
+
 
                 ->push(component('StyleguideHeader')->with('title', 'Masthead'))
                 ->push(component('Masthead')
@@ -122,11 +134,13 @@ class StyleguideController extends Controller {
                     ->with('title', 'Title')
                 )
 
+
                 ->push(component('StyleguideHeader')->with('title', 'Navbar'))
                 ->push(component('Navbar')
                     ->with('links', ['First link', 'Second link'])
                     ->with('sublinks', ['Third link'])
                 )
+
 
                 ->push(component('StyleguideHeader')->with('title', 'NavbarMobile'))
                 ->push(component('NavbarMobile')
@@ -134,14 +148,18 @@ class StyleguideController extends Controller {
                     ->with('sublinks', ['Third link'])
                 )
                 
+
                 ->push(component('StyleguideHeader')->with('title', 'ProfileImage'))
                 ->push(component('ProfileImage')->with('image', '/samples/norris.jpg'))
+
 
                 ->push(component('StyleguideHeader')->with('title', 'Promo'))
                 ->push(component('Promo')->with('route', '/promo'))
 
+
                 ->push(component('StyleguideHeader')->with('title', 'Tag'))
                 ->push(component('Tag')->with('title', 'I am tag'))
+
 
                 ->merge($this->getIcons())
 

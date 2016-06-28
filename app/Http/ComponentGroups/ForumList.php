@@ -16,11 +16,8 @@ class ForumList {
                     ->with('image', $post->user->image)
                 )
                 ->with('title', $post->title)
-                ->with('subtitle', 'hello')
-                ->with('subsubtitle', $post->tags->map(function($tag) {
-                    return component('Tag')->with('title', $tag->title)->render();
-                })->implode(' '))
-                ->with('meta', $post->meta);
+                ->with('route', '')
+                ->with('subtitle', $post->meta);
        
         });
     

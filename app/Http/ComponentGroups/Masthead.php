@@ -14,6 +14,7 @@ class Masthead {
             ->with('image', '/samples/header.jpg')
             ->with('search', component('Icon')
                 ->with('name', 'icon-search')
+                ->with('color', 'white')
             )
             ->with('logo', component('Icon')
                 ->with('name', 'tripee_logo')

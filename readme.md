@@ -4,6 +4,16 @@ The goal of this experiment is to clear up current view rendering mess and come 
 with a solution with clearer data and control flow. Currently the view logic
 is diffused into models, controllers, views and utility functions.
 
+## Installation
+
+```
+composer install
+npm install
+php artisan serve
+```
+
+## Architecture
+
 The proposal is to introduce some MVVC and declarative programming ideas to view rendering.
 
 Here are some core concepts:
@@ -315,28 +325,8 @@ Views are still views but they are degraded to simple layouts that accomodate re
     @section('footer', $footer)
 
 ```
+ 
 
-## Changelog
-
-* 0.1
-    * Initial version
-* 0.2
-    * Changed 'Composers' to 'Regions'
-    * Proposing region() helper
-* 0.3
-    * Changed 'Regions' to 'ComponentGroups'
-    * Implementing ```component()``` and ```componentGroup()``` / ```region()``` / ```pattern()``` helpers
-* 0.4
-    * Implementing styleguide and sample layout
-  
-## Installation
-
-```
-composer install
-npm install
-php artisan serve
-```
-
-## Why Cusco?
+## Why "Cusco"?
 
 Because https://fromalaskatobrazil.files.wordpress.com/2012/09/12-sided-inca-stone.jpg

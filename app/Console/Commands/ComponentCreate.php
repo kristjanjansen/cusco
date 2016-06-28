@@ -20,13 +20,6 @@ class ComponentCreate extends Command
 
         $element = 'title';
 
-        $yaml = [
-            "with:",
-            "    $element: I am $name",
-        ];
-
-        Storage::disk('root')->put("$dir/$name.yaml", implode("\n", $yaml));
-
         $css = [
             "@import \"variables\";",
             ".$name {",

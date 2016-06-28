@@ -1,4 +1,0 @@
-with:
-    image: /samples/norris.jpg
-is:
-    - small

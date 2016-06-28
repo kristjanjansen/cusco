@@ -9,7 +9,7 @@ class NewsController extends Controller {
 
     public function create() {
 
-        return view('pages.forum')
+        return view('layouts.1col')
             ->with('header', component('ForumHeader')) 
             ->with('content', collect()
                 ->push(component('FormHeader')

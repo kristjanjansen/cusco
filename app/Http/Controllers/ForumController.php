@@ -10,7 +10,7 @@ class ForumController extends Controller {
 
         $posts = (new App\Content)->get();
 
-        return view('pages.forum')
+        return view('layouts.2col')
             ->with('header', component('ForumHeader')) 
             ->with('content', collect()
                 ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
@@ -28,7 +28,7 @@ class ForumController extends Controller {
 
         $post = (new App\Content)->find((int)$id);
 
-        return view('pages.forum')
+        return view('layouts.2col')
             ->with('header', component('ForumHeader')) 
             ->with('content', collect()
                 ->push(componentGroup('ForumPost', $post))

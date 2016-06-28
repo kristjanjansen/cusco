@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import { mixin as Clickaway } from 'vue-clickaway';
 
 import Alert from './components/Alert/Alert.vue';
 import AlertDemo from './components/AlertDemo/AlertDemo.vue';
 import Arc from './components/Arc/Arc.vue';
+import ArcDemo from './components/ArcDemo/ArcDemo.vue';
 import Editor from './components/Editor/Editor.vue';
 import FormSelect from './components/FormSelect/FormSelect.vue';
 import Icon from './components/Icon/Icon.vue';
@@ -29,6 +29,7 @@ new Vue({
         Alert,
         AlertDemo,
         Arc,
+        ArcDemo,
         Editor,
         FormSelect,
         Icon,

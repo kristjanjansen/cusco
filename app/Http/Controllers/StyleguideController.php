@@ -27,10 +27,7 @@ class StyleguideController extends Controller {
                 ->push(component('AlertDemo'))
 
                 ->push(component('StyleguideHeader')->with('title', 'Arc'))
-                ->push(component('Arc')
-                    ->with('border', '5')
-                    ->with('color', 'gray')
-                )
+                ->push(component('ArcDemo'))
 
                 ->push(component('StyleguideHeader')->with('title', 'Block'))
                 ->push(component('Block')

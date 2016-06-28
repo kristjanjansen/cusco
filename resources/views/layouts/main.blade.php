@@ -4,7 +4,6 @@
         <title></title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <meta id="token" name="token" content="{{ csrf_token() }}">
         <meta id="globalprops" name="globalprops" content="
             {{
                 rawurlencode(json_encode([

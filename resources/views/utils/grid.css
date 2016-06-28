@@ -6,11 +6,8 @@
   width: 90%;
 }
 
-.region-one {
-    background: $yellow;
-}
-
 .row            { display: flex; flex-wrap: wrap; display: block ?if $mobile; }
+
 .row-middle     { align-items: center; display: flex; flex-wrap: wrap; }
 .row-stretch    { align-items: stretch; display: flex; flex-wrap: wrap; }
 .row-left       { justify-content: flex-start; display: flex; flex-wrap: wrap; }

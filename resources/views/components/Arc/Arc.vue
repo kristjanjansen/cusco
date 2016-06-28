@@ -1,6 +1,6 @@
 <template>
 
-    <div class="Arc" :class="isclasses">
+    <div class="Arc">
 
         <svg :style="{ width: size + 'px', height: size + 'px' }">
         
@@ -8,7 +8,7 @@
                 fill="none"
                 :stroke="color"
                 :stroke-width="border" 
-                :d="arc"
+                :d="d"
             />
       
         </svg>
@@ -22,11 +22,10 @@
     export default {
 
         props: {
-            isclasses: { default: ''},
             size: { default: 50 },
             border: { default: 4 },
+            endangle: { default: 270 },
             color: { default: 'black' },
-            endangle: { default: 270 }
         },
 
         data() {
@@ -38,16 +37,19 @@
 
         },
 
-        ready() {
+        computed: {
 
-            this.arc = this.generateArc(
-                this.size / 2,
-                this.size / 2,
-                this.size / 2 - (this.border / 2),
-                this.startangle,
-                this.endangle
-            )
-        
+            d: function() {
+
+                return this.generateArc(
+                    this.size / 2,
+                    this.size / 2,
+                    this.size / 2 - (this.border / 2),
+                    this.startangle,
+                    this.endangle
+                )
+            }
+
         },
 
         methods: {

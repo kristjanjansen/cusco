@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App;
 use Request;
+use Storage;
 
 class StyleguideController extends Controller {
 
@@ -130,8 +131,27 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Tag'))
                 ->push(component('Tag')->with('title', 'I am tag'))
 
+                ->merge($this->getIcons())
+
         );
 
+    }
+
+    public function getIcons() {
+
+        return collect(Storage::disk('root')->files('resources/svg'))
+            ->map(function($filepath) {
+                return pathinfo($filepath, PATHINFO_FILENAME);
+            })
+            ->map(function($filename) {
+                return component('StyleguideHeader')->with('title', 'Icon '. $filename)
+                    . component('Icon')
+                        ->with('name', $filename)
+                        ->with('color', 'orange')
+                        ->with('width', 32)
+                        ->with('height', 32);
+            });
+    
     }
 
     public function formdemo() {

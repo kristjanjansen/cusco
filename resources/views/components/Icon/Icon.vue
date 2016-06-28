@@ -3,7 +3,7 @@
     <svg
         class="Icon"
         :class="isclasses"
-        :style="{ width: width, height: height }"
+        :style="{ width: width, height: height, fill: color }"
     >
         <use xlink:href="#{{ name }}"></use>
 
@@ -19,7 +19,8 @@
             isclasses: { default: ''},
             width: { default: 18},
             height: { default: 18},
-            name: { default: ''}
+            name: { default: ''},
+            color: { default: 'red'}
         }
 
     }

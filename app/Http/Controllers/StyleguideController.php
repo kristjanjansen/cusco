@@ -15,33 +15,52 @@ class StyleguideController extends Controller {
             ->with('content', collect()
 
                 ->push(component('StyleguideHeader')->with('title', 'Alert'))
-                ->push(component('Alert')->with('alert', 'hello'))
+                ->push(component('Alert')
+                    ->with('alert', ''))
+
+                ->push(component('StyleguideHeader')->with('title', 'Alert--error'))
+                ->push(component('Alert')
+                    ->is('error')
+                    ->with('alert', ''))
 
                 ->push(component('StyleguideHeader')->with('title', 'AlertDemo'))
                 ->push(component('AlertDemo'))
 
                 ->push(component('StyleguideHeader')->with('title', 'Arc'))
-                ->push(component('Arc')->with('border', '10'))
+                ->push(component('Arc')
+                    ->with('border', '5')
+                    ->with('color', 'orange')
+                )
 
                 ->push(component('StyleguideHeader')->with('title', 'Block'))
                 ->push(component('Block')
                     ->with('title', 'Title')
-                    ->with('content', collect(['First item', 'Second item'])))
+                    ->with('content', collect()
+                        ->push(component('Body')->with('body', 'First line'))
+                        ->push(component('Body')->with('body', 'Second line'))
+                    )
+                )
 
-                ->push(component('StyleguideHeader')->with('title', 'Block'))
+                ->push(component('StyleguideHeader')->with('title', 'Block--withBackground'))
                 ->push(component('Block')
                     ->is('withBackground')
                     ->with('title', 'Title')
-                    ->with('content', collect(['First item', 'Second item'])))
+                    ->with('content', collect()
+                        ->push(component('Body')->with('body', 'First line'))
+                        ->push(component('Body')->with('body', 'Second line'))
+                    )
+                )
 
                 ->push(component('StyleguideHeader')->with('title', 'Body'))
                 ->push(component('Body')->with('body', '<p>Ennui flannel offal next level bitters four loko listicle synth church-key you probably havent heard of them keffiyeh sriracha.</p><h3>Gentrify etsy chartreuse</h3><p> trade 90 cold-pressed beard photo booth selvage craft</p>'))
 
-                ->push(component('StyleguideHeader')->with('title', 'Responsive body'))
+                ->push(component('StyleguideHeader')->with('title', 'Body--responsive'))
                 ->push(component('Body')->is('responsive')->with('body', '<p>Ennui flannel offal next level bitters four loko listicle synth church-key you probably havent heard of them keffiyeh sriracha.</p><h3>Gentrify etsy chartreuse</h3><p> trade 90 cold-pressed beard photo booth selvage craft</p>'))
 
                 ->push(component('StyleguideHeader')->with('title', 'Button'))
                 ->push(component('Button')->with('title', 'I am button'))
+
+                ->push(component('StyleguideHeader')->with('title', 'Button--wide'))
                 ->push(component('Button')->is('wide')->with('title', 'I am wide button'))
 
                 ->push(component('StyleguideHeader')->with('title', 'Editor'))
@@ -61,29 +80,22 @@ class StyleguideController extends Controller {
                 )
 
                 ->push(component('FormHeader')
-                    ->with('action', '/formdemo')
+                    ->with('action', '/styleguide/formdemo')
                     ->with('method', 'post'))
-
                 ->push(component('StyleguideHeader')->with('title', 'FormTextfield'))
                 ->push(component('FormTextfield')
                     ->with('name', 'title')
                     ->with('label', 'Title')
                     ->with('value', 'Hello'))
-
                 ->push(component('StyleguideHeader')->with('title', 'FormTextarea'))
                 ->push(component('FormTextarea')
                     ->with('name', 'body')
                     ->with('label', 'Body')
                     ->with('value', 'World')
                 )
-
                 ->push(component('StyleguideHeader')->with('title', 'FormButton'))
                 ->push(component('FormButton')->with('title', 'Save'))
-
                 ->push(component('FormFooter'))
-
-                ->push(component('StyleguideHeader')->with('title', 'Icon'))
-                ->push(component('Icon')->with('name', 'icon-car'))
 
                 ->push(component('StyleguideHeader')->with('title', 'ImageUpload'))
                 ->push(component('ImageUpload'))

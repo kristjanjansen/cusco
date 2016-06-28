@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <div class="row-center padding-topbottom-md">
+        <div class="row row-center padding-top-md padding-bottom-md">
 
             <div class="col-9">
 

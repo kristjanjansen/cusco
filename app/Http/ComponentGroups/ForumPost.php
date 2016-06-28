@@ -15,7 +15,10 @@ class ForumPost {
             )
             ->with('title', $post->title)
             ->with('meta', $post->meta)
-            ->with('body', $post->body)
+            ->with('body', component('Body')
+                ->is('responsive')
+                ->with('body', $post->body)
+            )
             ->with('tags', $post->tags->map(function($tag) {
                     return component('Tag')->with('title', $tag->title)->render();
                 })->implode(' ')

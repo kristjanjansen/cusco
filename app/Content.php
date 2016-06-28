@@ -23,7 +23,7 @@ class Content
                     ],
                     'title' => rtrim($faker->text(60),'.'),
                     'meta' => rtrim($faker->text(30),'.'),
-                    'body' => $faker->paragraph(10),
+                    'body' => '<p>' . $faker->paragraph(10) . '</p><p>' . $faker->paragraph(10) . '</p>',
                     'comments' => collect(range(1,10))
                         ->map(function($id) use ($faker) {
                             return (object) [

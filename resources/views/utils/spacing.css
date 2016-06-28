@@ -3,7 +3,7 @@
 /* Paddings */
 
 .padding-top-md {
-    margin-bottom: $padding-md;
+    padding-top: $padding-md;
 }
 .padding-right-md {
     padding-right: $padding-md;
@@ -30,28 +30,6 @@
 .padding-left-collapse-sm {
     padding-left: $padding-sm;
     padding-left: 0 ?if $mobile;
-}
-
-.padding-topbottom-md {
-    padding-top: $padding-md;
-    padding-bottom: $padding-md;
-}
-.padding-leftright-md {
-    padding-left: $padding-md;
-    padding-right: $padding-md;
-}
-
-.padding-topbottom-collapse-md {
-    padding-top: $padding-md;
-    padding-bottom: $padding-md;
-    padding-top: 0 ?if $mobile;
-    padding-bottom: 0 ?if $mobile;
-}
-.padding-leftright-collapse-md {
-    padding-left: $padding-md;
-    padding-right: $padding-md;
-    padding-left: 0 ?if $mobile;
-    padding-right: 0 ?if $mobile);
 }
 
 /* Margins */

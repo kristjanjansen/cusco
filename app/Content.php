@@ -21,7 +21,7 @@ class Content
                             collect(['/samples/norris.jpg', '/samples/carradine.jpg'])
                                 ->random()
                     ],
-                    'title' => rtrim($faker->text(30),'.'),
+                    'title' => rtrim($faker->text(60),'.'),
                     'meta' => rtrim($faker->text(30),'.'),
                     'body' => $faker->paragraph(10),
                     'comments' => collect(range(1,10))

@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <div class="row-between">
+        <div class="row-between padding-top-md padding-bottom-md">
 
             <div class="col-7">
 
@@ -54,3 +54,4 @@
 
 @endsection
 
+@section('footer', $footer)

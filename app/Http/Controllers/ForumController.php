@@ -11,7 +11,7 @@ class ForumController extends Controller {
         $posts = (new App\Content)->get();
 
         return view('layouts.2col')
-            ->with('header', component('ForumHeader')) 
+            ->with('header', componentGroup('Masthead', 'Forum'))
             ->with('content', collect()
                 ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
                 ->push(component('Promo')->with('route', '/promo'))
@@ -20,6 +20,7 @@ class ForumController extends Controller {
             ->with('sidebar', collect()
                 ->push(componentGroup('ForumAbout'))
             )
+            ->with('footer', componentGroup('Footer')) 
         ;
 
     }

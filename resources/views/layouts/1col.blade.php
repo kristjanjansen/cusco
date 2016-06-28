@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <div class="row-center">
+        <div class="row-center padding-topbottom-md">
 
             <div class="col-9">
 
@@ -33,4 +33,7 @@
     </div>
 
 @endsection
+
+@section('footer', $footer)
+
 

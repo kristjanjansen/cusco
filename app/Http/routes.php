@@ -24,6 +24,10 @@ Route::get('/content/forum', 'ForumController@index');
 Route::get('/content/forum/{id}', 'ForumController@show');
 
 
+Route::get('/content/news/{id}', 'NewsController@show');
+
+
+
 Route::get('/image/index', 'ImageController@index');
 
 Route::post('/image/store', 'ImageController@store');

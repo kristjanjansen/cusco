@@ -57,6 +57,17 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Button--wide'))
                 ->push(component('Button')->is('wide')->with('title', 'I am wide button'))
 
+                ->push(component('StyleguideHeader')->with('title', 'Comment'))
+                ->push(component('Comment')
+                    ->with('user', component('ProfileImage')
+                        ->with('image', '/samples/norris.jpg')
+                    )
+                    ->with('meta', 'meta')
+                    ->with('body', 'body')
+                    ->with('tags', 'tags')
+                    ->with('flags', 'flags')
+                )
+
                 ->push(component('StyleguideHeader')->with('title', 'Editor'))
                 ->push(component('Editor'))
 

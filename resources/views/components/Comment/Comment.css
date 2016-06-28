@@ -1,24 +1,18 @@
 @import "variables";
 
-.ForumPost {
+.Comment {
     display: flex;
     border: $border-gray;
     border-radius: $border-radius-md;
     padding: $padding-md;
 }
 
-    .ForumPost__left {
+    .Comment__left {
         padding-right: $padding-md;
         display: none ?if $mobile;
     }
 
-    .ForumPost__title {
-        font: $font-heading-xl;
-        font: $font-heading-lg ?if $mobile;
-        margin-bottom: $margin-xs;
-    }
-
-    .ForumPost__meta {
+    .Comment__meta {
         color: $gray-light;
         font: $font-text-sm;
         margin-bottom: $margin-sm;

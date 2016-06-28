@@ -13,7 +13,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-svgmin": "^1.2.2",
     "gulp-svgstore": "^6.0.0",
-    "laravel-elixir": "^5.0.0",
+    "laravel-elixir": "5.0.*",
     "laravel-elixir-vueify": "^1.0.3",
     "lodash": "^4.13.1",
     "parse": "^1.8.5",

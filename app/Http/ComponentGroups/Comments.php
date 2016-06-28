@@ -17,7 +17,10 @@ class Comments {
                 )
                 ->with('title', '')
                 ->with('meta', $comment->meta)
-                ->with('body', component('Body')->is('responsive')->with('body', $comment->body))
+                ->with('body', component('Body')
+                    ->is('responsive')
+                    ->with('body', $comment->body)
+                )
                 ->with('tags', '')
                 ->with('flags', '')
                 ->render();

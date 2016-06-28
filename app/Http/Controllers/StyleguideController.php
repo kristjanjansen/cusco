@@ -87,19 +87,25 @@ class StyleguideController extends Controller {
                 ->push(component('FormHeader')
                     ->with('action', '/styleguide/formdemo')
                     ->with('method', 'post'))
+          
                 ->push(component('StyleguideHeader')->with('title', 'FormTextfield'))
                 ->push(component('FormTextfield')
                     ->with('name', 'title')
                     ->with('label', 'Title')
                     ->with('value', 'Hello'))
+          
                 ->push(component('StyleguideHeader')->with('title', 'FormTextarea'))
                 ->push(component('FormTextarea')
                     ->with('name', 'body')
                     ->with('label', 'Body')
                     ->with('value', 'World')
                 )
+                ->push(component('StyleguideHeader')->with('title', 'FormSelect'))
+                ->push(component('FormSelect')->with('name', 'selector'))
+
                 ->push(component('StyleguideHeader')->with('title', 'FormButton'))
                 ->push(component('FormButton')->with('title', 'Save'))
+                
                 ->push(component('FormFooter'))
 
 
@@ -217,7 +223,7 @@ class StyleguideController extends Controller {
     public function formdemo() {
 
         dump(request()->all());
-        sleep(1);
+        sleep(2);
 
         return redirect('styleguide')->with('alert', 'We are back from PHP');
 

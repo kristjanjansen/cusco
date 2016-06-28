@@ -11,14 +11,34 @@ class Footer {
 
         return component('Footer')
             ->with('image', '/samples/footer.jpg')
-            ->with('logo', '')
+            ->with('logo', component('Icon')
+                ->with('name', 'tripee_logo_plain')
+                ->with('width', '100%')
+                ->with('height', '25')
+                ->with('color', 'white')
+            )
             ->with('links', [
-                'col1' => ['First link', 'Second link'],
-                'col2' => ['First link', 'Second link'],
-                'col3' => ['First link', 'Second link'],
-                'social' => ['First link', 'Second link'],
+                'col1' => [
+                    'Lennupakkumised',
+                    'Reisikaaslased',
+                    'Uudised',
+                    'Reisikirjad',
+                    'Reisipildid'
+                ],
+                'col2' => [
+                    'Foorum',
+                    'Elu välismaal',
+                    'Ost-müük'
+                ],
+                'col3' => [
+                    'Mis on Trip.ee',
+                    'Kontakt',
+                    'Kasutustingimused',
+                    'Reklaam'
+                ],
+                'social' => ['Facebook', 'Twitter'],
             ])
-            ->with('licence', 'Licence');
+            ->with('licence', 'Autoriõigused © Trip.ee 1998-2016');
 
     }
 

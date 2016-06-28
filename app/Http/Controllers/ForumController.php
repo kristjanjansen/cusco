@@ -30,7 +30,7 @@ class ForumController extends Controller {
         $post = (new App\Content)->find((int)$id);
 
         return view('layouts.2col')
-            ->with('header', component('ForumHeader')) 
+            ->with('header', componentGroup('Masthead', 'Forum'))
             ->with('content', collect()
                 ->push(componentGroup('ForumPost', $post))
                 ->push(component('Promo')->with('route', '/promo'))
@@ -39,6 +39,7 @@ class ForumController extends Controller {
             ->with('sidebar', collect()
                 ->push(componentGroup('ForumAbout'))
             )
+            ->with('footer', componentGroup('Footer'))
         ;
     
     }

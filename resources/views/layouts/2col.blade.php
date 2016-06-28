@@ -8,7 +8,7 @@
 
         <div class="row-between padding-top-md padding-bottom-md">
 
-            <div class="col-7">
+            <div class="col-8">
 
                 @foreach ($content->withoutLast() as $content_item)
                 
@@ -28,7 +28,7 @@
 
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
 
                 @foreach ($sidebar->withoutLast() as $sidebar_item)
                 

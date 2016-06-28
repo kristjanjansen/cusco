@@ -1,8 +1,0 @@
-with:
-    figure:
-        component: ProfileImage
-        with:
-            image: /samples/norris.jpg
-    title: I am ListItem
-    subtitle: With subtitle
-    subsubtitle: ''

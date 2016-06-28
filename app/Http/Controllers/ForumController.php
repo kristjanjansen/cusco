@@ -10,8 +10,8 @@ class ForumController extends Controller {
 
         $posts = (new App\Content)->get();
 
-        return view('pages.forum')
-            ->with('header', component('ForumHeader')) 
+        return view('layouts.2col')
+            ->with('header', componentGroup('Masthead', 'Forum'))
             ->with('content', collect()
                 ->merge(componentGroup('ForumList', $posts->forPage(1, 4)))
                 ->push(component('Promo')->with('route', '/promo'))
@@ -20,6 +20,7 @@ class ForumController extends Controller {
             ->with('sidebar', collect()
                 ->push(componentGroup('ForumAbout'))
             )
+            ->with('footer', componentGroup('Footer')) 
         ;
 
     }
@@ -28,8 +29,8 @@ class ForumController extends Controller {
 
         $post = (new App\Content)->find((int)$id);
 
-        return view('pages.forum')
-            ->with('header', component('ForumHeader')) 
+        return view('layouts.2col')
+            ->with('header', componentGroup('Masthead', 'Forum'))
             ->with('content', collect()
                 ->push(componentGroup('ForumPost', $post))
                 ->push(component('Promo')->with('route', '/promo'))
@@ -38,6 +39,7 @@ class ForumController extends Controller {
             ->with('sidebar', collect()
                 ->push(componentGroup('ForumAbout'))
             )
+            ->with('footer', componentGroup('Footer'))
         ;
     
     }

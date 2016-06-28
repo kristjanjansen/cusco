@@ -22,7 +22,7 @@ class ComponentGroupCreate extends Command
             "use Illuminate\Http\Request;",
             "class $name {",
             "    public function render(Request \$request, \$content)\n    {",
-            "        return component('Placeholder')\n            ->with('title', \$content->title);",
+            "        return component('Body')\n            ->with('body', \$content->body);",
             "    }",
             "}"
         ];

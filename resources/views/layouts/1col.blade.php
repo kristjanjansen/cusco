@@ -6,9 +6,9 @@
 
     <div class="container">
 
-        <div class="row-between">
+        <div class="row-center padding-topbottom-md">
 
-            <div class="col-7">
+            <div class="col-9">
 
                 @foreach ($content->withoutLast() as $content_item)
                 
@@ -28,29 +28,12 @@
 
             </div>
 
-            <div class="col-4">
-
-                @foreach ($sidebar->withoutLast() as $sidebar_item)
-                
-                <div class="margin-bottom-md">
-
-                    {!! $sidebar_item !!}
-                        
-                </div>
-
-                @endforeach
-
-                <div>
-
-                    {!! $sidebar->last() !!}
-                        
-                </div>
-
-            </div>
-
         </div>
 
     </div>
 
 @endsection
+
+@section('footer', $footer)
+
 

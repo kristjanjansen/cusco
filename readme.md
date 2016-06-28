@@ -67,10 +67,8 @@ Components are stored in ```resources/views/components``` directory and have a s
 ```yaml
 - resources/views/components/Alert/Alert.vue
 - resources/views/components/Alert/Alert.css
-- resources/views/components/Alert/Alert.yaml # Optional, for styleguide
 - resources/views/components/ProfileImage/ProfileImage.blade.php
 - resources/views/components/ProfileImage/ProfileImage.css
-- resources/views/components/ProfileImage/ProfileImage.yaml # Optional, for styleguide
 - ...
 ```
 

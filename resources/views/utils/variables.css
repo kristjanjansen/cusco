@@ -185,7 +185,6 @@ $height-xxl: $width-xxl;
 $height-xxxl: $width-xxxl;
 $height-xxxxl: $width-xxxxl;
 
-
 /* Borders */
 
 $border-gray: 2px solid $gray-lighter;
@@ -219,6 +218,3 @@ $opacity-sm: 0.25;
 $opacity-md: 0.5;
 $opacity-lg: 0.75;
 $opacity-xl: 0.9;
-
-/* Animations */
-

@@ -31,7 +31,6 @@ $gray-dark: #444;
 $gray-darker: #222;
 $gray-darkest: #111;
 
-
 /* Fonts */
 
 $font-family: "Sailec";
@@ -71,7 +70,6 @@ $font-code-xs: normal $font-size-xs/$line-height-md $font-family-code, monospace
 $font-code-sm: normal $font-size-sm/$line-height-md $font-family-code, monospace;
 $font-code-md: normal $font-size-md/$line-height-md $font-family-code, monospace;
 $font-code-lg: normal $font-size-lg/$line-height-md $font-family-code, monospace;
-
 
 /* Spacing */
 

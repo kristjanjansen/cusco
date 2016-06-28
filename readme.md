@@ -31,10 +31,10 @@ Open questions:
 Presenters, essentialy ViewModels that augment the models with presenter methods, such as
 
 ```
-Content::find(1)->present()->bodyShort
+Content::find(1)->vars()->bodyShort
 ```
 
-Instead of canonical ```->present()``` we consider simpler naming convention, such as
+Instead of canonical ```->vars()``` we consider simpler naming convention, such as
 
 ```
 Content::find(1)->vars()->bodyShort
@@ -82,7 +82,7 @@ Components are stored in ```resources/views/components``` directory and have a s
 - ...
 ```
 
-Component API is modeled after Laravel's trademark chained APIs and works as follows:
+Component API works as follows:
 
 ```php
 component('MyComponent')
@@ -99,7 +99,7 @@ By using the following Blade template...
 
 <!-- resources/views/components/MyComponent/MyComponent.blade.php -->
 
-<div class="MyComponent {{ $is }}">
+<div class="MyComponent {{ $isclasses }}">
   
     <div class="MyComponent__data1"> {{ $data1 }} </div>
  
@@ -133,8 +133,7 @@ public function index() {
     $photo = Content::getRandomFeaturedPhoto();
 
     return view('pages.content.static.show')
-        ->with('header', component('Header')
-            ->with('menu', config('menu.header'))
+        ->with('header', component('Masthead')
             ->with('title', $post->vars()->title)
             ->with('image', $photo->vars()->headerImage)
         )
@@ -197,18 +196,18 @@ public function index() {
     $travelmatePosts = Content::whereType('travelmate')::getLatestPagedPosts(24);
     $forumPosts =  Content::whereType('forum')::getLatestPosts(5);
 
-    return view('pages.content.travelmates.index')
+    return view('layouts.2col')
         ->with('header', componentGroup('Header'))
-        ->with('content', [
-            componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(1, 12)),
-            component('Promo')->is('inMiddleOfContent'),
-            componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(2, 12)),
-        ])
-        ->with('sidebar', [
-            componentGroup('TravelmatesAbout'),
-            component('Promo')->is('inSidebar'),
-            componentGroup('TravelmatesForumSidebar', $forumPosts)
-        ])
+        ->with('content', collect()
+            ->push(componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(1, 12))),
+            ->push(component('Promo')->is('inMiddleOfContent')),
+            ->push(componentGroup('ContentTravelmatesIndex', $travelmatePosts->forPage(2, 12))),
+        )
+        ->with('sidebar', collect()
+            ->push(componentGroup('TravelmatesAbout')),
+            ->push(component('Promo')->is('inSidebar')),
+            ->push(componentGroup('TravelmatesForumSidebar', $forumPosts))
+        )
         ->with('footer_promo', component('Promo')->is('inFooter'))
         ->with('footer', componentGroup('Footer'))
 
@@ -232,15 +231,15 @@ class ContentTravelmates
         return $forumPosts->render(function($post) {
             return component('ListItem')
                 ->with('figure', component('UserImage')->is('small')->with('user', $post->user))
-                ->with('title', $post->present()->titleSmall)
-                ->with('route', $post->present()->route)
-                ->with('subtitle', $post->present()->meta)
+                ->with('title', $post->vars()->titleSmall)
+                ->with('route', $post->vars()->route)
+                ->with('subtitle', $post->vars()->meta)
                 ->with('subtitle2', $post->topics->render(function($topic) {
                     return component('Tag')
                         ->is('small')
                         ->is(collect(['yellow', 'red', 'orange'])->random())
-                        ->with('title', $destination->present()->smallTitle)
-                        ->with('route', $destination->present()->route);
+                        ->with('title', $destination->vars()->smallTitle)
+                        ->with('route', $destination->vars()->route);
                     })
                 );
             });
@@ -277,55 +276,6 @@ Component groups are the most immature part of the proposal:
 #### 6. Views
 
 Views are still views but they are degraded to simple layouts that accomodate rendered components and lay them out using helper classes.
-
-```html
-
-    <!-- pages/content/static/show.blade.php -->
-
-    @extends('layouts.main')
-
-    @section('header', $header)
-
-    @section('content')
-
-    <div class="row">
-
-        <div class="col-8 padding-right-collapse-sm">
-        
-            @foreach($content as $content_item)
-        
-                <div class="margin-bottom-md">   
-                
-                    {!! content_item !!}
-            
-                </div>
-
-            @endforeach
-
-        </div>
-
-        <div class="col-4 padding-left-collapse-sm">
-        
-            @foreach($sidebar as $sidebar_item)
-        
-                <div class="margin-bottom-md">   
-                    
-                    {!! sidebar_item !!}
-                
-                </div>
-
-            @endforeach
-        
-        </div>
-
-    </div>
-
-    @endsection
-
-    @section('footer', $footer)
-
-```
- 
 
 ## Why "Cusco"?
 

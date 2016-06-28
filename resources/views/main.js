@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import { mixin as Clickaway } from 'vue-clickaway';
 
 import Alert from './components/Alert/Alert.vue';
 import AlertDemo from './components/AlertDemo/AlertDemo.vue';

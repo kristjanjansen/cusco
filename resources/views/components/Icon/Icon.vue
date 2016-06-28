@@ -20,7 +20,7 @@
             width: { default: 18},
             height: { default: 18},
             name: { default: ''},
-            color: { default: 'red'}
+            color: { default: 'black'}
         }
 
     }

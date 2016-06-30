@@ -9,7 +9,13 @@ is diffused into models, controllers, views and utility functions.
 ```
 composer install
 npm install
+gulp
 php artisan serve
+```
+
+In Ubuntu, add this:
+```
+sudo apt-get install libnotify-bin
 ```
 
 ## Architecture

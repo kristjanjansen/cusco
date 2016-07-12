@@ -6,11 +6,17 @@
 
     </div>
 
+    <div class="Block__header">
+
+        {!! $header !!}
+
+    </div>
+
     <div class="Block__content">
 
         @foreach ($content->withoutLast() as $content_item)
     
-            <div class="margin-bottom-md">
+            <div class="margin-bottom-sm">
 
             {!! $content_item !!}
             
@@ -23,6 +29,12 @@
             {!! $content->last() !!}
             
         </div>
+
+    </div>
+
+    <div class="Block__footer">
+
+        {!! $footer !!}
 
     </div>
 

@@ -12,18 +12,18 @@ class CommentCreateForm {
         return component('Block')
             ->is('withBackground')
             ->with('title', 'Add new comment')
+            ->with('header', component('FormHeader')
+                ->with('action', '/')
+                ->with('method', 'get'))
             ->with('content', collect()
-                ->push(component('FormHeader')
-                    ->with('action', '/')
-                    ->with('method', 'get'))
                 ->push(component('FormTextarea')
                     ->with('name', 'body')
                     ->with('label', 'Body')
                     ->with('value', 'World'))
                 ->push(component('FormButton')
                     ->with('title', 'Save'))
-                ->push(component('FormFooter'))
-            );
+            )
+            ->with('footer', component('FormFooter'));
 
     }
 

@@ -7,10 +7,12 @@ is diffused into models, controllers, views and utility functions.
 ## Installation
 
 ```
+cp .env.example .env
+php artisan key:generate
 composer install
 npm install
 gulp
-php artisan serve
+php artisan serve # Unless using Laragon
 ```
 
 In Ubuntu, add this:

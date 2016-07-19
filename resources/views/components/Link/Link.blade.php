@@ -3,8 +3,8 @@
 
 	    <div class="Link__title">
 	        {{ $title }}
-	        <component is="Icon" name="{{$icon}}"></component>
+	        
 	    </div>
-	    	
+	    	<component is="Icon" name="{{ $icon }}" class="Link__icon"></component>
 	</div>
 </a>

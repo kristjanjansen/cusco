@@ -1,9 +1,15 @@
 @import "variables";
 
 .Link {
-
+	display: flex;
+	font: $font-heading-md;
 }
 
     .Link__title {
+    	color: $blue;
+    	margin-right: $spacer;
+    }
 
+    .Link__icon{
+    	align-self: center;
     }

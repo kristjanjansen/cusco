@@ -132,6 +132,12 @@ class StyleguideController extends Controller {
                     ->with('subtitle', 'Subtitle')
                 )
 
+                ->push(component('StyleguideHeader')->with('title', 'Link'))
+                ->push(component('Link')
+                    ->with('icon', 'icon-arrow-right') // default
+                    ->with('title', 'Go ahead and click')
+                    ->with('route', '#')
+                )
 
                 ->push(component('StyleguideHeader')->with('title', 'Map'))
                 ->push(component('Map'))

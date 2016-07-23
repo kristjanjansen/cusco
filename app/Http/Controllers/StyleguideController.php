@@ -32,12 +32,16 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Block'))
                 ->push(component('Block')
                     ->with('title', 'Title')
+                    ->with('header', '')
+                    ->with('footer', '')
                     ->with('content', collect(['First item', 'Second item']))
                 )
 
                 ->push(component('StyleguideHeader')->with('title', 'Block--withBackground'))
                 ->push(component('Block')
                     ->is('withBackground')
+                    ->with('header', '')
+                    ->with('footer', '')
                     ->with('title', 'Title')
                     ->with('content', collect(['First item', 'Second item']))
                 )
@@ -138,6 +142,13 @@ class StyleguideController extends Controller {
                     ->with('title', 'Go ahead and click')
                     ->with('route', '#')
                 )
+
+                ->push(component('StyleguideHeader')->with('title', 'Badges'))
+                ->push(component('badge')->with('title', 1))
+                ->push(component('badge')->with('title', 10))
+                ->push(component('badge')->with('title', 100))
+                    
+
 
                 ->push(component('StyleguideHeader')->with('title', 'Map'))
                 ->push(component('Map'))

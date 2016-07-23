@@ -24,6 +24,7 @@
     "postcss-short": "^1.4.0",
     "postcss-simple-vars": "^2.0.0",
     "striptags": "^2.1.1",
+    "stylelint-config-standard": "^11.0.0",
     "to-markdown": "^3.0.0",
     "turf": "^3.0.11",
     "vue-clickaway": "^1.1.1",

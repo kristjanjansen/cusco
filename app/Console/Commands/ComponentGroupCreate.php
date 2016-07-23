@@ -24,7 +24,7 @@ class ComponentGroupCreate extends Command
             "    public function render(Request \$request, \$content)\n    {",
             "        return component('Body')\n            ->with('body', \$content->body);",
             "    }",
-            "}"
+            "}\n"
         ];
 
         Storage::disk('root')->put("$dir/$name.php", implode("\n\n", $php));

@@ -21,7 +21,8 @@
         height: 50vh;
     }
 
-    .Editor__writer, #writer {
+    .Editor__writer,
+    #writer {
         flex: 1;
         font-size: $font-size-sm;
         line-height: $line-height-lg;
@@ -47,3 +48,4 @@
         width: 100%;
         margin-top: $margin-sm;
     }
+

@@ -3,9 +3,9 @@
 .Badge {
 	display: inline-block;
 	background-color: $red;
-	border-radius: 50%;
+	border-radius: $border-radius-xl;
 	min-width: $width-sm;
-	padding:0 $padding-sm 0 $padding-sm ;
+	padding:0 $padding-sm 0 $padding-sm;
 	
 }
 	.Badge__title{

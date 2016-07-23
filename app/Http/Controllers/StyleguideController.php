@@ -135,7 +135,19 @@ class StyleguideController extends Controller {
                 ->push(component('StyleguideHeader')->with('title', 'Link'))
                 ->push(component('Link')
                     ->with('icon', 'icon-arrow-right') // default
+                    ->with('iconWidth', 18)
+                    ->with('iconHeight', 18)
                     ->with('title', 'Go ahead and click')
+                    ->with('route', '#')
+                )
+
+                ->push(component('StyleguideHeader')->with('title', 'Larger Link'))
+                ->push(component('Link')
+                    ->is('large')
+                    ->with('icon', 'icon-arrow-right') // default
+                    ->with('iconWidth', 28)
+                    ->with('iconHeight', 28)
+                    ->with('title', 'I am bigger Link')
                     ->with('route', '#')
                 )
 

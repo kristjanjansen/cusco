@@ -1,0 +1,15 @@
+@import "variables";
+
+.Badge {
+	background-color: $red;
+	border-radius: 15px;
+	min-width: $width-sm;
+	padding: 0 $padding-xs;
+	display: inline-flex;
+	justify-content: center;
+}
+	.Badge__title {
+		align-items: center;
+		font: $font-heading-xs;
+    	color: $white;
+	}

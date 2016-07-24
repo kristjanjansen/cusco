@@ -1,5 +1,5 @@
 ## About
- 
+
 The goal of this experiment is to clear up current view rendering mess and come up
 with a solution with clearer data and control flow. Currently the view logic
 is diffused into models, controllers, views and utility functions.

@@ -19,74 +19,67 @@
 
 <script>
 
-    export default {
+export default {
 
-        props: {
-            size: { default: 50 },
-            border: { default: 4 },
-            endangle: { default: 270 },
-            color: { default: 'black' },
-        },
+    props: {
+        size: { default: 50 },
+        border: { default: 4 },
+        endangle: { default: 270 },
+        color: { default: 'black' }
+    },
 
-        data() {
+    data() {
+        return {
+            arc: '',
+            startangle: 0
+        }
+    },
+
+    computed: {
+
+        d: function() {
+            return this.generateArc(
+                this.size / 2,
+                this.size / 2,
+                this.size / 2 - (this.border / 2),
+                this.startangle,
+                this.endangle
+            )
+        }
+
+    },
+
+    methods: {
+
+        // From http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
+
+        polarToCartesian: function(centerX, centerY, radius, angleInDegrees) {
+            var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0
 
             return {
-                arc: '',
-                startangle: 0,
+                x: centerX + (radius * Math.cos(angleInRadians)),
+                y: centerY + (radius * Math.sin(angleInRadians))
             }
-
         },
 
-        computed: {
+        generateArc: function(x, y, radius, startAngle, endAngle) {
+            endAngle = endAngle - 0.001
 
-            d: function() {
+            var start = this.polarToCartesian(x, y, radius, endAngle)
+            var end = this.polarToCartesian(x, y, radius, startAngle)
 
-                return this.generateArc(
-                    this.size / 2,
-                    this.size / 2,
-                    this.size / 2 - (this.border / 2),
-                    this.startangle,
-                    this.endangle
-                )
-            }
+            var arcSweep = endAngle - startAngle <= 180 ? '0' : '1'
 
-        },
+            var d = [
+                'M', start.x, start.y,
+                'A', radius, radius, 0, arcSweep, 0, end.x, end.y
+            ].join(' ')
 
-        methods: {
-
-            // From http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
-
-            polarToCartesian: function(centerX, centerY, radius, angleInDegrees) {
-              
-                var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0
-
-                return {
-                    x: centerX + (radius * Math.cos(angleInRadians)),
-                    y: centerY + (radius * Math.sin(angleInRadians))
-                }
-            
-            },
-
-            generateArc: function(x, y, radius, startAngle, endAngle) {
-
-                endAngle = endAngle - 0.001
-
-                var start = this.polarToCartesian(x, y, radius, endAngle)
-                var end = this.polarToCartesian(x, y, radius, startAngle)
-
-                var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
-
-                var d = [
-                    "M", start.x, start.y, 
-                    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
-                ].join(" ");
-
-                return d;       
-            
-            }
-
+            return d
         }
-   
+
     }
+
+}
 
 </script>

@@ -34,14 +34,14 @@ export default {
         alert: { default: '' }
     },
 
-    data () {
+    data() {
         return {
             show: false
         }
     },
 
     events: {
-        'showAlert': function (alert) {
+        'showAlert': function(alert) {
             this.alert = alert
             this.show = true
             setTimeout(() => (this.show = false), 2000)

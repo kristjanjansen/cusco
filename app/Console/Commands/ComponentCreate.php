@@ -25,7 +25,7 @@ class ComponentCreate extends Command
             ".$name {",
             "}",
             "    .$name"."__"."$element {",
-            "    }"
+            "    }\n"
         ];
 
         Storage::disk('root')->put("$dir/$name.css", implode("\n\n", $css));
@@ -62,7 +62,7 @@ class ComponentCreate extends Command
             "",
             "    }",
             "",
-            "</script>"
+            "</script>\n"
         ];
 
         $blade = [
@@ -70,7 +70,7 @@ class ComponentCreate extends Command
             "    <div class=\"$name"."__"."$element\">",
             "        {{ \$title }}",
             "    </div>",
-            "</div>"
+            "</div>\n"
         ];
 
         if ($this->option('vue')) {

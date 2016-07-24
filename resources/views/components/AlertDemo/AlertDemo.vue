@@ -14,16 +14,16 @@
 
 <script>
 
-    export default {
+export default {
 
-        methods: {
+    methods: {
 
-            'showAlert': function() {
-                this.$dispatch('showAlert', 'Hello from JS')
-            }
-        
+        'showAlert': function() {
+            this.$dispatch('showAlert', 'Hello from JS')
         }
 
     }
+
+}
 
 </script>

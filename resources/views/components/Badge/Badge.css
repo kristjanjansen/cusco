@@ -8,6 +8,7 @@
 	display: inline-flex;
 	justify-content: center;
 }
+
 	.Badge__title {
 		align-items: center;
 		font: $font-heading-xs;

@@ -44,30 +44,30 @@
 
 <script>
 
-    import Icon from '../Icon/Icon.vue';
+    import Icon from '../Icon/Icon.vue'
 
     export default {
-        
+    
         components: {
             Icon
         },
 
         props: {
-            isclasses: { default: ''},
+            isclasses: { default: '' },
             links: { default: '' },
-            sublinks: { default: '' },
+            sublinks: { default: '' }
         },
 
         data() {
-           return {
-               menuClosed: true
-           }
+            return {
+                menuClosed: true
+            }
         },
 
         methods: {
-           toggle: function() {
-               this.menuClosed = ! this.menuClosed
-           }
+            toggle: function() {
+                this.menuClosed = !this.menuClosed
+            }
         },
 
         ready() {

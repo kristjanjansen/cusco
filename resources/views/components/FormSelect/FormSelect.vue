@@ -27,11 +27,11 @@
         components: { Multiselect },
 
         props: {
-            isclasses: { default: ''},
-            name: { default: 'select' },
+            isclasses: { default: '' },
+            name: { default: 'select' }
         },
 
-        data () {
+        data() {
             return {
                 selected: null,
                 options: [{id: 1, name: 'One'}, {id: 2, name: 'Two'}]

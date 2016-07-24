@@ -6,8 +6,8 @@
     border: $border-green;
     display: flex;
     height: $height-lg;
-    justify-content: space-between; 
-    padding: $padding-leftright-md; 
+    justify-content: space-between;
+    padding: $padding-leftright-md;
 }
 
 .Alert--error {

@@ -9,9 +9,11 @@
     justify-content: center;
     padding: $padding-sm $padding-lg;
 }
+
 .Button--wide {
     display: flex;
 }
+
     .Button__title {
         color: $white;
     }

@@ -27,8 +27,8 @@
     }
 
     .Navbar__arrow {
-        width: 0; 
-        height: 0; 
+        width: 0;
+        height: 0;
         border-left: $width-xxs solid transparent;
         border-right: $width-xxs solid transparent;
         border-bottom: $width-xxs solid $green;

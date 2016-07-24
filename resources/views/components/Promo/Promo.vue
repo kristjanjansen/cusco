@@ -21,7 +21,7 @@
     export default {
 
         props: {
-            isclasses: { default: ''},
+            isclasses: { default: '' },
             route: { default: '/promo' }
         },
 
@@ -36,7 +36,7 @@
             this.$http.get(this.route).then(function(res) {
                 this.title = res.data.title
                 this.image = res.data.image
-            });
+            })
         }
 
     }

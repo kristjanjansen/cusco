@@ -21,7 +21,7 @@
         ready() {
             this.$http.get(this.route).then(function(res) {
                 this.svg = res.data
-            });
+            })
         }
 
     }

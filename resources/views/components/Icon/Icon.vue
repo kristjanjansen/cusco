@@ -16,11 +16,11 @@
     export default {
 
         props: {
-            isclasses: { default: ''},
-            width: { default: 18},
-            height: { default: 18},
-            name: { default: ''},
-            color: { default: 'black'}
+            isclasses: { default: '' },
+            width: { default: 18 },
+            height: { default: 18 },
+            name: { default: '' },
+            color: { default: 'black' }
         }
 
     }

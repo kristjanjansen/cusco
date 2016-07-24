@@ -53,22 +53,22 @@
 
 <script>
 
-    import { mixin as VueClickaway } from 'vue-clickaway';
+    import { mixin as VueClickaway } from 'vue-clickaway'
 
     export default {
 
         mixins: [ VueClickaway ],
 
         props: {
-            isclasses: { default: ''},
+            isclasses: { default: '' },
             links: { default: '' },
-            sublinks: { default: '' },
+            sublinks: { default: '' }
         },
 
         methods: {
             toggleSubmenu: function(index) {
-                if ((index == this.links.length - 1) || index == null) {
-                    this.submenuOpen = ! this.submenuOpen;
+                if ((index === this.links.length - 1) || index == null) {
+                    this.submenuOpen = !this.submenuOpen
                 }
             }
         },

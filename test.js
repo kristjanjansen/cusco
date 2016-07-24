@@ -1,18 +1,3 @@
-<template>
-
-    <svg :width="width" :height="height">
-
-        <path
-            v-for="path in paths"
-            fill="gray"
-            :d="path"
-        />
-
-    </div>
-
-</template>
-
-<script>
 
     import turf from 'turf'
     import geojson2svg from 'geojson2svg'
@@ -83,5 +68,3 @@
         }
 
     }
-
-</script>

@@ -1,13 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
+    "test": "eslint resources/views/**/*.{js,vue} && stylelint resources/views/**/*.css"
   },
   "dependencies": {
     "brace": "^0.8.0",
     "buble": "^0.11.5",
     "dropzone": "^4.3.0",
+    "eslint": "^3.1.1",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-html": "^1.5.1",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0",
     "geojson2svg": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.1.1",
@@ -24,6 +28,8 @@
     "postcss-short": "^1.4.0",
     "postcss-simple-vars": "^2.0.0",
     "striptags": "^2.1.1",
+    "stylelint": "^7.0.3",
+    "stylelint-config-standard": "^11.0.0",
     "to-markdown": "^3.0.0",
     "turf": "^3.0.11",
     "vue-clickaway": "^1.1.1",

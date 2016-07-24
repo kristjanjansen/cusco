@@ -22,7 +22,7 @@ const globalProps = JSON.parse(decodeURIComponent(
 Vue.use(VueResource)
 Vue.http.headers.common['X-CSRF-TOKEN'] = globalProps.token
 
-new Vue({
+var v = new Vue({
     el: 'body',
 
     components: {

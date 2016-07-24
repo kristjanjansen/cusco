@@ -1,8 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "testjs": "eslint resources/views/**/*.{js,vue}",
-    "testcss": "stylelint resources/views/**/*.css"
+    "test": "eslint resources/views/**/*.{js,vue} && stylelint resources/views/**/*.css"
   },
   "dependencies": {
     "brace": "^0.8.0",

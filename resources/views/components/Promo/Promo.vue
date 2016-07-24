@@ -20,8 +20,6 @@
 
     export default {
 
-
-
         props: {
             isclasses: { default: '' },
             route: { default: '/promo' }

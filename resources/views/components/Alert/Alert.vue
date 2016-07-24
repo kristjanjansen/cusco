@@ -21,33 +21,33 @@
 
 <script>
 
-import Icon from '../Icon/Icon.vue';
+import Icon from '../Icon/Icon.vue'
 
-    export default {
+export default {
 
-        components: {
-            Icon
-        },
+    components: {
+        Icon
+    },
 
-        props: {
-            isclasses: { default: ''},
-            alert: { default: '' }
-        },
+    props: {
+        isclasses: { default: '' },
+        alert: { default: '' }
+    },
 
-        data() {
-            return {
-                show: false,
-            };
-        },
+    data () {
+        return {
+            show: false
+        }
+    },
 
-        events: {
-            'showAlert': function (alert) {
-                this.alert = alert
-                this.show = true
-                setTimeout(() => this.show = false, 2000)
-            }
-        },
-
+    events: {
+        'showAlert': function (alert) {
+            this.alert = alert
+            this.show = true
+            setTimeout(() => (this.show = false), 2000)
+        }
     }
+
+}
 
 </script>

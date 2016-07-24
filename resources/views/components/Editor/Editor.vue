@@ -52,15 +52,15 @@
 
 <script>
 
-    import brace from 'brace';
-    import _ from 'lodash';
-    import tomarkdown from 'to-markdown';
-    import striptags from 'striptags';
- 
-    import 'brace/theme/chrome';
-    import 'brace/mode/markdown';
+    import brace from 'brace'
+    import _ from 'lodash'
+    import tomarkdown from 'to-markdown'
+    import striptags from 'striptags'
 
-    import ImageUpload from '../ImageUpload/ImageUpload.vue';
+    import 'brace/theme/chrome'
+    import 'brace/mode/markdown'
+
+    import ImageUpload from '../ImageUpload/ImageUpload.vue'
 
     export default {
 
@@ -69,39 +69,38 @@
         },
 
         data() {
-           return {
-              body: '',
-              images: [],
-              editor: {},
-              imagebrowserOpen: false
-           }
-       },
+            return {
+                body: '',
+                images: [],
+                editor: {},
+                imagebrowserOpen: false
+            }
+        },
 
-       ready: function() {
-            this.editor = brace.edit(this.$els.writer);
-            this.editor.setTheme("ace/theme/chrome");
-            this.editor.getSession().setMode("ace/mode/markdown");
-            this.editor.renderer.setShowGutter(false);
-            this.editor.setHighlightActiveLine(false);
-            this.editor.setOption("wrap", 60);
+        ready: function() {
+            this.editor = brace.edit(this.$els.writer)
+            this.editor.setTheme('ace/theme/chrome')
+            this.editor.getSession().setMode('ace/mode/markdown')
+            this.editor.renderer.setShowGutter(false)
+            this.editor.setHighlightActiveLine(false)
+            this.editor.setOption('wrap', 60)
             this.editor.$blockScrolling = Infinity
-            this.editor.setValue(this.body);
+            this.editor.setValue(this.body)
 
             this.editor.getSession().on('change', function() {
                 this.updatePreview()
-            }.bind(this));
+            }.bind(this))
 
-            this.updateImages();
+            this.updateImages()
+        },
 
-       },
+        events: {
 
-       events: {
-         
-           'imageUploaded': function () {
-                this.updateImages();
-           }
+            'imageUploaded': function() {
+                this.updateImages()
+            }
 
-       },
+        },
 
         methods: {
 
@@ -109,13 +108,13 @@
                 this.$http.post('./render', {body: this.editor.getValue()})
                     .then(function(res) {
                         this.body = res.data.body
-                    });
+                    })
             },
 
             updateImages: function() {
                 this.$http.get('image/index').then(function(res) {
                     this.images = res.data
-                });
+                })
             },
 
             insertBold: function() {
@@ -135,10 +134,10 @@
             },
 
             insertMarkdownLink: function() {
-                var link = prompt("Link URL", "http://");
+                var link = window.prompt('Link URL', 'http://')
                 this.editor.getSession().replace(
                     this.editor.selection.getRange(),
-                    '[' + this.editor.getSelectedText() + '](' +  link + ')'
+                    '[' + this.editor.getSelectedText() + '](' + link + ')'
                 )
                 this.editor.focus()
             },
@@ -153,12 +152,12 @@
 
             insertTable: function() {
                 this.editor.getSession().replace(
-                    this.editor.selection.getRange(),[
-                        "| Veerg 1 | Veerg 2 | Veerg 3 |",
-                        "|---------|---------|---------|",
-                        "| Sisu 1  | Sisu 2  | Sisu 3  |",
-                        "\n"
-                    ].join("\n")
+                    this.editor.selection.getRange(), [
+                        '| Veerg 1 | Veerg 2 | Veerg 3 |',
+                        '|---------|---------|---------|',
+                        '| Sisu 1  | Sisu 2  | Sisu 3  |',
+                        '\n'
+                    ].join('\n')
                 )
                 this.editor.focus()
             },
@@ -189,6 +188,6 @@
             }
         }
 
-   }
+    }
 
 </script>

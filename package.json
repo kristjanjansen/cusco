@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
+    "testjs": "eslint resources/views/**/*.{js,vue}",
+    "testcss": "stylelint resources/views/**/*.css"
   },
   "dependencies": {
     "brace": "^0.8.0",

@@ -15,10 +15,10 @@
 
 <script>
 
-    import Arc from '../Arc/Arc.vue';
+    import Arc from '../Arc/Arc.vue'
 
     export default {
-        
+
         components: {
             Arc
         },

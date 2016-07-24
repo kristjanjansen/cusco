@@ -14,9 +14,9 @@
 
 <script>
 
-    import turf from 'turf';
-    import geojson2svg from 'geojson2svg';
-    import countries from './countries.json';
+    import turf from 'turf'
+    import geojson2svg from 'geojson2svg'
+    import countries from './countries.json'
 
     export default {
 
@@ -34,67 +34,51 @@
         },
 
         ready() {
-
             var converter = geojson2svg({
                 viewportSize: {width: this.width, height: this.height},
                 mapExtent: {left: -162, bottom: -52, right: 183, top: 87},
                 output: 'path',
                 pointAsCircle: true,
-                r: this.radius,
-            });
-        
-            for (var lat = -54; lat < 85; lat += 3) { 
+                r: this.radius
+            })
 
-                for (var lon = -159; lon < 181; lon += 3) { 
-
+            for (var lat = -54; lat < 85; lat += 3) {
+                for (var lon = -159; lon < 181; lon += 3) {
                     if (this.getPointData(lat, lon)) {
-
                         var path = converter.convert({
                             type: 'Point', coordinates: [lon, lat]
                         })
 
                         this.paths.push(path)
-
                     }
-
                 }
-        
             }
-
         },
 
         methods: {
 
             getPointData: function(lat, lon) {
-
-                var show = false;
+                var show = false
 
                 countries.features.forEach(function(country) {
-
-                    if (country.geometry.type == 'Polygon'
-                        && turf.inside(
-                            turf.point([lon,lat]),
+                    if (country.geometry.type === 'Polygon' &&
+                        turf.inside(
+                            turf.point([lon, lat]),
                             turf.polygon(country.geometry.coordinates)
                         )
-                    ) { show = true  }
+                    ) { show = true }
 
-                    if (country.geometry.type == 'MultiPolygon') {
-
-                        country.geometry.coordinates.forEach(function (polygon) {
-
+                    if (country.geometry.type === 'MultiPolygon') {
+                        country.geometry.coordinates.forEach(function(polygon) {
                             if (turf.inside(
-                                turf.point([lon,lat]),
+                                turf.point([lon, lat]),
                                 turf.polygon(polygon))
                             ) { show = true }
-
                         })
-
                     }
-
                 })
 
                 return show
-                
             }
         }
 

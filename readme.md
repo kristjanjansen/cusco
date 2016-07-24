@@ -27,7 +27,7 @@ All JS and CSS is linted. To run the linter:
 ### From CLI
 
 ```sh
-./node_modules/.bin/eslint resources/views/**/*.{js,vue} && ./node_modules/.bin/stylelint resources/views/**/*.css
+npm run test
 ```
 
 ### From Sublime Text:

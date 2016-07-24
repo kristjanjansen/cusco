@@ -1,5 +1,5 @@
 ## About
-
+ 
 The goal of this experiment is to clear up current view rendering mess and come up
 with a solution with clearer data and control flow. Currently the view logic
 is diffused into models, controllers, views and utility functions.
@@ -19,6 +19,28 @@ In Ubuntu, add this:
 ```
 sudo apt-get install libnotify-bin
 ```
+
+## Linting
+
+All JS and CSS is linted. To run the linter:
+
+### From CLI
+
+```sh
+./node_modules/.bin/eslint resources/views/**/*.{js,vue} && ./node_modules/.bin/stylelint resources/views/**/*.css
+```
+
+### From Sublime Text:
+
+https://packagecontrol.io/packages/SublimeLinter-contrib-eslint
+https://packagecontrol.io/packages/ESLint-Formatter
+https://packagecontrol.io/packages/SublimeLinter-contrib-stylelint
+https://packagecontrol.io/packages/phpfmt
+
+### From PHPStorm
+
+https://www.jetbrains.com/help/phpstorm/10.0/eslint.html
+No Stylelint support yet https://youtrack.jetbrains.com/issue/WEB-19737
 
 ## Architecture
 

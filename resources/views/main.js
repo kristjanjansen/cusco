@@ -41,6 +41,8 @@ new Vue({
         Promo
     },
 
+
+
     events: {
 
         'showAlert': function(alert) { this.$broadcast('showAlert', alert) },

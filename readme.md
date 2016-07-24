@@ -32,15 +32,15 @@ All JS and CSS is linted. To run the linter:
 
 ### From Sublime Text:
 
-https://packagecontrol.io/packages/SublimeLinter-contrib-eslint
-https://packagecontrol.io/packages/ESLint-Formatter
-https://packagecontrol.io/packages/SublimeLinter-contrib-stylelint
-https://packagecontrol.io/packages/phpfmt
+* https://packagecontrol.io/packages/SublimeLinter-contrib-eslint
+* https://packagecontrol.io/packages/ESLint-Formatter
+* https://packagecontrol.io/packages/SublimeLinter-contrib-stylelint
+* https://packagecontrol.io/packages/phpfmt
 
 ### From PHPStorm
 
-https://www.jetbrains.com/help/phpstorm/10.0/eslint.html
-No Stylelint support yet https://youtrack.jetbrains.com/issue/WEB-19737
+* https://www.jetbrains.com/help/phpstorm/10.0/eslint.html
+* No Stylelint support yet https://youtrack.jetbrains.com/issue/WEB-19737
 
 ## Architecture
 

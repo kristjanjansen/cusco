@@ -4,18 +4,20 @@
 
         <div class="NavbarDesktop__links">
 
-            <div
-                v-for="link in links"
-                @click="toggleSubmenu(link)"
-                @mouseover="toggleSubmenu(link)"
-                v-on-clickaway="toggleSubmenu(link)"
-                track-by="$index"
-                class="NavbarDesktop__link"
-            >
+            <a v-for="link in links" :href="link.route">
 
-                {{ link.title }}
+                <div
+                    @mouseover="toggleSubmenu(link)"
+                    v-on-clickaway="submenuOpen = false"
+                    track-by="$index"
+                    class="NavbarDesktop__link"
+                >
 
-            </div>
+                    {{ link.title }}
+
+                </div>  
+
+            </a>
           
         </div>
 

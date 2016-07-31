@@ -12,9 +12,17 @@ class StyleguideController extends Controller {
 
         return view('layouts.1col')->with('content', collect()
 
+
             // COMPONENT GROUPS
 
+            // Masthead
+
             ->push(componentGroup('Masthead', 'Masthead'))
+
+            // Footer
+
+            ->push(componentGroup('Footer'))
+
 
             // COMPONENTS
 
@@ -80,20 +88,6 @@ class StyleguideController extends Controller {
             // Editor
 
             ->push(component('Editor'))
-
-            // Footer
-
-            ->push(component('Footer')
-                ->with('image', '/samples/footer.jpg')
-                ->with('logo', '')
-                ->with('links', [
-                    'col1' => ['First link', 'Second link'],
-                    'col2' => ['First link', 'Second link'],
-                    'col3' => ['First link', 'Second link'],
-                    'social' => ['First link', 'Second link'],
-                ])
-                ->with('licence', 'Licence')
-            )
 
             // Form
 
@@ -200,7 +194,8 @@ class StyleguideController extends Controller {
                     . component('Icon')
                         ->with('name', $filename)
                         ->with('color', 'gray')
-                        ->with('size', 'xxl');
+                        ->with('width', '100')
+                        ->with('height', '100');
             });
     
     }

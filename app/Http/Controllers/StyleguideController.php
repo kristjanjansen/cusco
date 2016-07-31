@@ -23,7 +23,6 @@ class StyleguideController extends Controller {
 
             ->push(componentGroup('Footer'))
 
-
             // COMPONENTS
 
             // Alert
@@ -150,20 +149,6 @@ class StyleguideController extends Controller {
             // Map
 
             ->push(component('Map'))
-
-            // Navbar
-
-            ->push(component('Navbar')
-                ->with('links', ['First link', 'Second link'])
-                ->with('sublinks', ['Third link'])
-            )
-
-            // NavbarMobile
-
-            ->push(component('NavbarMobile')
-                ->with('links', ['First link', 'Second link'])
-                ->with('sublinks', ['Third link'])
-            )
             
             // ProfileImage
 

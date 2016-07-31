@@ -2,13 +2,13 @@
 
     <component is="Arc" :size="size" :border="border" :endangle="endangle"></component>
 
-    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">size: {{ size }}</div>
+    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">Arc size: {{ size }}</div>
     <input type="range" v-model="size" min="16" max="256">
    
-    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">border: {{ border }}</div>
+    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">Arc border: {{ border }}</div>
     <input type="range" v-model="border" min="1" max="50">
     
-    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">endangle: {{ endangle }}</div>
+    <div style="font-family: monospace; color: #ccc; padding: 0.5em 0;">Arc endangle: {{ endangle }}</div>
     <input type="range" v-model="endangle" min="1" max="360">
 
 </template>

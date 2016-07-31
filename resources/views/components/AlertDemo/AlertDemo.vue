@@ -4,7 +4,7 @@
 
         <div class="Button__title">
             
-            Show alerts
+            Alert
 
         </div>
 

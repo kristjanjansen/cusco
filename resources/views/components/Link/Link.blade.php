@@ -5,6 +5,8 @@
 	        {{ $title }}
 	        
 	    </div>
-	    	<component is="Icon" name="{{ $icon }}" class="Link__icon" color="#d3d3d3"></component>
+	    
+        <component is="Icon" name="{{ $icon }}" class="Link__icon" color="gray"></component>
+
 	</div>
 </a>

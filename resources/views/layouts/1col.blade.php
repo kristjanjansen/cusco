@@ -1,3 +1,11 @@
+@php
+
+$header = $header ?? '';
+$content = $content ?? collect();
+$footer = $footer ?? '';
+
+@endphp
+
 @extends('layouts.main')
 
 @section('header', $header)

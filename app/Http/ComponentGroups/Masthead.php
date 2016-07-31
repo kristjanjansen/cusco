@@ -6,108 +6,10 @@ use Illuminate\Http\Request;
 
 class Masthead {
 
-/*
-
-                'items' => [
-                    'first' => [
-                        'title' => 'Minu Trip.ee',
-                        'route' => route('login.form'),
-                        'children' => [
-                            'login' => [
-                                'title' => 'Logi sisse',
-                                'route' => route('login.form')
-                            ],
-                            'register' => [
-                                'title' => 'Registreeri',
-                                'route' => route('register.form'),
-                            ],
-                        ]
-                    ],
-                ]
-...
-
-       @include('component.navbar.user', [
-            'modifiers' => 'm-green',
-            'profile' => [
-                'image' => \Auth::user()->imagePreset(),
-                'title' => \Auth::user()->name,
-                'route' => route('user.show', [\Auth::user()]),
-                'badge' => \Auth::user()->unreadMessagesCount(),
-                'letter' => [
-                    'modifiers' => 'm-green m-tiny',
-                    'text' => 'W'
-                ]
-            ],
-            'children' => [
-                [
-                    'title' => trans('menu.user.profile'),
-                    'route' => route('user.show', [\Auth::user()]),
-                ],
-                [
-                    'title' => trans('menu.user.message'),
-                    'route' => route('message.index', [\Auth::user()]),
-                    'badge' => \Auth::user()->unreadMessagesCount()
-                ],
-                [
-                    'title' => trans('menu.user.edit.profile'),
-                    'route' => route('user.edit', [\Auth::user()]),
-                ],
-                [
-                    'title' => trans('menu.auth.logout'),
-                    'route' => route('login.logout'),
-                ]
-            ]
-        ])
-    </div>
-
-    @elseif(\Auth::user() && \Auth::user()->hasRole('admin'))
-
-    <div class="c-header__user">
-
-        @include('component.navbar.user', [
-            'modifiers' => 'm-green',
-            'profile' => [
-                'image' => \Auth::user()->imagePreset(),
-                'title' => \Auth::user()->name,
-                'route' => route('user.show', [\Auth::user()]),
-                'badge' => \Auth::user()->unreadMessagesCount(),
-                'letter' => [
-                    'modifiers' => 'm-green m-tiny',
-                    'text' => 'W'
-                ]
-            ],
-            'children' => [
-                [
-                    'title' => trans('menu.user.profile'),
-                    'route' => route('user.show', [\Auth::user()]),
-                ],
-                [
-                    'title' => trans('menu.user.message'),
-                    'route' => route('message.index', [\Auth::user()]),
-                    'badge' => \Auth::user()->unreadMessagesCount()
-                ],
-                [
-                    'title' => trans('menu.user.edit.profile'),
-                    'route' => route('user.edit', [\Auth::user()]),
-                ],
-                [
-                    'title' => trans('menu.auth.admin'),
-                    'route' => route('content.index', ['internal'])
-                ],
-                [
-                    'title' => trans('menu.auth.logout'),
-                    'route' => route('login.logout'),
-                ]
-            ]
-        ])
-    </div>
-
-    @endif
-
-*/
-
-    protected function prepareUnloggedLinks()
+    protected function prepareLinks($request)
     {
+        $loggedUser = false; // $request->user();
+
         return collect(config('menu.header'))
             ->map(function($value, $key) {
                 return [
@@ -115,49 +17,52 @@ class Masthead {
                     'route' => $value['route'],
                 ];
             })
-            ->put('user', [
+            ->putWhen(! $loggedUser, 'user', [
                 'title' => trans("menu2.header.user"),
-                'route' => '',
-                'menu' => true
+                'route' => '', //route('login.form'),
+                'menu' => true,
+            ])
+            ->putWhen($loggedUser, 'user', [
+                'title' => 'Username',//$user->name,
+                'route' => '',//route('user.show', [$user]),
+                'badge' => '', //$loggedUser->vars()->unreadMessagesCount()
+                'image' => '', //$loggedUser->vars()->imagePreset(),
+                'menu' => true,
             ])
             ->toArray();
     }
 
-    protected function prepareUnloggedSublinks()
+    protected function prepareSublinks($request)
     {
+        $loggedUser = false; // $request->user();
+
         return collect()
-            ->push([
-                'title' => trans("menu2.header.login"),
+            ->pushWhen(! $loggedUser, [
+                'title' => trans('menu.auth.login'),
                 'route' => '', //route('login.form'),
             ])
-            ->push([
-                'title' => trans("menu2.header.register"),
-                'route' => '', // route('login.register'),
+            ->pushWhen(! $loggedUser, [
+                'title' => trans('menu.auth.register'),
+                'route' => '', //route('login.register'),
             ])
-            ->toArray();
-    }
-
-    protected function prepareLoggedSublinks()
-    {
-        return collect()
-            ->push([
+            ->pushWhen($loggedUser, [
                 'title' => trans('menu.user.profile'),
-                'route' => '', //route('user.show', [auth()->user()]),
+                'route' => '', //route('user.show', [$loggedUser]),
             ])
-            ->push([
+            ->pushWhen($loggedUser, [
                 'title' => trans('menu.user.edit.profile'),
-                'route' => '', //route('user.edit', [auth()->user()]),
+                'route' => '', //route('user.edit', [$loggedUser]),
             ])
-            ->push([
+            ->pushWhen($loggedUser, [
                 'title' => trans('menu.user.message'),
-                'route' => '', //route('message.index', [auth()->user()]),
-                'badge' => '' // auth()->user()->unreadMessagesCount()
+                'route' => '', //route('message.index', [$loggedUser]),
+                'badge' => '' //$loggedUser->vars()->unreadMessagesCount()
             ])
-            ->pushIf(auth()->check(), [
+            ->pushWhen($loggedUser, [
                 'title' => trans('menu.auth.admin'),
                 'route' => '', //route('content.index', ['internal']),
             ])
-            ->push([
+            ->pushWhen($loggedUser, [
                 'title' => trans('menu.auth.logout'),
                 'route' => '', //route('login.logout'),
             ])
@@ -187,12 +92,12 @@ class Masthead {
                 ->with('color', 'white')
             )
             ->with('navbar', component('Navbar')
-                ->with('links', $this->prepareUnloggedLinks())
-                ->with('sublinks', $this->prepareLoggedSubLinks())
+                ->with('links', $this->prepareLinks($request))
+                ->with('sublinks', $this->prepareSublinks($request))
             )
             ->with('navbar_mobile', component('NavbarMobile')
-                ->with('links', $this->prepareUnloggedLinks())
-                ->with('sublinks', $this->prepareLoggedSubLinks())
+                ->with('links', $this->prepareLinks($request))
+                ->with('sublinks', $this->prepareSublinks($request))
             );
     }
 

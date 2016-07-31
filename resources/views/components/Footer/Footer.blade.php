@@ -23,7 +23,7 @@
 
                 @foreach($links[$col] as $link)
                 
-                <div class="Footer__link"><a href="{{ $link->route }}">{{ $link->title }}</div>
+                <a href="{{ $link->route }}"><div class="Footer__link">{{ $link->title }}</div></a>
 
                 @endforeach
 
@@ -37,7 +37,10 @@
 
             @foreach($links['social'] as $link)
             
-            <div class="Footer__socialLink">{{ $link }}</div>
+            <a href="{{ $link->route }}">
+                <component is="Icon" name="{{ $link->icon }}" color="white"></component>
+                <span class="Footer__socialLink">{{ $link->title }}</span>
+            </a>
 
             @endforeach
         

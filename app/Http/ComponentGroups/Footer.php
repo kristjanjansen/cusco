@@ -3,6 +3,7 @@
 namespace App\Http\ComponentGroups;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class Footer {
 
@@ -12,7 +13,8 @@ class Footer {
             ->map(function($value, $key) use ($menuKey) {
                 return (object) [
                     'title' => trans("menu.$menuKey.$key"),
-                    'route' => $value['route']    
+                    'route' => $value['route'],
+                    'icon' => $value['icon'] ?? null    
                 ];
             });
     }
@@ -31,10 +33,11 @@ class Footer {
                 'col1' => $this->prepareLinks('footer'),
                 'col2' => $this->prepareLinks('footer2'),
                 'col3' => $this->prepareLinks('footer3'),
-                'social' => ['Facebook', 'Twitter'],
+                'social' => $this->prepareLinks('footer-social'),
             ])
-            ->with('licence', 'Autoriõigused © Trip.ee 1998-2016');
-
+            ->with('licence', trans('site.footer.copyright', [
+                'current_year' => Carbon::now()->year
+            ]));
     }
 
 }

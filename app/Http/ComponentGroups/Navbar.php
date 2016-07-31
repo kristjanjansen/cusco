@@ -75,13 +75,13 @@ class Navbar {
 
         return collect()
             ->push(component('NavbarDesktop')
-                ->with('links', $this->prepareLinks())
-                ->with('sublinks', $this->prepareSublinks())
+                ->with('links', $this->prepareLinks($request))
+                ->with('sublinks', $this->prepareSublinks($request))
                 ->render()
             )
             ->push(component('NavbarMobile')
-                ->with('links', $this->prepareLinks())
-                ->with('sublinks', $this->prepareSublinks())
+                ->with('links', $this->prepareLinks($request))
+                ->with('sublinks', $this->prepareSublinks($request))
                 ->render()
             )
             ->implode('');

@@ -1,6 +1,8 @@
 @import "variables";
 
 .NavbarMobile {
+    display: none;
+    display: block ?if $tablet;
 }
 
     .NavbarMobile__hamburger {

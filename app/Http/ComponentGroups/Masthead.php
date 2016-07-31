@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class Masthead {
 
+ 
     public function render(Request $request, $title)
     {
 
@@ -27,38 +28,7 @@ class Masthead {
                 ->with('height', 80)
                 ->with('color', 'white')
             )
-            ->with('navbar', component('Navbar')
-                ->with('links', [
-                    'Trip.ee',
-                    'Lennupakkumised',
-                    'Reisikaaslased',
-                    'Foorum',
-                    'Minu Trip.ee'
-                ])
-                ->with('sublinks', [
-                    'Profiil',
-                    'Sõnumid',
-                    'Muuda profiili',
-                    'Administreeri',
-                    'Logi välja'
-                ])
-            )
-            ->with('navbar_mobile', component('NavbarMobile')
-                ->with('links', [
-                    'Trip.ee',
-                    'Lennupakkumised',
-                    'Reisikaaslased',
-                    'Foorum',
-                    'Minu Trip.ee'
-                ])
-                ->with('sublinks', [
-                    'Profiil',
-                    'Sõnumid',
-                    'Muuda profiili',
-                    'Administreeri',
-                    'Logi välja'
-                ])
-            );
+            ->with('navbar', componentGroup('Navbar'));
     }
 
 }

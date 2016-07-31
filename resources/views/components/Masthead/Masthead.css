@@ -23,17 +23,6 @@
         align-items: center;
     }
 
-    .Masthead__nav {
-        display: flex;
-        align-items: center;
-        display: none ?if $tablet;
-    }
-
-    .Masthead__mobileNav {
-        display: none;
-        display: block ?if $tablet;
-    }
-
     .Masthead__wrapper {
         display: flex;
         align-items: center;
@@ -58,3 +47,4 @@
         font: $font-heading-xl ?if $mobile;
         font: $font-heading-xxxl;
     }
+

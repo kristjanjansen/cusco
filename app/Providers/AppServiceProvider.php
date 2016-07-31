@@ -42,6 +42,16 @@ class AppServiceProvider extends ServiceProvider
         Collection::macro('withoutFirst', function () {
             return $this->slice(1, $this->count());
         });
+
+        Collection::macro('pushWhen', function ($condition, $item) {
+            if ($condition) $this->push($item);
+            return $this;
+        });
+
+        Collection::macro('putWhen', function ($condition, $key, $item) {
+            if ($condition) $this->put($key, $item);
+            return $this;
+        });
     
     }
 }

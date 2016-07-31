@@ -1,45 +1,46 @@
 <template>
 
-    <nav class="Navbar" :class="isclasses">
+    <nav class="NavbarDesktop" :class="isclasses">
 
-        <div class="Navbar__links">
+        <div class="NavbarDesktop__links">
 
             <div
-                class="Navbar__link"
                 v-for="link in links"
-                @click="toggleSubmenu($index)"
-                @mouseover="toggleSubmenu($index)"
+                @click="toggleSubmenu(link)"
+                @mouseover="toggleSubmenu(link)"
+                v-on-clickaway="toggleSubmenu(link)"
                 track-by="$index"
+                class="NavbarDesktop__link"
             >
 
-                {{ link }}
+                {{ link.title }}
 
             </div>
           
         </div>
 
         <div
-            class="Navbar__popover"
+            class="NavbarDesktop__popover"
             v-if="submenuOpen"
             transition="fadeZoom"
             v-on-clickaway="toggleSubmenu()"
         >
 
-            <div class="Navbar__arrowWrapper">            
+            <div class="NavbarDesktop__arrowWrapper">            
             
-                <div class="Navbar__arrow"></div>
+                <div class="NavbarDesktop__arrow"></div>
             
             </div>
 
-            <div class="Navbar__sublinks">
+            <div class="NavbarDesktop__sublinks">
 
                 <div
-                    class="Navbar__sublink"
                     v-for="sublink in sublinks"
                     track-by="$index"
+                    class="NavbarDesktop__sublink"
                 >
 
-                    {{ sublink }}
+                    {{ sublink.title }}
 
                 </div>
               
@@ -66,8 +67,8 @@
         },
 
         methods: {
-            toggleSubmenu: function(index) {
-                if ((index === this.links.length - 1) || index == null) {
+            toggleSubmenu: function(link) {
+                if (link.menu) {
                     this.submenuOpen = !this.submenuOpen
                 }
             }

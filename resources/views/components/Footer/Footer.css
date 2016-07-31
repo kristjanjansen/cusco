@@ -36,6 +36,7 @@
         color: white;
         font: $font-heading-sm;
         padding: $padding-xs;
+        margin-right: $padding-md;
     }
 
     .Footer__licence {

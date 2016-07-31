@@ -37,7 +37,7 @@
 
             @foreach($links['social'] as $link)
             
-            <a href="{{ $link->route }}">
+            <a href="{{ $link->route }}" target="{{ $link->target }}">
                 <component is="Icon" name="{{ $link->icon }}" color="white"></component>
                 <span class="Footer__socialLink">{{ $link->title }}</span>
             </a>

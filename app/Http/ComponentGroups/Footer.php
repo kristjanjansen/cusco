@@ -14,7 +14,8 @@ class Footer {
                 return (object) [
                     'title' => trans("menu.$menuKey.$key"),
                     'route' => $value['route'],
-                    'icon' => $value['icon'] ?? null    
+                    'icon' => $value['icon'] ?? '',
+                    'target' => isset($value['external']) ? '_blank' : ''    
                 ];
             });
     }

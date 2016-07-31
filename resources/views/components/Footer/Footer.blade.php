@@ -23,7 +23,7 @@
 
                 @foreach($links[$col] as $link)
                 
-                <div class="Footer__link">{{ $link }}</div>
+                <div class="Footer__link"><a href="{{ $link->route }}">{{ $link->title }}</div>
 
                 @endforeach
 

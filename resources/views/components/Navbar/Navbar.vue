@@ -4,15 +4,17 @@
 
         <div class="Navbar__links">
 
+
             <div
-                class="Navbar__link"
                 v-for="link in links"
-                @click="toggleSubmenu($index)"
-                @mouseover="toggleSubmenu($index)"
+                @click="toggleSubmenu(link)"
+                @mouseover="toggleSubmenu(link)"
+                v-on-clickaway="toggleSubmenu(link)"
                 track-by="$index"
+                class="Navbar__link"
             >
 
-                {{ link }}
+                {{ link.title }}
 
             </div>
           
@@ -34,12 +36,12 @@
             <div class="Navbar__sublinks">
 
                 <div
-                    class="Navbar__sublink"
                     v-for="sublink in sublinks"
                     track-by="$index"
+                    class="Navbar__sublink"
                 >
 
-                    {{ sublink }}
+                    {{ sublink.title }}
 
                 </div>
               
@@ -66,8 +68,8 @@
         },
 
         methods: {
-            toggleSubmenu: function(index) {
-                if ((index === this.links.length - 1) || index == null) {
+            toggleSubmenu: function(link) {
+                if (link.menu) {
                     this.submenuOpen = !this.submenuOpen
                 }
             }

@@ -48,14 +48,3 @@
         font: $font-heading-xxxl;
     }
 
-    
-    .Masthead__navbarDesktop {
-        display: flex;
-        align-items: center;
-        display: none ?if $tablet;
-    }
-
-    .Masthead__navbarMobile {
-        display: none;
-        display: block ?if $tablet;
-    }

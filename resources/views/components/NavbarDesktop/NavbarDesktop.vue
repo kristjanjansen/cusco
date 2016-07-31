@@ -4,7 +4,6 @@
 
         <div class="NavbarDesktop__links">
 
-
             <div
                 v-for="link in links"
                 @click="toggleSubmenu(link)"

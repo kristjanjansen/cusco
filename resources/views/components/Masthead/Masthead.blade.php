@@ -23,15 +23,9 @@
 
             </div>
 
-            <div class="Masthead__navbarDesktop">
+            <div class="Masthead__navbar">
 
-                {!! $navbar_desktop !!}
-
-            </div>
-
-            <div class="Masthead__navbarMobile">
-
-                {!! $navbar_mobile !!}
+                {!! $navbar !!}
 
             </div>
 

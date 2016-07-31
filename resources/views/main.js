@@ -11,7 +11,7 @@ import Icon from './components/Icon/Icon.vue'
 import IconLoader from './components/IconLoader/IconLoader.vue'
 import ImageUpload from './components/ImageUpload/ImageUpload.vue'
 import Map from './components/Map/Map.vue'
-import Navbar from './components/Navbar/Navbar.vue'
+import NavbarDesktop from './components/NavbarDesktop/NavbarDesktop.vue'
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue'
 import Promo from './components/Promo/Promo.vue'
 
@@ -36,7 +36,7 @@ new Vue({
         IconLoader,
         ImageUpload,
         Map,
-        Navbar,
+        NavbarDesktop,
         NavbarMobile,
         Promo
     },

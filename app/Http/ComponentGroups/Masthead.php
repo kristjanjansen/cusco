@@ -91,7 +91,7 @@ class Masthead {
                 ->with('height', 80)
                 ->with('color', 'white')
             )
-            ->with('navbar', component('Navbar')
+            ->with('navbar_desktop', component('NavbarDesktop')
                 ->with('links', $this->prepareLinks($request))
                 ->with('sublinks', $this->prepareSublinks($request))
             )

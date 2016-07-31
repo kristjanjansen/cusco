@@ -23,13 +23,13 @@
 
             </div>
 
-            <div class="Masthead__nav">
+            <div class="Masthead__navbarDesktop">
 
-                {!! $navbar !!}
+                {!! $navbar_desktop !!}
 
             </div>
 
-            <div class="Masthead__mobileNav">
+            <div class="Masthead__navbarMobile">
 
                 {!! $navbar_mobile !!}
 

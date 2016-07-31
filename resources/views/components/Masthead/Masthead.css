@@ -23,17 +23,6 @@
         align-items: center;
     }
 
-    .Masthead__nav {
-        display: flex;
-        align-items: center;
-        display: none ?if $tablet;
-    }
-
-    .Masthead__mobileNav {
-        display: none;
-        display: block ?if $tablet;
-    }
-
     .Masthead__wrapper {
         display: flex;
         align-items: center;
@@ -57,4 +46,16 @@
         color: $white;
         font: $font-heading-xl ?if $mobile;
         font: $font-heading-xxxl;
+    }
+
+    
+    .Masthead__navbarDesktop {
+        display: flex;
+        align-items: center;
+        display: none ?if $tablet;
+    }
+
+    .Masthead__navbarMobile {
+        display: none;
+        display: block ?if $tablet;
     }

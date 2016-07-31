@@ -24,13 +24,13 @@
 
                 <div class="NavbarMobile__link" v-for="link in links">
                     
-                    {{ link }}
+                    {{ link.title }}
                     
                 </div>
 
                 <div class="NavbarMobile__link" v-for="link in sublinks">
                     
-                    {{ link }}
+                    {{ link.title }}
                     
                 </div>
 

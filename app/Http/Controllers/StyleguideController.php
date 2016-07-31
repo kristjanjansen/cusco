@@ -230,7 +230,7 @@ class StyleguideController extends Controller {
     
     }
 
-    public function formdemo() {
+    public function formDemo() {
 
         dump(request()->all());
         sleep(2);

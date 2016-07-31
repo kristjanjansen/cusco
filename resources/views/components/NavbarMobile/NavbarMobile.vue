@@ -25,7 +25,7 @@
                 <a v-for="link in links" :href="link.route">
 
                     <div class="NavbarMobile__link">
-                        
+                        a
                         {{ link.title }}
                         
                     </div>
@@ -35,7 +35,7 @@
                 <a v-for="link in sublinks" :href="link.route">
 
                     <div class="NavbarMobile__link">
-                        
+                        b
                         {{ link.title }}
                         
                     </div>

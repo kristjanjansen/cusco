@@ -12,6 +12,12 @@ class StyleguideController extends Controller {
 
         return view('layouts.1col')->with('content', collect()
 
+            // COMPONENT GROUPS
+
+            ->push(componentGroup('Masthead', 'Masthead'))
+
+            // COMPONENTS
+
             // Alert
 
             ->push(component('Alert')->with('alert', ''))
@@ -151,35 +157,6 @@ class StyleguideController extends Controller {
 
             ->push(component('Map'))
 
-            // Masthead
-
-            ->push(component('Masthead')
-                ->with('image', '/samples/header.jpg')
-                ->with('search', component('Icon')
-                    ->with('name', 'icon-search')
-                )
-                ->with('logo', component('Icon')
-                    ->with('name', 'tripee_logo')
-                    ->with('width', '220')
-                    ->with('height', '100')
-                )
-                ->with('smalllogo', component('Icon')
-                    ->with('name', 'tripee_logo_plain')
-                    ->with('width', '80')
-                    ->with('height', '20')
-                    ->with('color', 'white')
-                )
-                ->with('navbar', component('Navbar')
-                    ->with('links', ['First', 'Second'])
-                    ->with('sublinks', ['First', 'Second'])
-                )
-                ->with('navbar_mobile', component('NavbarMobile')
-                    ->with('links', ['First', 'Second'])
-                    ->with('sublinks', ['First', 'Second'])
-                )
-                ->with('title', 'Title')
-            )
-
             // Navbar
 
             ->push(component('Navbar')
@@ -206,8 +183,6 @@ class StyleguideController extends Controller {
 
             ->push(component('Tag')->with('title', 'I am tag'))
 
-            // Icons
-
             ->merge($this->getIcons())
 
         );
@@ -221,11 +196,11 @@ class StyleguideController extends Controller {
                 return pathinfo($filepath, PATHINFO_FILENAME);
             })
             ->map(function($filename) {
-                return '<p>'. $filename . '</p>' . component('Icon')
+                return '<p>'. $filename . '</p>'
+                    . component('Icon')
                         ->with('name', $filename)
                         ->with('color', 'gray')
-                        ->with('width', 32)
-                        ->with('height', 32);
+                        ->with('size', 'xxl');
             });
     
     }

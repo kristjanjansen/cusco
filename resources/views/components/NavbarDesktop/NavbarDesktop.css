@@ -22,6 +22,7 @@
         width: $width-xxl;
         position: absolute;
         right: 0;
+        top: $height-md;
     }
 
     .NavbarDesktop__arrowWrapper {

@@ -1,7 +1,7 @@
 @import "variables";
 
 .NavbarMobile {
-    display: none;
+    display: block;
     display: block ?if $tablet;
 }
 

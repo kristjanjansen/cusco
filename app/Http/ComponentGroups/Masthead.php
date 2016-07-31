@@ -24,8 +24,8 @@ class Masthead {
             )
             ->with('smalllogo', component('Icon')
                 ->with('name', 'tripee_logo_plain')
-                ->with('width', 120)
-                ->with('height', 80)
+                ->with('width', 80)
+                ->with('height', 30)
                 ->with('color', 'white')
             )
             ->with('navbar', componentGroup('Navbar'));

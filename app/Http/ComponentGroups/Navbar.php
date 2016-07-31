@@ -74,12 +74,12 @@ class Navbar {
     {
 
         return collect()
-            ->push(component('NavbarDesktop')
+            ->push(component('NavbarMobile')
                 ->with('links', $this->prepareLinks($request))
                 ->with('sublinks', $this->prepareSublinks($request))
                 ->render()
             )
-            ->push(component('NavbarMobile')
+            ->push(component('NavbarDesktop')
                 ->with('links', $this->prepareLinks($request))
                 ->with('sublinks', $this->prepareSublinks($request))
                 ->render()

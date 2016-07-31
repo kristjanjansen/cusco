@@ -4,11 +4,11 @@
 
         <div
             class="NavbarMobile__hamburger"
-            v-if="menuClosed"
+            v-if="! menuOpen"
             @click="toggle()"
         >
         
-            <component is="Icon" name="icon-menu"></component>
+            <component is="Icon" name="icon-menu" color="white"></component>
         
         </div>
 
@@ -18,11 +18,19 @@
             transition="fadeZoom"
         >
 
-            <div class="NavbarMobile__close" @click="toggle()">×</div>
+            <div class="NavbarMobile__close" @click="toggle()">
+                
+                <component is="Icon" name="icon-close" color="white"></component>
+
+            </div>
 
             <div class="NavbarMobile__links">
-
-                <a v-for="link in links" :href="link.route">
+       
+                <a
+                    v-for="link in links"
+                    :href="link.route"
+                    track-by="$index"
+                >
 
                     <div class="NavbarMobile__link">
                         
@@ -32,7 +40,11 @@
 
                 </a>
 
-                <a v-for="link in sublinks" :href="link.route">
+                <a
+                    v-for="link in sublinks"
+                    :href="link.route"
+                    track-by="$index"
+                >
 
                     <div class="NavbarMobile__link">
                         
@@ -68,13 +80,13 @@
 
         data() {
             return {
-                menuClosed: true
+                menuOpen: false
             }
         },
 
         methods: {
             toggle: function() {
-                this.menuClosed = !this.menuClosed
+                this.menuOpen = !this.menuOpen
             }
         },
 

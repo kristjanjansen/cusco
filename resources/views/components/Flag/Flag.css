@@ -1,9 +1,11 @@
 @import "variables";
 
 .Flag {
-
+	display: flex;
+	flex-direction: row;
 }
 
     .Flag__value{
     	font: $font-heading-md;
+    	margin: 0 $margin-sm ;
     }

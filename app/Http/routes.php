@@ -40,7 +40,7 @@ Route::post('/render', 'HelpersController@render');
 
 Route::get('/test', 'TestController@index');
 
-Route::get('/flag/toggle/{flagType}', function ($flagtype) {
+Route::post('/flag/toggle/{flagType}', function ($flagtype) {
     
     if ($flagType == 'good' && Request::has('value')) {
         $value = Request::get('value');

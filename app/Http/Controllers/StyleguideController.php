@@ -147,7 +147,14 @@ class StyleguideController extends Controller {
                 ->push(component('badge')->with('title', 1))
                 ->push(component('badge')->with('title', 10))
                 ->push(component('badge')->with('title', 100))
-                    
+
+                ->push(component('StyleguideHeader')->with('title', 'Badges'))
+                ->push(component('Flag')
+                    ->with('route_good', '#')
+                    ->with('route_bad', '#')
+                    ->with('value_good', 2)
+                    ->with('value_bad', 1)
+                                    
 
 
                 ->push(component('StyleguideHeader')->with('title', 'Map'))

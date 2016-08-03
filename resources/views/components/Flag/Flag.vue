@@ -2,11 +2,11 @@
 
     <div class="Flag" :class="isclasses">
 
-        <component is="Icon" name="icon-thumb-up" @click="toggleFlag('good')" width="32px" height="32px"></component>
+        <component is="Icon" name="icon-thumb-up" @click="toggleFlag('good')" size="lg" color="gray"></component>
 
         <div class="Flag__value">{{ good }}</div>
         
-        <component is="Icon" name="icon-thumb-down" @click="toggleFlag('bad')" width="32px" height="32px"></component>
+        <component is="Icon" name="icon-thumb-down" @click="toggleFlag('bad')" size="lg" color="gray"></component>
 
         <div class="Flag__value">{{ bad }}</div>
 

@@ -40,19 +40,19 @@ Route::post('/render', 'HelpersController@render');
 
 Route::get('/test', 'TestController@index');
 
-Route::post('/flag/toggle/{flagType}', function ($flagtype) {
+Route::post('/flag/toggle/{flagType}', function ($flagType) {
     
     if ($flagType == 'good' && Request::has('value')) {
         $value = Request::get('value');
         return Response::json([
-            'value' => $value++
+            'value' => $value + 1
         ]);
     }
     
-    if ($flagType == 'good' && Request::has('value')) {
+    if ($flagType == 'bad' && Request::has('value')) {
         $value = Request::get('value');
         return Response::json([
-            'value' => $value > 0 ? $value-- : $value
+            'value' => $value + 1
         ]);
     }
 

@@ -4,6 +4,6 @@
 
 }
 
-    .Flag__title {
-
+    .Flag__value{
+    	font: $font-heading-md;
     }

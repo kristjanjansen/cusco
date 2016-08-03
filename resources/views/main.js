@@ -14,6 +14,7 @@ import Map from './components/Map/Map.vue'
 import Navbar from './components/Navbar/Navbar.vue'
 import NavbarMobile from './components/NavbarMobile/NavbarMobile.vue'
 import Promo from './components/Promo/Promo.vue'
+import Flag from'./components/Flag/Flag.vue'
 
 const globalProps = JSON.parse(decodeURIComponent(
     document.querySelector('#globalprops').getAttribute('content')
@@ -38,7 +39,9 @@ new Vue({
         Map,
         Navbar,
         NavbarMobile,
-        Promo
+        Promo,
+        Flag,
+        
     },
 
     events: {

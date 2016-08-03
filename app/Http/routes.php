@@ -39,3 +39,23 @@ Route::get('/promo', 'PromoController@getRandom');
 Route::post('/render', 'HelpersController@render');
 
 Route::get('/test', 'TestController@index');
+
+Route::get('/flag/toggle/{flagType}', function ($flagtype) {
+    
+    if ($flagType == 'good' && Request::has('value')) {
+        $value = Request::get('value');
+        return Response::json([
+            'value' => $value++
+        ]);
+    }
+    
+    if ($flagType == 'good' && Request::has('value')) {
+        $value = Request::get('value');
+        return Response::json([
+            'value' => $value > 0 ? $value-- : $value
+        ]);
+    }
+
+    return abort(404);
+
+});

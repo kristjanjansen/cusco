@@ -308,7 +308,3 @@ Component groups are the most immature part of the proposal:
 #### 6. Views
 
 Views are still views but they are degraded to simple layouts that accomodate rendered components and lay them out using helper classes.
-
-## Why "Cusco"?
-
-Because https://fromalaskatobrazil.files.wordpress.com/2012/09/12-sided-inca-stone.jpg
